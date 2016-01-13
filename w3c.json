@@ -1,0 +1,14 @@
+{
+    "group":     "64149",
+    "contacts": [{
+    				"github" : "rdeltour"
+    		  	},
+    			{
+    				"github" : "dauwhe"
+   				},
+   				{
+   					"github": "hlflanagan"    				
+   				}],
+    "shortName": "pwp-lcr",
+    "policy":    "open"
+}
