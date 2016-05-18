@@ -81,50 +81,53 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 </section>
 
 <section>
-<h2>
-Use Case #1 – Online Discovery
-</h2>
+  <h2>Use Cases - Fundamental Features of a PWP</h2>
+  <section>
+   <h2>Basic Actions</h2>
+   <p>Anna is a self-publishing author. Anna creates a PWP, both packed and
+      unpacked. Anna uses some cloud storage system such as DropBox to publish
+      her PWP online. Her friend Bob is able to read Anna's PWP online and
+      offline, either packed or unpacked, as Bob sees fit.</p>
+  </section>
 
-<p>As a reader, I want to discover a publication on the web so that I can
-  start reading it right away. </p>
+  <section>
+    <h2>Online Discovery</h2>
+    <p>As a reader, I want to discover a publication on the web so that I can
+        start reading it right away. </p>
+  </section>
 
+<section>
+  <h2>Reading in Browser</h2>
+  <p>Bob finds a PWP online. His preference is to read the publication in
+     his web browser.</p>
+</section>
 </section>
 
 <section>
-  <h2>
-     Use Case #2 – Reading in Browser
-  </h2>
-    <p>
-      As a reader, I want to read a publication in my web browser.
-    </p>
-</section>
-
+  <h2>Use Cases - Changing State</h2>
 <section>
-<h2>
-Use Case #3 – State Changing Document
-</h2>
-
-   <p>Many publications - especially long form fiction and non-fiction - that
+  <h2>State Changing Document</h2>
+  <p>Many publications - especially long form fiction and non-fiction - that
      users engage with for many hours. During this time, the user may shift
      states in many ways - starting consumption on an internet enabled PC,
      moving to an internet enabled portable device, going into offline-mode
      on that device, and then back to the PC.</p>
 
-   <p>During all of these experiences, the user needs to ensure they have
-     access to critical pieces of data while secondary assets have a pre-
-     defined fallback that will allow the user to continue (for example, a
-     poster image of a video that serves as a placeholder for an externally
-     streamed video when internet is available).</p>
+ <p>During all of these experiences, the user needs to ensure they have
+    access to critical pieces of data while secondary assets have a pre-
+    defined fallback that will allow the user to continue (for example, a
+    poster image of a video that serves as a placeholder for an externally
+    streamed video when internet is available).</p>
 
-   <p>Lets take the use case of a user, Let's call him Nick. Nick is reading
-     long-form narrative non-fiction. A publication filled with text, images,
-     sounds, and multi-media files. Nick is also a multi-device user who
-     wishes to consume the publication on multiple devices. Some of those
-     devices have limited storage, and some of them have limited connectivity.
-     Nick also rides the subway - where he loses internet connection, without
-     warning - for long stretches of time.</p>
+ <p>Lets take the use case of a user, Let's call him Nick. Nick is reading
+    long-form narrative non-fiction. A publication filled with text, images,
+    sounds, and multi-media files. Nick is also a multi-device user who
+    wishes to consume the publication on multiple devices. Some of those
+    devices have limited storage, and some of them have limited connectivity.
+    Nick also rides the subway - where he loses internet connection, without
+    warning - for long stretches of time.</p>
 
-   <p>During offline or low-storage situations, there are still critical parts
+ <p>During offline or low-storage situations, there are still critical parts
      of the publication that are consumable - mainly the text (and possibly i
      mages). Having a reasonable fallback for video (a poster image or
      placeholder image) would allow Nick to read the content while offline or
@@ -139,7 +142,7 @@ Use Case #3 – State Changing Document
      want to obtain and locally store the entire (even non-critical) contents.
      This would be up to the reading system to provide a mechanism, but having
      a way to denote critical and fallback assets ensures that an entire
-    package isn't downloaded when not necessary.</p>
+     package isn't downloaded when not necessary.</p>
 
    <p>For the case of scripting - it's possible that certain items will be
      dynamic - and will hit an external resource (or server) to generate
@@ -150,344 +153,286 @@ Use Case #3 – State Changing Document
      control over the user's experience and replace a potential error-display
      with a limited subset of a good experience.</p>
 
-<h3>
+</section>
+<section>
+<h2>Annotating Across States Via a Reader Plugin</h2>
+<p>Writer Annie has her book published on her own web space as a PWP
+  [http/packed]. Reader Bob opens it online using the PWP reading plugin
+  PWPRead-plugin, and selects a nice quote to bookmark via PWPMark-plugin.</p>
+<p>Writer Annie has her book published on her own web space as a PWP
+    [http/packed]. Reader Bob caches it using a plugin [cache/packed],
+    and selects a nice quote to bookmark via PWPMark-plugin.</p>
+<p>Writer Annie has her book published on her own web space as a PWP,
+  both packed [http/packed] as unpacked [http/unpacked]. Reader Bob
+  reads [http/unpacked] online and selects a nice quote to bookmark
+  via PWPMark-plugin. Then, Bob downloads [http/packed] to his local
+  filesystem [file/packed] to open in his reading system of choice,
+  namely, PWPRead-soft.</p>
+   <p>PWPRead-soft synchronizes with Bob's PWPMark profile, and can
+     show Bob's bookmarks when he continues reading [file/packed]</p>
+</p>
+</section>
+
+<section>
+  <h2>Annotating Across States Via a Browser Plugin</h2>
+  <p>Writer Annie has her book published on her own web space as a PWP
+     [http/unpacked]. Reader Bob reads it online, and selects a nice quote
+     to bookmark via its browser PWP bookmarking plugin: PWPMark-plugin.</p>
+  <p>When Bob re-opens the PWP offline, the booksmarks are shown via
+     PWPMark-plugin</p>
+  <p>When Bob re-visits the original PWP, PWPMark-plugin can also show
+     Bob's bookmarks in the online version.</p>
+</p>
+
+</section>
+</section>
+
+<section>
+  <h2>Use Cases - Creating the PWP</h2>
+<section>
+ <h2>Configurability of Important Resources</h2>
+ <p>Chef Bob writes a cookbook with a lot of embedded videos to explain
+    certain techniques. Bob finds it very important that his videos remain
+    available even offline, and configures this in his cookbook. Reader
+    Annie starts reading Bob's cookbook online. When Annie gets disconnected,
+    the fonts of the cookbook fall back to the system fonts, but the videos
+    remain available.</p>
+
+ <p>Typographer Charlie writes a book on typography, and configures
+    differently: he finds fonts a very important aspect of his book, whilst
+    the embedded videos may fall back to a still. Annie can read Charlie's
+    book without err, online or offline. The fonts remain availabe, but the
+    videos fall back to stills when offline.</p>
+
+ <p>Author David does not configure anything to his novel, but still,
+    Annie can read David's book without problems whether she is online
+    or not.</p>
+</section>
+
+<section>
+ <h2>Updating PWPs</h2>
+ <p>Corp.Inc. creates a PWP with dynamically updatable stock exchange
+    information on chapter 4. Anna sends the locator for chapter 4 to Bob
+    on April 1st. When Bob reads the PWP offline, chapter 4 is filled with
+    some default content. However, when Bob gets online and clicks on the
+    locator for chapter 4, he gets the updated stock exchange information,
+    which might be different than the stock exchange information that Anna
+    saw when she created the bookmark.</p>
+
+</section>
+</section>
+
+<section>
+  <h2>Use Cases - Security</h2>
+  <section>
+    <h2>Read and Write Controls Required</h2>
+    <p>Alice is working on potentially Nobel prize winning research, and has
+      drafted her paper describing her discoveries. She asks Bob to review the
+      paper, but needs to make sure that the PWP retains specific protections,
+      regardless of whether it is read online or offline.</p>
+  </section>
+</section>
+
+<section>
+  <h2>Use Cases - Sharing, Distribution, and External Resources</h2>
+<section>
+ <h2>Distribution</h2>
+ <p>Publisher Corp.Inc. publishes a new PWP, and sends this PWP to ACME
+    its customers. This PWP is downloaded to devices, or synced across
+    several devices, or made available to a customer-specific cloud.
+    Customers can access this file from different retailers, through different
+    applications, either directly or downloaded from private cloud. Thus, the
+    PWP is duplicated many, many, many, many, many times, resulting in a huge
+    number of items. There is one source manifestation, one isbn identifier,
+    and lots of items spread across devices and buyers.</p>
+
+ <p>Annie buys a book and dowloads it offline. She bookmarks a certain
+    chapter (i.e., creates a locator for that chapter). She sends that
+    bookmark to Bob. Bob is able to use that locator on any item of the
+    same PWP, and gets redirected to the correct chapter. </p>
+</section>
+
+<section>
+  <h2>PWPs with Shared Resources</h2>
+  <p>EsteemedPublisher creates apps to distribute several journals to readers.
+    These apps share script libraries, CSS files, and other resources.
+    Distributing many journals as a package should enable systems to call the
+    shared resources once, speeding up processing and enabling offline reading.
+  </p>
+</section>
+
+<section>
+ <h2>Cross-references</h2>
+ <p>Writer Annie writes a dissertation. She references to her Master's
+    thesis, published on the university website. Her colleague Bob has
+    read her Master's thesis before. When he clicks the reference in
+    Annie's dissertation, he gets redirected to his local copy of Annie's
+    Master's thesis. Her friend, Charlie, hasn't read her Master's thesis
+    before. Charlie needs to be online when clicking the reference, to read
+    Annie's Master's thesis. </p>
+
+</section>
+
+<section>
+  <h2>Publication with Static Data</h2>
+  <p>Rosa submitted an article to EsteemedJournal and provided her research
+    data in CSV format. She and EsteemedJournal wish to provide users access
+    to the CSVs when they gain access to her article. EsteemedJournal
+    recommends that the package is built in such a way that a system can query
+    the manifest to assess whether it is situationally appropriate to offer
+    downloads. For example, the package might not offer the option to download
+    the CSV while a user is reading offline. </p>
+</section>
+
+<section>
+  <h2>Publication with Interactive Data</h2>
+  <p>(Extension to the Publication with Data use case): the article of Rosa
+    not only includes data, but also interactive graphics relying on that
+    data, with interaction directed through javascript (or other) programming
+    interfaces. These javascript programs may be fairly complex, and may also
+    rely on external libraries (not necessarily integrated into the article
+    itself). </p>
+</section>
+
+</section>
+<section>
+  <h2>Use Cases - Manifests and Packages</h2>
+<section>
+  <h2>Streamlined Access to Disjoint Package Components </h2>
+  <p>EsteemedJournalPublisher would like to offer the users of the
+    EsteemedJournal of Chemistry App the opportunity to read only the abstracts
+    of the journals in the app. The App Package must offer the user a list
+    (table of contents) of abstracts (disjoint objects in the package with
+    semantic information or metadata informing the package of the nature of the
+    object). </p>
+
+    <p>(Is the abstract-only view built-in? spun-off using shared resource?
+      totally independent publication?)</p>
+
+</section>
+
+<section>
+  <h2>Manifest includes Information of New Content</h2>
+  <p>Shoshana is an organic chemist. She has purchased the Esteemed Journal of
+    Chemistry App. She downloads Organic Chem Quarterly in her lab and reads the
+    first article over lunch. Shoshana begins the book reviews during office
+    hours but must tend to her students' questions, so she closes the app.
+    Shoshana opens the app on the train ride home to resume reading the book
+    reviews. She is happy to find that the app opens to the exact location and
+    opens quickly because most of the material does not need to be downloaded a
+    second time. </p>
+</section>
+</section>
+
+<section>
+  <h2>Use Cases - Other</h2>
+<section>
+ <h2>Offline Publications</h2>
+ <p>Corp.Inc. creates an internal manual for its employees as a PWP. This
+    PWP is not published online, but is sent around to all its employees.
+    Employee Anna has some questions about figure 2b, and sends an email to
+    co-worker Bob with a locator to that figure. Bob clicks on that locator,
+    and his company-branded PWP reader opens Bob's personal copy of the
+    manual, and redirects immediatly to that figure.</p>
+</section>
+
+<section>
+  <h2>Publication plus Annotations</h2>
+  <p>Oksana submits a scholarly article to a EsteemedJournal. EsteemedJournal
+    puts the article through the Peer Review process, during which
+    EsteemedJounral editors and third-party reviewers provide comments on the
+    article. Ultimately, EsteemedJournal chooses not to publish Oksana's
+    article, but the comments (annotations) that have already been made should
+    persist as she submits it to RespectedJournal. </p>
+</section>
+
+<section>
+  <h2>Personalized Experience</h2>
+  <p>Alice downloads a textbook and proceeds to personalize the material with
+    larger font, different contrast, and annotations.</p>
+</section>
+</section>
+
+<section>
+<h2>
 Requirement(s)
-</h3>
+</h2>
    <p>Be able handle intermittent changes in online/offline status during a
      single reading session while still minimizing the amount of material
      cached locally.</p>
-<h3>
-  Stakeholder(s)
-</h3>
-   <p>IMPLEMENTERS, USERS-ALL</p>
-<h3>
-  Ranking
-</h3>
-   <p>TBD</p>
-<h3>
-  Relations/dependencies
-</h3>
-   <p>TBD</p>
-<h3>
-  Comments
-</h3>
-   <p>TBD</p>
-<h3>
-  Submitted by
-</h3>
-   <p>Nick Rufflio</p>
-<h3>
-  Status
-</h3>
-   <p>NEW</p>
 
-</section>
-
-<section>
-<h2>
-Use Case #4 –Configurability of important resources
-</h2>
-
-<p>Chef Bob writes a cookbook with a lot of embedded videos to explain
-  certain techniques. Bob finds it very important that his videos remain
-  available even offline, and configures this in his cookbook. Reader
-  Annie starts reading Bob's cookbook online. When Annie gets disconnected,
-  the fonts of the cookbook fall back to the system fonts, but the videos
-  remain available.</p>
-
-<p>Typographer Charlie writes a book on typography, and configures
-  differently: he finds fonts a very important aspect of his book, whilst
-  the embedded videos may fall back to a still. Annie can read Charlie's
-  book without err, online or offline. The fonts remain availabe, but the
-  videos fall back to stills when offline.</p>
-
-<p>Author David does not configure anything to his novel, but still,
-   Annie can read David's book without problems whether she is online
-   or not.</p>
-
-<h3>
-Requirement(s)
-</h3>
-   <p>it SHOULD be possible to describe explicitly which resource does
+  <p>It SHOULD be possible to describe explicitly which resource does
      and which does not belong to the PWP or, to the “portable” part of
      a PWP.</p>
-<h3>
-  Stakeholder(s)
-</h3>
-   <p>IMPLEMENTERS, USERS-ALL</p>
-<h3>
-  Ranking
-</h3>
-   <p>TBD</p>
-<h3>
-  Relations/dependencies
-</h3>
-   <p>TBD</p>
-<h3>
-  Comments
-</h3>
-   <p>TBD</p>
-<h3>
-  Submitted by
-</h3>
-   <p>Ben De Meester</p>
-   <p><a href="https://github.com/w3c/dpub-pwp-ucr/issues/19">github issue 19</a>
-<h3>
-  Status
-</h3>
-   <p>NEW</p>
+
+  <p>There MUST be a separation between a format-independent
+     (“canonical”) and format-dependent locator.</p>
+
+  <p>It MUST be possible (and necessary) to use, for all cross-references,
+    the canonical locator.</p>
+
+  <p>There MUST be a separation between the identifier (e.g., ISBN) and
+    the (canonical) locator of a specific instance of a PWP.</p>
+
+  <p>There SHOULD be a possibility in the PWP to follow (if necessary)
+     the copying (provenance) chain<p>
+
+  <p>The Identifier (e.g., ISBN) MAY serve as a canonical locator for a
+     specific instance of a PWP</p>
+
+  <p>It SHOULD be possible to use, in all circumstances, a relative
+     locator to manipulate, annotate, etc, content in a PWP</p>
+
+  <p>A PWP Processor MUST be able to combine a relative locator with
+     the canonical as well as state dependent locators of a PWP</p>
+
+  <p>Locating a resource within a PWP should not depend on the PWP's
+     state.</p>
+
+  <p>A state independent locator should be part of the PWP.</p>
+
+  <p>There needs to be persistence of identifiers across PWP instances.</p>
+
+  <p>Any set up and mechanism, handling canonical and state-dependent
+    locators, MUST be easily settable on any server (albeit maybe not
+    in the most efficient manner) based on basic server behavior
+    control.</p>
+
+  <p>There should be the capability for dynamic updating of information
+      based on online/offline status and time of publication.</p>
+
+  <p>A PWP must allow for access control and write protections as part of
+      the resource.</p>
+
+  <p>Package may contain/point to textual/graphical/media as well as data
+    (CSV, code repository)</p>
+
+  <p>Package should include a queryable manifest.</p>
+
+  <p>Package may contain javascript libraries, and possibly other types of
+    processing engines, like Java</p>
+
+  <p>Javascript libraries may refer to services "outside", ie, to services on
+    the Web at large (e.g., reference to Wolfram Alfa, or online google
+    services)</p>
+
+  <p>Javascript libraries may become relatively complex and may therefore be
+    packaged; this means that the packaging format should allow for other
+    packages as parts.</p>
+
+  <p>Content in package is fully annotatable</p>
+
+  <p>Annotations are considered part of the package</p>
+
+  <p>There needs to be metadata on package components</p>
+
+  <p>Manifest with metadata and semantic information</p>
+
+  <p>Customizable manifest functionality</p>
+
+  <p>Manifest indicates whether content is new (relative to last download) and
+    triggers download only when content is new/updated.</p>
 
 </section>
-
-<section>
-<h2>
-Use Case #5 – Cross-references
-</h2>
-
-<p>Writer Annie writes a dissertation. She references to her Master's
-  thesis, published on the university website. Her colleague Bob has
-  read her Master's thesis before. When he clicks the reference in
-  Annie's dissertation, he gets redirected to his local copy of Annie's
-  Master's thesis. Her friend, Charlie, hasn't read her Master's thesis
-  before. Charlie needs to be online when clicking the reference, to read
-  Annie's Master's thesis. </p>
-
-  <h3>
-  Requirement(s)
-  </h3>
-     <p>There MUST be a separation between a format-independent
-       (“canonical”) and format-dependent locator.</p>
-    <p>It MUST be possible (and necessary) to use, for all cross-references,
-      the canonical locator.</p>
-</p>
-  <h3>
-    Stakeholder(s)
-  </h3>
-     <p>IMPLEMENTERS, USERS-ALL</p>
-  <h3>
-    Ranking
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Relations/dependencies
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Comments
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Submitted by
-  </h3>
-     <p>Ben De Meester</p>
-     <p><a href="https://github.com/w3c/dpub-pwp-ucr/issues/19">github issue 19</a>
-  <h3>
-    Status
-  </h3>
-     <p>NEW</p>
-
-</section>
-
-<section>
-<h2>
-Use Case #6 – Distribution
-</h2>
-
-<p>Publisher Corp.Inc. publishes a new PWP, and sends this PWP to ACME
-  and many more retailers. Retailer ACME makes this PWP book available to
-  its customers. This PWP is downloaded to devices, or synced across
-  several devices, or made available to a customer-specific cloud.
-  Customers can access this file from different retailers, through different
-  applications, either directly or downloaded from private cloud. Thus, the
-  PWP is duplicated many, many, many, many, many times, resulting in a huge
-  number of items. There is one source manifestation, one isbn identifier,
-  and lots of items spread across devices and buyers.</p>
-
-<p>Annie buys a book and dowloads it offline. She bookmarks a certain
-  chapter (i.e., creates a locator for that chapter). She sends that
-  bookmark to Bob. Bob is able to use that locator on any item of the
-  same PWP, and gets redirected to the correct chapter. </p>
-
-</p>
-
-  <h3>
-  Requirement(s)
-  </h3>
-     <p>There MUST be a separation between the identifier (eg, isbn) and
-       the (canonical) locator of a specific instance of a PWP.</p>
-     <p>There SHOULD be a possibility in the PWP to follow (if necessary)
-       the copying (provenance) chain<p>
-     <p>The Identifier (eg, ISBN) MAY serve as a canonical locator for a
-       specific instance of a PWP</p>
-      <p>It SHOULD be possible to use, in all circumstances, a relative
-        locator to manipulate, annotate, etc, content in a PWP</p>
-      <p>A PWP Processor MUST be able to combine a relative locator with
-        the canonical as well as state dependent locators of a PWP</p>
-
-  <h3>
-    Stakeholder(s)
-  </h3>
-     <p>PUBLISHERS-ALL, IMPLEMENTERS, USERS-ALL, RETAILERS</p>
-  <h3>
-    Ranking
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Relations/dependencies
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Comments
-  </h3>
-     <p>Q1: Is it the packaged state that goes to the retailer?</p
-     <p>Q2: Is it up to the retailer to maintain portability?</p>
-  <h3>
-    Submitted by
-  </h3>
-     <p>Ben De Meester</p>
-     <p><a href="https://github.com/w3c/dpub-pwp-ucr/issues/19">github issue 19</a>
-  <h3>
-    Status
-  </h3>
-     <p>NEW</p>
-
-</section>
-
-<section>
-<h2>
-Use Case #7 – Offline Publications
-</h2>
-
-<p>Corp.Inc. creates an internal manual for its employees as a PWP. This
-  PWP is not published online, but is sent around to all its employees.
-  Employee Anna has some questions about figure 2b, and sends an email to
-  co-worker Bob with a locator to that figure. Bob clicks on that locator,
-  and his company-branded PWP reader opens Bob's personal copy of the
-  manual, and redirects immediatly to that figure.</p>
-
-  <h3>
-  Requirement(s)
-  </h3>
-     <p>Persistence of identifiers across PWP instances.</p>
-  <h3>
-    Stakeholder(s)
-  </h3>
-     <p>PUBLISHERS-ALL, IMPLEMENTERS, USERS-ALL</p>
-  <h3>
-    Ranking
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Relations/dependencies
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Comments
-  </h3>
-     <p>Q1: Is it the packaged state that goes to the retailer?</p>
-     <p>Q2: Is it up to the retailer to maintain portability?</p>
-  <h3>
-    Submitted by
-  </h3>
-     <p>Ben De Meester</p>
-     <p><a href="https://github.com/w3c/dpub-pwp-ucr/issues/19">github issue 19</a>
-  <h3>
-    Status
-  </h3>
-     <p>NEW</p>
-
-</section>
-
-<section>
-<h2>
-Use Case #8 – Updating PWPs
-</h2>
-
-<p>Corp.Inc. creates a PWP with dynamically updatable stock exchange
-  information on chapter 4. Anna sends the locator for chapter 4 to Bob
-  on April 1st. When Bob reads the PWP offline, chapter 4 is filled with
-  some default content. However, when Bob gets online and clicks on the
-  locator for chapter 4, he gets the updated stock exchange information,
-  which might be different than the stock exchange information that Anna
-  saw when she created the bookmark.</p>
-
-  <h3>
-  Requirement(s)
-  </h3>
-     <p>Dynamic updating of information based on online/offline status
-     and time of publication.</p>
-  <h3>
-    Stakeholder(s)
-  </h3>
-     <p>PUBLISHERS-ALL, IMPLEMENTERS, USERS-ALL</p>
-  <h3>
-    Ranking
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Relations/dependencies
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Comments
-  </h3>
-    <p>TBD</p>
-  <h3>
-    Submitted by
-  </h3>
-     <p>Ben De Meester</p>
-     <p><a href="https://github.com/w3c/dpub-pwp-ucr/issues/19">github issue 19</a>
-  <h3>
-    Status
-  </h3>
-     <p>NEW</p>
-
-</section>
-
-<section>
-<h2>
-Use Case #9 - Minimal Requirements
-</h2>
-
-<p>Anna is a self-publishing author. Anna creates a PWP, both packed and
-  unpacked. Anna uses some cloud storage system such as DropBox to publish
-  her PWP online. Her friend Bob is able to read Anna's PWP online and
-  offline, either packed or unpacked, as Bob sees fit.</p>
-
-  <h3>
-  Requirement(s)
-  </h3>
-     <p>Any set up and mechanism, handling canonical and state-dependent
-       locators, MUST be easily settable on any server (albeit maybe not
-       in the most efficient manner) based on basic server behavior
-       control.</p>
-  <h3>
-    Stakeholder(s)
-  </h3>
-     <p>PUBLISHERS-ALL, IMPLEMENTERS, USERS-ALL</p>
-  <h3>
-    Ranking
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Relations/dependencies
-  </h3>
-     <p>TBD</p>
-  <h3>
-    Comments
-  </h3>
-    <p>Need to define packed, unpacked</p>
-  <h3>
-    Submitted by
-  </h3>
-     <p>Ben De Meester</p>
-     <p><a href="https://github.com/w3c/dpub-pwp-ucr/issues/19">github issue 19</a>
-  <h3>
-    Status
-  </h3>
-     <p>NEW</p>
-
-</section>
-
   </body>
 </html>
