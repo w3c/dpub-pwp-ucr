@@ -83,6 +83,37 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 <section>
   <h2>Use Cases - Fundamental Features of a PWP</h2>
   <section>
+    <h2>Collection of Resources</h2>
+    <p>Publisher P works with multiple authors to create an anthology and uses
+      resources from different rights’ holders from different locations on the
+      web. Following the current practice on the Web, the publication consists
+      of many different resources (html, svg, css, etc.). P needs the
+      collection of all the resources as a unit to include it into its business
+      workflow. The publication must also be deposited to the national library
+      of as a legal deposit.</p>
+    <p>A book on wines that can be read from A-Z, or personalized to only read
+      about red wines or wines from a specific region. Each wine may be a
+      resources/small chunk of data.</p>
+    <p>User A has access to materials only through an old computer in her local
+      library. While she has time to read the entire copy of War and Peace, the
+      system is unable to display the entire resource as one huge HTML file.
+      Parsing through one 2000-page HTML document is difficult and resource-
+      intensive. Parsing through a package of  20 10-page HTML documents is
+      less resource-intensive.</p>
+  </section>
+
+  <section>
+    <h2>Online/offline</h2>
+    <p>Connectivity as a commodity: Students reading e-textbooks in a village
+      in africa where there is none or not a reliable connection.</p>
+    <p>Many institutions, such as schools and government organizations (even in
+      the wealthiest countries), do not have the resources to update equipment
+      frequently. Therefore, it is necessary for publications to be accessible on
+      current as well as older browsers.</p>
+    <p>Bob wants read a PWP on an airplane.</p>
+  </section>
+
+  <section>
    <h2>Basic Actions</h2>
    <p>Anna is a self-publishing author. Anna creates a PWP, both packed and
       unpacked. Anna uses some cloud storage system such as DropBox to publish
@@ -103,21 +134,9 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 </section>
 
 <section>
-  <h2>Online/offline</h2>
-  <p>Connectivity as a commodity: Students reading e-textbooks in a village
-    in africa where there is none or not a reliable connection.</p>
-  <p>Many institutions, such as schools and government organizations (even in
-    the wealthiest countries), do not have the resources to update equipment
-    frequently. Therefore, it is necessary for publications to be accessible on
-    current as well as older browsers.</p>
-  <p>Bob wants read a PWP on an airplane.</p>
-</section>
-
-<section>
   <h2>Platform Independence</h2>
   <p>Publisher ACME creates a publication that is consumable across a variety
     of reader platforms, whether online or offline.</p>
-</section>
 </section>
 
 <section>
@@ -171,6 +190,7 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
      with a limited subset of a good experience.</p>
 
 </section>
+
 <section>
 <h2>Annotating Across States Via a Reader Plugin</h2>
 <p>Writer Annie has her book published on her own web space as a PWP
@@ -270,6 +290,22 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 </section>
 
 <section>
+  <h2>Retail</h2>
+  <p>(e)books that are sold need to be delivered, so that purchasers can load
+    them on offline devices.</p>
+  <p>Purchased content has different expectations - one being that you have
+    “something” or a reasonable use of that content in a logical way (such as
+    always being able to read your amazon purchases through the amazon app)</p>
+  <p>The web is not permanent - sites go down, when you purchase a book, you
+    need an offline copy that you can continue to read when the retailer you
+    purchased from goes kaput…</p>
+  <p>Sales Auditing -> Ability to track “what” is sold so that it can be paid.
+    If all content is just free and different chunks are purchased, chasing
+    rights/payments is an issue.  Basically the package can have an ISBN
+    associated so that it can be tracked for sale - even multiple versions.</p>
+</section>
+
+<section>
   <h2>PWPs with Shared Resources</h2>
   <p>EsteemedPublisher creates apps to distribute several journals to readers.
     These apps share script libraries, CSS files, and other resources.
@@ -354,6 +390,16 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 
 <section>
   <h2>Use Cases - Archival Interest</h2>
+  <section>
+    <h2>Integrity and Longevity</h2>
+    <p>A government agency (e.g., laws, regulations, judicial decisions) publishes
+      information that need to persist without any loss of information
+      forever.</p>
+    <p>Journal article (e.g. announcing novel compound in chemistry) must be
+      published in method that is persistent because it serves at the document of
+      record for scientific record.  </p>
+  </section>
+
 <section>
   <h2>Retraction Notices</h2>
   <p>An archival service needs to harvest the retraction notice and update the
@@ -368,16 +414,6 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
     taken down by the publisher.</p>
 </section>
 
-<section>
-  <h2>Integrity and Longevity</h2>
-  <p>A government agency (e.g., laws, regulations, judicial decisions) publishes
-    information that need to persist without any loss of information
-    forever.</p>
-  <p>Journal article (e.g. announcing novel compound in chemistry) must be
-    published in method that is persistent because it serves at the document of
-    record for scientific record.  </p>
-</section>
-
 </section>
 
 <section>
@@ -386,6 +422,46 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
       <h2>Personalized Experience</h2>
       <p>Alice downloads a textbook and proceeds to personalize the material with
         larger font, different contrast, and annotations.</p>
+</section>
+</section>
+
+<section>
+  <h2>CSS Requirements for Packaged Multiple Documents</h2>
+<section>
+  <h2>Pagination and Generated Content</h2>
+  <p>Any kind of pagination and also indexing has to be through a whole
+    collection of documents that constitute a PWP, which may raise issues
+    around transition between documents.</p>
+
+    <p>As a reader, I want to choose between a scrolled view and a paginated
+      view of content that extends across multiple html documents</p>
+</section>
+
+<section>
+  <h2>Navigation</h2>
+  <p>As a publisher I want to navigate from chapter 1 to chapter 2 (separate
+    HTML files) seamlessly. The presentation should not be bound to HTML
+    organization. This happens, for example, in Japanese publication where
+    chapter separations may not be very sharp but the move from, e.g.,
+    horizontal writing to vertical is reasonably organized with different
+    files.</p>
+
+  <p>Placeholder: Page Transition effects both within an HTML document, and
+    between HTML documents</p>
+
+
+</section>
+
+<section>
+  <h2>CSS customization</h2>
+  <p>As a publisher I want my footnotes to number sequentially across the
+    publication, even when the publication is constructed of multiple
+    documents.</p>
+</section>
+
+<section>
+  <h2>Transitions</h2>
+  <p>Placeholder: Comics-like transition</p>
 </section>
 </section>
 
@@ -417,22 +493,7 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
     possibly for accessibility also.</p>
   <p>Specialized semantics are required for users and processors.</p>
 </section>
-
-<section>
-  <h2>Pagination and Generated Content</h2>
-  <p>Any kind of pagination and also indexing has to be through a whole
-    collection of documents that constitute a PWP, which may raise issues
-    around transition between documents.</p>
 </section>
-
-<section>
-  <h2>CSS customization</h2>
-  <p>Placeholder</p>
-</section>
-
-<section>
-  <h2>Transitions</h2>
-  <p>Placeholder: Comics-like transition</p>
 </section>
 
 <section>
@@ -522,6 +583,26 @@ Requirement(s)
     comprise a publication must remain intact and complete across all
     transitions (online/offline), rendering in various formats, and
     distribution over time.</p>
+
+  <p>Data that affects content may be stored apart from the content.</p>
+
+  <p>The choice should be driven by content or workflow, not mandated by
+    specification.</p>
+
+  <p>Long-form content should not be stored in one giant file. This affects
+    performance, storage, workflow.</p>
+
+  <p>The components of a publication should be aggregated or disaggregated
+    without loss of information.</p>
+
+  <p>Every resource can hold it’s own rights. The rights of this resource
+    should be kept in the process of distributing the resource.</p>
+
+  <p>A collection of documents must be treated as a single unit for:
+    Searching, values of counters (page counters, section numbering, footnotes),
+    and user stylesheets (users must be able to adjust display, e.g., font
+    selection, font-size adjustment, background color)</p>
+
 
 </section>
   </body>
