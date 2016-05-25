@@ -421,8 +421,15 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
   <h2>Use Cases - Accessibility</h2>
 <section>
       <h2>Personalized Experience</h2>
-      <p>Alice downloads a textbook and proceeds to personalize the material with
-        larger font, different contrast, and annotations.</p>
+      <p>Alice, a dyslexic student, downloads a textbook and proceeds to
+        personalize the material with larger font, different contrast, and
+        annotations.</p>
+
+      <h2>Supporting User Preferences</h2>
+      <p>While reading a book on computer programming, Bob wants to change the
+        font into a local font. However, the code should remain in a
+        fixed-width font. xt in the font, but the code should remain in
+        fixed-width font.</p>
 </section>
 </section>
 
@@ -443,13 +450,8 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
   <p>As a publisher I want to navigate from chapter 1 to chapter 2 (separate
     HTML files) seamlessly. The presentation should not be bound to HTML
     organization. This happens, for example, in Japanese publication where
-    chapter separations may not be very sharp but the move from, e.g.,
-    horizontal writing to vertical is reasonably organized with different
-    files.</p>
-
-  <p>Placeholder: Page Transition effects both within an HTML document, and
-    between HTML documents</p>
-
+    there are no chapter separations but content is still split between
+    multiple files for organizational reasons.</p>
 
 </section>
 
@@ -458,11 +460,18 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
   <p>As a publisher I want my footnotes to number sequentially across the
     publication, even when the publication is constructed of multiple
     documents.</p>
+  <p>Content may have significantly different styles between files. For
+    instance, some Japanese books will have documents whose root element
+    is vertical-rl and others whose root element is horizontal-tb. These root
+    element styles must be preserved.</p>
 </section>
 
 <section>
   <h2>Transitions</h2>
   <p>Placeholder: Comics-like transition</p>
+
+  <p>Placeholder: Page Transition effects both within an HTML document, and
+    between HTML documents</p>
 </section>
 </section>
 
