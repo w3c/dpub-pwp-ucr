@@ -87,7 +87,7 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
     <p>Publisher P works with multiple authors to create an anthology and uses
       resources from different rights’ holders from different locations on the
       web. Following the current practice on the Web, the publication consists
-      of many different resources (html, svg, css, etc.). P needs the
+      of many different resources (HTML, SVG, CSS, etc.). The publisher needs the
       collection of all the resources as a unit to include it into its business
       workflow. The publication must also be deposited to the national library
       of as a legal deposit.</p>
@@ -105,7 +105,7 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
   <section>
     <h2>Online/offline</h2>
     <p>Connectivity as a commodity: Students reading e-textbooks in a village
-      in africa where there is none or not a reliable connection.</p>
+      in Africa where there is none or not a reliable connection.</p>
     <p>Many institutions, such as schools and government organizations (even in
       the wealthiest countries), do not have the resources to update equipment
       frequently. Therefore, it is necessary for publications to be accessible on
@@ -165,8 +165,8 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
     warning - for long stretches of time.</p>
 
  <p>During offline or low-storage situations, there are still critical parts
-     of the publication that are consumable - mainly the text (and possibly i
-     mages). Having a reasonable fallback for video (a poster image or
+     of the publication that are consumable - mainly the text (and possibly
+     images). Having a reasonable fallback for video (a poster image or
      placeholder image) would allow Nick to read the content while offline or
      in limited storage. While this should be the job of the reading system,
      having a method in the publication for the author of the publication to
@@ -216,7 +216,7 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
   <p>Writer Annie has her book published on her own web space as a PWP
      [http/unpacked]. Reader Bob reads it online, and selects a nice quote
      to bookmark via its browser PWP bookmarking plugin: PWPMark-plugin.</p>
-  <p>When Bob re-opens the PWP offline, the booksmarks are shown via
+  <p>When Bob re-opens the PWP offline, the bookmarks are shown via
      PWPMark-plugin</p>
   <p>When Bob re-visits the original PWP, PWPMark-plugin can also show
      Bob's bookmarks in the online version.</p>
@@ -239,7 +239,7 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
  <p>Typographer Charlie writes a book on typography, and configures
     differently: he finds fonts a very important aspect of his book, whilst
     the embedded videos may fall back to a still. Annie can read Charlie's
-    book without err, online or offline. The fonts remain availabe, but the
+    book without err, online or offline. The fonts remain available, but the
     videos fall back to stills when offline.</p>
 
  <p>Author David does not configure anything to his novel, but still,
@@ -275,16 +275,16 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
   <h2>Use Cases - Sharing, Distribution, and External Resources</h2>
 <section>
  <h2>Distribution</h2>
- <p>Publisher Corp.Inc. publishes a new PWP, and sends this PWP to ACME
+ <p>Publisher Corp. Inc. publishes a new PWP, and sends this PWP to ACME
     its customers. This PWP is downloaded to devices, or synced across
     several devices, or made available to a customer-specific cloud.
     Customers can access this file from different retailers, through different
     applications, either directly or downloaded from private cloud. Thus, the
     PWP is duplicated many, many, many, many, many times, resulting in a huge
-    number of items. There is one source manifestation, one isbn identifier,
+    number of items. There is one source manifestation, one ISBN identifier,
     and lots of items spread across devices and buyers.</p>
 
- <p>Annie buys a book and dowloads it offline. She bookmarks a certain
+ <p>Annie buys a book and downloads it offline. She bookmarks a certain
     chapter (i.e., creates a locator for that chapter). She sends that
     bookmark to Bob. Bob is able to use that locator on any item of the
     same PWP, and gets redirected to the correct chapter. </p>
@@ -420,16 +420,40 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 <section>
   <h2>Use Cases - Accessibility</h2>
 <section>
-      <h2>Personalized Experience</h2>
-      <p>Alice, a dyslexic student, downloads a textbook and proceeds to
-        personalize the material with larger font, different contrast, and
-        annotations.</p>
+  <h2>Personalized Experience</h2>
+  <p>Alice, a dyslexic student, downloads a textbook and proceeds to
+    personalize the material with larger font and different contrast.</p>
 
-      <h2>Supporting User Preferences</h2>
-      <p>While reading a book on computer programming, Bob wants to change the
-        font into a local font. However, the code should remain in a
-        fixed-width font. xt in the font, but the code should remain in
-        fixed-width font.</p>
+  <h2>Supporting User Preferences</h2>
+  <p>While reading a book on computer programming, Bob wants to change the
+    font into a local font. However, the code should remain in a
+    fixed-width font.</p>
+</section>
+
+<section>
+  <h2>Adding Alternative Media</h2>
+  <p>As a publisher of accessible content, I need to add content such as a
+    braille style sheet, image descriptions, or video captioning (text /
+    descriptive audio) to a PWP previously published by a third party.</p>
+</section>
+
+<section>
+  <h2>Assisted Reader Technology</h2>
+  <p>As a user of assistive technology, Alice wants to perceive the full
+    PWP.</p>
+</section>
+
+<section>
+  <h2>Time-based Media</h2>
+  <p>Bobbie is learning to read and viewing a picture book. The picture book
+    is fixed layout that will turn the page and reads along in sync with the
+    page currently open.</p>
+</section>
+
+<section>
+  <h2>Building a Custom PWP</h2>
+  <p>Alice wants to download a PWP that captures only the external resources
+    she needs to perceive the PWP.</p>
 </section>
 </section>
 
@@ -612,6 +636,13 @@ Requirement(s)
     Searching, values of counters (page counters, section numbering, footnotes),
     and user stylesheets (users must be able to adjust display, e.g., font
     selection, font-size adjustment, background color)</p>
+
+  <p>PWP needs to support rendering for visual output, tactile output, and
+    audio output.</p>
+
+  <p>Package needs to support Time based media and Text such as audio
+    synchronized with text, Video synchronized with Text, sign language sync
+    with text.</p>
 
 
 </section>
