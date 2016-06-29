@@ -10,17 +10,17 @@
           specStatus: "ED",
           shortName:  "dpub-pwp-ucr",
           editors: [
-{   name:       "Heather Flanagan",
+                {   name:       "Heather Flanagan",
                     url:        "",
                     company:    "Invited Expert",
                     companyURL: "https://www.rfc-editor.org" },
 
 
-{   name:       "Romain Deltour",
+                {   name:       "Romain Deltour",
                     url:        "",
                     company:    "DAISY",
                     companyURL: "" },
-{   name:       "Dave Cramer",
+                {   name:       "Dave Cramer",
                     url:        "",
                     company:    "Hachette Livre",
                     companyURL: "http://www.hbgusa.com/" }
@@ -31,8 +31,8 @@
           wgURI:        "http://www.w3.org/dpub/IG/",
           wgPublicList: "public-digipub-ig",
           wgPatentURI:  "",
-noRecTrack : "true",
-otherLinks: [
+          noRecTrack : "true",
+          otherLinks: [
             {
               key: "Repository",
               data: [{
@@ -48,9 +48,15 @@ otherLinks: [
               }]
             }
           ],
-edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
+          edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
       };
     </script>
+    <style media="screen">
+        .example-heading {
+            font-weight: bold;
+            font-size: 110%;
+        }
+    </style>
   </head>
   <body>
     <section id='abstract'>
@@ -73,45 +79,81 @@ edDraftURI:           "http://w3c.github.io/dpub-pwp-ucr/",
 
 
     <section>
+        <h2>Introduction</h2>
 
-<h2>Introduction</h2>
+        <p>TK</p>
 
-<p>TK</p>
+    </section>
 
-</section>
+    <section>
+        <h2>Use Cases - Fundamental Features of a PWP</h2>
+        <section>
+            <h2>PWP may consist of a collection of Resources</h2>
+            <p>A Portable Web Publications would, usually, consists of a (possibly large) number of Web Resources, like HTML, SVG, or CSS. This reflects the current practice on the Web, emphasizing the need of memory requirement on small devices, cachebility, or independent development</p>
 
-<section>
-  <h2>Use Cases - Fundamental Features of a PWP</h2>
-  <section>
-    <h2>Collection of Resources</h2>
-    <p>Publisher P works with multiple authors to create an anthology and uses
-      resources from different rights’ holders from different locations on the
-      web. Following the current practice on the Web, the publication consists
-      of many different resources (HTML, SVG, CSS, etc.). The publisher needs the
-      collection of all the resources as a unit to include it into its business
-      workflow. The publication must also be deposited to the national library
-      of as a legal deposit.</p>
-    <p>A book on wines that can be read from A-Z, or personalized to only read
-      about red wines or wines from a specific region. Each wine may be a
-      resources/small chunk of data.</p>
-    <p>User A has access to materials only through an old computer in her local
-      library. While she has time to read the entire copy of War and Peace, the
-      system is unable to display the entire resource as one huge HTML file.
-      Parsing through one 2000-page HTML document is difficult and resource-
-      intensive. Parsing through a package of  20 10-page HTML documents is
-      less resource-intensive.</p>
-  </section>
+            <p class="example-heading">Examples:</p>
+            <ul>
+                <li>Publisher “P” works with multiple authors to create an anthology and uses resources from different locations on the web. Following the current practice on the Web, the publication consists of many different resources (HTML, SVG, CSS, etc.), with some of the HTML contents formatted by, possibly, different CSS files. The publisher needs the collection of all the resources as a unit to include it into its business workflow. </li>
+                <li>A book on wines that can be read from A-Z, or personalized to only read about red wines or wines from a specific region. Each wine may be a resources/small chunk of data that is used to generate the corresponding HTML content on the fly.</li>
+                <li>User “A” has access to materials only through an old computer in her local library. While she has time to read the entire copy of War and Peace, the system is unable to display the entire resource as one huge HTML file. Parsing through one 2000-page HTML document is difficult and resource-intensive. Parsing through a package of 20 HTML documents, roughly 10 pages each, is less resource-intensive.</li>
+             </ul>
+         </section>
 
-  <section>
-    <h2>Online/offline</h2>
-    <p>Connectivity as a commodity: Students reading e-textbooks in a village
-      in Africa where there is none or not a reliable connection.</p>
-    <p>Many institutions, such as schools and government organizations (even in
-      the wealthiest countries), do not have the resources to update equipment
-      frequently. Therefore, it is necessary for publications to be accessible on
-      current as well as older browsers.</p>
-    <p>Bob wants read a PWP on an airplane.</p>
-  </section>
+          <section>
+            <h2>The same PWP content may have to be accessed both online and offline</h2>
+            <p>The <em>same</em> content of the PWP should be accessible offline, if circumstances so dictate, without the necessity for the reader to take any particular, technical actions.</p>
+
+            <p class="example-heading">Examples:</p>
+            <ul>
+                <li>Connectivity as a commodity; students reading a digital textbook in a village in Africa should be prepared to the fact that the connection may not be reliable.</li>
+                <li>Many institutions, such as schools and government organizations (even in the wealthiest countries), do not have the resources to update equipment frequently. Therefore, it is necessary for publications to be accessible on current as well as older browsers.</li>
+                <li>Readers, who can enjoy reading their favourite book on their portable device in their home countries would find it prohibitive to do the same doing the same, due to the very high roaming charters.</li>
+                <li>Bob wants read a PWP on an airplane</li>
+            </ul>
+          </section>
+
+          <section>
+              <h2>Reading a publication in a Browser</h2>
+              <p>Reading long publications should not be restricted to specific devices and applications but should be equally available in a browser</p>
+
+              <p class="example-heading">Examples:</p>
+              <ul>
+                  <li>Bob has some very specific plugins in his browser that he enjoys using for, e.g., annotation using his own annotation server, or quickly copy and publish extracts in a specialized social service. That means that he wants to be able to read his textbook in this environment, enjoying the environment he is familiar with, rather than being forced in to a special application for the purpose of that specific publicaiton</li>
+                  <li>Alice reads a scholarly paper that refers to large datasets. The data can be presented interactively through some very specialized data visualization services relying on custom hardware on her computer. These visualization services are incorporated into her browser and can be used from within a web page. Alice wants to make use of these wile reading her paper to gain a better understanding of the content.</li>
+              </ul>
+          </section>
+
+          <section>
+              <h2>The reading system has to find the information on the constituent resources of a PWP easily</h2>
+
+              <p>A PWP will likely be composed of multiple web documents. A more complicated PWP may have many more components, meaning that extracting in advance all the references to other constituent resources may be prohibitive.
+              </p>
+
+              <p class="example-heading">Examples:</p>
+              <ul>
+                  <li>The system needs to identify which components need to be downloaded to a local user’s device to support offline reading</li>
+                  <li>The system needs to preload some document components in order to provide a more responsive reading experience.</li>
+              </ul>
+
+          </section>
+
+          <section>
+              <h2>The order in which the resources are to be displayed must be known to the Reading System</h2>
+
+              <p>A user agent needs to know the sequence in which to present components of a PWP to the user. A PWP will likely be composed of multiple web documents. A typical simple PWP will anywhere from 1 to 15 HTML documents and several image files, in one location or many. A more complicated PWP may have many more components, meaning that extracting the exact order from within the resources (i.e., parsing them in advance to extract the information) may be prohibitive.
+              </p>
+
+              <p class="example-heading">Examples:</p>
+              <ul>
+                  <li>Moby Dick contains 136 chapters. Each chapter is a separate HTML document. The user agent must present the chapters sequentially.</li>
+                  <li>The Encyclopedia of Stuff includes 1348 articles, each one a unique HTML document. The user agent must present the articles in order (alphabetically, by title).
+                  </li>
+              </ul>
+          </section>
+      </section>
+
+      <section>
+          <h2>@@@TO edited further into the previous section</h2>
 
   <section>
    <h2>Basic Actions</h2>
