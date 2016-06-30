@@ -52,9 +52,11 @@
       };
     </script>
     <style media="screen">
-        .example-heading {
+        ul.use-cases::before {
+            content: "Examples:";
             font-weight: bold;
-            font-size: 100%;
+            font-style: italic;
+            text-decoration: underline;
         }
     </style>
   </head>
@@ -94,8 +96,7 @@
 
                     <p>There is a formidable development visualization systems, interactive tools, and other powerful facilities that are built on top of the Open Web Platform. These tools have been traditionally developed for browsers, and provide possibilities that traditional publications (books, magazines, scholarly papers, educational materials, etc.) should also benefit from. That requires publications to become first class citizens on the Web platforms. </p>
 
-                    <p class="example-heading">Examples:</p>
-                    <ul>
+                    <ul class="use-cases">
                         <li>For scholarly publishing, Web-only publications gradually become part of the mainstream (e.g., the multidisciplinary <a href="http://www.plosone.org">PLOS ONE</a> or the new <a href="https://peerj.com/computer-science/">PeerJ CompSci</a> journals) with the main content being published using traditional Web technologies like HTML and CSS. These publications increasingly use additional media such as video, audio, animated graphics, or very large images, and the trend is to consider these as integral parts of the scientific output. (<a href="http://bost.ocks.org/mike/algorithms/">Mike Bostock’s recent article on visualizing algorithms</a> or the “live” presentation of data in a <a href="http://f1000research.com/articles/3-176/v1#f3">paper published by F1000 Research</a> are good examples for the new possibilities.) This means the publications need access to the latest visualization, data management, etc, tools that the Open Web Platform based tools can offer.</li>
 
                         <li>Educational materials are increasingly making use of Open Web Platform facilities. They include runnable program snippets, interactive testing tools (linked to online evaluation facilities); in many respect, the borderline between these publications and Web Applications is becoming fuzzy.</li>
@@ -110,8 +111,7 @@
                     <h2>The same PWP content may have to be accessed both online and offline</h2>
                     <p>The <em>same</em> content of the PWP should be accessible offline, if circumstances so dictate, without the necessity for the reader to take any particular, technical actions.</p>
 
-                    <p class="example-heading">Examples:</p>
-                    <ul>
+                    <ul class="use-cases">
                         <li>Connectivity as a commodity; students reading a digital textbook in a village in Africa should be prepared to the fact that the connection may not be reliable.</li>
 
                         <li>Many institutions, such as schools and government organizations (even in the wealthiest countries), do not have the resources to update equipment frequently. Therefore, it is necessary for publications to be accessible on current as well as older browsers.</li>
@@ -128,8 +128,7 @@
                     <p>Accessing a document online or offline should not be made through conversions from one storage format to the other, but should be as transparent as possible to the reader, requiring only a very minimal (ideally no) interaction from her part.
                     </p>
 
-                    <p class="example-heading">Examples:</p>
-                    <ul>
+                    <ul class="use-cases">
                         <li>Reviewing a scholary publication is an essential facility. In practice, reviewing is often done offline (e.g., in a plane, while commuting on a train, etc.). Reviewing means annotations, notes, highlights, possibly changes on the content itself. These annotations and changes should not be bound to a specific device used at the time of reading; they should be smoothly transferred to, e.g., the server of the journal when back online.</li>
 
                         <li>Many publications—especially long form fiction and non-fiction—that users engage with for many hours. During this time, the user may shift states in many ways—starting consumption on an internet enabled PC, moving to an internet enabled portable device, going into offline-mode on that device, and then back to the PC. Ensuring a smooth transition also means that bookmarks, current reading position, etc, are stored, without the need of a central server that may lead to privacy concerns.
@@ -141,8 +140,7 @@
                     <h2>The publication should be readable in a browser</h2>
                     <p>Reading long publications should not be restricted to specific devices or applications but should be equally available in a browser.</p>
 
-                    <p class="example-heading">Examples:</p>
-                    <ul>
+                    <ul class="use-cases">
                         <li>Bob has some very specific plugins in his browser that he enjoys using for, e.g., annotation using his own annotation server, or quickly copy and publish extracts in a specialized social service. That means that he wants to be able to read his textbook in this environment, enjoying the environment he is familiar with, rather than being forced in to a special application for the purpose of that specific publication</li>
 
                         <li>Alice reads a scholarly paper that refers to large datasets. The data can be presented interactively through some very specialized data visualization services relying on custom hardware on her computer. These visualization services are incorporated into her browser and can be used from within a web page. Alice wants to make use of these wile reading her paper to gain a better understanding of the content.</li>
@@ -153,8 +151,7 @@
                     <h2>PWP may consist of a collection of Resources</h2>
                     <p>A Portable Web Publications would, usually, consists of a (possibly large) number of Web Resources, like HTML, SVG, or CSS. This reflects the current practice on the Web, emphasizing the need of memory requirement on small devices, cachebility, or independent development</p>
 
-                    <p class="example-heading">Examples:</p>
-                    <ul>
+                    <ul class="use-cases">
                         <li>Publisher “P” works with multiple authors to create an anthology and uses resources from different locations on the web. Following the current practice on the Web, the publication consists of many different resources (HTML, SVG, CSS, etc.), with some of the HTML contents formatted by, possibly, different CSS files. The publisher needs the collection of all the resources as a unit to include it into its business workflow. </li>
 
                         <li>A book on wines that can be read from A-Z, or personalized to only read about red wines or wines from a specific region. Each wine may be a resources/small chunk of data that is used to generate the corresponding HTML content on the fly.</li>
@@ -177,8 +174,7 @@
                   <p>A PWP will likely be composed of multiple web documents. A more complicated PWP may have many more components, meaning that extracting in advance all the references to other constituent resources may be prohibitive. It is therefore necessary for the reading system to have an easy access to the list of constituent resources.
                   </p>
 
-                  <p class="example-heading">Examples:</p>
-                  <ul>
+                  <ul class="use-cases">
                       <li>The system needs to identify which components need to be downloaded to a local user’s device to support offline reading</li>
                       <li>The system needs to preload some document components in order to provide a more responsive reading experience.</li>
                       <li>When creating a packaged publication it must be clear which documents should or should not be added to the distribution package</li>
@@ -191,8 +187,7 @@
                   <p>A user agent needs to know the sequence in which to present components of a PWP to the user. A PWP will likely be composed of multiple web documents. A typical simple PWP will anywhere from 1 to 15 HTML documents and several image files, in one location or many. A more complicated PWP may have many more components, meaning that extracting the exact order from within the resources (i.e., parsing them in advance to extract the information) may be prohibitive. It is therefore necessary for the reading system to have an easy access to the reading order constituent resources.
                   </p>
 
-                  <p class="example-heading">Examples:</p>
-                  <ul>
+                  <ul class="use-cases">
                       <li>Moby Dick contains 136 chapters. Each chapter is a separate HTML document. The user agent must present the chapters sequentially.</li>
                       <li>The Encyclopedia of Stuff includes 1348 articles, each one in a unique HTML document. The user agent must present the articles in order (alphabetically, by title).
                       </li>
@@ -213,8 +208,7 @@
                   <p>A unique identification of a specific publication, regardless of whether it is online or offline, or whether it is part of a web site or a single (packaged) file is essential. This unique identification should be mapped onto the “real” location of the publication smoothly, without the author’s interaction.
                   </p>
 
-                  <p class="example-heading">Examples:</p>
-                  <ul>
+                  <ul class="use-cases">
                       <li>Digital publications make use of interactive cross references within the publication (references to indeces, images, etc). These references should be done once by the author and should work regardless of whether the publication is online or offline, for example.
                       </li>
 
