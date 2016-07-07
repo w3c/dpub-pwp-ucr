@@ -557,82 +557,33 @@
           </section>
       </section>
 
-      <section>
-          <h2>==== Has been changed until here ===</h2>
-
-  <section>
-   <h2>Basic Actions</h2>
-   <p>Anna is a self-publishing author. Anna creates a PWP, both packed and
-      unpacked. Anna uses some cloud storage system such as DropBox to publish
-      her PWP online. Her friend Bob is able to read Anna's PWP online and
-      offline, either packed or unpacked, as Bob sees fit.</p>
-  </section>
-
-  <section>
-    <h2>Online Discovery</h2>
-    <p>As a reader, I want to discover a publication on the web so that I can
-        start reading it right away. </p>
-  </section>
-
-
 <section>
-  <h2>Platform Independence</h2>
-  <p>Publisher ACME creates a publication that is consumable across a variety
-    of reader platforms, whether online or offline.</p>
-</section>
-
-<section>
-  <h2>Manifests/Metadata</h2>
-  <p>As a reading system, I need to know if support a media type included in
-    the publication.</p>
-   <p>As a reading system, I need to know which files are required or essential
-    for the user to perceive the content.</p>
-  <p>As a reading system, I need to know enough about the publication efficiently
-    and without preprocessing.</p>
-  <p>As a reading system, I need to know the title and cover image to display
-    the publication on a shelf without downloading all it's content.</p>
-  <p>As a reading system, I need to know if I need additional processing
-    instructions, such as with MathML.</p>
-  <p>As a reading system, I need to know if I have the rights to put the resource
-    offline.</p>
-  <p>As a reading sytem, I need to know when all the files are delivered, and that
-    if a file is not in the manifest, I will not process it.</p>
-  <p>As a reading system, I need descriptions about the publication that travel
-    with the publication whether online or offline. For example: author(s), title,
-    size, rights and permissions, accessibility, multimedia details.</p>
-  <p>As a reading system, I want to know that the content is unaltered.</p>
-  <p>As a reading system, I want to know if the content is intentionally
-    updated.</p>
-  <p>As a reading system, I want to know the origin of the publication.</p>
-</section>
-
-</section>
-
-<section>
-  <h2>Use Cases - Changing State</h2>
+  <h1>Changing State</h1>
 <section>
   <h2>State Changing Document</h2>
-  <p>Many publications - especially long form fiction and non-fiction - that
+    <p>Many publications - especially long form fiction and non-fiction - that
      users engage with for many hours. During this time, the user may shift
      states in many ways - starting consumption on an internet enabled PC,
      moving to an internet enabled portable device, going into offline-mode
      on that device, and then back to the PC.</p>
 
- <p>During all of these experiences, the user needs to ensure they have
+    <ul class="use-cases">
+
+      <li>The user needs to ensure they have
     access to critical pieces of data while secondary assets have a pre-
     defined fallback that will allow the user to continue (for example, a
     poster image of a video that serves as a placeholder for an externally
-    streamed video when internet is available).</p>
+    streamed video when internet is available).</li>
 
- <p>Lets take the use case of a user, Let's call him Nick. Nick is reading
+      <li>Nick is reading
     long-form narrative non-fiction. A publication filled with text, images,
     sounds, and multi-media files. Nick is also a multi-device user who
     wishes to consume the publication on multiple devices. Some of those
     devices have limited storage, and some of them have limited connectivity.
     Nick also rides the subway - where he loses internet connection, without
-    warning - for long stretches of time.</p>
+    warning - for long stretches of time.</li>
 
- <p>During offline or low-storage situations, there are still critical parts
+ <li>During offline or low-storage situations, there are still critical parts
      of the publication that are consumable - mainly the text (and possibly
      images). Having a reasonable fallback for video (a poster image or
      placeholder image) would allow Nick to read the content while offline or
@@ -641,231 +592,408 @@
      mark what items are critical, and what need a fallback for limited
      connectivity/storage situations would greatly help the reading system and
      give more control to the publisher to ensure consistent experience with
-     consuming the publication.</p>
+     consuming the publication.</li>
 
-   <p>Nick may know he's going to be in a no-connectivity situation and may
+   <li>Nick may know he's going to be in a no-connectivity situation and may
      want to obtain and locally store the entire (even non-critical) contents.
      This would be up to the reading system to provide a mechanism, but having
      a way to denote critical and fallback assets ensures that an entire
-     package isn't downloaded when not necessary.</p>
+     package isn't downloaded when not necessary.</li>
 
-   <p>For the case of scripting - it's possible that certain items will be
+   <li>For the case of scripting - it's possible that certain items will be
      dynamic - and will hit an external resource (or server) to generate
      on-the-fly data. In offline mode, the user would want to be alerted that
      content could not be obtained, or be shown some fallback set of data. In t
      his case, being able to specify a "no-connectivity" or "offline-mode"
      alternative for scripts would allow the publication author to have more
      control over the user's experience and replace a potential error-display
-     with a limited subset of a good experience.</p>
+     with a limited subset of a good experience.</li>
+   </ul>
 
 </section>
 
 <section>
-<h2>Annotating Across States Via a Reader Plugin</h2>
-<p>Writer Annie has her book published on her own web space as a PWP
+  <h2>Annotating Across States Via a Reader Plugin</h2>
+    <p>TBD (note that we'll need to clean up and/or clarify what
+      packed and unpacked mean in this context)</p>
+  <ul class="use-cases">
+    <li>Writer Annie has her book published on her own web space as a PWP
   [http/packed]. Reader Bob opens it online using the PWP reading plugin
-  PWPRead-plugin, and selects a nice quote to bookmark via PWPMark-plugin.</p>
-<p>Writer Annie has her book published on her own web space as a PWP
+  PWPRead-plugin, and selects a nice quote to bookmark via PWPMark-plugin.</li>
+
+    <li>Writer Annie has her book published on her own web space as a PWP
     [http/packed]. Reader Bob caches it using a plugin [cache/packed],
-    and selects a nice quote to bookmark via PWPMark-plugin.</p>
-<p>Writer Annie has her book published on her own web space as a PWP,
+    and selects a nice quote to bookmark via PWPMark-plugin.</li>
+
+    <li>Writer Annie has her book published on her own web space as a PWP,
   both packed [http/packed] as unpacked [http/unpacked]. Reader Bob
   reads [http/unpacked] online and selects a nice quote to bookmark
   via PWPMark-plugin. Then, Bob downloads [http/packed] to his local
   filesystem [file/packed] to open in his reading system of choice,
-  namely, PWPRead-soft.</p>
-   <p>PWPRead-soft synchronizes with Bob's PWPMark profile, and can
-     show Bob's bookmarks when he continues reading [file/packed]</p>
-</p>
+  namely, PWPRead-soft.</li>
+
+   <li>PWPRead-soft synchronizes with Bob's PWPMark profile, and can
+     show Bob's bookmarks when he continues reading [file/packed]</li>
+</ul>
 </section>
 
 <section>
   <h2>Annotating Across States Via a Browser Plugin</h2>
-  <p>Writer Annie has her book published on her own web space as a PWP
+    <p>TBD (note that we'll need to clean up and/or clarify what
+      packed and unpacked mean in this context)</p>
+  <ul class="use-cases">
+    <li>Writer Annie has her book published on her own web space as a PWP
      [http/unpacked]. Reader Bob reads it online, and selects a nice quote
-     to bookmark via its browser PWP bookmarking plugin: PWPMark-plugin.</p>
-  <p>When Bob re-opens the PWP offline, the bookmarks are shown via
-     PWPMark-plugin</p>
-  <p>When Bob re-visits the original PWP, PWPMark-plugin can also show
-     Bob's bookmarks in the online version.</p>
-</p>
+     to bookmark via its browser PWP bookmarking plugin: PWPMark-plugin.</li>
+
+    <li>When Bob re-opens the PWP offline, the bookmarks are shown via
+     PWPMark-plugin</li>
+
+    <li>When Bob re-visits the original PWP, PWPMark-plugin can also show
+     Bob's bookmarks in the online version.</li>
+  </ul>
 
 </section>
 </section>
 
 <section>
-  <h2>Use Cases - Sharing, Distribution, and External Resources</h2>
+  <h1>Sharing, Distribution, and External Resources</h1>
+
 <section>
  <h2>Distribution</h2>
- <p>Publisher Corp. Inc. publishes a new PWP, and sends this PWP to ACME
+    <p>Multiple distribution points and reader devices for a PWP should not result in
+      multiple versions of a PWP.</p>
+  <ul class="use-cases">
+    <li>Publisher Corp. Inc. publishes a new PWP, and sends this PWP to ACME
     its customers. This PWP is downloaded to devices, or synced across
     several devices, or made available to a customer-specific cloud.
     Customers can access this file from different retailers, through different
     applications, either directly or downloaded from private cloud. Thus, the
     PWP is duplicated many, many, many, many, many times, resulting in a huge
     number of items. There is one source manifestation, one ISBN identifier,
-    and lots of items spread across devices and buyers.</p>
+    and lots of items spread across devices and buyers.</li>
+</ul>
 
 </section>
 
 <section>
   <h2>Retail (???)</h2>
-  <p>(e)books that are sold need to be delivered, so that purchasers can load
-    them on offline devices.</p>
-  <p>Purchased content has different expectations - one being that you have
+     <p></p>
+  <ul class="use-cases">
+     <li>(e)books that are sold need to be delivered, so that purchasers can load
+    them on offline devices.</li>
+
+     <li>Purchased content has different expectations - one being that you have
     “something” or a reasonable use of that content in a logical way (such as
-    always being able to read your amazon purchases through the amazon app)</p>
-  <p>Sales Auditing -> Ability to track “what” is sold so that it can be paid.
+    always being able to read your amazon purchases through the amazon app)</li>
+
+     <li>Sales Auditing -> Ability to track “what” is sold so that it can be paid.
     If all content is just free and different chunks are purchased, chasing
     rights/payments is an issue.  Basically the package can have an ISBN
-    associated so that it can be tracked for sale - even multiple versions.</p>
+    associated so that it can be tracked for sale - even multiple versions.</li>
+  </ul>
 </section>
 
 <section>
   <h2>PWPs with Shared Resources</h2>
-  <p>EsteemedPublisher creates apps to distribute several journals to readers.
+  <p>Several PWPs may share identical resources.</p>
+  <ul class="use-cases">
+    <li>EsteemedPublisher creates apps to distribute several journals to readers.
     These apps share script libraries, CSS files, and other resources.
     Distributing many journals as a package should enable systems to call the
     shared resources once, speeding up processing and enabling offline reading.
-  </p>
+    </li>
+  </ul>
 </section>
 
 <section>
- <h2>Cross-references</h2>
- <p>Writer Annie writes a dissertation. She references to her Master's
+  <h2>Cross-references</h2>
+  <p>A user should have an option to pull their local copy of a PWP when
+  there is a choice between a local, annotated copy and third-party source.</p>
+  <ul class="use-cases">
+   <li>Writer Annie writes a dissertation. She references to her Master's
     thesis, published on the university website. Her colleague Bob has
     read her Master's thesis before. When he clicks the reference in
     Annie's dissertation, he gets redirected to his local copy of Annie's
     Master's thesis. Her friend, Charlie, hasn't read her Master's thesis
     before. Charlie needs to be online when clicking the reference, to read
-    Annie's Master's thesis. </p>
-
+    Annie's Master's thesis. </li>
+  </ul>
 </section>
 
 <section>
   <h2>Publication with Static Data</h2>
-  <p>Rosa submitted an article to EsteemedJournal and provided her research
+  <p>TBD</p>
+  <ul class="use-cases">
+  <li>Rosa submitted an article to EsteemedJournal and provided her research
     data in CSV format. She and EsteemedJournal wish to provide users access
     to the CSVs when they gain access to her article. EsteemedJournal
     recommends that the package is built in such a way that a system can query
     the manifest to assess whether it is situationally appropriate to offer
     downloads. For example, the package might not offer the option to download
-    the CSV while a user is reading offline. </p>
+    the CSV while a user is reading offline. </li>
+  </ul>
 </section>
 
 <section>
   <h2>Publication with Interactive Data</h2>
-  <p>(Extension to the Publication with Data use case): the article of Rosa
+  <p>TBD</p>
+  <ul class="use-cases">
+     <li>(Extension to the Publication with Data use case): the article of Rosa
     not only includes data, but also interactive graphics relying on that
     data, with interaction directed through javascript (or other) programming
     interfaces. These javascript programs may be fairly complex, and may also
     rely on external libraries (not necessarily integrated into the article
-    itself). </p>
+    itself). </li>
+
+  </ul>
 </section>
 
 </section>
 <section>
-  <h2>Use Cases - Manifests and Packages</h2>
+  <h1>Manifests and Packages</h1>
 
 <section>
   <h2>Streamlined Access to Disjoint Package Components </h2>
-  <p>EsteemedJournalPublisher would like to offer the users of the
+  <p>TBD</p>
+  <ul class="use-cases">
+  <li>EsteemedJournalPublisher would like to offer the users of the
     EsteemedJournal of Chemistry App the opportunity to read only the abstracts
     of the journals in the app. The App Package must offer the user a list
     (table of contents) of abstracts (disjoint objects in the package with
     semantic information or metadata informing the package of the nature of the
-    object). </p>
+    object). </li>
 
-    <p>(Is the abstract-only view built-in? spun-off using shared resource?
-      totally independent publication?)</p>
+    <li>(Is the abstract-only view built-in? spun-off using shared resource?
+      totally independent publication?)</li>
+
+    </ul>
 
 </section>
 
 <section>
   <h2>Manifest includes Information of New Content</h2>
-  <p>Shoshana is an organic chemist. She has purchased the Esteemed Journal of
+  <p>TBD</p>
+  <ul class="use-cases">
+  <li>Shoshana is an organic chemist. She has purchased the Esteemed Journal of
     Chemistry App. She downloads Organic Chem Quarterly in her lab and reads the
     first article over lunch. Shoshana begins the book reviews during office
     hours but must tend to her students' questions, so she closes the app.
     Shoshana opens the app on the train ride home to resume reading the book
     reviews. She is happy to find that the app opens to the exact location and
     opens quickly because most of the material does not need to be downloaded a
-    second time. </p>
+    second time. </li>
 
-  <p>An archival service needs to update an Archival Information Package (i.e.,
+  <li>An archival service needs to update an Archival Information Package (i.e.,
     a previously harvested PWP) because a new version of a component of the PWP
-    has been published</p>
+    has been published</li>
+
+  </ul>
 
 </section>
+
 <section>
   <h2>Manifest Includes Links to Resources, Regardless of Location</h2>
-  <p>An archival service wants to harvest (spider) a PWP, and expects to find
+  <p>TBD</p>
+  <ul class="use-cases">
+  <li>An archival service wants to harvest (spider) a PWP, and expects to find
     in the manifest what it will need to make sure it gets all the pieces of
-    the PWP that need to be archived, even if on separate servers.</p>
+    the PWP that need to be archived, even if on separate servers.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Manifests/Metadata</h2>
+  <p>TBD</p>
+  <ul class="use-cases">
+    <li>As a reading system, I need to know if support a media type included in
+    the publication.</li>
+
+     <li>As a reading system, I need to know which files are required or essential
+    for the user to perceive the content.</li>
+
+     <li>As a reading system, I need to know enough about the publication efficiently
+    and without preprocessing.</li>
+
+     <li>As a reading system, I need to know the title and cover image to display
+    the publication on a shelf without downloading all it's content.</li>
+
+     <li>As a reading system, I need to know if I need additional processing
+    instructions, such as with MathML.</li>
+
+     <li>As a reading system, I need to know if I have the rights to put the resource
+    offline.</li>
+
+     <li>As a reading sytem, I need to know when all the files are delivered, and that
+    if a file is not in the manifest, I will not process it.</li>
+
+     <li>As a reading system, I need descriptions about the publication that travel
+    with the publication whether online or offline. For example: author(s), title,
+    size, rights and permissions, accessibility, multimedia details.</li>
+
+     <li>As a reading system, I want to know that the content is unaltered.</li>
+
+     <li>As a reading system, I want to know if the content is intentionally
+    updated.</li>
+
+     <li>As a reading system, I want to know the origin of the publication.</li>
+
+     <li>There needs to be metadata on package components (manifest use case)</li>
+
+    <li>Package should include a queryable manifest.</li>
+
+    <li>Manifest indicates whether content is new (relative to last download) and
+      triggers download only when content is new/updated.</li>
+ </ul>
+
 </section>
 </section>
 
 <section>
-  <h2>Use Cases - Archival Interest</h2>
+  <h1>Locators</h1>
+
   <section>
-    <h2>Integrity and Longevity</h2>
-    <p>A government agency (e.g., laws, regulations, judicial decisions) publishes
-      information that need to persist without any loss of information
-      forever.</p>
-    <p>Journal article (e.g. announcing novel compound in chemistry) must be
-      published in method that is persistent because it serves at the document of
-      record for scientific record.  </p>
+    <h2>General locators</h2>
+    <p>TBD</p>
+    <ul class="use-cases">
+      <li>A state-independent locator should be part of the PWP.</li>
+
+      <li>There MUST be a separation between a format-independent
+         (“canonical”) and format-dependent locator.</li>
+
+      <li>It SHOULD be possible to use, in all circumstances, a relative
+                locator to manipulate, annotate, etc, content in a PWP</li>
+
+      <li>Locating a resource within a PWP should not depend on the PWP's
+                state.</li>
+
+      <li>There needs to be persistence of identifiers across PWP instances.</li>
+    </ul>
   </section>
 
+  <section>
+  <h2>Canonical versus non-canonical</h2>
+  <p>TBD</p>
+  <ul class="use-cases">
+    <li>It MUST be possible (and necessary) to use, for all cross-references,
+      the canonical locator.</li>
+
+    <li>There MUST be a separation between the identifier (e.g., ISBN) and
+      the (canonical) locator of a specific instance of a PWP.</li>
+
+      <li>The Identifier (e.g., ISBN) MAY serve as a canonical locator for a
+         specific instance of a PWP</li>
+
+      <li>Any set up and mechanism, handling canonical and state-dependent
+           locators, MUST be easily settable on any server (albeit maybe not
+           in the most efficient manner) based on basic server behavior
+           control.</li>
+
+      <li>A PWP Processor MUST be able to combine a relative locator with
+              the canonical as well as state dependent locators of a PWP</li>
+  </ul>
+
+  </section>
+</section>
+
+
 <section>
-  <h2>Retraction Notices</h2>
-  <p>An archival service needs to harvest the retraction notice and update the
+  <h1>Archival Interest</h1>
+
+  <section>
+    <h2>Integrity and Longevity</h2>
+      <p>TBD</p>
+    <ul class="use-cases">
+      <li>A government agency (e.g., laws, regulations, judicial decisions) publishes
+      information that need to persist without any loss of information
+      forever.</li>
+
+      <li>Journal article (e.g., announcing novel compound in chemistry) must be
+      published in method that is persistent because it serves at the document of
+      record for scientific record.  </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Retraction Notices</h2>
+      <p>TBD</p>
+    <ul class="use-cases">
+      <li>An archival service needs to harvest the retraction notice and update the
     Archival Information Package for the original PWP to include / link to the
-    Retraction Notice.</p>
-</section>
+    Retraction Notice.</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Take-down Notices</h2>
-  <p>An archival service needs to update an Archival Information Package (i.e.,
+  <section>
+    <h2>Take-down Notices</h2>
+      <p>TBD</p>
+    <ul class="use-cases"?
+      <li>An archival service needs to update an Archival Information Package (i.e.,
     a previously harvested PWP) because it or one of its components has been
-    taken down by the publisher.</p>
-</section>
+    taken down by the publisher.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Provenance</h2>
+      <p>There SHOULD be a possibility in the PWP to follow (if necessary)
+     the copying (provenance) chain (archiving use case).</p>
+    <ul class="use-cases">
+      <li></li>
+    </ul>
+  </section>
 
 </section>
 
 <section>
-  <h2>Use Cases - Accessibility</h2>
-<section>
-  <h2>Personalized Experience</h2>
-  <p>Alice, a dyslexic student, downloads a textbook and proceeds to
-    personalize the material with larger font and different contrast.</p>
-</section>
+  <h1>Accessibility</h1>
 
-<section>
-  <h2>Adding Alternative Media</h2>
-  <p>As a publisher of accessible content, I need to add content such as a
+  <section>
+    <h2>Personalized Experience</h2>
+      <p>TBD</p>
+    <ul class="use-cases">
+      <li>Alice, a dyslexic student, downloads a textbook and proceeds to
+    personalize the material with larger font and different contrast.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Adding Alternative Media</h2>
+    <p>TBD</p>
+    <ul class="use-cases">
+      <li>As a publisher of accessible content, I need to add content such as a
     braille style sheet, image descriptions, or video captioning (text /
-    descriptive audio) to a PWP previously published by a third party.</p>
-</section>
+    descriptive audio) to a PWP previously published by a third party.</li>
+    </ul>
+   </section>
 
-<section>
-  <h2>Assisted Reader Technology</h2>
-  <p>As a user of assistive technology, Alice wants to perceive the full
-    PWP.</p>
-</section>
+   <section>
+     <h2>Assisted Reader Technology</h2>
+       <p>TBD</p>
+     <ul class="use-cases">
+       <li>As a user of assistive technology, Alice wants to perceive the full
+    PWP.</li>
+   </ul>
+   </section>
 
-<section>
-  <h2>Time-based Media</h2>
-  <p>Bobbie is learning to read and viewing a picture book. The picture book
-    is fixed layout that will turn the page and reads along in sync with the
-    page currently open.</p>
-</section>
+   <section>
+     <h2>Time-based Media</h2>
+       <p>TBD</p>
+     <ul class="use-cases">
+       <li>Bobbie is learning to read and viewing a picture book. The picture book
+     is fixed layout that will turn the page and reads along in sync with the
+     page currently open.</li>
+     </ul>
+   </section>
 
-<section>
-  <h2>Building a Custom PWP</h2>
-  <p>Alice wants to download a PWP that captures only the external resources
-    she needs to perceive the PWP.</p>
-</section>
+   <section>
+     <h2>Building a Custom PWP</h2>
+       <p>TBD</p>
+     <ul class="use-cases">
+       <li>Alice wants to download a PWP that captures only the external resources
+     she needs to perceive the PWP.</li>
+     </ul>
+   </section>
 
                 <section>
                     <h2>Package needs to support time-based media and text </h2>
@@ -891,120 +1019,115 @@
 </section>
 
 <section>
-  <h2>CSS Requirements for Packaged Multiple Documents</h2>
+  <h1>CSS Requirements for Packaged Multiple Documents</h1>
+
 <section>
   <h2>Pagination and Generated Content</h2>
-  <p>Any kind of pagination and also indexing has to be through a whole
+  <p>TBD</p>
+  <ul class="use-cases">
+  <li>Any kind of pagination and also indexing has to be through a whole
     collection of documents that constitute a PWP, which may raise issues
-    around transition between documents.</p>
+    around transition between documents.</li>
 
-    <p>As a reader, I want to choose between a scrolled view and a paginated
-      view of content that extends across multiple html documents</p>
+    <li>As a reader, I want to choose between a scrolled view and a paginated
+      view of content that extends across multiple html documents</li>
+  </ul>
 </section>
 
 <section>
   <h2>Navigation</h2>
-  <p>As a publisher I want to navigate from chapter 1 to chapter 2 (separate
+    <p>TBD</p>
+  <ul class="use-cases">
+    <li>As a publisher I want to navigate from chapter 1 to chapter 2 (separate
     HTML files) seamlessly. The presentation should not be bound to HTML
     organization. This happens, for example, in Japanese publication where
     there are no chapter separations but content is still split between
-    multiple files for organizational reasons.</p>
+    multiple files for organizational reasons.</li>
+  </ul>
 
 </section>
 
-<section>
-  <h2>CSS customization</h2>
-  <p>As a publisher I want my footnotes to number sequentially across the
+  <section>
+    <h2>CSS customization</h2>
+      <p>TBD</p>
+    <ul class="use-cases">
+      <li>As a publisher I want my footnotes to number sequentially across the
     publication, even when the publication is constructed of multiple
-    documents.</p>
-  <p>Content may have significantly different styles between files. For
+    documents.</li>
+      <li>Content may have significantly different styles between files. For
     instance, some Japanese books will have documents whose root element
     is vertical-rl and others whose root element is horizontal-tb. These root
-    element styles must be preserved.</p>
+    element styles must be preserved.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Transitions</h2>
+      <p>TBD</p>
+   <ul class="use-cases">
+      <li>Placeholder: Comics-like transition</li>
+
+      <li>Placeholder: Page Transition effects both within an HTML document, and
+    between HTML documents</li>
+    </ul>
+    </section>
+
 </section>
 
 <section>
-  <h2>Transitions</h2>
-  <p>Placeholder: Comics-like transition</p>
+  <h1>Other</h1>
 
-  <p>Placeholder: Page Transition effects both within an HTML document, and
-    between HTML documents</p>
-</section>
-</section>
-
-<section>
-  <h2>Use Cases - Other</h2>
-<section>
- <h2>Offline Publications</h2>
- <p>Corp.Inc. creates an internal manual for its employees as a PWP. This
+  <section>
+   <h2>Offline Publications</h2>
+     <p>TBD</p>
+   <ul class="use-cases">
+     <li>Corp.Inc. creates an internal manual for its employees as a PWP. This
     PWP is not published online, but is sent around to all its employees.
     Employee Anna has some questions about figure 2b, and sends an email to
     co-worker Bob with a locator to that figure. Bob clicks on that locator,
     and his company-branded PWP reader opens Bob's personal copy of the
-    manual, and redirects immediatly to that figure.</p>
-</section>
+    manual, and redirects immediatly to that figure.</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Publication plus Annotations</h2>
-  <p>Oksana submits a scholarly article to a EsteemedJournal. EsteemedJournal
+  <section>
+   <h2>Publication plus Annotations</h2>
+      <p>TBD</p>
+    <ul class="use-cases">
+    <li>Oksana submits a scholarly article to a EsteemedJournal. EsteemedJournal
     puts the article through the Peer Review process, during which
     EsteemedJounral editors and third-party reviewers provide comments on the
     article. Ultimately, EsteemedJournal chooses not to publish Oksana's
     article, but the comments (annotations) that have already been made should
-    persist as she submits it to RespectedJournal. </p>
+    persist as she submits it to RespectedJournal. </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Specialized Domain Semantics</h2>
+      <p>TBD</p>
+    <ul class="use-cases">
+      <li>Placeholder: Formal usage terms and engineering or legal documents,
+    possibly for accessibility also.</li>
+
+      <li>Specialized semantics are required for users and processors.</li>
+    </ul>
+  </section>
+
+</section>
+
 </section>
 
 <section>
-  <h2>Specialized Domain Semantics</h2>
-  <p>Placeholder: Formal usage terms and engineering or legal documents,
-    possibly for accessibility also.</p>
-  <p>Specialized semantics are required for users and processors.</p>
-</section>
-</section>
-</section>
+<h1>
+Misc Requirement(s)
+</h1>
 
 <section>
-<h2>
-Requirement(s)
-</h2>
+<h2>Currently unassigned</h2>
    <p>Be able handle intermittent changes in online/offline status during a
      single reading session while still minimizing the amount of material
      cached locally.</p>
-
-  <p>There MUST be a separation between a format-independent
-     (“canonical”) and format-dependent locator.</p>
-
-  <p>It MUST be possible (and necessary) to use, for all cross-references,
-    the canonical locator.</p>
-
-  <p>There MUST be a separation between the identifier (e.g., ISBN) and
-    the (canonical) locator of a specific instance of a PWP. (locator use case)</p>
-
-  <p>There SHOULD be a possibility in the PWP to follow (if necessary)
-     the copying (provenance) chain (archiving use case).<p>
-
-  <p>The Identifier (e.g., ISBN) MAY serve as a canonical locator for a
-     specific instance of a PWP</p>
-
-  <p>It SHOULD be possible to use, in all circumstances, a relative
-     locator to manipulate, annotate, etc, content in a PWP</p>
-
-  <p>A PWP Processor MUST be able to combine a relative locator with
-     the canonical as well as state dependent locators of a PWP</p>
-
-  <p>Locating a resource within a PWP should not depend on the PWP's
-     state.</p>
-
-  <p>A state independent locator should be part of the PWP.</p>
-
-  <p>There needs to be persistence of identifiers across PWP instances.</p>
-
-  <p>Any set up and mechanism, handling canonical and state-dependent
-    locators, MUST be easily settable on any server (albeit maybe not
-    in the most efficient manner) based on basic server behavior
-    control.</p>
-
-  <p>Package should include a queryable manifest.</p>
 
   <p>Javascript libraries may refer to services "outside", ie, to services on
     the Web at large (e.g., reference to Wolfram Alfa, or online google
@@ -1017,17 +1140,32 @@ Requirement(s)
   <p>The package is fully annotatable, and annotations can be part of the
     package and discoverable.</p>
 
-  <p>There needs to be metadata on package components (manifest use case)</p>
-
-  <p>Manifest indicates whether content is new (relative to last download) and
-    triggers download only when content is new/updated.</p>
-
   <p>There should be a discovery service or trigger available to indicate
     content changes or long-term availability changes.</p>
 
   <p>Every resource within a PWP can hold it’s own rights. The rights of this resource
     should be kept in the process of distributing the resource.</p>
+</section>
 
+    <section>
+     <h2>Basic Actions</h2>
+     <p>Anna is a self-publishing author. Anna creates a PWP, both packed and
+        unpacked. Anna uses some cloud storage system such as DropBox to publish
+        her PWP online. Her friend Bob is able to read Anna's PWP online and
+        offline, either packed or unpacked, as Bob sees fit.</p>
+    </section>
+
+    <section>
+      <h2>Online Discovery</h2>
+      <p>As a reader, I want to discover a publication on the web so that I can
+          start reading it right away. </p>
+    </section>
+
+  <section>
+    <h2>Platform Independence</h2>
+    <p>Publisher ACME creates a publication that is consumable across a variety
+      of reader platforms, whether online or offline.</p>
+  </section>
 
 </section>
   </body>
