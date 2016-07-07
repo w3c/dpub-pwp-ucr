@@ -408,8 +408,50 @@
                         the PWP (as opposed to individual components being
                         numbered separately)</li>
                       <li>User preferences apply to complete PWP (users must be
-                        able to adjust display, e.g., font selection, font-size 
+                        able to adjust display, e.g., font selection, font-size
                         adjustment, background color)</li>
+                    </ul>
+                  </section>
+                  
+                  <section>
+                    <h2>There should be a way to differentiate between essential
+                      and non-essential resources</h2>
+
+                    <p>When changing the state of a PWP from, e.g., online to
+                      offline, an implementation may have to know which PWP
+                      resources are essential for the display of the content, and
+                      therefore must be included in the offline version, or which
+                      may be skipped</p>
+
+                    <ul class="use-cases">
+                       <li>A mathematical font is essential for the proper display
+                         of a mathematical formula; it is therefore essential to add
+                         that font to the set of resources that are made available
+                         offline.</li>
+                       <li>A font used for aesthetic purposes only in display of a
+                         book may not be essential and an implementation may decide
+                         not to embed it for offline use.</li>
+                       <li>Extended image descriptions may be essential for some
+                         users and included for offline use.</li>
+                        <li>A large dataset referred to from a scholarly journal
+                          article may not be essential for conveying the results of
+                          the paper and can therefore be skipped when an offline
+                          version is produced to save space in a mobile device. </li>
+                    </ul>
+
+                  </section>
+
+                  <section>
+                    <h2>Access control and write protections</h2>
+                      <p>A PWP should allow for access control and write protections of
+                          the resource.</p>
+
+                    <ul class="use-cases">
+                      <li>A library may loan the publication for 2 weeks; the PWP
+                        should provide means for its environment to control the
+                        period of the loan.</li>
+                      <li>A university may make a textbook available for its
+                        students for the course of the year.</li>
                     </ul>
                   </section>
 
@@ -469,33 +511,7 @@
                   </ul>
               </section>
 
-              <section>
-                <h2>There should be a way to differentiate between essential
-                  and non-essential resources</h2>
 
-                <p>When changing the state of a PWP from, e.g., online to
-                  offline, an implementation may have to know which PWP
-                  resources are essential for the display of the content, and
-                  therefore must be included in the offline version, or which
-                  may be skipped</p>
-
-                <ul class="use-cases">
-                   <li>A mathematical font is essential for the proper display
-                     of a mathematical formula; it is therefore essential to add
-                     that font to the set of resources that are made available
-                     offline.</li>
-                   <li>A font used for aesthetic purposes only in display of a
-                     book may not be essential and an implementation may decide
-                     not to embed it for offline use.</li>
-                   <li>Extended image descriptions may be essential for some
-                     users and included for offline use.</li>
-                    <li>A large dataset referred to from a scholarly journal
-                      article may not be essential for conveying the results of
-                      the paper and can therefore be skipped when an offline
-                      version is produced to save space in a mobile device. </li>
-                </ul>
-
-              </section>
 
 
               <section>
@@ -531,19 +547,6 @@
 
               </section>
 
-              <section>
-                <h2>Access control and write protections</h2>
-                  <p>A PWP should allow for access control and write protections of
-                      the resource.</p>
-
-                <ul class="use-cases">
-                  <li>A library may loan the publication for 2 weeks; the PWP
-                    should provide means for its environment to control the
-                    period of the loan.</li>
-                  <li>A university may make a textbook available for its
-                    students for the course of the year.</li>
-                </ul>
-              </section>
 
 
           </section>
