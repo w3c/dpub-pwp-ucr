@@ -333,7 +333,7 @@
 
                 <section>
                    <h2>The notion of a PWP should enable specific publications
-                     like audio books, graphics books, etc, as well.</h2>
+                     like audio books, graphics books.</h2>
                      <p>All concepts, structures, etc, related to PWP should
                        enable the creation and/or production of video or audio
                        rendering; all the audio, video, sync, etc. content must
@@ -350,6 +350,30 @@
                     </ul>
                 </section>
 
+                <section>
+                  <h2>Reader must have the possibility to personalize his/her
+                    reading experience</h2>
+
+                    <p>The user/reader should be able to control such features
+                      as font size, choice of fonts, background and foreground
+                      color, tone of voice, etc. This should be done via a proper
+                      interactive dialogue and/or a choice among author-defined
+                      possiblities.</p>
+
+                    <ul class="use-cases">
+                      <li>Olga, a dyslexic student, downloads a textbook and
+                        proceeds to personalize the material with larger font
+                        and different contrast.</p>
+                      <li>When reading a book in the sun, a user adjusts the
+                        background color to a dark color so that she can see the
+                        text.</li>
+                      <li>While reading a book on computer programming, Ransheed
+                        wants to change the font into a local font. However, the
+                        code should remain in a fixed-width font.</li>
+                      <li>Mia choses to read in night mode because she finds it
+                        easier to sleep when she puts the PWP aside.</li>
+                    </ul>
+                  </section>
 
           </section>
 
@@ -437,19 +461,83 @@
 
 
               <section>
-                  <h2>There should be a way to uniquely identify a publication regardless of its state</h2>
+                  <h2>There should be a way to uniquely identify a publication
+                    regardless of its state</h2>
 
-                  <p>A unique identification of a specific publication, regardless of whether it is online or offline, or whether it is part of a web site or a single (packaged) file is essential. This unique identification should be mapped onto the “real” location of the publication smoothly, without the author’s interaction.
+                  <p>A unique identification of a specific publication,
+                    regardless of whether it is online or offline, or whether it
+                    is part of a web site or a single (packaged) file is
+                    essential. This unique identification should be mapped onto
+                    the “real” location of the publication smoothly, without the
+                    author’s interaction.
                   </p>
 
                   <ul class="use-cases">
-                      <li>Digital publications make use of interactive cross references within the publication (references to indeces, images, etc). These references should be done once by the author and should work regardless of whether the publication is online or offline, for example.
+                      <li>Digital publications make use of interactive cross
+                        references within the publication (references to indeces,
+                        images, etc). These references should be done once by
+                        the author and should work regardless of whether the publication is online or offline, for example.
                       </li>
 
                       <li>Scholarly references demand a unique identification of the publication and, possibly, it internal structure. That unique identification must be available as a Web link, to make it possible for other publications and other sites (e.g., the authors’ institutional sites) to unumbigously link to the publication. These features are essential in the scholarly community to make, for example, the assessment of individual researchers possible.</li>
                   </ul>
 
               </section>
+
+              <section>
+                 <h2>There should be a way to control versioning and revisioning</h2>
+
+                    <p>There should be the capability for dynamic updating of information
+                  based on online/offline status and time of publication. (version
+                  control use case?)</p>
+
+                  <ul class="use-cases">
+                     <li></li>
+                  </ul>
+              </section>
+
+              <section>
+                <h2>Access control and write protections</h2>
+                  <p>A PWP must allow for access control and write protections as part of
+                      the resource.</p>
+
+                <ul class="use-cases">
+                  <li></li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>Package pointers</h2>
+
+                    <p>Package may contain/point to textual/graphical/media as well as data
+                      (CSV, code repository)</p>
+                <ul class="use-cases">
+                  <li></li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>JavaScript Allowed</h2>
+
+                    <p>Package may contain javascript libraries, and possibly other types of
+                      processing engines, like Java</p>
+                  <ul class="use-cases">
+                    <li></li>
+                  </ul>
+                </section>
+
+              <section>
+                 <h2>Searching</h2>
+
+                <p>A collection of documents must be treated as a single unit for:
+                  Searching, values of counters (page counters, section numbering, footnotes),
+                  and user stylesheets (users must be able to adjust display, e.g., font
+                  selection, font-size adjustment, background color)</p>
+                <ul class="use-cases">
+                  <li></li>
+                </ul>
+              </section>
+
           </section>
       </section>
 
@@ -788,11 +876,6 @@
   <h2>Personalized Experience</h2>
   <p>Alice, a dyslexic student, downloads a textbook and proceeds to
     personalize the material with larger font and different contrast.</p>
-
-  <h2>Supporting User Preferences</h2>
-  <p>While reading a book on computer programming, Bob wants to change the
-    font into a local font. However, the code should remain in a
-    fixed-width font.</p>
 </section>
 
 <section>
@@ -925,10 +1008,6 @@ Requirement(s)
      single reading session while still minimizing the amount of material
      cached locally.</p>
 
-  <p>It SHOULD be possible to describe explicitly which resource does
-     and which does not belong to the PWP or, to the “portable” part of
-     a PWP.</p>
-
   <p>There MUST be a separation between a format-independent
      (“canonical”) and format-dependent locator.</p>
 
@@ -936,10 +1015,10 @@ Requirement(s)
     the canonical locator.</p>
 
   <p>There MUST be a separation between the identifier (e.g., ISBN) and
-    the (canonical) locator of a specific instance of a PWP.</p>
+    the (canonical) locator of a specific instance of a PWP. (locator use case)</p>
 
   <p>There SHOULD be a possibility in the PWP to follow (if necessary)
-     the copying (provenance) chain<p>
+     the copying (provenance) chain (archiving use case).<p>
 
   <p>The Identifier (e.g., ISBN) MAY serve as a canonical locator for a
      specific instance of a PWP</p>
@@ -962,19 +1041,7 @@ Requirement(s)
     in the most efficient manner) based on basic server behavior
     control.</p>
 
-  <p>There should be the capability for dynamic updating of information
-      based on online/offline status and time of publication.</p>
-
-  <p>A PWP must allow for access control and write protections as part of
-      the resource.</p>
-
-  <p>Package may contain/point to textual/graphical/media as well as data
-    (CSV, code repository)</p>
-
   <p>Package should include a queryable manifest.</p>
-
-  <p>Package may contain javascript libraries, and possibly other types of
-    processing engines, like Java</p>
 
   <p>Javascript libraries may refer to services "outside", ie, to services on
     the Web at large (e.g., reference to Wolfram Alfa, or online google
@@ -984,15 +1051,10 @@ Requirement(s)
     packaged; this means that the packaging format should allow for other
     packages as parts.</p>
 
-  <p>Content in package is fully annotatable</p>
+  <p>The package is fully annotatable, and annotations can be part of the
+    package and discoverable.</p>
 
-  <p>Annotations are considered part of the package</p>
-
-  <p>There needs to be metadata on package components</p>
-
-  <p>Manifest with metadata and semantic information</p>
-
-  <p>Customizable manifest functionality</p>
+  <p>There needs to be metadata on package components (manifest use case)</p>
 
   <p>Manifest indicates whether content is new (relative to last download) and
     triggers download only when content is new/updated.</p>
@@ -1000,36 +1062,8 @@ Requirement(s)
   <p>There should be a discovery service or trigger available to indicate
     content changes or long-term availability changes.</p>
 
-  <p>The complex collection of documents, media, and other resources that
-    comprise a publication must remain intact and complete across all
-    transitions (online/offline), rendering in various formats, and
-    distribution over time.</p>
-
-  <p>Data that affects content may be stored apart from the content.</p>
-
-  <p>The choice should be driven by content or workflow, not mandated by
-    specification.</p>
-
-  <p>Long-form content should not be stored in one giant file. This affects
-    performance, storage, workflow.</p>
-
-  <p>The components of a publication should be aggregated or disaggregated
-    without loss of information.</p>
-
-  <p>Every resource can hold it’s own rights. The rights of this resource
+  <p>Every resource within a PWP can hold it’s own rights. The rights of this resource
     should be kept in the process of distributing the resource.</p>
-
-  <p>A collection of documents must be treated as a single unit for:
-    Searching, values of counters (page counters, section numbering, footnotes),
-    and user stylesheets (users must be able to adjust display, e.g., font
-    selection, font-size adjustment, background color)</p>
-
-  <p>PWP needs to support rendering for visual output, tactile output, and
-    audio output.</p>
-
-  <p>Package needs to support Time based media and Text such as audio
-    synchronized with text, Video synchronized with Text, sign language sync
-    with text.</p>
 
 
 </section>
