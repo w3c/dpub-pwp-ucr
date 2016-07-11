@@ -805,39 +805,71 @@
 
 <section>
   <h2>Manifests/Metadata</h2>
-  <p>TBD</p>
+  <p>Manifest: A publication represents a unit comprised of several components.
+    There must be a structure that identifies the components of the unit and
+    describes the constituents and relations between them.</p>
+
   <ul class="use-cases">
-    <li>As a reading system, I need to know if support a media type included in
-    the publication.</li>
+    <li>A User Agent requires  about media-type for each component so that it
+      can understand whether information can be conveyed to the user the reader
+      without parsing through the contents.</li>
 
-     <li>As a reading system, I need to know which files are required or essential
-    for the user to perceive the content.</li>
+    <li>A User Agent must know the component parts of a publication such that
+      the PWP can be made available for offline use.</li>
 
-     <li>As a reading system, I need to know enough about the publication efficiently
-    and without preprocessing.</li>
+    <li>A User Agent must know which component of the PWP to present to the user
+      first.</li>
 
-     <li>As a reading system, I need to know the title and cover image to display
-    the publication on a shelf without downloading all it's content.</li>
+    <li>A User Agent must know in what sequence to present components to the
+      user (i.e., default reading order).</li>
 
-     <li>As a reading system, I need to know if I need additional processing
-    instructions, such as with MathML.</li>
+    <li>A User Agent must know which components are essential vs. non-essential
+      to the publication. See Section 2.1.</li>
 
-     <li>As a reading system, I need to know if I have the rights to put the resource
-    offline.</li>
+   </ul>
+ </section>
 
-     <li>As a reading sytem, I need to know when all the files are delivered, and that
-    if a file is not in the manifest, I will not process it.</li>
+ <section>
+  <h2>Manifests/Metadata part 2</h2>
+  <p>A user agent requires information about the package and its components in
+    order to process it. Performance and memory requirements may prevent a user
+    agent from parsing a large number of content documents in order to discover
+    the necessary components and their relationships. A user agent may need to
+    make some decisions about how to present content before displaying it.</p>
 
-     <li>As a reading system, I need descriptions about the publication that travel
-    with the publication whether online or offline. For example: author(s), title,
-    size, rights and permissions, accessibility, multimedia details.</li>
+  <ul class="use-cases">
 
-     <li>As a reading system, I want to know that the content is unaltered.</li>
+    <li>As a user agent, I need to know if a publication contains/requires
+      support for a specified media type (without processing all content
+      documents).</li>
 
-     <li>As a reading system, I want to know if the content is intentionally
+    <li>As a user agent, I may not be able to process files beyond a certain
+      size due to bandwidth, storage or memory limitations, or processing time
+      expectations. </li>
+
+    <li>As a user agent, I should be able to process permissions and rights
+      information for each component identified in the package. For example, I
+      need to know if I have the rights to place an image of the Mona Lisa owned
+      by Louvre in a package to be downloaded offline.</li>
+
+    <li>As a user agent, I need to know about the accessibility of each
+      component.</li>
+
+    <li>As a user agent, I need to know about the accessibility of each
+      component.</li>
+
+    <li>As a user agent, I need to know if I need additional processing
+      instructions, such as with MathML.</li>
+
+    <li>As a reading system, I need to know the title and cover image to display
+      the publication on a shelf without downloading all its content. (biblio)</li>
+
+     <li>As a user agent, I want to know that the content is unaltered.</li>
+
+     <li>As a user agent, I want to know if the content is intentionally
     updated.</li>
 
-     <li>As a reading system, I want to know the origin of the publication.</li>
+     <li>As a user agent, I want to know the origin of the publication.</li>
 
      <li>There needs to be metadata on package components (manifest use case)</li>
 
