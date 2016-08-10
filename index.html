@@ -14,8 +14,6 @@
                     url:        "",
                     company:    "Invited Expert",
                     companyURL: "https://www.rfc-editor.org" },
-
-
                 {   name:       "Romain Deltour",
                     url:        "",
                     company:    "DAISY",
@@ -122,7 +120,7 @@
                             <a href="http://bost.ocks.org/mike/algorithms/">Mike
                               Bostock’s recent article on visualizing
                               algorithms</a> or the “live” presentation of data
-                              in a <a href="http://f1000research.com/articles/3-176/v1#f3">
+                              in a <a href="http://f1000research.com/articles/3-176/v2">
                                 paper published by F1000 Research</a> are good
                                 examples for the new possibilities.) This means
                                 the publications need access to the latest
@@ -386,7 +384,7 @@
                     </ul>
                   </section>
 
-                  <section>
+                  <section id="versioning">
                      <h3>There should be a way to control versioning and revisioning</h3>
 
                         <p>There should be the capability for providing revisions
@@ -474,16 +472,15 @@
 
           <section>
               <h2>Implementation requirements</h2>
-              <section>
-                  <h3>Find the information on the constituent resources of a
-                    PWP easily</h3>
+              <section id="find-information">
+                  <h3>Find the information on the constituent resources of a PWP easily</h3>
 
                   <p>A PWP will likely be composed of multiple web documents. A
                     more complicated PWP may have many more components, meaning
                     that extracting in advance all the references to other
                     constituent resources may be prohibitive. It is therefore
                     necessary for the reading system to have an easy access to
-                    the list of constituent resources.
+                    the list of constituent resources, and some of their characteristics like their media types or sizes.
                   </p>
 
                   <ul class="use-cases">
@@ -497,11 +494,13 @@
                         distribution package</li>
                       <li>The size of the components will need to be known in
                         advance.</li>
+                      <li>The reading systems needs to know if a publication contains/requires support for a specified media type (without processing all content documents).</li>
+
                   </ul>
               </section>
 
-              <section>
-                  <h3>Find the reading order of the resources of a PWP easily</h3>
+              <section id="reading-order">
+                  <h3>Find the (default) reading order of the resources of a PWP easily</h3>
 
                   <p>A user agent needs to know the sequence in which to present
                     components of a PWP to the user. A PWP will likely be
@@ -512,13 +511,13 @@
                     within the resources (i.e., parsing them in advance to extract
                     the information) may be prohibitive. It is therefore necessary
                     for the reading system to have an easy access to the reading
-                    order constituent resources.
+                    order constituent resources. In particular, the user agent should also have the information on what the starting point of the publication rendering is.
                   </p>
 
                   <ul class="use-cases">
                       <li>Moby Dick contains 136 chapters. Each chapter is a
                         separate HTML document. The user agent must present the
-                        chapters sequentially.</li>
+                        chapters sequentially, starting by the first chapter.</li>
                       <li>The Encyclopedia of Stuff includes 1348 articles, each
                         one in a unique HTML document. The user agent must
                         present the articles in order (alphabetically, by title).
@@ -526,7 +525,7 @@
                   </ul>
               </section>
 
-              <section>
+              <section id="unique-identifier">
                   <h3>There should be a way to uniquely identify a publication
                     regardless of its state</h3>
 
@@ -756,134 +755,127 @@
 
 </section>
 <section>
-  <h1>Manifests and Packages</h1>
+    <h1>Manifests</h1>
 
-<section>
-  <h2>Streamlined Access to Disjoint Package Components </h2>
-  <p>TBD</p>
-  <ul class="use-cases">
-  <li>EsteemedJournalPublisher would like to offer the users of the
-    EsteemedJournal of Chemistry App the opportunity to read only the abstracts
-    of the journals in the app. The App Package must offer the user a list
-    (table of contents) of abstracts (disjoint objects in the package with
-    semantic information or metadata informing the package of the nature of the
-    object). </li>
+    <p>In this document by <em>manifest</em> we mean an abstract place, typically one or several files, that contain information necessary to the proper management, rendering, etc, of the publication. This is opposed to <em>metadata</em> that contain information on the <em>content</em> of the publication like author, publication date, etc.</p>
 
-    <li>(Is the abstract-only view built-in? spun-off using shared resource?
-      totally independent publication?)</li>
-
+    <p>Some fundamental use cases and requirements already imply the usage of manifests, e.g.:</p>
+    <ul>
+        <li><a href="#find-information"></a></li>
+        <li><a href="#reading-order"></a></li>
     </ul>
 
+    <section>
+      <h2>Manifests should include the basic characteristics of the constituent resources</h2>
+
+      <p>A user agent requires information about the package and its components in order to process it. E.g., performance and memory requirements may prevent a user agent from parsing a large number of content documents in order to discover the necessary components and their relationships. A user agent may need to make some decisions about how to present content before displaying it.</p>
+
+      <p>Some necessary features are listed among the fundamental features of a PWP (see <a href="#find-information"></a>); the use cases below provide a (non-exhaustive) list of further information.</p>
+
+      <ul class="use-cases">
+        <li>A user agent may not be able to process files beyond a certain size due to bandwidth, storage or memory limitations, or processing time expectations. Hence this information should be available in advance.</li>
+
+        <li>A user agent should be able to process permissions and rights information for each component identified in the package. For example, it need to know whether it has the rights to place an image of the Mona Lisa owned by the Louvre in a package to be downloaded offline.</li>
+
+        <li>For further processing the user agent needs to have access to a number of additional information like:
+            <ul>
+                <li>the accessibility of each component;</li>
+                <li>whether it needs additional processing instructions, such as with MathML;</li>
+                <li>the title, author(s), cover image, etc., to display the publication on a shelf without downloading all its content;</li>
+                <li>whether the content is unaltered;</li>
+                <li>the origin of the publication.</li>
+            </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+        <h2>The manifest should provide access to the general metadata of a publication</h2>
+        <ul class="use-cases">
+            <li>The manifest may be a "first point of entry" for the user agent when getting hold of a publication, and should therefore provide an easy way to get hold of the general publication metadata (e.g., author’s and publisher’s data, library data, copyright information, etc.)</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Manifest should make it possible to provide a streamlined access to disjoint parts of the publication</h2>
+
+      <p>It should be possible for the author to convey several reading orders for the content of the publication, that may go beyond the “default” <a href="reading-order">reading order</a>. Furthermore, this alternative reading order may not necessary include the full content of the publication but only specific parts thereof.</p>
+
+      <ul class="use-cases">
+          <li>EsteemedJournalPublisher would like to offer the users of the EsteemedJournal of Chemistry App the opportunity to read only the abstracts of the journals in the app. The App Package must offer the user a list (table of contents) of abstracts (disjoint objects in the package with semantic information or metadata informing the package of the nature of the object). </li>
+
+          <li>The publisher wants to provide “teasers” for a book by providing a series of extracts that are meant to give an overview of the book without the necessity to read the whole publication. This can be typically used by a reseller allowing for a prospective client to access part of the publication free of charge.</li>
+        </ul>
+    </section>
+
+    <section>
+      <h2>Manifest should include information of new content</h2>
+
+      <p>The manifest should include information that makes it possible for a user agent to find out whether a specific content has changed since a last access or not. This may or may not directly reflect versioning, as referred to in the requirement on versioning (see <a href="#versioning"></a>), insofar as the granularity may be different.</p>
+
+      <ul class="use-cases">
+          <li>Shoshana is an organic chemist. She has purchased the Esteemed Journal of Chemistry App. She downloads Organic Chem Quarterly in her lab and reads the first article over lunch. Shoshana begins the book reviews during office hours but must tend to her students' questions, so she closes the app. Shoshana opens the app on the train ride home to resume reading the book reviews. She is happy to find that the app opens to the exact location and opens quickly because most of the material does not need to be downloaded a second time. </li>
+
+          <li>An archival service needs to update an Archival Information Package (i.e., a previously harvested PWP) because a new version of a component of the PWP has been published</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Manifest should include means to use links to resources, regardless of location</h2>
+
+      <p>The fundamental requirement on identification already states that there should be a way to uniquely identify a publication (see <a href="#unique-identifier"></a>). This requirement should be extended to resources <em>within</em> a publication, e.g., a chapter, an image, a mathematical formula. To achieve these, the manifest should contain the necessary information to make the mapping of URI-s possible.</p>
+
+      <ul class="use-cases">
+          <li>A scholarly mathematical publication refers to a specific theorem in another publication, and that reference must be unique, stable and retrievable on the Web. That reference should not depend on whether the publishes issues a new version of the target publication (thereby possibly change the section numbering) or whether the publication is available now for offline use.</li>
+
+          <li>An archival service wants to harvest (spider) a PWP, and expects to find in the manifest what it will need to make sure it gets all the pieces of the PWP that need to be archived, even if on separate servers.</li>
+      </ul>
+    </section>
+
+    <section id="alternative-reading-order">
+        <h2>Manifest may include alternative reading orders</h2>
+
+        <p>Whilst one of the fundamental requirements is that the default reading order should be made available to the user agent (see <a href="#reading-order"></a>), the manifest should also provide means to define alternative reading orders. It is up to the user agent how this alternative reading order is conveyed to the reader (via some suitable user interface techniques).</p>
+
+        <ul class="use-cases">
+            <li>EducationalPublisher publishes a complex textbook. The textbook is created is such a way that it could be used both for beginner and advanced level. The default reading order corresponds to beginners, but the goal is that advanced students can follow a different path through the material, corresponding to their level of knowledge. EducationPublisher adds, therefore, alternative reading orders to the publication that advanced users can follow</li>
+        </ul>
+    </section>
+
+    <section id="flexible-access-manifest">
+        <h2>There should be flexible ways to get hold of the manifest for a publication</h2>
+
+        <p>The physical realization of the manifest may be a file in some predefined format (XML, JSON, etc.). There may be several ways to get hold of that manifest (file on a well known location, usage of an HTML <code>link</code> element, etc). PWP should provide a high level of flexibility, i.e., possible alternatives, on how that manifest should be found.
+        </p>
+
+        <ul class="use-cases">
+            <li id="bigretailer-manifest">BigRetailer receives a publication from EsteemedPublisher that it intends to add to its catalogue. BigRetailer wants to change or extend some general information (typically contained in the manifest) regarding the publication, like the local bibliographic metadata, or its own “teaser” in terms an alternative reading order (see <a href="#alternative-reading-order"></a>). To achieve that, BigRetailer provides its own version of the publication manifest, and makes it sure that the user agent takes that one as the publication’s manifest (e.g., by providing a reference to the alternative manifest via an HTTP <code>LINK</code> header).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>There should be a possibility to combine manifests from several origins</h2>
+
+        <p>The default approach for a user agent is to get hold of the manifest (file) as one unit via some flexible means (see <a href="#flexible-access-manifest"></a>). However, an even more flexible means is to provide possibilities to provide <em>several</em> manifests file that the user agen would combine, following some rules, to yield the final, overall manifest for the publication.
+        </p>
+        <p class="note">
+            It is recognized that the proper definition/implementation of this requirement may lead to major technical complications and, therefore may not be fulfilled.
+        </p>
+
+        <ul class="use-cases">
+            <li>The simple solution for the <a href="#bigretailer-manifest">use case involving BigRetailer</a> requires the creation of a <em>complete</em> manifest, involving duplicating the information provided the EsteemedPublisher. This is obviously error prone if the publication’s manifest is large. If it was possible to combine manifests, BitRetailer can only provide its own additional (and possibly replacement) information and let the user agent combine the manifests of BigRetailer and of EsteemedPublisher to yield the final manifest.</li>
+        </ul>
+    </section>
+
 </section>
 
 <section>
-  <h2>Manifest includes Information of New Content</h2>
-  <p>TBD</p>
-  <ul class="use-cases">
-  <li>Shoshana is an organic chemist. She has purchased the Esteemed Journal of
-    Chemistry App. She downloads Organic Chem Quarterly in her lab and reads the
-    first article over lunch. Shoshana begins the book reviews during office
-    hours but must tend to her students' questions, so she closes the app.
-    Shoshana opens the app on the train ride home to resume reading the book
-    reviews. She is happy to find that the app opens to the exact location and
-    opens quickly because most of the material does not need to be downloaded a
-    second time. </li>
+    <h2>Packaging</h2>
+    <p>TBD</p>
 
-  <li>An archival service needs to update an Archival Information Package (i.e.,
-    a previously harvested PWP) because a new version of a component of the PWP
-    has been published</li>
+    <p>From the manifest part: "Package should include a queryable manifest."; to be added here?</p>
 
-  </ul>
 
-</section>
-
-<section>
-  <h2>Manifest Includes Links to Resources, Regardless of Location</h2>
-  <p>TBD</p>
-  <ul class="use-cases">
-  <li>An archival service wants to harvest (spider) a PWP, and expects to find
-    in the manifest what it will need to make sure it gets all the pieces of
-    the PWP that need to be archived, even if on separate servers.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Manifests/Metadata</h2>
-  <p>Manifest: A publication represents a unit comprised of several components.
-    There must be a structure that identifies the components of the unit and
-    describes the constituents and relations between them.</p>
-
-  <ul class="use-cases">
-    <li>A User Agent requires  about media-type for each component so that it
-      can understand whether information can be conveyed to the user the reader
-      without parsing through the contents.</li>
-
-    <li>A User Agent must know the component parts of a publication such that
-      the PWP can be made available for offline use.</li>
-
-    <li>A User Agent must know which component of the PWP to present to the user
-      first.</li>
-
-    <li>A User Agent must know in what sequence to present components to the
-      user (i.e., default reading order).</li>
-
-    <li>A User Agent must know which components are essential vs. non-essential
-      to the publication. See Section 2.1.</li>
-
-   </ul>
- </section>
-
- <section>
-  <h2>Manifests/Metadata part 2</h2>
-  <p>A user agent requires information about the package and its components in
-    order to process it. Performance and memory requirements may prevent a user
-    agent from parsing a large number of content documents in order to discover
-    the necessary components and their relationships. A user agent may need to
-    make some decisions about how to present content before displaying it.</p>
-
-  <ul class="use-cases">
-
-    <li>As a user agent, I need to know if a publication contains/requires
-      support for a specified media type (without processing all content
-      documents).</li>
-
-    <li>As a user agent, I may not be able to process files beyond a certain
-      size due to bandwidth, storage or memory limitations, or processing time
-      expectations. </li>
-
-    <li>As a user agent, I should be able to process permissions and rights
-      information for each component identified in the package. For example, I
-      need to know if I have the rights to place an image of the Mona Lisa owned
-      by Louvre in a package to be downloaded offline.</li>
-
-    <li>As a user agent, I need to know about the accessibility of each
-      component.</li>
-
-    <li>As a user agent, I need to know about the accessibility of each
-      component.</li>
-
-    <li>As a user agent, I need to know if I need additional processing
-      instructions, such as with MathML.</li>
-
-    <li>As a reading system, I need to know the title and cover image to display
-      the publication on a shelf without downloading all its content. (biblio)</li>
-
-     <li>As a user agent, I want to know that the content is unaltered.</li>
-
-     <li>As a user agent, I want to know if the content is intentionally
-    updated.</li>
-
-     <li>As a user agent, I want to know the origin of the publication.</li>
-
-     <li>There needs to be metadata on package components (manifest use case)</li>
-
-    <li>Package should include a queryable manifest.</li>
-
-    <li>Manifest indicates whether content is new (relative to last download) and
-      triggers download only when content is new/updated.</li>
- </ul>
-
-</section>
 </section>
 
 <section>
