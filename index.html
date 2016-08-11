@@ -218,6 +218,7 @@
                         <li>Fatima wants to choose between a scrolled view and a paginated
                           view of content that extends across multiple html documents.</li>
                         <li>A publisher wants to provide transition effects between pages, both within and across content documents.</li>
+                        <li>A classroom teacher says, “turn to page 137 of your textbook,” and students with both print and digital editions need to find the same text.</li>
                     </ul>
                 </section>
 
@@ -341,6 +342,11 @@
                           is difficult and resource-intensive. Parsing through a
                           package of 60 HTML documents, roughly 20 pages each,
                           is less resource-intensive.</li>
+
+                         <li>Content may have significantly different styles between files. For
+                          instance, some Japanese books will have documents whose root element
+                          is vertical-rl and others whose root element is horizontal-tb. These 
+                          root element styles must be preserved.</li>
                     </ul>
                 </section>
 
@@ -421,6 +427,7 @@
                         able to adjust display, e.g., font selection, font-size
                         adjustment, background color)</li>
                       <li>Assistive Technology such as screen readers or voice dication control needs to access a complete PWP.</li>
+                      <li>A user should be able to access all linear content through simple UI gestures, independent of the document structure.</li>
                     </ul>
                   </section>
 
@@ -1076,11 +1083,11 @@
                 </section>
 
 </section>
-
+<!-- use cases moved
 <section>
   <h1>CSS Requirements for Packaged Multiple Documents</h1>
 
-<!-- use cases moved
+
 <section>
   <h2>Pagination and Generated Content</h2>
   <p>TBD</p>
@@ -1093,7 +1100,7 @@
       view of content that extends across multiple html documents</li>
   </ul>
 </section>
- -->
+
 
 <section>
   <h2>Navigation</h2>
@@ -1107,31 +1114,10 @@
   </ul>
 
 </section>
+ -->
 
-  <section>
-    <h2>CSS customization</h2>
-      <p>TBD</p>
-    <ul class="use-cases">
-      <li>As a publisher I want my footnotes to number sequentially across the
-    publication, even when the publication is constructed of multiple
-    documents.</li>
-      <li>Content may have significantly different styles between files. For
-    instance, some Japanese books will have documents whose root element
-    is vertical-rl and others whose root element is horizontal-tb. These root
-    element styles must be preserved.</li>
-    </ul>
-  </section>
 
-  <section>
-    <h2>Transitions</h2>
-      <p>TBD</p>
-   <ul class="use-cases">
-      <li>Placeholder: Comics-like transition</li>
 
-      <li>Placeholder: Page Transition effects both within an HTML document, and
-    between HTML documents</li>
-    </ul>
-    </section>
 
 </section>
 
