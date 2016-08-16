@@ -122,28 +122,40 @@
                 </section>
 
                 <section>
-                    <h3>The publication should conform to all the requirements of
-                       the horizontal dependencies</h3>
-                    <p>Reading a publication needs to conform to all of the
-                      <a href="https://www.w3.org/Guide/Charter.html#horizontal-review">horizontal dependencies</a>
-                      common to all specifications: accessibility, 
-                      internationalization, mobility, device independence, 
-                      privacy, security, and technical architecture principles.</p>
+                    <h3>The publication should conform to all the requirements of horizontal dependencies</h3>
 
-                    <p>Several of these requirements have their own sections with 
-                      use cases defined below.</p>
+                    <p>Web content has to be accessed under different circumstances that Web site authors must be prepared for: the content must be available to the largest possible audience in a secure manner and providing the necessary protection of the reader’s privacy. To achieve this goal, the underlying technologies must be able to answer to a number of requirements like accessibility, internationalization, device independence, security, or privacy. (These are usually referred to, in the W3C context, as “horizontal” dependencies.) It is only by providing the right technologies that authors can be expected to make the content widely available and usable. These requirements mean, in general terms:
+                    </p>
 
-                    <ul>
-                        <li><a href="#accessibility">Accessibility</a></li>
-                    </ul>
+                    <dl class="">
+                        <dt>(Web) Accessibility:</dt>
+                        <dd>People with disabilities should be able use the content, i.e., they should be able to perceive, understand, navigate, and interact with it, and that they should be able contribute to it. Accessibility encompasses all disabilities that affect access to the content, including visual, auditory, physical, speech, cognitive, and neurological disabilities.</dd>
+                        <dt>Internationalization:</dt>
+                        <dd>Content designers should be able to produce publications well adapted to any language, writing systems, region, or culture. This includes the possibility to use left-to-right, right-to-left, horizontal or vertical writing, to adapt item numbering, or interactive forms to specific cultures, to use different character sets, or to reproduce local typographic conventions.</dd>
+                        <dt>Device Independence:</dt>
+                        <dd>Content should be usable on a large number of devices with very different device characteristics: different screen types and sizes, various input modalities, varying level of processing power, etc. Authors should be able to produce content that self-adapt to these environments automatically with no, or very little user intervention.</dd>
+                        <dt>Security:</dt>
+                        <dd>Authors should be able to produce content that prevent malicious attacks, data theft, etc., but also to develop secure mashups, access distributed services, etc, without jeopardizing the integrity of the underlying data, users’ privacy, or machine operations.</dd>
+                        <dt>Privacy:</dt>
+                        <dd>The evolution of online technologies has increased the possibility for the collection, processing, and publication of personal data. Privacy concerns are raised as applications built on the Web platform have access to more sensitive data—including location, health and social network information—and users' activity online is ubiquitously tracked. Authors should be in position to improve the support the user’s privacy when interacting with a specific publication.</dd>
+                    </dl>
+
+                    <p>All these constraints are usually formalized in the context of the Web, but they are also valid for publications in general <em>regardless of whether they are online or offline, or whether the publication is distributed as a single unit or not</em>. Actually, in some cases, for example due to legislative reasons, the demands on digital publications may be more stringent than for generic Web sites. That means that the underlying technologies must abide to the relevant technical requirements for publications, and with a high priority. The use cases below provide some examples for the publication-specific situations.
+                    </p>
 
                     <ul class="use-cases">
-                        <li>Asmait uses a dedicated braille e-reader capable of
-                          using standard Open Web technologies, that can render
-                          any WCAG-compliant content. She needs to be able to
-                          read her newspaper on her dedicated braille reader, not
-                          just a standard browser and computer combination.</li>
-                    </ul> 
+                        <li>Asmait uses a dedicated braille e-reader capable of using standard Open Web technologies, that can render any WCAG-compliant content. She needs to be able to read her newspaper on her dedicated braille reader, not just a standard browser and computer combination.</li>
+
+                        <li>Legal Publishing Ltd. publishes all the official texts, as issued by the government of its country. Per local legislation, the publication MUST be accessible, following W3C’s WCAG Level AA requirements, to serve as official references in courts.</li>
+
+                        <li>EducationPublishing Ltd. publishes digital textbooks to cover BigUniversity’s curriculae. These (digital) educational publications also include access to interactive tests via specialized services on the Web that regularly access the student’s progress. The digital textbooks must abide to the highest accessibility standards by law, corresponding to WCAG Level AA requirements. Furthermore the privacy and the integrity of the student’s test data must be preserved. Both of these requirements are such that EducationPublishing is liable in case they are not fulfilled.</li>
+
+                        <li>PublicationInternational SA. publishes literary work all over the world and in many languages. In order to continue its business in, e.g., Japan, it must be able to produce digital publications with right-to-left and vertical writing, and following the Japanese typesetting traditions, because that is the only way those publications are accepted by local customers.</li>
+
+                        <li>Vera has several devices she uses to read her books, depending on where she is. She may use her table with a larger screen when sitting in an armchair at home, she uses her phone when commuting to her work by train, and uses her laptop when adding more complex annotations to the book. The book is authored in a way that, while maintaing the integrity of data like bookmarks and annotations, the book is automatically adapted to a different screen size, or to the fact that her phone does not have a keyboard.</li>
+
+                        <li>BigAirline uses digital versions of the airline manuals. This means that the manuals are put “online” to keep them up-to-date, and the pilots have access to the latest version even when they are flying, i.e., they are off line. The way the manuals are authors and managed ensures that the integrity of the manuals and the relevant data is maintained at all times, to secure that the pilots operate based on correct information only.</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -372,7 +384,7 @@
 
                          <li>Content may have significantly different styles between files. For
                           instance, some Japanese books will have documents whose root element
-                          is vertical-rl and others whose root element is horizontal-tb. These 
+                          is vertical-rl and others whose root element is horizontal-tb. These
                           root element styles must be preserved.</li>
                     </ul>
                 </section>
@@ -1063,9 +1075,9 @@
        <p>There is an important difference between just sending the raw text to a braille display which will translate the text to the default braille grade and language the braille display is using and having a pre-formatted braille rendition using a specific braille table.</p>
      <ul class="use-cases">
         <li>As a publisher wanting to fulfill my legal requirements in creating an accessible Math textbook, to this end the inclusion of math equation examples in both Braille as well as MathML is desired since not all reading systems fully support MathML.  Nemeth Braille is primarily used and has therefore been added as a separate preformatted Nemeth Braille examples to my publication in addition to the MathML.</li>
-         
+
          <li>Alberto who has been blind since birth is studying to become an engineer.  Some of his advance textbooks would greatly benefit from a pre-formatted fully transcribed braille rendition with braille codes or complex formatting which is not yet well supported by the software typically available.</li>
-         
+
          <li>James a struggling blind artist requires that the musical score within this publication be rendered in braille music.  James uses freely available assistive technology which does not have braille music translations built in and would need this already converted into braille music notation.</li>
       </ul>
     </section>
@@ -1090,12 +1102,12 @@
 
        <ul class="use-cases">
            <li>Illyés has a cognitive disability and uses accomodated texts in
-             the classroom, to help her learn the content while improving her reading.  
-             Her assistive technology uses combined audio and text, turning the page 
+             the classroom, to help her learn the content while improving her reading.
+             Her assistive technology uses combined audio and text, turning the page
              for her while reading along in sync with the page currently open.</li>
           <li>Bogi has auditory processing disorder. They are reading an annotated screenplay showing
             the author's original notes, along with synchronized video clips.
-            Bogi needs to be able to view the captions on the video clips, even 
+            Bogi needs to be able to view the captions on the video clips, even
             though they're associated with snippets of the screenplay.</li>
        </ul>
    </section>
