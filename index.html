@@ -970,48 +970,46 @@
 
 
 <section>
-  <h1>Archival Interest</h1>
+  <h1>Archiving</h1>
 
   <section>
-    <h2>Integrity and Longevity</h2>
-      <p>TBD</p>
+    <h2>The locations of all PWP components should be discoverable</h2>
+    <p>An archiving service needs a reliable way to learn where all of the components that constitute a PWP are located in order to be able to archive it. Without such a mechanism, the archiving service will have to develop and maintain publisher- and/or platform-specific heuristics for packaging collections of interlinked resources into discrete publications, making archiving more expensive and error-prone.</p>
     <ul class="use-cases">
-      <li>A government agency (e.g., laws, regulations, judicial decisions) publishes
-      information that need to persist without any loss of information
-      forever.</li>
-
-      <li>Journal article (e.g., announcing novel compound in chemistry) must be
-      published in method that is persistent because it serves at the document of
-      record for scientific record.  </li>
+	  <li>An archiving service sets out to conduct an initial harvest of a book. They are able to locate all of the images, markup, scripts, and style and layout instructions that constitute the object. The archiving service retrieves these Resources and package them into a logical archival unit for ingest into a preservation repository.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Retraction Notices</h2>
-      <p>TBD</p>
+    <h2>There should be a way to discover that a new version of one or more PWP components have been published</h2>
+    <p>An archiving service needs a reliable way to learn that a new version of one or more PWP components have been published (i.e., at the same locations as previously) in order to be able to archive them. Without such a mechanism, the archiving service will have to periodically re-download and re-checksum all PWP components to determine whether any updates have transpired, unnecessarily increasing the load on archiving service and publisher servers and delaying updated PWP components from being archived.</p>
     <ul class="use-cases">
-      <li>An archival service needs to harvest the retraction notice and update the
-    Archival Information Package for the original PWP to include / link to the
-    Retraction Notice.</li>
+      <li>An archiving service regularly polls for changes to an article that it has already archived. One such poll indicates that several Resources that constitute the object have changed. The archiving service retrieves these Resources and store them as incremental updates to the appropriate archival unit in a preservation repository.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Take-down Notices</h2>
-      <p>TBD</p>
-    <ul class="use-cases"?
-      <li>An archival service needs to update an Archival Information Package (i.e.,
-    a previously harvested PWP) because it or one of its components has been
-    taken down by the publisher.</li>
+    <h2>There should be a way to discover that one or more new components have been added to a PWP</h2>
+    <p>An archiving service needs a reliable way to learn that one or more PWP components have been added to a PWP in order to be able to archive them. Without such a mechanism, there is a possibility that the archiving service will not know that the new component belongs to the PWP, because the publisher- and/or platform-specific heuristics have not been updated.</p>
+    <ul class="use-cases">
+      <li>An archiving service regularly polls for changes to an article that it has already archived. One such poll indicates that several Resources have been added to the object. The archiving service retrieves these Resources and store them as incremental updates to the appropriate archival unit in a preservation repository.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Provenance</h2>
-      <p>There SHOULD be a possibility in the PWP to follow (if necessary)
-     the copying (provenance) chain (archiving use case).</p>
+    <h2>There should be a way to discover that one or more PWP components have been removed from a PWP</h2>
+    <p>An archiving service needs a reliable way to learn that one or more PWP components have been removed from a PWP in order to be able to propagate this change to the archive. Without such a mechanism, there is a possibility that the archiving service will mistakenly make PWP components accessible that should not be.</p>
     <ul class="use-cases">
-      <li></li>
+      <li>A publisher issues a retraction for a published article, resulting in the addition of new Resources to the object (i.e., the retraction notice) and the removal of others (i.e., the article content). An archiving service regularly polls for changes to this article, which it has already archived, and discovers the retraction. The archiving service retrieves the new Resources and record those that are no longer accessible, carrying over the cumulative updates to a preservation repository.</li>
+      <li>A copyright dispute results in the takedown of a published book. An archiving service regularly polls for changes to this book, which it has already archived, and discovers that it has been taken down. It records that the Resources that constitute the object are no longer accessible and propagates this update to a preservation repository.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>There should be a way to indicate whether one or more PWP components contain structured descriptive metadata</h2>
+    <p>An archiving service needs a reliable way to determine which, if any, PWP components contain structured descriptive metadata. Without such a mechanism, the archiving service will have to develop and maintain publisher- and/or platform-specific heuristics for locating or parsing out descriptive metadata, making archiving more expensive and decreasing the reliability of reporting.</p>
+    <ul class="use-cases">
+      <li>An archiving service sets out to conduct an initial harvest of an article. Along with the images, markup, scripts, and style and layout instructions that constitute the object, it is able to locate a file containing descriptive metadata. The archiving service retrieves these resources and packages them into a logical archival unit for ingest into a preservation repository. A related process identifies and parses the descriptive metadata structure and saves its contents into an associated management database.</li>
     </ul>
   </section>
 
