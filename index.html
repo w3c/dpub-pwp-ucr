@@ -817,8 +817,8 @@
         <li><a href="#reading-order"></a></li>
     </ul>
 
-    <section>
-      <h2>Manifests should include the technical metadata and basic characteristics of the constituent resources</h2>
+    <section id="technical-metadata">
+      <h2>Manifests should include the technical and descriptive metadata and basic characteristics of the constituent resources</h2>
 
       <p>A user agent requires information about the package and its components in order to process it. E.g., performance and memory requirements may prevent a user agent from parsing a large number of content documents in order to discover the necessary components and their relationships. A user agent may need to make some decisions about how to present content before displaying it.</p>
 
@@ -828,6 +828,8 @@
         <li>A user agent may not be able to process files beyond a certain size due to bandwidth, storage or memory limitations, or processing time expectations. Hence this information should be available in advance.</li>
 
         <li>A user agent should be able to process permissions and rights information for each component identified in the package. For example, it need to know whether it has the rights to place an image of the Mona Lisa owned by the Louvre in a package to be downloaded offline.</li>
+
+        <li>A user agent should be able to determine if captions are available for multimedia resources within the publication.</li>
 
         <li>For further processing the user agent needs to have access to additional information including:
             <ul>
@@ -1027,11 +1029,11 @@
 
     <section>
     <h2>Accessible Metadata</h2>
-    <p> Accessibility of a PWP as a whole must be discoverable so that users know how (or whether) a PWP is accessible</p>
+    <p> Accessibility of a PWP as a whole must be discoverable so that users know how (or whether) a PWP is accessible. See also <a href="#technical-metadata"></a></p>
     <ul class="use-cases">
       <li> Accessibility of a PWP must be discoverable so that users know how (or whether) a PWP is accessible</li>
         <li>Ferdous wants to buy a book about a museum exhibit and wants to guarantee before he does that his screen reader will describe the images to him in great detail.</li>
-        <li>Alejandra must ensure that the videos in her textbook have captioning before she purchases it.</li>
+        <li>Alejandra must ensure that the equation editors in her textbook have non-mouse functionality before she purchases the textbook.</li>
     </ul>
     <p>Granular Accessibility of a PWP must be discoverable so that users know how (or whether) a specific chapter or element within a PWP is accessible</p>
     <ul class="use-cases">
