@@ -56,6 +56,13 @@
             font-style: italic;
             text-decoration: underline;
         }
+
+        ul.requirements::before {
+            content: "Requirements:";
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+        }
     </style>
   </head>
   <body>
@@ -263,7 +270,7 @@
                     </ul>
                 </section>
 
-                <section>
+                <section id="fundamental-online-offline">
                     <h3>The same PWP content may have to be accessed both online
                       and offline</h3>
                     <p>The <em>same</em> content of the PWP should be accessible
@@ -298,10 +305,12 @@
                           beneficial when done from the work floor (e.g., at an
                           airplane production line), the same documents may need
                           reliable offline access (e.g., in the cockpit).</li>
+
+                        <li>Due to restrictions such as limited storage or limited connectivity, certain (non-essential) content may only be available in certain states (see <a href="#non-essential-resources"></a>).</li>
                     </ul>
                 </section>
 
-                <section>
+                <section id="fundamental-transition">
                     <h3>There should be a very smooth transition between offline
                       and online states of the same publication</h3>
 
@@ -316,6 +325,8 @@
 
                         <li>Many publications—especially long form fiction and non-fiction—that users engage with for many hours. During this time, the user may shift states in many ways—starting consumption on an internet enabled PC, moving to an internet enabled portable device, going into offline-mode on that device, and then back to the PC. Ensuring a smooth transition also means that bookmarks, current reading position, etc, are stored, without the need of a central server that may lead to privacy concerns.
                         </li>
+
+                        <li>Non-essential content, not available in certain states, should have a predefined fallback that will allow the user to continue consumption (even in a potentially degraded, but author-controlled manner) (see <a href="#non-essential-resources"></a>).</li>
                     </ul>
                 </section>
 
@@ -472,17 +483,32 @@
                     </ul>
                   </section>
 
-                  <section>
+                  <section id="non-essential-resources">
                     <h3>There should be a way to differentiate between essential
                       and non-essential resources</h3>
 
-                    <p>When changing the state of a PWP from, e.g., online to
-                      offline, an implementation may have to know which PWP
+                    <p>
+                      Whilst preserving essential content should be the job of the reading system, having a method in the publication for the author of the publication to mark what items are critical, and what need a fallback for limited connectivity/storage situations would greatly help the reading system and give more control to the publisher to ensure consistent experience with consuming the publication.
+                      This way, when changing the state of a PWP from, e.g., online to
+                      offline, an implementation knows which PWP
                       resources are essential for the display of the content, and
                       therefore must be included in the offline version, or which
-                      may be skipped</p>
+                      may be skipped (see <a href="#fundamental-online-offline"></a> and <a href="#fundamental-transition"></a>)</p>
 
                     <ul class="use-cases">
+                      <li>
+                        Nick is reading a long-form narrative.
+                        A publication filled with text, images, sounds, and multimedia files.
+                        Nick is also a multi-device user who wishes to consume the publication on multiple devices.
+                        Some of those devices have limited storage, and some of them have limited connectivity.
+                        Nick also rides the subway - where he loses internet connection, without warning - for long stretches of time.
+                        During offline or low-storage situations, there are still critical parts of the publication that are consumable - mainly the text (and possibly images).
+                        Having a reasonable fallback for video (a poster image or placeholder image) would allow Nick to read the content while offline or in limited storage.
+                      </li>
+                      <li>
+                        Nick may know he's going to be in a no-connectivity situation and may want to obtain and locally store the entire (even non-critical) contents.
+                        This would be up to the reading system to provide a mechanism, but having a way to denote critical and fallback assets ensures that an entire package need not be downloaded when not necessary.
+                      </li>
                        <li>A mathematical font is essential for the proper display
                          of a mathematical formula; it is therefore essential to add
                          that font to the set of resources that are made available
@@ -613,104 +639,149 @@
           </section>
       </section>
 
-<section>
-  <h1>Changing State</h1>
-<section>
-  <h2>State Changing Document</h2>
-    <p>Many publications - especially long form fiction and non-fiction - that
-     users engage with for many hours. During this time, the user may shift
-     states in many ways - starting consumption on an internet enabled PC,
-     moving to an internet enabled portable device, going into offline-mode
-     on that device, and then back to the PC.</p>
+    <section>
+        <h1>The Same Publication in Multiple States</h1>
+        <section>
+            <h2>State Changing Document</h2>
 
-    <ul class="use-cases">
+            <p>
+                During the consumption of a publication, a user may change their online/offline state in many ways.
+                For example, they may start reading on an internet enabled PC, move to an internet-enabled portable device, which may enter offline-mode at some point, and then finish up on another PC.
+            </p>
 
-      <li>The user needs to ensure they have
-    access to critical pieces of data while secondary assets have a pre-
-    defined fallback that will allow the user to continue (for example, a
-    poster image of a video that serves as a placeholder for an externally
-    streamed video when internet is available).</li>
+            <section>
+                <h3>(Non-)Essential Content</h3>
 
-      <li>Nick is reading
-    long-form narrative non-fiction. A publication filled with text, images,
-    sounds, and multi-media files. Nick is also a multi-device user who
-    wishes to consume the publication on multiple devices. Some of those
-    devices have limited storage, and some of them have limited connectivity.
-    Nick also rides the subway - where he loses internet connection, without
-    warning - for long stretches of time.</li>
+                <p>See <a href="#non-essential-resources"></a>.</p>
 
- <li>During offline or low-storage situations, there are still critical parts
-     of the publication that are consumable - mainly the text (and possibly
-     images). Having a reasonable fallback for video (a poster image or
-     placeholder image) would allow Nick to read the content while offline or
-     in limited storage. While this should be the job of the reading system,
-     having a method in the publication for the author of the publication to
-     mark what items are critical, and what need a fallback for limited
-     connectivity/storage situations would greatly help the reading system and
-     give more control to the publisher to ensure consistent experience with
-     consuming the publication.</li>
+            </section>
 
-   <li>Nick may know he's going to be in a no-connectivity situation and may
-     want to obtain and locally store the entire (even non-critical) contents.
-     This would be up to the reading system to provide a mechanism, but having
-     a way to denote critical and fallback assets ensures that an entire
-     package isn't downloaded when not necessary.</li>
+            <section>
+                <h3>Dynamic Content</h3>
 
-   <li>For the case of scripting - it's possible that certain items will be
-     dynamic - and will hit an external resource (or server) to generate
-     on-the-fly data. In offline mode, the user would want to be alerted that
-     content could not be obtained, or be shown some fallback set of data. In t
-     his case, being able to specify a "no-connectivity" or "offline-mode"
-     alternative for scripts would allow the publication author to have more
-     control over the user's experience and replace a potential error-display
-     with a limited subset of a good experience.</li>
-   </ul>
+                <p>
+                    It’s possible that certain items will be dynamic, requiring the use of an external resource (or server) to provide the data.
+                    In offline mode, the user may want to be alerted that content could not be obtained, or be shown some fallback set of data.
+                    In this case, being able to specify an explicit "no-connectivity" or "offline-mode" alternative would allow the publication author to have more control over the user's experience and replace a potential error-display with a limited subset of a good experience.
+                </p>
 
-</section>
+                <ul class="use-cases">
 
-<section>
-  <h2>Annotating Across States Via a Reader Plugin</h2>
-    <p>TBD (note that we'll need to clean up and/or clarify what
-      packed and unpacked mean in this context)</p>
-  <ul class="use-cases">
-    <li>Writer Annie has her book published on her own web space as a PWP
-  [http/packed]. Reader Bob opens it online using the PWP reading plugin
-  PWPRead-plugin, and selects a nice quote to bookmark via PWPMark-plugin.</li>
+                    <li>
+                        Nick is reading a publication about stock exchange. The current state of the stock is being fetched when Nick opens the publication.
+                        However, when Nick is on the train one week later and opens the stock exchange book, he sees the state of the stock exchange as it was the last time he opened his publication. A small alert is shown denoting that this data is a week old.
+                    </li>
+                </ul>
 
-    <li>Writer Annie has her book published on her own web space as a PWP
-    [http/packed]. Reader Bob caches it using a plugin [cache/packed],
-    and selects a nice quote to bookmark via PWPMark-plugin.</li>
+            </section>
 
-    <li>Writer Annie has her book published on her own web space as a PWP,
-  both packed [http/packed] as unpacked [http/unpacked]. Reader Bob
-  reads [http/unpacked] online and selects a nice quote to bookmark
-  via PWPMark-plugin. Then, Bob downloads [http/packed] to his local
-  filesystem [file/packed] to open in his reading system of choice,
-  namely, PWPRead-soft.</li>
+        </section>
 
-   <li>PWPRead-soft synchronizes with Bob's PWPMark profile, and can
-     show Bob's bookmarks when he continues reading [file/packed]</li>
-</ul>
-</section>
+        <section>
+            <h2>Locating Across States</h2>
 
-<section>
-  <h2>Annotating Across States Via a Browser Plugin</h2>
-    <p>TBD (note that we'll need to clean up and/or clarify what
-      packed and unpacked mean in this context)</p>
-  <ul class="use-cases">
-    <li>Writer Annie has her book published on her own web space as a PWP
-     [http/unpacked]. Reader Bob reads it online, and selects a nice quote
-     to bookmark via its browser PWP bookmarking plugin: PWPMark-plugin.</li>
+            <p>
+                A user reads a publication across states. When providing a pointer to (a part of) a publication, this should be robust across states.
+                Locating a resource within a PWP should not depend on the PWP's state.
+            </p>
 
-    <li>When Bob re-opens the PWP offline, the bookmarks are shown via
-     PWPMark-plugin</li>
+            <p class="note">
+                This is related to <a href="https://www.w3.org/TR/dpub-annotation-uc/#cross-format-annotations">https://www.w3.org/TR/dpub-annotation-uc/#cross-format-annotations</a> and <a href="https://www.w3.org/TR/dpub-annotation-uc/#cross-version-annotations">https://www.w3.org/TR/dpub-annotation-uc/#cross-version-annotations</a>.
+            </p>
 
-    <li>When Bob re-visits the original PWP, PWPMark-plugin can also show
-     Bob's bookmarks in the online version.</li>
-  </ul>
+            <ul class="use-cases">
+                <li>
+                    Writer Annie has her book published on her own web space as a PWP.
+                    Reader Bob opens it online using a dedicated PWP reader, and highlights a nice quote.
+                    When Bob reads the same book later on, the highlight is retrieved, whether the PWP is opened using the same PWP reader, opened in a browser, downloaded locally, etc.
+                </li>
+                <li>
+                    Annie sends Bob the state-independent locator to the second chapter of ‘Moby Dick’ while reading it online.
+                    Bob can use that state-independent locator for his own copy of ‘Moby Dick’, even though it is loaded from a local package.
+                </li>
+            </ul>
 
-</section>
-</section>
+            <p class="note">
+                Highlights are in this case <a href="http://w3c.github.io/web-annotation/">Web Annotations</a>, i.e., stored online, with links to the highlighted text.
+            </p>
+
+            <section>
+                <h3>State-Independent Locator vs. State-Dependent Locators</h3>
+
+                <p>
+                    To be able to connect the same publication across status, there needs to be a common, state-independent locator.
+                </p>
+
+                <ul class="requirements">
+                    <li>This state-independent locator (also known as the canonical locator, https://tools.ietf.org/html/rfc6596) should be part of the PWP.</li>
+                    <li>There MUST be a separation between a format-independent (“canonical”) and format-dependent locator.</li>
+                    <li>It MUST be possible (and necessary) to use, for all cross-references, the canonical locator.</li>
+                </ul>
+
+                <ul class="use-cases">
+                    <li>
+                        Annie sends Bob the state-independent locator to the second chapter of ‘Moby Dick’ while reading it online.
+                        Bob opens that state-independent locator &mdash; whilst he is offline &mdash; in his e-reader with his copy of ‘Moby Dick’ loaded.
+                        The e-reader can direct him to the correct chapter, with no additional online connection needed.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Relative Locators</h3>
+
+                <p>Relative locators are abundant on the Web. State-independent locators should not break this mechanism.</p>
+
+                <ul class="requirements">
+                    <li>It SHOULD be possible to use, in all circumstances, a relative locator to refer to content in a PWP.</li>
+                    <li>A PWP Processor MUST be able to combine a relative locator with the canonical as well as state dependent locators of a PWP.</li>
+                </ul>
+
+                <ul class="use-cases">
+                    <li>
+                        Nick creates his own short story.
+                        Based on choices of the reader, the story is different (e.g.: `If you want to go into the rabbit hole, see <a href="#">chapter 3</a>, otherwise, see <a href="#">chapter 4</a>`).
+                        He publishes this PWP online with relative links between the different chapters.
+                        When Annie downloads this publication as a package, all the relative links still work as expected.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Publishing Multiple States</h3>
+
+                <p>Any server-side configuration required to enable handling of canonical and state-dependent locators, MUST be well documented and readily apparent to anyone that would need to perform this work.</p>
+
+                <ul class="use-cases">
+                    <li>
+                        Bob is an independent writer.
+                        He can publish all his PWPs using a popular cloud storage provider that has enabled their system to correct process locators.
+                    </li>
+                    <li>
+                        Annie is a more tech-savvy independent writer.
+                        She publishes her PWPs in multiple states using her own standard (eg. Apache/Nginx/&hellip;) server and is able to follow the provided instructions to enable locators.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Identifiers</h3>
+
+                <p>
+                    Identification of a publication is orthogonal to the issue at hand.
+                    This document does not address the unique identification of a PWP, but does address the requirements that any such identifier is usable across states and does not conflict with locators.
+                </p>
+
+                <ul class="requirements">
+                    <li>
+                        There needs to be persistence of identifiers across PWP instances.
+                        (However, this does not imply that the same PWP in different states is required to use the same identifier)
+                    </li>
+                </ul>
+            </section>
+
+        </section>
+    </section>
 
 <section>
   <h1>Sharing, Distribution, and External Resources</h1>
@@ -926,48 +997,9 @@
 <section>
   <h1>Locators</h1>
 
-  <section>
-    <h2>General locators</h2>
-    <p>TBD</p>
-    <ul class="use-cases">
-      <li>A state-independent locator should be part of the PWP.</li>
-
-      <li>There MUST be a separation between a format-independent
-         (“canonical”) and format-dependent locator.</li>
-
-      <li>It SHOULD be possible to use, in all circumstances, a relative
-                locator to manipulate, annotate, etc, content in a PWP</li>
-
-      <li>Locating a resource within a PWP should not depend on the PWP's
-                state.</li>
-
-      <li>There needs to be persistence of identifiers across PWP instances.</li>
-    </ul>
-  </section>
-
-  <section>
-  <h2>Canonical versus non-canonical</h2>
-  <p>TBD</p>
-  <ul class="use-cases">
-    <li>It MUST be possible (and necessary) to use, for all cross-references,
-      the canonical locator.</li>
-
-    <li>There MUST be a separation between the identifier (e.g., ISBN) and
-      the (canonical) locator of a specific instance of a PWP.</li>
-
-      <li>The Identifier (e.g., ISBN) MAY serve as a canonical locator for a
-         specific instance of a PWP</li>
-
-      <li>Any set up and mechanism, handling canonical and state-dependent
-           locators, MUST be easily settable on any server (albeit maybe not
-           in the most efficient manner) based on basic server behavior
-           control.</li>
-
-      <li>A PWP Processor MUST be able to combine a relative locator with
-              the canonical as well as state dependent locators of a PWP</li>
-  </ul>
-
-  </section>
+    <p class="note">
+        To be removed.
+    </p>
 </section>
 
 
