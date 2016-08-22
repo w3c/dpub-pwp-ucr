@@ -784,97 +784,55 @@
     </section>
 
 <section>
-  <h1>Sharing, Distribution, and External Resources</h1>
+  <h1>Distribution, Sharing and External Resources</h1>
 
-<section>
- <h2>Distribution</h2>
-    <p>Multiple distribution points and reader devices for a PWP should not result in
-      multiple versions of a PWP.</p>
-  <ul class="use-cases">
-    <li>Publisher Corp. Inc. publishes a new PWP, and sends this PWP to ACME
-    its customers. This PWP is downloaded to devices, or synced across
-    several devices, or made available to a customer-specific cloud.
-    Customers can access this file from different retailers, through different
-    applications, either directly or downloaded from private cloud. Thus, the
-    PWP is duplicated many, many, many, many, many times, resulting in a huge
-    number of items. There is one source manifestation, one ISBN identifier,
-    and lots of items spread across devices and buyers.</li>
-</ul>
+  <section>
+   <h2>The distribution of a PWP should not affect its versioning</h2>
+    <p>Simply distributing or sharing a PWP to multiple destinations and devices should not result in multiple versions of the PWP.</p>
+    <ul class="use-cases">
+      <li>Publisher Corp. Inc. publishes a new PWP and sends it to its distributors and customers. This PWP is downloaded to devices, or synced across several devices, or made available to a customer-specific cloud. Customers can access this file from different retailers, through different applications, either directly or downloaded from a private cloud. Thus, the PWP is duplicated many times, resulting in a huge number of items. There is one source manifestation, therefore one canonical identifier for a large number of items spread across devices and buyers. Those items should not be different versions of the source PWP unless they contain modifications that make them different PWPs.</li>
+      <li>Mary creates a PWP and sends it to Dave and Kristin, who each send it to two friends, who then send it on to their friends. Ultimately there are many copies of Mary's PWP but they are not different versions unless they have been altered; one shall say that they are all “the same” PWP.</li>
+    </ul>
+  </section>
 
-</section>
+  <section>
+    <h2>The distribution of PWPs should conform to the standard processes and expectations of commercial publishing channels.</h2>
+    <ul class="use-cases">
+       <li>Ahmed acquires a PWP on an e-commerce platform. He expects to be able to receive the PWP as a file (rather than only having access to it) and to be able to load it onto its different reading  devices.</li>
+       <li>Bridget buys (rather than subscribes to) a PWP. She expects to have permanent access to that PWP and to be able to make reasonable use of it.</li>
+       <li>Alice acquires a PWP through a subscription service and downloads it. When, later on, she decides to unsubscribe from the service, this PWP becomes unavailable to her.</li>
+       <li>Bill acquires a PWP through a rental service. After a certain period, this PWP becomes unavailable to him.</li>
+       <li>Slicendice Publishing publishes many PWPs, some of which are different versions or subsets or combinations of others. Slicendice needs not only to be able to uniquely identify each unique PWP but also to identify each "copy" or "delivery" ("item") of each of those PWPs so that it can track "what" has been sold and "how many" of each one have been sold.</li>
+       <li>Cobble-It Publishing creates PWPs from a mix of internal content and content licensed from other parties. Using PWP metadata, Cobble-It is able to keep track of the rights associated with the different components so that it can realize income from its own IP and appropriately compensate the parties whose IP it has licensed.</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Retail (???)</h2>
-     <p></p>
-  <ul class="use-cases">
-     <li>(e)books that are sold need to be delivered, so that purchasers can load
-    them on offline devices.</li>
+  <section>
+    <h2>PWPs should support cross-references that can be resolved locally or externally.</h2>
+    <p>A user should have an option to access their local copy of a PWP when there is a choice between a local copy and an external source.</p>
+    <ul class="use-cases">
+     <li>Writer Annie writes a dissertation. She references her Master's thesis, which is published on the university website. Her colleague Bob has read her Master's thesis before and has annotated his copy. When he clicks the reference in Annie's dissertation, he gets redirected to his local copy of Annie's Master's thesis. Her friend, Charlie, hasn't read her Master's thesis before. Charlie needs to be online when clicking the reference in order to access Annie's Master's thesis on the university website.</li>
+    </ul>
+  </section>
 
-     <li>Purchased content has different expectations - one being that you have
-    “something” or a reasonable use of that content in a logical way (such as
-    always being able to read your amazon purchases through the amazon app)</li>
+  <section>
+    <h2>Several PWPs may share external resources.</h2>
+    <p>In order to make serial publications lighter and speed up processing, PWP should support the injection of external resources.</p>
+    <ul class="use-cases">
+      <li>EsteemedPublisher creates a software application to distribute daily journals to readers. These journals share script libraries, CSS files, images and other resources, that are downloaded once in a while by the reading application and cached.</li>
+    </ul>
+  </section>
 
-     <li>Sales Auditing -> Ability to track “what” is sold so that it can be paid.
-    If all content is just free and different chunks are purchased, chasing
-    rights/payments is an issue.  Basically the package can have an ISBN
-    associated so that it can be tracked for sale - even multiple versions.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>PWPs with Shared Resources</h2>
-  <p>Several PWPs may share identical resources.</p>
-  <ul class="use-cases">
-    <li>EsteemedPublisher creates apps to distribute several journals to readers.
-    These apps share script libraries, CSS files, and other resources.
-    Distributing many journals as a package should enable systems to call the
-    shared resources once, speeding up processing and enabling offline reading.
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Cross-references</h2>
-  <p>A user should have an option to pull their local copy of a PWP when
-  there is a choice between a local, annotated copy and third-party source.</p>
-  <ul class="use-cases">
-   <li>Writer Annie writes a dissertation. She references to her Master's
-    thesis, published on the university website. Her colleague Bob has
-    read her Master's thesis before. When he clicks the reference in
-    Annie's dissertation, he gets redirected to his local copy of Annie's
-    Master's thesis. Her friend, Charlie, hasn't read her Master's thesis
-    before. Charlie needs to be online when clicking the reference, to read
-    Annie's Master's thesis. </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Publication with Static Data</h2>
-  <p>TBD</p>
-  <ul class="use-cases">
-  <li>Rosa submitted an article to EsteemedJournal and provided her research
-    data in CSV format. She and EsteemedJournal wish to provide users access
-    to the CSVs when they gain access to her article. EsteemedJournal
-    recommends that the package is built in such a way that a system can query
-    the manifest to assess whether it is situationally appropriate to offer
-    downloads. For example, the package might not offer the option to download
-    the CSV while a user is reading offline. </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Publication with Interactive Data</h2>
-  <p>TBD</p>
-  <ul class="use-cases">
-     <li>(Extension to the Publication with Data use case): the article of Rosa
-    not only includes data, but also interactive graphics relying on that
-    data, with interaction directed through javascript (or other) programming
-    interfaces. These javascript programs may be fairly complex, and may also
-    rely on external libraries (not necessarily integrated into the article
-    itself). </li>
-
-  </ul>
-</section>
+  <section>
+    <h2>PWPs should be able to access external data.</h2>
+    <p>Requirement 2.1.13 states that “There should be a way to differentiate between essential and non-essential resources”; essential resources must be included in the offline version; non-essential resources may be either included also, or accessed online when possible. It is up to the packaging software to decide which resources will be included, and which won’t.</p>
+    <p>This requirement adds the possibility to specify that some data must stay external to the packaged publication.</p>
+    <ul class="use-cases">
+      <li>Rosa has submitted an article to EsteemedJournal and provided her research data in CSV format. She and EsteemedJournal wish to provide users access to the CSVs when accessing her article, but they decide to inactivate the inclusion of the research data in the packaged publication. Albert reads Rosa’s article from a packaged version. When online, he can access the research data, but when offline, he cannot access it and its reading system fails gracefully.</li>
+      <li>Risha publishes an article which includes an interactive component relying on a database access, exposed to the Web as a REST API. The interactive component is implemented as a Javascript library. Such data cannot be included in a packaged publication and the interactive module is of no use without such data. Risha therefore marks the PWP component relative to the interactive module as “not packageable”. Albert reads Risha’s article from a packaged version. When online, he can access the interactive module, but when offline, he cannot access it and its reading system fails gracefully.</li>
+      <li>InteractiveCompany publishes a PWP containing an interactive component implemented as a Javascript library, but this library requires several other JS libraries. The interactive component has not been marked as “not packageable”. The reading system therefore packages all JS libraries required to get the interactive component running offline, with a recursive inspection of the JS code.</li>
+    </ul>
+  </section>
 
 </section>
 <section>
