@@ -1321,5 +1321,43 @@ Collections
     <p>Anna wants to share annotations—via email, Twitter, Slack—, with links back to them in situ in her PWP copy.</p>
   </section>
 </section>
+
+<section>
+  <h1>Security</h1>
+  <section>
+    <h2>User Agents must be allowed to limit the capabilities of Portable Web Publications</h2>
+    <p>The compatibility and interoperability requirements of the specification must not prevent User Agents from taking measures to protect the security, safety, or privacy of the User. Security-conscious systems that interlink an unusually large number of important services and have an unusually large attack surface (such as web browsers or web services) have stricter security requirements than standalone apps that are siloed from the web. They must be allowed to continue to fulfil their pre-existing security requirements as they implement support for the Portable Web Publications format.</p>
+    <ul class="use-cases">
+      <li>Alice opens a malicious PWP in her browser. The malicious PWP tries to exploit a flaw in a social media service to take over her account but blocked by her browser’s security measures.</li>
+      <li>Joe, a student, has completed his classroom assignment which was to use PWP annotations to complete the text’s quizzes, and uploads the document to the school’s classroom management web service. The teacher can safely read the PWP on the web because the service has automatically stripped the document of all untrusted scripts.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Capabilities discovery</h2>
+    <p>A document’s access to features and APIs will vary from platform to platform, app to app. Document authors would benefit from being able to discover what capabilities their documents will have access to. </p>
+    <ul class="use-cases">
+      <li>Luke has written a nonfiction book on web development. To discover which APIs he can demonstrate directly in the PWP and which he can’t he uses a <a href="http://www.w3.org/TR/permissions/" title="W3C - Permissions">permissions API</a> combined with feature detection to let the text discover what capabilities it has access to at each read. standardising an "always available" safe subset of the platform's capabilities, or documenting specific methods progressive enhancement or graceful degradation that the author should be able to use to safely create their documents.</li>
+      <li>Jill has written a detailed data analysis report for her manager that uses complex interactive graphs to display the results. These graphs work in the manager’s User Agent because the script driving them uses a previously specified ‘always safe’ API subset that User Agent’s have committed to enabling even when the capabilities of the document are otherwise limited, e.g. for security.</li>
+      <li>Jack has written an interactive children’s book. Because he has followed published guidelines on how to make texts that progressively enhance or gracefully degrade, all of his readers can experience the text, even if they don’t have access to all the features, all the time.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Preserving the integrity of the document</h2>
+    <p>Scripted documents are dynamic by nature. Long-lived authored documents are vulnerable to alteration by a variety of external factors. PWP authors should be able to embed guidance policies in their documents that inform the User Agent of their preferences as to how the integrity and security of the document itself should be preserved. This mechanism should be based on the pre-existing <a href="http://www.w3.org/TR/CSP/" title="W3C - Content Security Policy">Content Security Policy</a> and <a href="http://www.w3.org/TR/SRI/" title="W3C - Subresource Integrity">Subresource Integrity</a> specifications and not be a new invention incompatible with web browser CSP implementations.</p>
+    <ul class="use-cases">
+      <li>Jill’s data analysis report used an externally hosted script to generate her interactive graphs. To ensure that these scripts do not violate her manager’s privacy, she includes a CSP whitelist in the document that tells the User Agent that it should only load that external script and not any of the third party services the script wants to load as well.</li>
+      <li>After Jill’s report has been in the archive for a year, Simon, the manager, wants to revisit the analysis for his own end-of-year report. But because the domain for the external web service has lapsed, it has been taken over by a malicious actor who replaced its scripted graphs with graphs that display random numbers and nonsense. But because Jill’s authoring system used Subresource Integrity attributes the User Agent refuses to load the malware and instead the document degrades gracefully to showing static—correct—graphs.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Escalating trust</h2>
+    <p>Platform vendors have sometimes offered methods for otherwise untrusted local scripts to become trusted and regain API privileges that the had lost while untrusted. User Agents may provide a method for escalating trust so that publications the UA otherwise would have limited for security reasons may gain access to more capabilities.</p>
+    <ul class="use-cases">
+      <li>Luke has written another book, this time using all of the capabilities of the web platform that he can think of. He submits the book for review to a PWP retail platform. After review, the book is listed in the retailer’s store. When bought, the book runs with the full capabilities of the platform because it has been code signed by the platform vendor.</li>
+    </ul>
+  </section>
+</section>
+
+
 </body>
 </html>
