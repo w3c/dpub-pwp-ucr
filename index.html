@@ -109,31 +109,35 @@
         ul.definition li ul, ol.definition li ul {
             margin-top: 0.3em;
         }
+
+        dl.pwpintro dd {
+            font-style: italic;
+        }
+
+        dl.pwpintro dd::before {
+            content: "— i.e.: "
+        }
+
     </style>
   </head>
   <body>
     <section id='abstract'>
+        <p>A <strong>Portable Web Publication (PWP)</strong> is</p>
+        <dl class="pwpintro">
+            <dt>portable</dt>
+            <dd>online &amp; offline, original “canonicals” and individual copies</dd>
+            <dt>bounded package of media</dt>
+            <dd>a folder or archive, “internally complete”</dd>
+            <dt>in web-standard formats</dt>
+            <dd>HTML5, CSS, JS, images, video, audio, etc…</dd>
+            <dt>accessible by standard Web protocols</dt>
+            <dd>HTTP, URI</dd>
+            <dt>and consumable by standard Web tools.</dt>
+            <dd>Web based user agents &amp; apps—including browsers—based on them</dd>
+        </dl>
+
       <p>
-<strong>A Portable Web Publication is a</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>portable</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <em>i.e.: online &amp; offline, original “canonicals” and individual copies</em><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>bounded package of media</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <em>i.e.: a folder or archive, “internally complete”</em><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>in web-standard formats</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <em>i.e.: HTML5, CSS, JS, images, video, audio, etc…</em>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>accessible by web-standard protocols</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <em>i.e.: HTTP, URI</em><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>and consumable by web-standard tools.</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <em>i.e.: web renderers &amp; apps—including browsers—based on them</em>
-      </p>
-        <!--collection of content items (e.g.,
-        pages, chapters, modules, articles) whose content is compatible with
-        Web usage, and structured as a single, self-contained logical unit.-->
-      <p>
-        This document describes the use cases that inform the requirements
-        for a Portable Web Publication, and should be read as part of the
-        <a href="https://www.w3.org/TR/pwp/">Portable Web Publications for
-        the Open Web Platform</a>.
+        This document describes the use cases that correspond to the requirements for a Portable Web Publication. It provides the basis for the technical considerations for the “Portable Web Publications for the Open Web Platform” document&nbsp;[[pwp]].
       </p>
     </section>
 
