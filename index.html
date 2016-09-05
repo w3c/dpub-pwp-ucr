@@ -49,6 +49,12 @@
               }]
             }
           ],
+          alternateFormats: [
+              {
+                uri: "pwp-ucr.epub",
+                label: "ePub"
+              }
+          ],
           edDraftURI: "http://w3c.github.io/dpub-pwp-ucr/",
       };
     </script>
@@ -120,7 +126,14 @@
         dl.pwpintro dd::before {
             content: "— i.e.: "
         }
-
+        span.orcid a {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            transform: translateY(15px);
+        }
+        span.orcid a img {
+            transform: translateY(0.18em) translateX(-0.18em);
+        }
     </style>
   </head>
   <body>
