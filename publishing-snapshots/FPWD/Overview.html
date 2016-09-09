@@ -8,6 +8,7 @@
     /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
 */
     
     .hljs {
@@ -397,6 +398,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     {
       "preProcess": [
         null,
+        null,
         null
       ],
       "specStatus": "ED",
@@ -523,7 +525,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </dl>
 
     <p>
-      This document describes the use cases that correspond to the requirements for a Portable Web Publication. It provides the basis for the technical considerations for the “Portable Web Publications for the Open Web Platform” document&nbsp;[<cite><a href="#bib-pwp" class="bibref">pwp</a></cite>].
+      This document describes the use cases that correspond to the requirements for a Portable Web Publication. It provides the basis for the technical considerations in the “Portable Web Publications for the Open Web Platform” document&nbsp;[<cite><a href="#bib-pwp" class="bibref">pwp</a></cite>] companion document.
     </p>
   </section>
 
@@ -653,10 +655,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <li class="tocline"><a class="tocxref" href="#escalating_trust"><span class="secno">10.4 </span>Escalating trust</a></li>
         </ol>
       </li>
-      <li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A. </span>Acknowledgements</a></li>
-      <li class="tocline"><a class="tocxref" href="#references"><span class="secno">B. </span>References</a>
+      <li class="tocline"><a class="tocxref" href="#req_list"><span class="secno">A. </span>List of Requirements</a></li>
+      <li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgements</a></li>
+      <li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a>
         <ol class="toc">
-          <li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">B.1 </span>Informative references</a></li>
+          <li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.1 </span>Informative references</a></li>
         </ol>
       </li>
     </ol>
@@ -675,7 +678,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
     <p>We believe there is great value in combining this older tradition of portable, bounded publications with the pervasive accessibility, addressability, and interconnectedness of the Open Web Platform (OWP). New models of economic sustainability, innovative experiences of knowledge and invigorated socio-cultural engagement depend on this.</p>
 
-    <p>It is the task of this <abbr title="World Wide Web Consortium">W3C</abbr> Digital Publishing Interest Group to explore the uniqueness, desirability, and feasibility of bringing these two great models of publishing together. This document explores requirements based on examples of real world use cases and scenarios. The fundamental, baseline requirements that form the heart of what is expected from a PWP are described first, followed by requirements and use cases that describe additional, strongly desired scenarios.</p>
+    <p>It is the task of this <abbr title="World Wide Web Consortium">W3C</abbr> Digital Publishing Interest Group to explore the uniqueness, desirability, and feasibility of bringing these two great models of publishing together. This document explores requirements based on examples of real world use cases and scenarios. The fundamental, baseline requirements that form the heart of what is expected from a PWP are described first, followed by requirements and use cases that describe additional, strongly desired scenarios. The complete list of requirements is also collected in a separate table in
+      <a class="sec-ref" href="#req_list"><span class="secno">A.</span> <span class="sec-title">List of Requirements</span></a>.
+    </p>
 
     <section property="bibo:hasPart" resource="#terminology" typeof="bibo:Chapter" id="terminology">
       <h3 resource="#h-terminology" id="h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Terminology</span></h3>
@@ -1569,9 +1574,227 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
   </section>
 
+  <section property="bibo:hasPart" resource="#req_list" typeof="bibo:Chapter" class="appendix" id="req_list">
+    <!--OddPage-->
+    <h2 resource="#h-req_list" id="h-req_list"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>List of Requirements</span></h2>
+    <table class="zebra" id="reqtable">
+      <tbody>
+        <tr>
+          <th>
+            Number and reference
+          </th>
+          <th>
+            Short description
+          </th>
+        </tr>
+
+        <tr>
+          <td><a href="#r_browser">Req. 1</a></td>
+          <td>The publication should be readable in a browser</td>
+        </tr>
+        <tr>
+          <td><a href="#r_owp">Req. 2</a></td>
+          <td>PWPs should be able to make use of all facilities offered by the OWP</td>
+        </tr>
+        <tr>
+          <td><a href="#r_pag">Req. 3</a></td>
+          <td>It should be possible to see the publication in a “paginated” view</td>
+        </tr>
+        <tr>
+          <td><a href="#r_onloffl">Req. 4</a></td>
+          <td>The same PWP should be available both online and offline</td>
+        </tr>
+        <tr>
+          <td><a href="#r_statetrans">Req. 5</a></td>
+          <td>There should be a smooth transition between offline and online states of the same publication</td>
+        </tr>
+        <tr>
+          <td><a href="#r_uniqres">Req. 6</a></td>
+          <td>It should be possible to create and distribute a PWP as a uniquely identified single resource unit</td>
+        </tr>
+        <tr>
+          <td><a href="#r_pwpcoll">Req. 7</a></td>
+          <td>A publication may consist of a collection of resources</td>
+        </tr>
+        <tr>
+          <td><a href="#r_multimedia">Req. 8</a></td>
+          <td>The notion of a PWP should enable specific publications like audio books, graphics books, and mixed media</td>
+        </tr>
+        <tr>
+          <td><a href="#r_p13n">Req. 9</a></td>
+          <td>The reader must have the possibility to personalize his or her reading experience</td>
+        </tr>
+        <tr>
+          <td><a href="#r_discover">Req. 10</a></td>
+          <td>The publication must be discoverable</td>
+        </tr>
+        <tr>
+          <td><a href="#r_version">Req. 11</a></td>
+          <td>There should be a way to control versioning and revisioning</td>
+        </tr>
+        <tr>
+          <td><a href="#r_essential">Req. 12</a></td>
+          <td>There should be a way to differentiate between essential and non-essential resources</td>
+        </tr>
+        <tr>
+          <td><a href="#r_protections">Req. 13</a></td>
+          <td>A PWP should allow for access control and write protections of the resource</td>
+        </tr>
+        <tr>
+          <td><a href="#r_horizdep">Req. 14</a></td>
+          <td>The publication should conform to all the requirements of horizontal dependencies</td>
+        </tr>
+        <tr>
+          <td><a href="#r_single">Req. 15</a></td>
+          <td>User agents must treat a PWP, regardless of the number of components, as a single unit as opposed to individual documents</td>
+        </tr>
+        <tr>
+          <td><a href="#r_con-res">Req. 16</a></td>
+          <td>The information regarding the constituent resources of a PWP must be easily discovered</td>
+        </tr>
+        <tr>
+          <td><a href="#r_read-order">Req. 17</a></td>
+          <td>Find the (default) reading order of the resources of a PWP easily</td>
+        </tr>
+        <tr>
+          <td><a href="#r_uniq-id-state">Req. 18</a></td>
+          <td>There should be a way to uniquely identify a publication regardless of its state</td>
+        </tr>
+        <tr>
+          <td><a href="#r_dyn-content">Req. 19</a></td>
+          <td>The PWP needs to have an explicit “offline mode” alternative</td>
+        </tr>
+        <tr>
+          <td><a href="#r_distro">Req. 20</a></td>
+          <td>The distribution of a PWP should not affect its versioning</td>
+        </tr>
+        <tr>
+          <td><a href="#r_process">Req. 21</a></td>
+          <td>The distribution of PWPs should conform to the standard processes and expectations of commercial publishing channels</td>
+        </tr>
+        <tr>
+          <td><a href="#r_cross-ref">Req. 22</a></td>
+          <td>PWPs should support cross-references that can be resolved locally or externally</td>
+        </tr>
+        <tr>
+          <td><a href="#r_extres">Req. 23</a></td>
+          <td>Several PWPs may share external resources</td>
+        </tr>
+        <tr>
+          <td><a href="#r_extdata">Req. 24</a></td>
+          <td>PWPs should be able to access external data</td>
+        </tr>
+        <tr>
+          <td><a href="#r_manifest-metadata">Req. 25</a></td>
+          <td>Manifests should include the technical and descriptive metadata, and basic characteristics of the constituent resources</td>
+        </tr>
+        <tr>
+          <td><a href="#r_streamlining">Req. 26</a></td>
+          <td>Manifest should make it possible to provide a streamlined access to disjoint parts of the publication</td>
+        </tr>
+        <tr>
+          <td><a href="#r_changenotice">Req. 27</a></td>
+          <td>Manifest should include information of new content</td>
+        </tr>
+        <tr>
+          <td><a href="#r_manifest-links">Req. 28</a></td>
+          <td>Manifest should include means to use links to resources, regardless of location</td>
+        </tr>
+        <tr>
+          <td><a href="#r_manifest-reading">Req. 29</a></td>
+          <td>The manifest may include alternative reading orders</td>
+        </tr>
+        <tr>
+          <td><a href="#r_manifest-flex">Req. 30</a></td>
+          <td>The access methods for retrieving a manifest should allow for significant flexibility</td>
+        </tr>
+        <tr>
+          <td><a href="#r_manifest-comb">Req. 31</a></td>
+          <td>There should be a possibility to combine manifests from several origins</td>
+        </tr>
+        <tr>
+          <td><a href="#r_locator-ind-dep">Req. 32</a></td>
+          <td>A common, state-independent locator needs to exist</td>
+        </tr>
+        <tr>
+          <td><a href="#r_locator_fi_fd">Req. 33</a></td>
+          <td>There must also be a separation between state-independent and state-dependent locators</td>
+        </tr>
+        <tr>
+          <td><a href="#r_locator-rel">Req. 34</a></td>
+          <td>It should be possible to use, in all circumstances, a relative locator to refer to content within a PWP</td>
+        </tr>
+        <tr>
+          <td><a href="#r_locator-state">Req. 35</a></td>
+          <td>When providing a pointer to any or all of a publication, this should be robust across &lt;a href="#states"&gt;states&lt;/a&gt;</td>
+        </tr>
+        <tr>
+          <td><a href="#r_identifier">Req. 36</a></td>
+          <td>Identifiers must be persistent and usable across states, and not conflict with locators</td>
+        </tr>
+        <tr>
+          <td><a href="#r_archdisc">Req. 37</a></td>
+          <td>The locations of all PWP components should be discoverable</td>
+        </tr>
+        <tr>
+          <td><a href="#r_archnewvers">Req. 38</a></td>
+          <td>There should be a way to discover that a new version of one or more PWP components have been published</td>
+        </tr>
+        <tr>
+          <td><a href="#r_archnewcomp">Req. 39</a></td>
+          <td>There should be a way to discover that one or more new components have been added to a PWP</td>
+        </tr>
+        <tr>
+          <td><a href="#r_archdelcomp">Req. 40</a></td>
+          <td>There should be a way to discover that one or more PWP components have been removed from a PWP</td>
+        </tr>
+        <tr>
+          <td><a href="#r_archmetadata">Req. 41</a></td>
+          <td>There should be a way to indicate whether one or more PWP components contain structured descriptive metadata</td>
+        </tr>
+        <tr>
+          <td><a href="#r_acc-metadata">Req. 42</a></td>
+          <td> Accessibility of a PWP must be discoverable</td>
+        </tr>
+        <tr>
+          <td><a href="#r_acc-alt-media">Req. 43</a></td>
+          <td>A PWP must support the ability to include multiple renditions of a publication</td>
+        </tr>
+        <tr>
+          <td><a href="#r_custompwp">Req. 44</a></td>
+          <td>A PWP needs to support the ability to construct a limited package with only a subset of the necessary content</td>
+        </tr>
+        <tr>
+          <td><a href="#r_time">Req. 45</a></td>
+          <td>A PWP needs to support both time-based media and text</td>
+        </tr>
+        <tr>
+          <td><a href="#r_acc-annotation">Req. 46</a></td>
+          <td>When annotations are distributed and associated with a PWP, the content of the annotation must be compatible with assistive technology</td>
+        </tr>
+        <tr>
+          <td><a href="#r_sec-limit">Req. 47</a></td>
+          <td>User agents must be allowed to limit the capabilities of a PWP</td>
+        </tr>
+        <tr>
+          <td><a href="#r_sec-discovery">Req. 48</a></td>
+          <td>It should be possible to discover the capabilities a PWP will have access to</td>
+        </tr>
+        <tr>
+          <td><a href="#r_sec-integrity">Req. 49</a></td>
+          <td>PWP authors should be able to embed guidance policies in their documents that inform the user agent of their preferences as to how the integrity and security of the document itself should be preserved</td>
+        </tr>
+        <tr>
+          <td><a href="#r_sec-trust">Req. 50</a></td>
+          <td>User agents may provide a method for escalating trust</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
   <section property="bibo:hasPart" resource="#acknowledgements" typeof="bibo:Chapter" class="appendix" id="acknowledgements">
     <!--OddPage-->
-    <h2 resource="#h-acknowledgements" id="h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Acknowledgements</span></h2>
+    <h2 resource="#h-acknowledgements" id="h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>Acknowledgements</span></h2>
     <p>The following people have been instrumental in providing thoughts, feedback, reviews, content, criticism, and input in the creation of this document:</p>
 
     <div style="margin-left: 3em">
@@ -1582,10 +1805,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section property="bibo:hasPart" resource="#references" typeof="bibo:Chapter" id="references" class="appendix">
     <!--OddPage-->
-    <h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>References</span></h2>
+    <h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>References</span></h2>
 
     <section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references">
-      <h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.1 </span>Informative references</span></h3>
+      <h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C.1 </span>Informative references</span></h3>
       <dl resource="" class="bibliography"><dt id="bib-annotation-model">[annotation-model]</dt>
         <dd>Robert Sanderson; Paolo Ciccarese; Benjamin Young. W3C. <a property="dc:references" href="https://www.w3.org/TR/annotation-model/"><cite>Web Annotation Data Model</cite></a>. 6 September 2016. W3C Candidate Recommendation. URL: <a property="dc:references" href="https://www.w3.org/TR/annotation-model/">https://www.w3.org/TR/annotation-model/</a>
         </dd><dt id="bib-csp2">[csp2]</dt>

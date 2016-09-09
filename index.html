@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="extras.css">
     <script class='remove'>
       var respecConfig = {
-          preProcess : [collectreqs, fullreqref],
+          preProcess : [collectreqs, fullreqref, listreq],
           specStatus: "ED",
           shortName:  "pwp-ucr",
           editors: [
@@ -103,8 +103,8 @@
       <p>
         This document describes the use cases that correspond to the requirements
         for a Portable Web Publication. It provides the basis for the technical
-        considerations for the “Portable Web Publications for the Open Web
-        Platform” document&nbsp;[[pwp]].
+        considerations in the “Portable Web Publications for the Open Web
+        Platform” document&nbsp;[[pwp]] companion document.
       </p>
     </section>
 
@@ -143,7 +143,10 @@
           requirements based on examples of real world use cases and scenarios.
           The fundamental, baseline requirements that form the heart of what is
           expected from a PWP are described first, followed by requirements and
-          use cases that describe additional, strongly desired scenarios.</p>
+          use cases that describe additional, strongly desired scenarios.
+          The complete list of requirements is also collected in a separate table in
+          <a href="#req_list"></a>.
+    </p>
 
         <section>
           <h2>Terminology</h2>
@@ -1769,6 +1772,21 @@
               the platform because it has been code signed by the platform vendor.</li>
             </ul>
         </section>
+    </section>
+
+    <section class="appendix" id="req_list">
+        <h2>List of Requirements</h2>
+        <table class="zebra" id="reqtable">
+            <tr>
+                <th>
+                    Number and reference
+                </th>
+                <th>
+                    Short description
+                </th>
+            </tr>
+
+        </table>
     </section>
 
     <section class="appendix" id="acknowledgements">

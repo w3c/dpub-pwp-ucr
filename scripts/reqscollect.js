@@ -65,6 +65,30 @@ function fullreqref() {
 	});
 }
 
+// List of all requirements, one per table row
+function listreq() {
+	$("#reqtable").each( function(i) {
+		var $table = $(this);
+		reqInfo.forEach( function(element, index, array) {
+			// Add a new table row to the table itself
+			var $row = $("<tr></tr>");
+			$table.append($row);
+
+			cellref = $("<td></td>");
+			$row.append(cellref)
+			reqref = $("<a></a>");
+			cellref.append(reqref);
+			reqref.attr("href","#" + element.id);
+			reqref.text(element.title)
+
+			celltitle = $("<td></td>");
+			$row.append(celltitle);
+			celltitle.text(element.content);
+		})
+	})
+}
+
+
 require(["core/pubsubhub"], function(respecEvents) {
 	respecEvents.sub("end-all", function() {
 		//alert("asdfas")
