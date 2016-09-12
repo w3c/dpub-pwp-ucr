@@ -3,12 +3,15 @@
   <head>
     <title>Portable Web Publications Use Cases and Requirements</title>
     <meta charset='utf-8'>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
-    <script src="scripts/reqscollect.js" class="remove"></script>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove' async></script>
+    <script src="scripts/rcollect.js" class="remove"></script>
+    <script src="scripts/rdisplay.js" class="remove"></script>
     <link rel="stylesheet" href="extras.css">
     <script class='remove'>
       var respecConfig = {
-          // preProcess : [ fullreqref],
+          preProcess : [rcollect, rdisplay],
+          postProcess : [rstore],
+
           specStatus: "ED",
           shortName:  "pwp-ucr",
           editors: [
@@ -170,7 +173,7 @@
         <h1>PWP Fundamentals - Authors and Readers</h1>
         <section id="browser">
             <h3>Browser Readability</h3>
-            <p class="req" id="r_browser">The publication should be readable in a browser.</p>
+            <p class="req-set" id="r_browser">The publication should be readable in a browser.</p>
 
             <p>Reading publications of any length should not be restricted
             to specific devices or applications; publications should be equally
@@ -199,7 +202,7 @@
 
         <section id='pwp-owp'>
               <h3>Open Web Platform</h3>
-            <p class="req" id="r_owp">PWPs should be able to make use of all facilities offered by the OWP.</p>
+            <p class="req-set" id="r_owp">PWPs should be able to make use of all facilities offered by the OWP.</p>
 
             <p>There is a formidable development of visualization systems,
               interactive tools, and other powerful facilities that are
@@ -254,7 +257,7 @@
 
         <section id='pagination'>
           <h3>Pagination</h3>
-            <p class="req" id="r_pag">It should be possible to see the publication in a “paginated” view.</p>
+            <p class="req-set" id="r_pag">It should be possible to see the publication in a “paginated” view.</p>
 
             <p>Whereas a “scrolling” view is the dominating approach on
               the Web in Web browsers, publications must provide the
@@ -294,7 +297,7 @@
 
         <section id='fundamental-online-offline'>
             <h3>Online and Offline</h3>
-            <p class="req" id="r_onloffl">The same PWP should be available both online and offline.</p>
+            <p class="req-set" id="r_onloffl">The same PWP should be available both online and offline.</p>
 
             <p>The same content of the PWP should be accessible
               offline, if circumstances so dictate, without the necessity
@@ -344,7 +347,7 @@
 
         <section id='fundamental-transition'>
             <h3>State Transitions</h3>
-            <p class="req" id="r_statetrans">There should be a smooth transition between offline and online states of the same publication.</p>
+            <p class="req-set" id="r_statetrans">There should be a smooth transition between offline and online states of the same publication.</p>
 
             <p>Accessing a document online or offline should not require
             conversions from one storage format to the other. The
@@ -377,7 +380,7 @@
 
         <section id='distribute-uniquely'>
           <h3>Distribution of a Single Resource Unit</h3>
-            <p class="req" id="r_uniqres">It should be possible to create and distribute a PWP as a uniquely identified single resource unit.</p>
+            <p class="req-set" id="r_uniqres">It should be possible to create and distribute a PWP as a uniquely identified single resource unit.</p>
 
             <p>A PWP, no matter how many pieces, must be distributable
               to readers or consumers as a single unit for distribution
@@ -406,7 +409,7 @@
 
         <section id="pwp-collection">
             <h3>Collections</h3>
-            <p class="req" id="r_pwpcoll">A publication may consist of a collection of resources.</p>
+            <p class="req-set" id="r_pwpcoll">A publication may consist of a collection of resources.</p>
 
             <p>A PWP is likely to consist of
               a variety of web resources, including HTML,
@@ -453,7 +456,7 @@
 
         <section id="multimedia">
             <h3>Multimedia PWPs</h3>
-            <p class="req" id="r_multimedia">The notion of a PWP should enable specific publications like audio books, graphics books, and mixed media.</p>
+            <p class="req-set" id="r_multimedia">The notion of a PWP should enable specific publications like audio books, graphics books, and mixed media.</p>
 
             <p>All concepts and structures related to a PWP should
             enable the creation and/or production of video or audio
@@ -493,7 +496,7 @@
 
         <section id="personalized">
           <h3>Personalization</h3>
-            <p><span class="req" id="r_p13n">The reader must have the possibility to personalize his or her reading experience.</span> This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of voice, etc. This should be done via a proper interactive dialogue and/or a choice among pre-defined possibilities.</p>
+            <p><span class="req-set" id="r_p13n">The reader must have the possibility to personalize his or her reading experience.</span> This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of voice, etc. This should be done via a proper interactive dialogue and/or a choice among pre-defined possibilities.</p>
 
             <ul class="use-cases">
               <li>Olga, a dyslexic student, downloads a textbook and
@@ -512,7 +515,7 @@
 
         <section id="discover">
             <h3>Discoverability</h3>
-            <p class="req" id="r_discover">The publication must be discoverable.</p>
+            <p class="req-set" id="r_discover">The publication must be discoverable.</p>
 
             <p>During the discovery phase, as a reader decides whether to
             acquire and download a publication, he or she will want to
@@ -524,12 +527,12 @@
                     which includes audio tracks of bird calls.</li>
             </ul>
 
-            <p>See also <a class="fullReqRef" href="#r_acc-metadata"></a>.</p>
+            <p>See also <a class="req-ref-full" href="#r_acc-metadata"></a>.</p>
         </section>
 
         <section id="versioning">
             <h3>Version Control</h3>
-            <p class="req" id="r_version">There should be a way to control versioning and revisioning.</p>
+            <p class="req-set" id="r_version">There should be a way to control versioning and revisioning.</p>
 
             <p>There should be the capability for providing revisions
             or new versions to users. The online and offline version
@@ -543,12 +546,12 @@
                 version with the update.</li>
             </ul>
 
-            <p>See also <a class="fullReqRef" href="#r_distro"></a>.</p>
+            <p>See also <a class="req-ref-full" href="#r_distro"></a>.</p>
         </section>
 
         <section id="non-essential-resources">
             <h3>Essential and Non-essential Resources</h3>
-            <p class="req" id="r_essential">There should be a way to differentiate between essential and non-essential resources.</p>
+            <p class="req-set" id="r_essential">There should be a way to differentiate between essential and non-essential resources.</p>
 
             <p>Preserving essential content is the job of the reading
             system. However, having a clear indication within the
@@ -630,7 +633,7 @@
 
         <section id='acwp'>
             <h3>Access Control and Write Protections</h3>
-            <p class="req" id="r_protections">A PWP should allow for access control and write protections of the resource.</p>
+            <p class="req-set" id="r_protections">A PWP should allow for access control and write protections of the resource.</p>
 
             <ul class="use-cases">
                 <li>A library may loan the publication for two weeks; the PWP
@@ -655,7 +658,7 @@
         <h2>PWP Fundamentals - Implementation Requirements</h2>
         <section id="find-information">
             <h3>Horizontal Dependencies</h3>
-            <p class="req" id="r_horizdep">The publication should conform to
+            <p class="req-set" id="r_horizdep">The publication should conform to
             all the requirements of horizontal dependencies.</p>
 
             <p>Web content has to be consumed under different
@@ -794,7 +797,7 @@
 
         <section id="single-package">
             <h3>Single Unit</h3>
-            <p class="req" id="r_single">User agents must treat a PWP, regardless of the number of components, as a single unit as opposed to individual documents.</p>
+            <p class="req-set" id="r_single">User agents must treat a PWP, regardless of the number of components, as a single unit as opposed to individual documents.</p>
 
             <ul class="use-cases">
               <li>User agent must be able to search a complete PWP as
@@ -816,7 +819,7 @@
 
         <section id="constituent-resources">
           <h3>Constituent Resources</h3>
-          <p class="req" id="r_con-res">The information regarding the constituent resources of a PWP must be easily discovered.</p>
+          <p class="req-set" id="r_con-res">The information regarding the constituent resources of a PWP must be easily discovered.</p>
 
           <p>A PWP will likely be composed of multiple web documents. A
             more complicated PWP may have many more components, meaning
@@ -846,7 +849,7 @@
 
         <section id="reading-order">
           <h3>Default Reading Order</h3>
-          <p class="req" id="r_read-order">Find the (default) reading order of the resources of a PWP easily.</p>
+          <p class="req-set" id="r_read-order">Find the (default) reading order of the resources of a PWP easily.</p>
 
           <p>A user agent needs to know the sequence in which to present
           components of a PWP to the user. A PWP will likely be composed
@@ -874,7 +877,7 @@
 
       <section id="unique-identifier">
           <h3>Uniquely Identifying a PWP</h3>
-          <p class="req" id="r_uniq-id-state">There should be a way to uniquely identify a publication regardless of its state.</p>
+          <p class="req-set" id="r_uniq-id-state">There should be a way to uniquely identify a publication regardless of its state.</p>
 
           <p>A unique identification of a specific publication,
             regardless of whether it is online or offline, or whether it
@@ -951,7 +954,7 @@
 
         <section id="dyn-content">
             <h3>Dynamic Content</h3>
-            <p class="req" id="r_dyn-content">The PWP needs to have an explicit
+            <p class="req-set" id="r_dyn-content">The PWP needs to have an explicit
               “offline mode” alternative.</p>
 
             <p> It is possible that certain items will be dynamic, requiring the
@@ -980,7 +983,7 @@
 
         <section id="distro-vers">
             <h3>Distribution and Versioning</h3>
-            <p class="req" id="r_distro">The distribution of a PWP should not affect its versioning.</p>
+            <p class="req-set" id="r_distro">The distribution of a PWP should not affect its versioning.</p>
 
             <p>Simply distributing or sharing a PWP to multiple destinations and devices
             should not result in multiple versions of the PWP. Those items
@@ -1006,7 +1009,7 @@
 
         <section id='pwp-process'>
             <h3>Distribution Process</h3>
-            <p class="req" id="r_process">The distribution of PWPs should conform to the standard processes and expectations of commercial publishing channels.</p>
+            <p class="req-set" id="r_process">The distribution of PWPs should conform to the standard processes and expectations of commercial publishing channels.</p>
 
             <ul class="use-cases">
                <li>Ahmed acquires a PWP on an e-commerce platform. He expects to be able
@@ -1041,7 +1044,7 @@
 
         <section id='cross-ref'>
             <h3>Cross-referencing</h3>
-            <p class="req" id="r_cross-ref">PWPs should support cross-references that can be resolved locally or externally.</p>
+            <p class="req-set" id="r_cross-ref">PWPs should support cross-references that can be resolved locally or externally.</p>
 
             <p>A user should have an option to access their local copy of a PWP when
             there is a choice between a local copy and an external source.</p>
@@ -1059,7 +1062,7 @@
 
         <section id='extres'>
             <h3>Sharing External Resources</h3>
-            <p class="req" id="r_extres">Several PWPs may share external resources.</p>
+            <p class="req-set" id="r_extres">Several PWPs may share external resources.</p>
 
             <p>In order to make serial publications lighter and speed up processing, a PWP
             should support the injection of external resources.</p>
@@ -1074,9 +1077,9 @@
 
         <section id='extdata'>
             <h3>External Data</h3>
-            <p class="req" id="r_extdata">PWPs should be able to access external data.</p>
+            <p class="req-set" id="r_extdata">PWPs should be able to access external data.</p>
 
-            <p>This is related to <a class="fullReqRef" href="#r_essential"></a>. That requirement states that essential resources must be included in the offline version; non-essential resources may be either included, too, or accessed online when possible. It is up to the packaging software to decide which resources will be included, and which will not. This requirement adds the possibility to specify that some data must stay external to the packaged publication.</p>
+            <p>This is related to <a class="req-ref-full" href="#r_essential"></a>. That requirement states that essential resources must be included in the offline version; non-essential resources may be either included, too, or accessed online when possible. It is up to the packaging software to decide which resources will be included, and which will not. This requirement adds the possibility to specify that some data must stay external to the packaged publication.</p>
 
             <ul class="use-cases">
                 <li>Rosa has submitted an article to EsteemedJournal and provided her
@@ -1118,13 +1121,13 @@
 
         <p>Some fundamental use cases and requirements already imply the usage of manifests. For example:</p>
         <ul>
-            <li><a class="fullReqRef" href="#r_horizdep"></a></li>
-            <li><a class="fullReqRef" href="#r_read-order"></a></li>
+            <li><a class="req-ref-full" href="#r_horizdep"></a></li>
+            <li><a class="req-ref-full" href="#r_read-order"></a></li>
         </ul>
 
         <section id="technical-metadata">
               <h3>Manifests, Metadata, and Resources</h3>
-              <p class="req" id="r_manifest-metadata">Manifests should include the technical and descriptive metadata, and basic characteristics of the constituent resources.</p>
+              <p class="req-set" id="r_manifest-metadata">Manifests should include the technical and descriptive metadata, and basic characteristics of the constituent resources.</p>
 
               <p>A user agent requires information about the package and its components
               in order to process it. For example, performance and memory requirements may
@@ -1170,7 +1173,7 @@
     <!--
         <section>
           <h3>Manifests and General Metadata</h3>
-            <p class="req" id="r_genmeta">The manifest should provide access to the
+            <p class="req-set" id="r_genmeta">The manifest should provide access to the
               general metadata of a publication.</p>
             <ul class="use-cases">
                 <li>The manifest may be a "first point of entry" for the user agent
@@ -1183,7 +1186,7 @@
     -->
         <section id="streamlining">
             <h3>Streamlining a PWP</h3>
-            <p class="req" id="r_streamlining">Manifest should make it possible to provide a streamlined access to disjoint parts of the publication.</p>
+            <p class="req-set" id="r_streamlining">Manifest should make it possible to provide a streamlined access to disjoint parts of the publication.</p>
 
             <p>It should be possible for the author to convey several potential <a
                 href="#reading-order">reading orders</a> that may go beyond the
@@ -1209,7 +1212,7 @@
 
         <section id="change_notices">
               <h3>Change Notices</h3>
-              <p class="req" id="r_changenotice">Manifest should include information of new content.</p>
+              <p class="req-set" id="r_changenotice">Manifest should include information of new content.</p>
 
               <p>The manifest should include information that makes it possible for a
               user agent to find out whether a specific content has changed since a last
@@ -1233,7 +1236,7 @@
 
         <section id="manifest_links">
               <h3>Manifests and Links</h3>
-              <p class="req" id="r_manifest-links">Manifest should include means to use links to resources, regardless of location.</p>
+              <p class="req-set" id="r_manifest-links">Manifest should include means to use links to resources, regardless of location.</p>
               <p>The fundamental requirement on identification already states that there
               should be a way to uniquely identify a publication (see <a
               href="#unique-identifier"></a>). This requirement should be extended to
@@ -1257,7 +1260,7 @@
 
         <section id="alternative-reading-order">
             <h3>Alternative Reading Orders</h3>
-            <p class="req" id="r_manifest-reading">The manifest may include alternative reading orders.</p>
+            <p class="req-set" id="r_manifest-reading">The manifest may include alternative reading orders.</p>
 
             <p>One of the fundamental requirements is that the default reading order
             should be made available to the user agent (see <a
@@ -1279,7 +1282,7 @@
 
         <section id="flexible-access-manifest">
             <h3>Multiple Access Options</h3>
-            <p class="req" id="r_manifest-flex">The access methods for retrieving a manifest should allow for significant flexibility.</p>
+            <p class="req-set" id="r_manifest-flex">The access methods for retrieving a manifest should allow for significant flexibility.</p>
 
             <p>A manifest may be a file in some predefined format, such as XML or
             JSON. There should be several ways to get hold of that manifest--sourcing
@@ -1305,7 +1308,7 @@
 
         <section id="combining_manifests">
             <h3>Combining Manifests</h3>
-            <p class="req" id="r_manifest-comb">There should be a possibility to combine manifests from several origins.</p>
+            <p class="req-set" id="r_manifest-comb">There should be a possibility to combine manifests from several origins.</p>
             <p>The default approach for a user agent is to get hold of the manifest
             (file) as one unit via some flexible means (see <a
             href="#flexible-access-manifest"></a>). However, an even more flexible
@@ -1339,9 +1342,9 @@
         <section id="state_independent_locs">
             <h3>State-Independent and State-Dependent Locators</h3>
 
-            <p><span class="req" id="r_locator-ind-dep">A common, state-independent locator needs to exist.</span> This is necessary to connect the same publication across states. This state-independent locator (also known as the “canonical” locator&nbsp;[[rfc6596]]) should be part of the PWP.</p>
+            <p><span class="req-set" id="r_locator-ind-dep">A common, state-independent locator needs to exist.</span> This is necessary to connect the same publication across states. This state-independent locator (also known as the “canonical” locator&nbsp;[[rfc6596]]) should be part of the PWP.</p>
 
-            <p><span class="req" id="r_locator_fi_fd">There must also be a separation between state-independent and state-dependent locators.</span> It must be possible (and necessary) to use, for all cross-references, the canonical locator.</p>
+            <p><span class="req-set" id="r_locator_fi_fd">There must also be a separation between state-independent and state-dependent locators.</span> It must be possible (and necessary) to use, for all cross-references, the canonical locator.</p>
 
             <ul class="use-cases">
                 <li> Annie sends Bob the state-independent locator to the second
@@ -1356,7 +1359,7 @@
         <section id="relative_locs">
             <h3>Relative Locators</h3>
 
-            <p><span class="req" id="r_locator-rel">It should be possible to use, in all circumstances, a relative locator to refer to content within a PWP.</span> Relative locators are abundant on the Web; state-independent locators should not break this mechanism.  A PWP processor must be able to combine a relative locator with the canonical as well as state dependent locators of a PWP.</p>
+            <p><span class="req-set" id="r_locator-rel">It should be possible to use, in all circumstances, a relative locator to refer to content within a PWP.</span> Relative locators are abundant on the Web; state-independent locators should not break this mechanism.  A PWP processor must be able to combine a relative locator with the canonical as well as state dependent locators of a PWP.</p>
 
             <ul class="use-cases">
                 <li> Nick creates his own short story. Based on choices of the
@@ -1368,7 +1371,7 @@
         <section id="locators_states">
             <h3>Location Across States</h3>
 
-            <p><span class="req" id="r_locator-state">When providing a pointer to any or all of a publication, this should be robust across <a href="#states">states</a>.</span> Locating a resource within a PWP should not depend on the PWP's state. </p> <p> Some use cases, documented separately&nbsp;[[dpub-annotation-uc]] for the purpose of annotations, imply this issue: </p>
+            <p><span class="req-set" id="r_locator-state">When providing a pointer to any or all of a publication, this should be robust across <a href="#states">states</a>.</span> Locating a resource within a PWP should not depend on the PWP's state. </p> <p> Some use cases, documented separately&nbsp;[[dpub-annotation-uc]] for the purpose of annotations, imply this issue: </p>
             <ul>
                 <li><a href="https://www.w3.org/TR/dpub-annotation-uc/#cross-format-annotations">2.3.1. Cross Format annotations</a></li>
                 <li><a href="https://www.w3.org/TR/dpub-annotation-uc/#cross-version-annotations">2.3.2. Cross Version annotations</a></li>
@@ -1394,7 +1397,7 @@
 
         <section id="identifiers">
             <h3>Identifiers</h3>
-            <p class="req" id="r_identifier">Identifiers must be persistent and usable across states, and not conflict with locators.</p> <p>Identification of a publication is orthogonal to the issue of locators. There are no specific requirements on identification of PWPs
+            <p class="req-set" id="r_identifier">Identifiers must be persistent and usable across states, and not conflict with locators.</p> <p>Identification of a publication is orthogonal to the issue of locators. There are no specific requirements on identification of PWPs
             in this document in general; however, any such identifier must be usable
             across states and must not conflict with locators. Identifiers need to be
             persistent across PWP instances. </p>
@@ -1434,7 +1437,7 @@
 
         <section id="arch_discovery">
             <h3>Archival Discovery</h3>
-            <p class="req" id="r_archdisc">The locations of all PWP components should be discoverable.</p>
+            <p class="req-set" id="r_archdisc">The locations of all PWP components should be discoverable.</p>
 
             <p>An archiving service needs a reliable way to learn where all of the
             components that constitute a PWP are located in order to be able to archive
@@ -1456,7 +1459,7 @@
         <section id="new_version">
             <h3>Newly Published Versions</h3>
 
-            <p class="req" id="r_archnewvers">There should be a way to discover that a new version of one or more PWP components have been published.</p> <p>In order to be able to archive a PWP, an archiving service needs a
+            <p class="req-set" id="r_archnewvers">There should be a way to discover that a new version of one or more PWP components have been published.</p> <p>In order to be able to archive a PWP, an archiving service needs a
             reliable way to learn that a new version of one or more PWP components have
             been published at the same locations as previously published. Without such a
             mechanism, the archiving service will need to periodically re-download and
@@ -1477,7 +1480,7 @@
         <section id="new_components">
             <h3>New Components</h3>
 
-            <p class="req" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to a PWP.</p>
+            <p class="req-set" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to a PWP.</p>
             <p>An archiving service needs a reliable way to learn that one or more PWP
             components have been added to a PWP in order to be able to archive them.
             Without such a mechanism, there is a possibility that the archiving service
@@ -1495,7 +1498,7 @@
 
         <section id="deleted_components">
             <h3>Deleted Components</h3>
-            <p class="req" id="r_archdelcomp">There should be a way to discover that one or more PWP components have been removed from a PWP.</p>
+            <p class="req-set" id="r_archdelcomp">There should be a way to discover that one or more PWP components have been removed from a PWP.</p>
             <p>An archiving service needs a reliable way to learn that one or more PWP
             components have been removed from a PWP in order to be able to propagate
             this change to the archive. Without such a mechanism, it is possible
@@ -1522,7 +1525,7 @@
         <section id="embedded_metadata">
             <h3>Embedded Metadata</h3>
 
-            <p class="req" id="r_archmetadata">There should be a way to indicate whether one or more PWP components contain structured descriptive metadata.</p>
+            <p class="req-set" id="r_archmetadata">There should be a way to indicate whether one or more PWP components contain structured descriptive metadata.</p>
 
             <p>An archiving service needs a reliable way to determine which, if any, PWP
             components contain structured descriptive metadata. Without such a
@@ -1549,14 +1552,14 @@
 <p>Some fundamental use cases and requirements already imply the usage of accessibility.
         For example:</p>
         <ul>
-            <li><a class="fullReqRef" href="#r_p13n"></a></li>
-            <li><a class="fullReqRef" href="#r_single"></a></li>
+            <li><a class="req-ref-full" href="#r_p13n"></a></li>
+            <li><a class="req-ref-full" href="#r_single"></a></li>
         </ul>
 
         <section id="accessible-metadata">
             <h2>Accessible Metadata</h2>
 
-            <p><span class="req" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</span> This ensures that users know how (or whether) a PWP or any of its parts is accessible. Granular accessibility of a PWP must be discoverable so that users know how (or whether) a specific chapter or element within a PWP is accessible. See also <a href="#technical-metadata"></a>.</p>
+            <p><span class="req-set" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</span> This ensures that users know how (or whether) a PWP or any of its parts is accessible. Granular accessibility of a PWP must be discoverable so that users know how (or whether) a specific chapter or element within a PWP is accessible. See also <a href="#technical-metadata"></a>.</p>
             <ul class="use-cases">
                 <li>Ferdous wants to buy a book about a museum exhibit and wants to
                 guarantee before he does that his screen reader will describe the images
@@ -1583,7 +1586,7 @@
 
         <section id="alterantive_media">
             <h2>Adding Alternative Media</h2>
-            <p><span class="req" id="r_acc-alt-media">A PWP must support the ability to include multiple renditions of a publication.</span> Within their publication, in addition to the print rendition, a publisher may include a fully narrated rendition, or a video with described audio and captioning.</p>
+            <p><span class="req-set" id="r_acc-alt-media">A PWP must support the ability to include multiple renditions of a publication.</span> Within their publication, in addition to the print rendition, a publisher may include a fully narrated rendition, or a video with described audio and captioning.</p>
             <ul class="use-cases">
                 <li>BigBox Publisher needs to add content such as a braille style sheet,
                 image descriptions, or video captioning (text/descriptive audio) to a
@@ -1608,7 +1611,7 @@
         <section id="building_custom_PWP">
              <h2>Building a Custom PWP</h2>
 
-               <p class="req" id="r_custompwp">A PWP needs to support the ability to construct a limited package with only a subset of the necessary content.</p>
+               <p class="req-set" id="r_custompwp">A PWP needs to support the ability to construct a limited package with only a subset of the necessary content.</p>
 
              <ul class="use-cases">
                <li>Buffy is Deafblind. Every morning she downloads her daily newspaper.
@@ -1630,12 +1633,12 @@
                reconfigure.</li>
 
              </ul>
-             <p>See also <a class="fullReqRef" href="#r_uniqres"></a> and <a class="fullReqRef" href="#r_p13n"></a>.</p>
+             <p>See also <a class="req-ref-full" href="#r_uniqres"></a> and <a class="req-ref-full" href="#r_p13n"></a>.</p>
          </section>
 
          <section id="time_based_media_text">
            <h3>Time-based Media and Text</h3>
-           <p class="req" id="r_time">A PWP needs to support both time-based media and text.</p>
+           <p class="req-set" id="r_time">A PWP needs to support both time-based media and text.</p>
 
            <p>A PWP needs to support time-based media, such as synchronized video, audio,
            captions or transcript, or sign language interpretation.
@@ -1658,7 +1661,7 @@
 
         <section id="accessible_annotation">
             <h2>Accessible Annotations</h2>
-            <p class="req" id="r_acc-annotation">When annotations are distributed and associated with a PWP, the content of the annotation must be compatible with assistive technology.</p>
+            <p class="req-set" id="r_acc-annotation">When annotations are distributed and associated with a PWP, the content of the annotation must be compatible with assistive technology.</p>
 
             <ul class="use-cases">
                 <li>A teacher annotates a PWP used in the classroom with specific
@@ -1677,7 +1680,7 @@
         <h1>Security</h1>
         <section id="limiting_features">
             <h3>Limiting a PWP’s features</h3>
-            <p class="req" id="r_sec-limit">User agents must be allowed to limit the capabilities of a PWP.</p>
+            <p class="req-set" id="r_sec-limit">User agents must be allowed to limit the capabilities of a PWP.</p>
             <p>The compatibility and interoperability requirements of the specification
             must not prevent user agents from taking measures to protect the security,
             safety, or privacy of the user. Security-conscious systems that interlink an
@@ -1704,7 +1707,7 @@
             <h2>Capabilities Discovery</h2>
 
             <p>
-                <span class="req" id="r_sec-discovery">It should be possible to discover the capabilities a PWP will have access to.</span> A document’s access to features and APIs will vary from platform to platform, app to app. Document authors benefit from being able to discover these capabilities.
+                <span class="req-set" id="r_sec-discovery">It should be possible to discover the capabilities a PWP will have access to.</span> A document’s access to features and APIs will vary from platform to platform, app to app. Document authors benefit from being able to discover these capabilities.
             </p>
 
 
@@ -1737,7 +1740,7 @@
             <h2>Preserving Integrity</h2>
 
             <p>
-                <span class="req" id="r_sec-integrity">PWP authors should be able to embed guidance policies in their documents that inform the user agent of their preferences as to how the integrity and security of the document itself should be preserved.</span> Indeed, scripted documents are dynamic by nature; long-lived authored documents are vulnerable to alteration by a variety of external factors. This mechanism should be based on the pre-existing Content Security Policy (CSP)&nbsp;[[csp2]] and Subresource Integrity&nbsp;[[sri]] specifications and not be a new invention incompatible with web browser CSP implementations. </p>
+                <span class="req-set" id="r_sec-integrity">PWP authors should be able to embed guidance policies in their documents that inform the user agent of their preferences as to how the integrity and security of the document itself should be preserved.</span> Indeed, scripted documents are dynamic by nature; long-lived authored documents are vulnerable to alteration by a variety of external factors. This mechanism should be based on the pre-existing Content Security Policy (CSP)&nbsp;[[csp2]] and Subresource Integrity&nbsp;[[sri]] specifications and not be a new invention incompatible with web browser CSP implementations. </p>
 
             <ul class="use-cases">
                   <li>Jill’s data analysis report used an externally hosted script to
@@ -1761,7 +1764,7 @@
         <section id="escalating_trust">
             <h2>Escalating trust</h2>
             <p>
-                <span class="req" id="r_sec-trust">User agents may provide a method for escalating trust.</span> By providing such methods, user agents may regain access to more capabilities, while otherwise the agent would impose limitation for security reasons. Platform vendors have sometimes offered methods for otherwise untrusted local scripts to become trusted and regain API privileges that the had lost while untrusted.
+                <span class="req-set" id="r_sec-trust">User agents may provide a method for escalating trust.</span> By providing such methods, user agents may regain access to more capabilities, while otherwise the agent would impose limitation for security reasons. Platform vendors have sometimes offered methods for otherwise untrusted local scripts to become trusted and regain API privileges that the had lost while untrusted.
             </p>
 
             <ul class="use-cases">
@@ -1777,15 +1780,16 @@
     <section class="appendix" id="req_list">
         <h2>List of Requirements</h2>
         <table class="zebra" id="reqtable">
-            <tr>
+            <thead>
                 <th>
                     Number and reference
                 </th>
                 <th>
                     Short description
                 </th>
-            </tr>
-
+            </thead>
+            <tbody>
+            </tbody>
         </table>
     </section>
 
