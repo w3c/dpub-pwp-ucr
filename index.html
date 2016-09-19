@@ -153,8 +153,8 @@
 
         <section>
           <h2>Terminology</h2>
-          <p>
-              The terms “online” and “offline” are used in this document, but the
+          <ul class="terms">
+              <li>Online/Offline: The terms “online” and “offline” are used in this document, but the
               borderline between these is not always clear cut. For example, a PWP
               can be on a local disc but accessed through a web server running on
               that machine (i.e., through a <code>http://localhost</code> URL).
@@ -164,8 +164,12 @@
               mounted as a local disc, in which case a PWP can be accessed as a file
               though technically online. A more precise terminology would use the
               terms like “protocol” and “file” states, for what is colloquially
-              called “online” and “offline” in this document.
-          </p>
+              called “online” and “offline” in this document.</li>
+          <li>Publication: A publication is a resource or collection of resources with
+          a persistent identity that enables interchange and reference.</li>
+          <li>Web Publication</li>
+          <li>Portable Web Publication: A subset of publications that are both
+            portable and on the web.</li>
         </section>
     </section>
 
@@ -362,9 +366,10 @@
             </ul>
         </section>
 
-        <section id='distribute-uniquely'>
-          <h3>Distribution of a Single Resource Unit</h3>
-            <p class="req-set" id="r_uniqres">It should be possible to create and distribute a PWP as a uniquely identified single resource unit.</p>
+        <section id='distribute-uniquely'> <h3>Distribution of a Single Resource
+        Unit</h3> <p class="req-set" id="r_uniqres">It should be possible to
+        create and distribute a PWP as a uniquely identified single resource
+        unit.</p>
 
             <p>A PWP, no matter how many pieces, must be distributable
               to readers or consumers as a single unit for distribution
@@ -1009,6 +1014,14 @@
 
                <li>Bill acquires a PWP through a rental service. After a certain period,
                this PWP becomes unavailable to him.</li>
+
+               <li>Slicendice Publishing publishes many PWPs, some of which are
+               different versions or subsets or combinations of others. Slicendice needs
+               not only to be able to uniquely identify each unique PWP but also to
+               identify each "copy" or "delivery" ("item") of each of those PWPs so that
+               it can track "what" has been sold and "how many" of each one have been
+               sold. (See also "There should be a way to uniquely identify a publication
+               regardless of its state")</li>
 
                <li>Cobble-It Publishing creates PWPs from a mix of internal content and
                content licensed from other parties. Using PWP metadata, Cobble-It is
