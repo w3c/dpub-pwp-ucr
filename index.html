@@ -153,8 +153,8 @@
 
         <section>
           <h2>Terminology</h2>
-          <p>
-              The terms “online” and “offline” are used in this document, but the
+          <ul class="terms">
+              <li>Online/Offline: The terms “online” and “offline” are used in this document, but the
               borderline between these is not always clear cut. For example, a PWP
               can be on a local disc but accessed through a web server running on
               that machine (i.e., through a <code>http://localhost</code> URL).
@@ -164,8 +164,12 @@
               mounted as a local disc, in which case a PWP can be accessed as a file
               though technically online. A more precise terminology would use the
               terms like “protocol” and “file” states, for what is colloquially
-              called “online” and “offline” in this document.
-          </p>
+              called “online” and “offline” in this document.</li>
+          <li>Publication: A publication is a resource or collection of resources with
+          a persistent identity that enables interchange and reference.</li>
+          <li>Web Publication</li>
+          <li>Portable Web Publication: A subset of publications that are both
+            portable and on the web.</li>
         </section>
     </section>
 
@@ -201,17 +205,9 @@
 
         <section id='pwp-owp'>
               <h3>Open Web Platform</h3>
-            <p class="req-set" id="r_owp">PWPs should be able to make use of all facilities offered by the OWP.</p>
+            <p class="req-set" id="r_owp">PWPs should be able to make use of all features offered by the OWP.</p>
 
-            <p>There is a formidable development of visualization systems,
-              interactive tools, and other powerful facilities that are
-              built on top of the OWP, including accessing
-              external services like Wolfram Alfa. These tools have
-              been traditionally developed for browsers, and provide
-              possibilities that traditional publications, such as books,
-              magazines, scholarly papers, and educational materials,
-              should also benefit from. That requires publications to
-              become first class citizens on the web platform. </p>
+            <p>There is a remarkable development of tools and frameworks built on top of OWP that make it possible to develop powerful interactive layers on top of OWP. These include, for example, data visualization systems (e.g., d3, built on top of SVG), or possibilities to access external services like Wolfram Alfa. These tools have been traditionally developed for browsers, and provide possibilities that traditional publications, such as books, magazines, scholarly papers, and educational materials, should also benefit from. That requires publications to become first class citizens on the web platform.</p>
 
             <ul class="use-cases">
                 <li>A large, multidisciplinary, web-based journal relies on
@@ -231,12 +227,7 @@
                           paper published by F1000 Research</a> are good
                           examples for the new possibilities.) -->
 
-                <li>Educational materials are increasingly making use
-                  of OWP facilities. They include
-                  runnable program snippets, interactive testing tools
-                  (linked to online evaluation facilities); in many
-                  respects, the borderline between these publications
-                  and web applications is becoming fuzzy.</li>
+                <li>Educational publications are increasingly making use of OWP features. They include interactive exams (possibly linked to online evaluation facilities), visualization of data or of algorithms, built-in interpreters for various languages (e.g., for courses on programming); in many respects, the borderline between these publications and web applications is becoming fuzzy.</li>
 
                 <li id="in_house_doc">BigBoxCo, a large technology company
                   with extensive "in-house" documentation to support the
@@ -276,15 +267,13 @@
                   the book easier (i.e., to support usability) she decides
                   to switch her reading environment to paged view.</li>
 
-                <li>Susan uses CSS, images, flexboxes, and more to create
+                <li>Susan uses a flexible CSS layout, that includes images, to create
                   a rich, interactive publication on the history of a city.
                   Each major historical milestone is
                   defined as a standalone unit that would be a single
                   page when printed, with a timeline with the main
                   events in the footer area of the page.</li>
 
-                <li>Fatima wants to choose between a scrolled view and a paginated
-                  view of content that extends across multiple HTML documents.</li>
                 <li>IndyPublisher wants to provide transition effects between
                   pages, both within and across content documents.</li>
 
@@ -308,7 +297,7 @@
                   intermittent. Omo needs to have his textbooks available
                   regardless of actual connectivity.</li>
 
-                <li>Public School 148 is part of a school system in a 
+                <li>Public School 148 is part of a school system in a
                   low-income area. While it has a computer lab for teachers and
                   students to access material online, the school does not
                   have the resources to update the equipment, either in terms
@@ -377,9 +366,10 @@
             </ul>
         </section>
 
-        <section id='distribute-uniquely'>
-          <h3>Distribution of a Single Resource Unit</h3>
-            <p class="req-set" id="r_uniqres">It should be possible to create and distribute a PWP as a uniquely identified single resource unit.</p>
+        <section id='distribute-uniquely'> <h3>Distribution of a Single Resource
+        Unit</h3> <p class="req-set" id="r_uniqres">It should be possible to
+        create and distribute a PWP as a uniquely identified single resource
+        unit.</p>
 
             <p>A PWP, no matter how many pieces, must be distributable
               to readers or consumers as a single unit for distribution
@@ -470,12 +460,8 @@
                  of her local library, is looking exclusively for material
                  rich in audio and video components so as to reach a wider
                  age bracket.</li>
-              <li>BigBox Publisher must fulfill its legal requirements in creating
-                 an accessible Math textbook. The inclusion of math equation
-                 examples in both Braille as well as MathML is desired since not all
-                 reading systems fully support MathML.  Nemeth Braille is primarily used
-                 and has therefore been added as a separate preformatted Nemeth Braille
-                 examples to my publication in addition to the MathML.</li>
+
+              <li>As Nemeth Braille is commonly used as a means to access math tactually in education, BigBox Publisher has added Nemeth Braille examples to its publication, in addition to the MathML content.</li>
 
               <li>James is a struggling blind artist requires that the musical score
                 within this publication be rendered in braille music.  James uses
@@ -498,17 +484,16 @@
             <p><span class="req-set" id="r_p13n">The reader must have the possibility to personalize his or her reading experience.</span> This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of voice, etc. This should be done via a proper interactive dialogue and/or a choice among pre-defined possibilities.</p>
 
             <ul class="use-cases">
-              <li>Olga, a dyslexic student, downloads a textbook and
-                proceeds to personalize the material with a larger font
-                and different contrast.</li>
-              <li>When reading a book in the sun, Fanta adjusts the
-                background color to a dark color so that she can see the
+              <li>Olga, a dyslexic student, downloads a textbook and proceeds to personalize the material with larger and/or a specialized dyslexic font, as well as different contrast that, for her particular case, makes the text easier to consume.</li>
+              <li>When reading a book in the sun, Mia adjusts the
+                background color to allow for a stronger contrast so that she can see the
                 text.</li>
               <li>While reading a book on computer programming, Ransheed
                 wants to change the font into a local font. However, the
                 code samples within the text should remain in a fixed-width font.</li>
-              <li>Mia choses to read in night mode because she finds it
-                easier to sleep when she puts the PWP aside.</li>
+              <!-- <li>Mia choses to read in night mode--an option to change the colors
+                and light levels of a screen--because she finds it
+                easier to sleep when she puts the PWP aside.</li>-->
             </ul>
         </section>
 
@@ -848,7 +833,9 @@
 
         <section id="reading-order">
           <h3>Default Reading Order</h3>
-          <p class="req-set" id="r_read-order">Find the (default) reading order of the resources of a PWP easily.</p>
+          <p class="req-set" id="r_read-order">There should be a means of
+          indicating the author-preferred navigation structure of the resources
+          of a PWP.</p>
 
           <p>A user agent needs to know the sequence in which to present
           components of a PWP to the user. A PWP will likely be composed
@@ -876,7 +863,8 @@
 
       <section id="unique-identifier">
           <h3>Uniquely Identifying a PWP</h3>
-          <p class="req-set" id="r_uniq-id-state">There should be a way to uniquely identify a publication regardless of its state.</p>
+          <p class="req-set" id="r_uniq-id-state">There should be a way to
+          uniquely identify a publication regardless of its state.</p>
 
           <p>A unique identification of a specific publication,
             regardless of whether it is online or offline, or whether it
@@ -1008,7 +996,9 @@
 
         <section id='pwp-process'>
             <h3>Distribution Process</h3>
-            <p class="req-set" id="r_process">The distribution of PWPs should conform to the standard processes and expectations of commercial publishing channels.</p>
+            <p class="req-set" id="r_process">The distribution of PWPs should
+            respect the existing processes and expectations of publishing
+            channels. </p>
 
             <ul class="use-cases">
                <li>Ahmed acquires a PWP on an e-commerce platform. He expects to be able
