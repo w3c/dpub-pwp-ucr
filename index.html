@@ -165,11 +165,16 @@
               though technically online. A more precise terminology would use the
               terms like “protocol” and “file” states, for what is colloquially
               called “online” and “offline” in this document.</li>
-          <li>Publication: A publication is a resource or collection of resources with
-          a persistent identity that enables interchange and reference.</li>
-          <li>Web Publication</li>
-          <li>Portable Web Publication: A subset of publications that are both
-            portable and on the web.</li>
+
+              <li>This document uses the term “user agent”, as used by the Web community; see, for example, the <a href="https://www.w3.org/WAI/UA/work/wiki/Definition_of_User_Agent">WAI glossary entry</a>. The publishing community often uses the term “reading system” for roughly the same notion; while there may be subtle differences, it has been decided that it is better to stick to a single term for the purposes of this document.</li>
+
+              <li>Publication: A publication is a resource or collection of resources with
+              a persistent identity that enables interchange and reference.</li>
+
+              <li>Web Publication</li>
+
+              <li>Portable Web Publication: A subset of publications that are both
+                portable and on the web.</li>
         </section>
     </section>
 
@@ -542,7 +547,7 @@
             publication format to mark which items are critical, and
             which instead need a fallback for limited
             connectivity/storage situations, would provide critical
-            input to the reading system to do it's job. This would also
+            input to the user agent to do it's job. This would also
             give more control to the publisher, allowing them to ensure
             a consistent user experience while consuming the
             publication. When changing the state of a PWP
@@ -582,7 +587,7 @@
                 situation and may want to locally store the entire (even
                 non-essential) contents of his textbooks. He will save
                 space by only storing essential content for his graphic
-                novels. It is up to the reading system to support different
+                novels. It is up to the user agent to support different
                 behaviors for essential versus non-essential content,
                 ensuring that an entire package only downloaded when necessary.
               </li>
@@ -809,7 +814,7 @@
             more complicated PWP may have many more components, meaning
             that extracting in advance all the references to other
             constituent resources may be prohibitive. It is therefore
-            necessary for the reading system to have an easy access to
+            necessary for the user agent to have an easy access to
             the list of constituent resources, and some of their
             characteristics like their media types or sizes.
           </p>
@@ -825,7 +830,7 @@
                 distribution package</li>
               <li>The size of the components must be known in
                 advance.</li>
-              <li>The reading systems needs to know if a publication
+              <li>The user agents needs to know if a publication
               contains/requires support for a specified media type
               (without processing the complete PWP).</li>
           </ul>
@@ -845,7 +850,7 @@
           components, meaning that extracting the exact order from
           within the resources (i.e., parsing them in advance to extract
           the information) may be prohibitive. It is therefore necessary
-          for the reading system to have an easy access to the reading
+          for the user agent to have an easy access to the reading
           order constituent resources. In particular, the user agent
           should also have the information on what the starting point of
           the publication rendering is. </p>
@@ -1077,7 +1082,7 @@
                 inactivate the inclusion of the research data in the packaged publication.
                 Albert reads Rosa’s article from a packaged version. When online, he can
                 access the research data, but when offline, he cannot access it and the
-                reading system fails gracefully.</li>
+                user agent fails gracefully.</li>
 
                 <li>Risha publishes an article which includes an interactive component
                 relying accessing a database, exposed to the web via a RESTful API. The
@@ -1092,7 +1097,7 @@
                 <li>InteractiveCompany publishes a PWP containing an interactive component
                 implemented as a JavaScript library, but this library requires several
                 other JavaScript libraries. The interactive component has not been marked as “not
-                packageable”. The reading system therefore packages all JavaScript libraries
+                packageable”. The user agent therefore packages all JavaScript libraries
                 required to get the interactive component running offline, with a
                 recursive inspection of the JavaScript code.</li>
             </ul>
