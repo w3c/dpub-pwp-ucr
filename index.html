@@ -1294,36 +1294,6 @@
 
             </ul>
         </section>
-
-        <section id="combining_manifests">
-            <h3>Combining Manifests</h3>
-            <p class="req-set" id="r_manifest-comb">There should be a possibility to combine manifests from several origins.</p>
-            <p>The default approach for a user agent is to get hold of the manifest
-            (file) as one unit via some flexible means (see <a
-            href="#flexible-access-manifest"></a>). However, an even more flexible
-            means is to provide possibilities to provide several manifests
-            file that the user agent would combine, following some rules, to yield
-            the final, overall manifest for the publication.
-            </p>
-
-            <p class="note">
-                The Interest Group recognizes that the proper
-                definition/implementation of this requirement may lead to major
-                technical complications and therefore may not be fulfilled.
-            </p>
-
-            <ul class="use-cases">
-                <li>The simple solution for the <a href="#bigretailer-manifest">use
-                case involving BigRetailer</a> requires the creation of a
-                complete manifest, involving duplicating the information
-                provided the EsteemedPublisher. This is obviously error prone if the
-                publication’s manifest is large. If it was possible to combine
-                manifests, BigRetailer can only provide its own additional (and
-                possibly replacement) information and let the user agent combine the
-                manifests of BigRetailer and of EsteemedPublisher to yield the final
-                manifest.</li>
-            </ul>
-        </section>
     </section>
 
     <section id="locators">
