@@ -165,11 +165,17 @@
               though technically online. A more precise terminology would use the
               terms like “protocol” and “file” states, for what is colloquially
               called “online” and “offline” in this document.</li>
-          <li>Publication: A publication is a resource or collection of resources with
-          a persistent identity that enables interchange and reference.</li>
-          <li>Web Publication</li>
-          <li>Portable Web Publication: A subset of publications that are both
-            portable and on the web.</li>
+
+              <li>This document uses the term “user agent”, as used by the Web community; see, for example, the <a href="https://www.w3.org/WAI/UA/work/wiki/Definition_of_User_Agent">WAI glossary entry</a>. The publishing community often uses the term “reading system” for roughly the same notion; while there may be subtle differences, it has been decided that it is better to stick to a single term for the purposes of this document.</li>
+
+			  <li>Publication: A publication is a resource or collection of resources with
+			  a persistent identity that enables interchange and reference.</li>
+
+			  <li>Web Publication</li>
+
+			  <li>Portable Web Publication: A subset of publications that are both
+				portable and on the web.</li>
+          </ul>
         </section>
     </section>
 
@@ -444,13 +450,12 @@
         </section>
 
         <section id="multimedia">
-            <h3>Multimedia PWPs</h3>
+            <h3>Alternative modalities</h3>
             <p class="req-set" id="r_multimedia">The notion of a PWP should enable specific publications like audio books, graphics books, and mixed media.</p>
 
             <p>All concepts and structures related to a PWP should
-            enable the creation and/or production of video or audio
-            rendering; all the audio, video, and graphics content must
-            be treated with the same attention as all other content.</p>
+            enable the creation and/or production of alternative
+            renderings for visual and auditory content.</p>
 
             <ul class ="use-cases">
                <li>Faye, a busy mother of five, wants to access audio books
@@ -463,18 +468,20 @@
 
               <li>As Nemeth Braille is commonly used as a means to access math tactually in education, BigBox Publisher has added Nemeth Braille examples to its publication, in addition to the MathML content.</li>
 
-              <li>James is a struggling blind artist requires that the musical score
-                within this publication be rendered in braille music.  James uses
-                freely available assistive technology, which does not have braille music
-                translations built-in, and would need this converted into
-                braille music notation.</li>
+              <li>James, a musician, requires that the musical score within a publication come preformatted in braille music notation in order to read it, as he uses freely available assistive technology which does not have braille music translations built in.</li>
 
-              <li>Lisa is a visually impaired child in a class of sighted peers, who
-                are reading a book in which poems are presented in form of  visuals of
-                different shapes like a Christmas tree to provide the context to the
-                children. She needs to access the replica of the book in preformatted
-                braille with equivalent precision, to acquire the knowledge in the same
-                way as her sighted classmates.</li>
+              <li>A class of students is reading a book in which poems are pictorially presented
+                  in different shapes. To have a comparable experience as her sighted classmates,
+                  Lisa, who is visually impaired, needs access to the material in
+                  braille. Because of the way the poems are presented, she actually needs the
+                  content in preformatted braille that provides an equivalent precision.
+              </li>
+
+              <li>Working with colleagues on some research issues Joos, who is visually
+                  impaired, needs an alternative access for the various articles the research work
+                  is based on. He chooses an audio rendition of the article content, because he does
+                  not master braille well enough.
+              <li>
             </ul>
             <p>See also <a href="#accessibility">section on Accessibility</a>.</p>
         </section>
@@ -542,7 +549,7 @@
             publication format to mark which items are critical, and
             which instead need a fallback for limited
             connectivity/storage situations, would provide critical
-            input to the reading system to do it's job. This would also
+            input to the user agent to do it's job. This would also
             give more control to the publisher, allowing them to ensure
             a consistent user experience while consuming the
             publication. When changing the state of a PWP
@@ -582,7 +589,7 @@
                 situation and may want to locally store the entire (even
                 non-essential) contents of his textbooks. He will save
                 space by only storing essential content for his graphic
-                novels. It is up to the reading system to support different
+                novels. It is up to the user agent to support different
                 behaviors for essential versus non-essential content,
                 ensuring that an entire package only downloaded when necessary.
               </li>
@@ -809,7 +816,7 @@
             more complicated PWP may have many more components, meaning
             that extracting in advance all the references to other
             constituent resources may be prohibitive. It is therefore
-            necessary for the reading system to have an easy access to
+            necessary for the user agent to have an easy access to
             the list of constituent resources, and some of their
             characteristics like their media types or sizes.
           </p>
@@ -825,7 +832,7 @@
                 distribution package</li>
               <li>The size of the components must be known in
                 advance.</li>
-              <li>The reading systems needs to know if a publication
+              <li>The user agents needs to know if a publication
               contains/requires support for a specified media type
               (without processing the complete PWP).</li>
           </ul>
@@ -845,7 +852,7 @@
           components, meaning that extracting the exact order from
           within the resources (i.e., parsing them in advance to extract
           the information) may be prohibitive. It is therefore necessary
-          for the reading system to have an easy access to the reading
+          for the user agent to have an easy access to the reading
           order constituent resources. In particular, the user agent
           should also have the information on what the starting point of
           the publication rendering is. </p>
@@ -1068,7 +1075,7 @@
             <h3>External Data</h3>
             <p class="req-set" id="r_extdata">PWPs should be able to access external data.</p>
 
-            <p>This is related to <a class="req-ref-full" href="#r_essential"></a>. That requirement states that essential resources must be included in the offline version; non-essential resources may be either included, too, or accessed online when possible. It is up to the packaging software to decide which resources will be included, and which will not. This requirement adds the possibility to specify that some data must stay external to the packaged publication.</p>
+            <p>This is related to <a class="req-ref-full" href="#r_essential"></a>. That requirement states that essential resources must be included in the offline version; non-essential resources may be either included, too, or accessed online when possible. It is up to the author to decide which resources will be included, and which will not. This requirement adds the possibility to specify that some data must stay external to the Web Publication. </p>
 
             <ul class="use-cases">
                 <li>Rosa has submitted an article to EsteemedJournal and provided her
@@ -1077,7 +1084,7 @@
                 inactivate the inclusion of the research data in the packaged publication.
                 Albert reads Rosa’s article from a packaged version. When online, he can
                 access the research data, but when offline, he cannot access it and the
-                reading system fails gracefully.</li>
+                user agent fails gracefully.</li>
 
                 <li>Risha publishes an article which includes an interactive component
                 relying accessing a database, exposed to the web via a RESTful API. The
@@ -1092,7 +1099,7 @@
                 <li>InteractiveCompany publishes a PWP containing an interactive component
                 implemented as a JavaScript library, but this library requires several
                 other JavaScript libraries. The interactive component has not been marked as “not
-                packageable”. The reading system therefore packages all JavaScript libraries
+                packageable”. The user agent therefore packages all JavaScript libraries
                 required to get the interactive component running offline, with a
                 recursive inspection of the JavaScript code.</li>
             </ul>
@@ -1130,25 +1137,13 @@
               (non-exhaustive) list of further information.</p>
 
               <ul class="use-cases">
-                <li>A user agent may not be able to process files beyond a certain size
-                due to bandwidth, storage or memory limitations, or processing time
-                expectations; this information should be available in
-                advance.</li>
+                <li>The author/publisher should provide, when appropriate, the rights of various components identified in the package; e.g., the rights relevant to the image of the Mona Lisa owned by the Louvre on whether it is permissible to download the image for offline use.</li>
 
-                <li>A user agent should be able to process permissions and rights
-                information for each component identified in the package. For example,
-                it needs to know whether it has the rights to place an image of the Mona
-                Lisa owned by the Louvre in a package to be downloaded offline.</li>
-
-                <li>A user agent should be able to determine if captions are available
-                for multimedia resources within the publication.</li>
-
-                <li>For further processing the user agent needs to have access to
-                additional information including:
+                <li>The author/publisher should have the possibility to provide additional information on the Web Publication, like:
                     <ul>
+                        <li>captions belonging to multimedia resources within the publication;</li>
                         <li>the accessibility of each component (see also "Accessible Metadata");</li>
-                        <li>whether it needs additional processing instructions, such as
-                        with MathML;</li>
+                        <li>whether there is a need for additional processing, such as with MathML;</li>
                         <li>the title, author(s), cover image, etc., to display the
                         publication on a shelf without downloading all its content see
                         also "Discoverability", "Accessible Metadata");</li>
@@ -1215,9 +1210,11 @@
                   lab and reads the first article over lunch. Shoshana begins the book
                   reviews during office hours but must tend to her students' questions,
                   so she closes the app. Shoshana opens the app on the train ride home
-                  to resume reading the book reviews. She is happy to find that the app
-                  opens to the exact location and opens quickly because most of the
-                  material does not need to be downloaded a second time. </li>
+                  to resume reading the book reviews. Chemistry App notifies Shoshana that
+                  the article she is reading has recieved an update, and prompts her
+                  if she would like to see the changes. By accepting those changes Shoshana
+                  is sure that she works with a most up-to-date version of the journal.
+              </li>
 
               </ul>
               <p>See also <a href="#archiving">"Archiving"</a></p>
@@ -1292,36 +1289,6 @@
                 publication’s manifest (e.g., by providing a reference to the
                 alternative manifest via an HTTP <code>LINK</code> header).</li>
 
-            </ul>
-        </section>
-
-        <section id="combining_manifests">
-            <h3>Combining Manifests</h3>
-            <p class="req-set" id="r_manifest-comb">There should be a possibility to combine manifests from several origins.</p>
-            <p>The default approach for a user agent is to get hold of the manifest
-            (file) as one unit via some flexible means (see <a
-            href="#flexible-access-manifest"></a>). However, an even more flexible
-            means is to provide possibilities to provide several manifests
-            file that the user agent would combine, following some rules, to yield
-            the final, overall manifest for the publication.
-            </p>
-
-            <p class="note">
-                The Interest Group recognizes that the proper
-                definition/implementation of this requirement may lead to major
-                technical complications and therefore may not be fulfilled.
-            </p>
-
-            <ul class="use-cases">
-                <li>The simple solution for the <a href="#bigretailer-manifest">use
-                case involving BigRetailer</a> requires the creation of a
-                complete manifest, involving duplicating the information
-                provided the EsteemedPublisher. This is obviously error prone if the
-                publication’s manifest is large. If it was possible to combine
-                manifests, BigRetailer can only provide its own additional (and
-                possibly replacement) information and let the user agent combine the
-                manifests of BigRetailer and of EsteemedPublisher to yield the final
-                manifest.</li>
             </ul>
         </section>
     </section>
@@ -1550,9 +1517,7 @@
 
             <p><span class="req-set" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</span> This ensures that users know how (or whether) a PWP or any of its parts is accessible. Granular accessibility of a PWP must be discoverable so that users know how (or whether) a specific chapter or element within a PWP is accessible. See also <a href="#technical-metadata"></a>.</p>
             <ul class="use-cases">
-                <li>Ferdous wants to buy a book about a museum exhibit and wants to
-                guarantee before he does that his screen reader will describe the images
-                to him in great detail.</li>
+                <li>Ferdous wants to buy a book about a museum exhibit, but before he does that, he wants to guarantee that the images and videos about the exhibits have detailed descriptions, to ensure that he will be able to read it with a screen reader or refreshable Braille display.</li>
 
                 <li>Alejandra must ensure that the equation editors in her textbook have
                 non-mouse functionality before she purchases the textbook.</li>
@@ -1598,7 +1563,7 @@
         </section>
 
         <section id="building_custom_PWP">
-             <h2>Building a Custom PWP</h2>
+              <h2>Building a Custom Reading Experience</h2>
 
                <p class="req-set" id="r_custompwp">A PWP needs to support the ability to construct a limited package with only a subset of the necessary content.</p>
 
@@ -1608,7 +1573,7 @@
                a high-quality, accessible news site, it's multimedia presentations come
                with captions and transcripts. Buffy does not want to waste her data plan
                on the useless-to-her audio and video content. She'd like to build a PWP
-               which contains the captions and transcripts, but not the data-heavy
+               which contains the captions, transcripts, and alternative text, but not the data-heavy
                videos.</li>
 
                <li>Smitha has limited hand mobility, and controls her e-reader by voice.
