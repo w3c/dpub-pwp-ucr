@@ -497,6 +497,10 @@
                   is based on. He chooses an audio rendition of the article content, because he does
                   not master braille well enough.
               <li>
+
+                 <li>BigBox Publisher needs to add content such as a braille style sheet,
+                image descriptions, or video captioning (text/descriptive audio) to a
+                PWP.</li>           
             </ul>
             <p>See also <a href="#accessibility">section on Accessibility</a>.</p>
         </section>
@@ -778,6 +782,8 @@
                   the Japanese typesetting traditions, because that is
                   the only way those publications are accepted by local
                   customers.</li>
+                
+                <li>(On Device Independence)Yoshio usually reads a book on his tablet when he is at home, but he does not carry his tablet around while commuting on the train. Instead, he prefers to use his phone to continue reading. Publications must be able to adapt to the consumption environment, so as to provide a good reading experience regardless of the device.</li>
 
                 <!--
                 <li>(On Device Independence) Vera has several
@@ -1291,12 +1297,20 @@
                   package with semantic information or metadata informing the package of
                   the nature of the object). </li>
 
-                  <li>The publisher wants to provide “teasers” for a book by providing a
+                  <li>A publisher wants to provide “teasers” for a book by providing a
                   series of extracts that are meant to give an overview of the book
                   without the necessity to read the whole publication. This can be
                   typically used by a reseller allowing for a prospective client to
                   access part of the publication free of charge.</li>
-                  
+
+                <li>EducationalPublisher publishes a complex textbook. The textbook
+                is created is such a way that it could be used both for beginner and
+                advanced level. The default reading order corresponds to beginners,
+                but the goal is that advanced students can follow a different path
+                through the material, corresponding to their level of knowledge.
+                EducationPublisher adds, therefore, alternative reading orders to
+                the publication that advanced users can follow</li>
+
                   <li>A specialized user agent wishes to find all images in a publication that do not already have alternative text and automatically provide it using an image identification service such as <a href="http://labelme.csail.mit.edu/">LabelMe</a>.</li>
               </ul>
         </section>
@@ -1351,6 +1365,7 @@
               </ul>
         </section>
 
+        <!--
         <section id="alternative-reading-order">
             <h3>Alternative Reading Orders</h3>
             <p class="req-set" id="r_manifest-reading">The manifest may include alternative reading orders in addition to the <a href="#reading-order">default one</a>, such as to enable <a href="#streamlining">streamlined navigation</a>.</p>
@@ -1368,6 +1383,7 @@
                 the publication that advanced users can follow</li>
             </ul>
         </section>
+        -->
 
         <section id="flexible-access-manifest">
             <h3>Multiple Means of Access</h3>
@@ -1497,6 +1513,14 @@
         tenure of individual authors, file formats, publishers, or publishing
         platforms.</p>
 
+        <p>Some fundamental use cases and requirements already help aid our archiving requirements.
+        For example:</p>
+        <ul>
+            <li><a class="req-ref-full" href="#r_con-res"></a></li>
+            <li><a class="req-ref-full" href="#r_id-version"></a></li>
+        </ul>
+
+        <!--
         <section id="arch_discovery">
             <h3>Archival Discovery</h3>
             <p class="req-set" id="r_archdisc">The locations of all PWP components should be discoverable.</p>
@@ -1517,7 +1541,6 @@
               ingest into a preservation repository.</li>
             </ul>
             <p>See also Discovery</p>
-            -->
         </section>
 
         <section id="new_version">
@@ -1543,8 +1566,8 @@
                 resources and stores them as incremental updates to the appropriate
                 archival unit in a preservation repository.</li>
             </ul>
-            -->
         </section>
+            -->
 
         <section id="new_or_delete_components">
             <h3>New or Removed Components</h3>
@@ -1612,12 +1635,15 @@
         <ul>
             <li><a class="req-ref-full" href="#r_p13n"></a></li>
             <li><a class="req-ref-full" href="#r_single"></a></li>
+            <li><a class="req-ref-full" href="#r_multimedia"></a></li>
         </ul>
 
         <section id="accessible-metadata">
             <h2>Accessible Metadata</h2>
 
-            <p><span class="req-set" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</span> This ensures that users know how (or whether) a PWP or any of its resources is accessible. Granular accessibility of a PWP must be discoverable so that users know which (if any) resources within a PWP are accessible. See also <a href="#technical-metadata"></a>.</p>
+            <p class="req-set" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</p> 
+            
+            <p>This ensures that users know how (or whether) a PWP or any of its resources is accessible. Granular accessibility of a PWP must be discoverable so that users know which (if any) resources within a PWP are accessible. See also <a href="#technical-metadata"></a>.</p>
             
             <ul class="use-cases">
                 <li>Ferdous wants to buy a book about a museum exhibit, but before he does that, he wants to guarantee that the images and videos about the exhibits have detailed descriptions, to ensure that he will be able to read it with a screen reader or refreshable Braille display.</li>
@@ -1631,7 +1657,7 @@
                 determine which titles are accessible and therefore suitable for his
                 use.</li>
 
-                <li>Anita is a school student who knows only uncontracted Hindi Braille.
+                <li>Aashi is a school student who knows only uncontracted Hindi Braille.
                 Her parents should be able to discover the language and the braille
                 codes of the publications before purchasing the publications for
                 her.</li>
@@ -1642,9 +1668,10 @@
             </ul>
         </section>
 
+        <!--
         <section id="alterantive_media">
             <h2>Alternative Media</h2>
-            <p><span class="req-set" id="r_acc-alt-media">A PWP must support the ability to include multiple renditions of a publication.</span></p>
+            <p class="req-set" id="r_acc-alt-media">A PWP must support the ability to include multiple renditions of a publication.</p>
                 
             <p>Within their publication, in addition to the print rendition, a publisher may include a fully narrated rendition, or a video with described audio and captioning. This requirement is the same as <a href="#r_multimedia">alternative modalities</a></p>
             
@@ -1653,7 +1680,6 @@
                 image descriptions, or video captioning (text/descriptive audio) to a
                 PWP.</li>
 
-                <!--
                 <li>Frank has dyslexia and finds reading printed books a very
                 frustrating experience.  Having a book read to him by his assistive technology solution that inlcudes synchronized highlighting of the text not only allows him to comprehend the book but helps him become a better reader.</li>
 
@@ -1666,9 +1692,9 @@
                 Having an embedded three dimensional image available to be printed alongside
                 the visual image will greatly improve his understanding of the object being
                 presented.</li>
-                -->
             </ul>
         </section>
+                -->
 
         <!--
         <section id="building_custom_PWP">
