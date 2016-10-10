@@ -29,7 +29,11 @@
                         class: "orcid"
                       }]
                   ,   w3cid:      "7382"
-                }
+                },
+                {   name:       "Leonard Rosenthol",
+                    url:        "",
+                    company:    "Adobe Systems",
+                    companyURL: "https://www.adobe.com" },
           ],
           previousMaturity: "WD",
           previousPublishDate:  "2016-09-13",
@@ -89,6 +93,7 @@
   </head>
   <body>
     <section id='abstract'>
+        <p><strong>EDITORS NOTE: We need to revise the definition as discussed at TPAC</strong></p>
         <p>A <strong>Portable Web Publication (PWP)</strong> is</p>
         <dl class="pwpintro">
             <dt>portable</dt>
@@ -133,6 +138,8 @@
           notebooks, albums of all sorts. We can define these different
           manifestations as “publications”: bound editions of meaningful media,
           made public.</p>
+        
+        <p>Another form of publication that also has a long history in both the printed as well as the digital world are documents. These are publications that are written and distributed in a more ad-hoc manner, such as legal briefs, corporate memos, and even the definitions of standards, such as this content currently being read.</p>
 
         <p>We believe there is great value in combining this older tradition
           of portable, bounded publications with the pervasive accessibility,
@@ -154,6 +161,7 @@
         <section>
           <h2>Terminology</h2>
           <ul class="terms">
+                <p><strong>EDITORS NOTE: We need to revise online/offline as discussed at TPAC</strong></p>
               <li>Online/Offline: The terms “online” and “offline” are used in this document, but the
               borderline between these is not always clear cut. For example, a PWP
               can be on a local disc but accessed through a web server running on
@@ -213,7 +221,7 @@
               <h3>Open Web Platform</h3>
             <p class="req-set" id="r_owp">PWPs should be able to make use of all features offered by the OWP.</p>
 
-            <p>There is a remarkable development of tools and frameworks built on top of OWP that make it possible to develop powerful interactive layers on top of OWP. These include, for example, data visualization systems (e.g., d3, built on top of SVG), or possibilities to access external services like Wolfram Alfa. These tools have been traditionally developed for browsers, and provide possibilities that traditional publications, such as books, magazines, scholarly papers, and educational materials, should also benefit from. That requires publications to become first class citizens on the web platform.</p>
+            <p>There is a remarkable development of tools and frameworks built on top of OWP that make it possible to develop powerful interactive layers on top of OWP. These include, for example, data visualization systems (e.g., d3, built on top of SVG), or possibilities to access external services like Wolfram Alfa. These tools have been traditionally developed for browsers, and provide possibilities that traditional publications should also benefit from. That requires publications to become first class citizens on the web platform.</p>
 
             <ul class="use-cases">
                 <li>A large, multidisciplinary, web-based journal relies on
@@ -244,8 +252,7 @@
                   in print. Instead, the company publishes them
                   on the company intranet, and/or provides them to their
                   employees and contractors via specialized mobile devices.
-                  The production of these documents has similar
-                  challenges to scholarly publications including issues around
+                  These documents, as a type of publication, require 
                   accessibility, portability of annotations, and
                   the possible inclusion of complex media.</li>
             </ul>
@@ -256,7 +263,7 @@
             <p class="req-set" id="r_pag">It should be possible to see the publication in a “paginated” view.</p>
 
             <p>Whereas a “scrolling” view is the dominating approach on
-              the Web in Web browsers, publications must provide the
+              the Web in browsers, publications should provide the
               possibility to switch to a paginated view if the user so
               desires or as the author suggests. Pagination may
               automatically adapt page sizes to the device’s or the
@@ -267,7 +274,7 @@
             <p>For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.</p>
 
             <ul class="use-cases">
-                <li>Ann reads the War and Peace which, when printed, is
+                <li>Ann reads War and Peace which, when printed, is
                   over 1200 pages. In order to have a better sense of
                   her progress in the book and to make navigation within
                   the book easier (i.e., to support usability) she decides
@@ -295,7 +302,7 @@
 
             <p>The same content of the PWP should be accessible
               offline, if circumstances so dictate, without the necessity
-              for the reader to take any particular, technical actions.</p>
+              for the user to take any particular, technical actions.</p>
 
             <ul class="use-cases">
                 <li>Omo, a student in a remote Nigerian village, is taking
@@ -303,12 +310,12 @@
                   intermittent. Omo needs to have his textbooks available
                   regardless of actual connectivity.</li>
 
-                <li>Public School 148 is part of a school system in a
+                <!--<li>Public School 148 is part of a school system in a
                   low-income area. While it has a computer lab for teachers and
                   students to access material online, the school does not
                   have the resources to update the equipment, either in terms
                   of hardware or software. The publications being accessed
-                  must be available on older browsers.</li>
+                  must be available on older browsers.</li>-->
 
                 <li>Heather, a frequent international traveller, enjoys
                   reading books and tour guides on her portable device,
@@ -331,14 +338,35 @@
                   airplane production line), the same documents may need
                   reliable offline access (e.g., in the cockpit).</li>
 
-                <li>Due to restrictions such as limited storage or
+                <!--<li>Due to restrictions such as limited storage or
                   limited connectivity, certain (non-essential) content
                   may only be available in certain states (see
                   <a href="#non-essential-resources"></a> and
-                  <a href="#states"></a>).</li>
+                  <a href="#states"></a>).</li>-->
+                <li>Gyongyi, selected as a peer reviewer for the Journal of
+                Scholarly Publications, only has time to review her assigned
+                publication while commuting on the train to her university, 
+                where she does not have connectivity. Since her review process includes the
+                creation of annotations, notes, highlights, and possibly
+                changes on the content itself, it is important that these changes
+                must be smoothly transferred back to the server of the
+                journal when she is back online.</li>
+
+                <!--<li>Klaas is reading an in-depth biography of Catherine
+                the Great. As this is a lengthy document, it takes Klaas
+                several weeks to finish reading the material. During
+                this time, Klaas frequently alternates between reading
+                on his portable device, which may or may be
+                online, and reading on his desktop. Ensuring a smooth
+                transition also means that bookmarks, current reading
+                position, personal notes, and more, are stored without
+                the need of a central server that may lead to privacy
+                concerns. </li>-->
+
             </ul>
         </section>
 
+        <!--
         <section id='fundamental-transition'>
             <h3>State Transitions</h3>
             <p class="req-set" id="r_statetrans">There should be a smooth transition between offline and online states of the same publication.</p>
@@ -371,6 +399,7 @@
                 concerns. </li>
             </ul>
         </section>
+        -->
 
         <section id='distribute-uniquely'> <h3>Distribution of a Single Resource
         Unit</h3> <p class="req-set" id="r_uniqres">It should be possible to
@@ -384,19 +413,19 @@
 
             <ul class="use-cases">
                 <li>HA, Ltd, a publisher of legal briefs, needs to
-                  distribute content in a consumable format to its clients.</li>
+                  distribute content in a consumable format to its clients via secure email.</li>
                 <li>Dalia, a patent lawyer, wants to consume content on
                   a multitude of devices, some of which may not always have
-                  connectivity. Having all required content grouped in
-                  a logical structure that can be easily transferred will
-                  meet her expectations.  </li>
+                  connectivity. In order to meet her expectations, it is necessary to have 
+                    all required content grouped in a logical structure that can be easily transferred between devices.  </li>
                 <li>Andreas is working on his first collaborative research
                   paper with a fellow student. He wants to share a
                   relevant publication that includes content, diagrams, and
                   data sets with his writing partner. He does not
                   have time to learn how to share each component so that his
                   partner can access it all without much effort; he expects
-                  to be able to share this material as a single unit.</li>
+                  to be able to share this material as a single unit via the chatting system that
+                    they use to collaborate.</li>
             </ul>
             <p>See also <a href="#archiving">Archiving</a>.
 
@@ -404,48 +433,33 @@
 
         <section id="pwp-collection">
             <h3>Collections</h3>
-            <p class="req-set" id="r_pwpcoll">A publication may consist of a collection of resources.</p>
+            <p class="req-set" id="r_pwpcoll">A publication may consist of a collection of other publications.</p>
 
-            <p>A PWP is likely to consist of
-              a variety of web resources, including HTML,
-              SVG, or CSS material. It may also contain data files,
-              executable resources like JavaScript, iPython scripts, or
-              Java. This reflects the current practice on the web,
-              emphasizing the need of memory requirement on small
-              devices, cacheability, or independent development.</p>
+            <p>It is not uncommon for publishers or users to combine multiple publications (either in their entirety or in parts) together to create a new publication either for their own personal use or for redistribution.</p>
 
             <ul class="use-cases">
                 <li>Acme Publishing Company works with multiple authors to create
                   an anthology and uses resources from different
-                  locations on the web. Following the current practice
-                  on the web, the publication consists of many different
-                  resources, including HTML, SVG, and CSS. Some of the
-                  HTML contents are formatted by different CSS
-                  files. The publisher needs the collection of all the
-                  resources as a unit to include into its business
-                  workflow. </li>
+                  publications (at potentially different locations) on the web. 
+                    The publisher needs the collection identified as a new, unique, single publication to include into its business workflow. </li>
 
                 <li>Acme Publishing has published a book on wines that
                   can be read from A-Z, or
                   personalized to only read about red wines or wines
-                  from a specific region. Each wine may be a
-                  resource or a small chunk of data that is used to generate
-                  the corresponding HTML content on the fly.</li>
+                  from a specific region. </li>
 
-                <li>Elin has access to materials only through an
+                <!--<li>Elin has access to materials only through an
                   old computer in her local library. While she has time
                   to read the entire copy of War and Peace, the system
                   is unable to display the entire resource as one huge
                   HTML file. </li>
-                  <!--Parsing through one 1200-page HTML document
+                  Parsing through one 1200-page HTML document
                   is difficult and resource-intensive. Parsing through a
                   package of 60 HTML documents, roughly 20 pages each,
                   is less resource-intensive.-->
 
-                <li>Motonori is reading a Japanese history book. This book
-                  includes components where the root element is vertical-rl
-                  and others where the root element is horizontal-tb. These
-                  root element styles must be preserved.</li>
+                <li>Motonori is reading a Japanese history book. This book combines two different variants of the publication - one for users that prefer a <em>vertical-rl</em> reading style
+                    and another for users that prefer <em>horizontal-tb</em>. Users should be able to identify the variants and choose between them.</li>
             </ul>
         </section>
 
@@ -461,6 +475,7 @@
                <li>Faye, a busy mother of five, wants to access audio books
                  while commuting, jogging, doing dishes, or otherwise
                  not able to use her eyes or hands. </li>
+                
                <li>Khoudia, a librarian focusing on the children's section
                  of her local library, is looking exclusively for material
                  rich in audio and video components so as to reach a wider
@@ -488,13 +503,15 @@
 
         <section id="personalized">
           <h3>Personalization</h3>
-            <p><span class="req-set" id="r_p13n">The reader must have the possibility to personalize his or her reading experience.</span> This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of voice, etc. This should be done via a proper interactive dialogue and/or a choice among pre-defined possibilities.</p>
+            <p><span class="req-set" id="r_p13n">The user must have the possibility to personalize his or her reading experience.</span> This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of voice, etc. <!--This should be done via a proper interactive dialogue and/or a choice among pre-defined possibilities.--></p>
 
             <ul class="use-cases">
               <li>Olga, a dyslexic student, downloads a textbook and proceeds to personalize the material with larger and/or a specialized dyslexic font, as well as different contrast that, for her particular case, makes the text easier to consume.</li>
+                
               <li>When reading a book in the sun, Mia adjusts the
                 background color to allow for a stronger contrast so that she can see the
                 text.</li>
+                
               <li>While reading a book on computer programming, Ransheed
                 wants to change the font into a local font. However, the
                 code samples within the text should remain in a fixed-width font.</li>
@@ -504,6 +521,7 @@
             </ul>
         </section>
 
+        <!--
         <section id="discover">
             <h3>Discoverability</h3>
             <p class="req-set" id="r_discover">The publication must be discoverable.</p>
@@ -520,7 +538,9 @@
 
             <p>See also <a class="req-ref-full" href="#r_acc-metadata"></a>.</p>
         </section>
+        -->
 
+        <!--
         <section id="versioning">
             <h3>Version Control</h3>
             <p class="req-set" id="r_version">There should be a way to control versioning and revisioning.</p>
@@ -539,7 +559,9 @@
 
             <p>See also <a class="req-ref-full" href="#r_distro"></a>.</p>
         </section>
+        -->
 
+        <!--
         <section id="non-essential-resources">
             <h3>Essential and Non-essential Resources</h3>
             <p class="req-set" id="r_essential">There should be a way to differentiate between essential and non-essential resources.</p>
@@ -621,25 +643,21 @@
 
             </ul>
         </section>
+        -->
 
         <section id='acwp'>
             <h3>Access Control and Write Protections</h3>
-            <p class="req-set" id="r_protections">A PWP should allow for access control and write protections of the resource.</p>
+            <p class="req-set" id="r_protections">A PWP should allow for access control and write protections of the publication.</p>
 
             <ul class="use-cases">
-                <li>A library may loan the publication for two weeks; the PWP
-                should provide means for its environment to control the
-                period of the loan.</li>
-
-                <li>A university may make a textbook available for its
-                students for the course of the year.</li>
+                <li>A library may loan the publication for two weeks or a university may make a textbook available for its students for the course of the year. A PWP
+                should provide a means to inform user agents about the availability period to enable the UA to control access accordingly.</li>
 
                 <li>Alice is working on potentially Nobel prize winning
                     research, and has drafted her paper describing her
                     discoveries. She asks Bob to review the paper, but
                     needs to make sure that the PWP retains specific
-                    protections, regardless of whether it is read online or
-                    offline.
+                    protections on what Bob is able to do with the publication and its content.
                 </li>
             </ul>
         </section>
@@ -666,7 +684,7 @@
             <dl>
                 <dt>Accessibility:</dt>
                 <dd>People with disabilities should be able to access
-                  the content; they should be able to perceive,
+                  the content of a publication. They should be able to perceive,
                   understand, navigate, and interact with it, as well
                   as contribute to it. Accessibility encompasses all
                   disabilities that affect access to the content,
@@ -682,27 +700,23 @@
                   the right character sets and of local typographic conventions.</dd>
 
                 <dt>Device Independence:</dt>
-                <dd>Content should be usable on a large number of devices
+                <dd>The content in a publication should be usable on a large number of devices
                   with very different device characteristics: different
                   screen types and sizes, various input modalities, varying
                   level of processing power, etc. These different affordances
-                  should be automatic with no, or very little user intervention.</dd>
+                  should be automatic with no, or very little, user intervention.</dd>
 
                 <dt>Security:</dt>
-                <dd>Publications should prevent malicious attacks,
-                data theft, and other security incidents, even if
-                they contain secure mashups, access to distributed
-                services, etc. Consuming the content should not
-                jeopardize the integrity of the underlying data,
-                users’ privacy, or machine operations.</dd>
+                <dd>Publications should be presented by a User Agent using a security model that is at least (if not more) secure than the standard <a href="https://www.w3.org/TR/runtime/">web security model</a>. Doing will prevent publications that contain malicious attacks,
+                data theft, and other security incidents from impacting users by jeopardizing the integrity of the underlying data or machine operations.</dd>
 
                 <dt>Privacy:</dt>
-                <dd>Content should maintain and support user privacy,
+                <dd>The content in a publication should maintain and support user privacy,
                   in spite of the fact that the evolution of online
                   technologies has increased the possibility for the
                   collection and processing of personal, and possibly
-                  sensitive, data, as well as the ability to ubiquitously
-                  track a user's online activity.</dd>
+                  sensitive, data. However, since a publication may use <a href="#pwp-owp">any part of the OWP</a>, it may choose to use  functionality such as the ability to
+                  track a user's activity within the publication.</dd>
             </dl>
 
             <p>These principles correspond to technical requirements on
@@ -713,28 +727,31 @@
               authors use the possibilities of these technologies or
               not is not addressed in this document.</p>
 
-            <p>All these constraints are usually formalized in the
-              context of the usage on the Web, but they are also valid
+            <p>All these constraints are formalized in the
+              context of the usage on the Web and by extension Web Publications.
+                This means that they are valid
               for publications in general regardless of whether
               they are online or offline, or whether the publication
-              is distributed as a single unit or not. In some cases,
-              for example due to legislative reasons,
-              the demands on digital publications may be more stringent
+              is distributed as a single unit or not. 
+                In some cases, for example due to legislative reasons,
+              the demands on publications may be more stringent
               than for generic web sites. The use cases below provide
               some examples for the publication-specific situations.
             </p>
 
             <ul class="use-cases">
+                <!--
                 <li>(On Accessibility) Asmait uses a dedicated
                   braille e-reader capable of using standard OWP
-                  technologies, that can render any WCAG-compliant content.
+                  technologies that can render any WCAG-compliant content.
                   She needs to be able to read her newspaper and contribute
                   to the interactive discussion components on her dedicated
                   braille reader, not just a standard browser and computer
                   combination. </li>
+                -->
 
                 <li>(On Accessibility) Legal Publishing Ltd.
-                  publishes all the official texts, as issued by the
+                  publishes all the official texts as issued by the
                   government of its country. Per local legislation, the
                   publication must be accessible, following W3C’s WCAG
                   Level AA requirements, to serve as official references
@@ -762,6 +779,7 @@
                   the only way those publications are accepted by local
                   customers.</li>
 
+                <!--
                 <li>(On Device Independence) Vera has several
                 devices she uses to read her books, depending on
                 where she is. She uses her table with a larger
@@ -783,43 +801,56 @@
                   the integrity of the manuals and the relevant data
                   is maintained at all times, to secure that the pilots
                   operate based on correct information only.</li>
+                -->
+                
+                <li>(On Security)LocalLibrary receives publications from a variety of sources
+                that they then make available to their members. It is imperative that none
+                of these publications can cause any damage to their own systems or those
+                of their members.</li>
             </ul>
         </section>
 
         <section id="single-package">
             <h3>Single Unit</h3>
-            <p class="req-set" id="r_single">User agents must treat a PWP, regardless of the number of components, as a single unit as opposed to individual documents.</p>
+            <p class="req-set" id="r_single">User agents must treat a PWP as a single unit as opposed to individual resources.</p>
 
             <ul class="use-cases">
-              <li>User agent must be able to search a complete PWP as
+              <li>User agent must be able to search a PWP and see the results provided as if it was
                 one unit.</li>
-              <li>User agent must be able to give value counters (page
-                counters, section numbering, footnotes, endnotes) across
-                the PWP (as opposed to individual components being
+              <li>User agents that support value counters (page
+                counters, section numbering, footnotes, endnotes), should do so across
+                the entire PWP (as opposed to individual components being
                 numbered separately)</li>
-              <li>User preferences apply to complete PWP (users must be
+              <li>Any preferences or settings in the user agent, must 
+                  apply to the complete PWP (users must be
                 able to adjust display, e.g., font selection, font-size
                 adjustment, background color)</li>
               <li>Assistive Technology such as screen readers or voice
-                dictation control needs to access a complete PWP.</li>
+                dictation control needs to have the PWP presented to it 
+                  as if it was a single unit.</li>
+            <!--
               <li>A user should be able to access all linear content
                 through simple UI gestures, independent of the document
                 structure.</li>
+            -->
             </ul>
         </section>
 
         <section id="constituent-resources">
           <h3>Constituent Resources</h3>
-          <p class="req-set" id="r_con-res">The information regarding the constituent resources of a PWP must be easily discovered.</p>
+          <p class="req-set" id="r_con-res">The information regarding the constituent resources of a PWP must be easily discovered and there should be a way to differentiate between essential and non-essential resources.</p>
 
-          <p>A PWP will likely be composed of multiple web documents. A
-            more complicated PWP may have many more components, meaning
-            that extracting in advance all the references to other
+          <p>A PWP will likely be composed of multiple web documents and their resources. A
+            more complicated PWP may have many resources, some of which are essential and some of which are not. Because of this complexity, extracting in advance all the references to some or all 
             constituent resources may be prohibitive. It is therefore
             necessary for the user agent to have an easy access to
-            the list of constituent resources, and some of their
-            characteristics like their media types or sizes.
+            the list of constituent resources and some of their
+            characteristics such as whether they are essential, and their media types and sizes.
           </p>
+            
+            <p>In a publication, some content is essential to the user being able to consume it while other content could be either absent or have a provided fallback for situations such as limited
+            connectivity or storage. This information, provided by the author or publisher of the PWP, would enable a user agent to provide a better experience to the user. 
+                For exanple, the user agent can ensure that essential resources are made available when offline (see <a href="#fundamental-online-offline"></a>.</p>
 
           <ul class="use-cases">
               <li>The system needs to identify which components must be
@@ -835,7 +866,118 @@
               <li>The user agents needs to know if a publication
               contains/requires support for a specified media type
               (without processing the complete PWP).</li>
+              
+              <li>
+                Nick is reading a long-form narrative on a device with limited storage: a publication
+                filled with text, images, sounds, and multimedia files.
+                Nick also rides the subway, where
+                he loses Internet connectivity frequently and without
+                warning for long stretches of time. During offline or
+                low-storage situations, there are still critical parts of the
+                publication that are consumable, mainly the text (and
+                possibly images). Having a reasonable fallback for video,
+                such as a poster image or placeholder image, would allow Nick
+                to read the content while offline or on a device with
+                limited storage.
+              </li>
+
+              <li>Gösta is reading a treatise on the theory of functions.
+                A mathematical font is essential for the proper display
+                of the mathematical formula in this publication, so the author
+                has marked the font as essential so it is made available offline.</li>
+            
+              <!--
+              <li>A font used for aesthetic purposes only in display of a
+                book may not be essential and an implementation may decide
+                not to embed it for offline use.</li>
+
+              <li>Mary is unable to view images; she requires extended
+                image descriptions to make sense of the material. These
+                descriptions are essential for her, whereas they might
+                not be for Nick who has indicated the images are, to him,
+                nonessential.</li>
+            -->
+
+              <li>While reading an article on a new spam analysis algorithm,
+                Lars is primarily interested in the findings of the research.
+                Since the research was funded by a government agency, the
+                dataset, consisting of millions of anonymized log files, is also
+                available. Because of its size, the researchers have marked the 
+                  dataset as non-essential for conveying the results of the paper and therefore
+                indicates it can be skipped when reading the publication
+                offline. </li>
+              
+                <li> Sarah is reading a publication about the stock exchange. The
+                current state of the stock is fetched (from a remote resource) when she opens the
+                publication. However, when she is on the train (without a connection) one week later
+                and opens the stock exchange publication, she will continue to see the state of the
+                stock exchange as it was the last time she opened the
+                publication. It should be possible for either the content itself or the user agent to 
+                    provide some user experience that notifies her that the currently presented data is a
+                week old. </li>
           </ul>
+        </section>
+
+          <section id="technical-metadata">
+              <h3>Metadata and Resources</h3>
+              <p class="req-set" id="r_manifest-metadata">Publications should include technical and descriptive metadata as well as any additional characteristics of the <a href="#constituent-resources">constituent resources.</a></p>
+
+              <p>A user agent may require information about the publication and its components
+              in order to process it. For example, performance and memory requirements may
+              prevent a user agent from parsing a large number of content documents in
+              order to discover the necessary components and their relationships. A user
+              agent may need to make some decisions about how to present content before
+              displaying it.</p>
+
+              <p>Some necessary features are listed among the fundamental features of a
+              PWP (see <a href="#find-information"></a>); the use cases below provide a
+              (non-exhaustive) list of further information.</p>
+
+              <ul class="use-cases">
+                <li>The author/publisher should provide, when appropriate, the rights of various components identified in the package; e.g., the rights relevant to the image of the Mona Lisa owned by the Louvre on whether it is permissible to download the image for offline use.</li>
+
+                <li>The author/publisher should have the possibility to provide additional information on the Web Publication, like:
+                    <ul>
+                        <li>captions belonging to multimedia resources within the publication;</li>
+                        <li>the accessibility of each component (see also "Accessible Metadata");</li>
+                        <li>whether there is a need for additional processing, such as with MathML;</li>
+                        <li>the title, author(s), cover image, etc., to display the
+                        publication on a shelf without downloading all its content (see
+                        also "Discoverability", "Accessible Metadata");</li>
+                        <li>whether the content is unaltered (see also "Security");</li>
+                        <li>the origin of the publication.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+       <section id='extdata'>
+            <h3>Data</h3>
+            <p class="req-set" id="r_extdata">PWPs should be able to include data as <a href="#constituent-resources">resources</a>, just as it does with text, images, etc.</p>
+
+            <ul class="use-cases">
+                <li>Rosa has submitted an article to EsteemedJournal and provided her
+                research data in CSV format. She and EsteemedJournal provide users
+                access to the CSVs when accessing her article either online or in the packaged publication.
+                <!--Albert reads Rosa’s article from a packaged version. When online, he can
+                access the research data, but when offline, he cannot access it and the
+                user agent fails gracefully.--></li>
+
+                <li>Risha publishes an article which includes an interactive component
+                that accesses a database, exposed to the web via a RESTful API. The
+                interactive component is implemented as a JavaScript library. Such data
+                cannot be included in a packaged publication and the interactive module is
+                of no use without such data. Risha therefore marks the PWP component
+                relative to the interactive module as “not packageable”. <!-- Albert reads
+                Risha’s article from a packaged version. When online, he can access the
+                interactive module, but when offline, he cannot access it and the reading
+                system fails gracefully.--></li>
+
+                <li>InteractiveCompany publishes a PWP containing an interactive component
+                implemented as a JavaScript library, but this library requires several
+                other JavaScript libraries. Therefore InteractiveCompany packages all JavaScript libraries
+                required to get the interactive component running offline.</li>
+            </ul>
         </section>
 
         <section id="reading-order">
@@ -845,7 +987,8 @@
           of a PWP.</p>
 
           <p>A user agent needs to know the sequence in which to present
-          components of a PWP to the user. A PWP will likely be composed
+          components of a PWP to the user, including the starting point. 
+              <!--A PWP will likely be composed
           of multiple web documents. A typical simple PWP will have anywhere
           from one to fifteen HTML documents and several image files, in one
           location or many. A more complicated PWP may have many more
@@ -855,15 +998,15 @@
           for the user agent to have an easy access to the reading
           order constituent resources. In particular, the user agent
           should also have the information on what the starting point of
-          the publication rendering is. </p>
+          the publication rendering is.-->  </p>
 
           <ul class="use-cases">
               <li>Moby Dick contains 136 chapters. Each chapter is a
-                separate HTML document. The user agent must present the
-                chapters sequentially, starting by the first chapter.</li>
+                separate HTML document, with a logical order for reading them. 
+                  It should be possible for the publication to inform the user agent 
+                  that the proper order for consumption of the HTML documents is sequentially, starting by the first chapter.</li>
               <li>The Encyclopedia of Stuff includes 1348 articles, each
-                one in a unique HTML document. The user agent must
-                present the articles in order (alphabetically, by title).
+                one in a unique HTML document. The publication must be able to indicate to the user agent that the standard way to consume the articles is alphabetical order, by title.
               </li>
           </ul>
       </section>
@@ -871,23 +1014,24 @@
       <section id="unique-identifier">
           <h3>Uniquely Identifying a PWP</h3>
           <p class="req-set" id="r_uniq-id-state">There should be a way to
-          uniquely identify a publication regardless of its state.</p>
+          uniquely identify a publication <!--regardless of its state-->.</p>
 
           <p>A unique identification of a specific publication,
-            regardless of whether it is online or offline, or whether it
+            regardless of <!--whether it is online or offline, or--> whether it
             is part of a web site or a single (packaged) file is
-            essential. This unique identification should be mapped onto
-            the “real” location of the publication smoothly, without
-            requiring the author’s interaction.
+            essential. This unique identification should be able to mapped onto
+            the <a href="#locators">location</a> of the publication.
           </p>
 
           <ul class="use-cases">
+              <!--
               <li>Digital publications make use of interactive cross
                 references within the publication (references to indices,
                 images, etc). These references should be done once by
                 the author and should work regardless of whether the
                 publication is online or offline, for example.
               </li>
+            -->
 
               <li>Scholarly references demand a unique identification
                 of the publication and, possibly, its internal structure.
@@ -899,10 +1043,32 @@
                 example, the assessment of individual researchers
                 possible.</li>
           </ul>
-
       </section>
-    </section>
+    
+        <section id="versioning">
+                <h3>Versioning a PWP</h3>
+                <p class="req-set" id="r_id-version">There should be a way to
+                uniquely identify a version of a publication.</p>
 
+                <p>For a variety of reasons, it is important that there be a
+                reliable way to learn that a new version of one or more PWP components have
+                been published at the same locations as previously published. Without such a
+                mechanism, such services will need to periodically re-download and
+                re-checksum all PWP components to determine whether any updates have
+                transpired, unnecessarily increasing the load on not only that service but on the
+                publisher's servers.</p>
+
+                <ul class="use-cases">
+                    <li>An archiving service regularly polls for changes to an article that it
+                    has already archived. One such poll indicates that several resources that
+                    constitute the object have changed. The archiving service retrieves these
+                    resources and stores them as incremental updates to the appropriate
+                    archival unit in a preservation repository.</li>
+                </ul>
+        </section>
+      </section>
+
+      <!--
     <section id="states">
         <h1>States of a PWP</h1>
 
@@ -971,49 +1137,57 @@
             </ul>
         </section>
     </section>
+-->
 
     <section id="distribution_sharing">
-        <h1>Distribution, Sharing and External Resources</h1>
+        <h1>Distribution and Sharing</h1>
 
         <section id="distro-vers">
             <h3>Distribution and Versioning</h3>
             <p class="req-set" id="r_distro">The distribution of a PWP should not affect its versioning.</p>
 
             <p>Simply distributing or sharing a PWP to multiple destinations and devices
-            should not result in multiple versions of the PWP. Those items
-            should not be different versions of the source PWP unless they contain
+            should not result in (technically) different versions of the PWP unless they contain
             modifications that make them different PWPs.</p>
 
             <ul class="use-cases">
               <li>Publisher Corp. Inc. publishes a new PWP and sends it to its
-              distributors and customers. This PWP is downloaded to devices, or synced
-              across several devices, or made available to a customer-specific cloud.
+              distributors and customers. This PWP is downloaded to devices or made available to a customer-specific cloud.
               Customers can access this file from different retailers, through different
               applications, either directly or downloaded from a private cloud. Thus,
-              the PWP is duplicated many times, resulting in a huge number of items.
-              There is one source manifestation, therefore one canonical identifier for
-              a large number of items spread across devices and buyers. </li>
+              the PWP is duplicated many times, resulting in a huge number of copies.
+              There remains a single source manifestation, and therefore one <a href="unique-identifier">canonical identifier</a> for
+              all of the items spread across devices and buyers. </li>
 
-              <li>Mary creates a PWP and sends it to Dave and Kristin, who each send it
-              to two friends, who then send it on to their friends. Ultimately there are
-              many copies of Mary's PWP but they are not different versions unless they
-              have been altered; one shall say that they are all “the same” PWP.</li>
+              <li>Mary creates a PWP and sends it to Dave and Kristin. Kristin simply sends it
+                  along to two other friends, but Dave adds some comments first to his copy before sending to two friends. By doing so, Dave has created a new PWP with its own <a href="unique-identifier">canonical identifier</a> while the version used by Mary, Kristen and her friends remains the same as the original.</li>
+                
+               <li>Slicendice Publishing publishes many PWPs, some of which are
+               different versions or subsets or combinations of others. Slicendice needs
+               not only to be able to uniquely identify each unique PWP but also to
+               identify each "copy" or "delivery" ("item") of each of those PWPs so that
+               it can track "what" has been sold and "how many" of each one have been
+               sold.</li>
+
             </ul>
         </section>
 
         <section id='pwp-process'>
             <h3>Distribution Process</h3>
             <p class="req-set" id="r_process">The distribution of PWPs should
-            respect the existing processes and expectations of publishing
-            channels. </p>
+            respect the existing processes and expectations of professional publishing
+            channels as well as ad-hoc methods of distribution (eg. email). </p>
 
             <ul class="use-cases">
                <li>Ahmed acquires a PWP on an e-commerce platform. He expects to be able
                to receive the PWP as a file (rather than only having access to it) and
                to be able to load it onto its different reading  devices.</li>
+                
+                <!--
                <li>Bridget buys (rather than subscribes to) a PWP. She expects to have
                permanent access to that PWP and to be able to make reasonable use of
                it.</li>
+                -->
 
                <li>Alice acquires a PWP through a subscription service and downloads it.
                When, later on, she decides to unsubscribe from the service, this PWP
@@ -1022,19 +1196,13 @@
                <li>Bill acquires a PWP through a rental service. After a certain period,
                this PWP becomes unavailable to him.</li>
 
-               <li>Slicendice Publishing publishes many PWPs, some of which are
-               different versions or subsets or combinations of others. Slicendice needs
-               not only to be able to uniquely identify each unique PWP but also to
-               identify each "copy" or "delivery" ("item") of each of those PWPs so that
-               it can track "what" has been sold and "how many" of each one have been
-               sold. (See also "There should be a way to uniquely identify a publication
-               regardless of its state")</li>
-
+                <!--
                <li>Cobble-It Publishing creates PWPs from a mix of internal content and
                content licensed from other parties. Using PWP metadata, Cobble-It is
                able to keep track of the rights associated with the different components
                so that it can realize income from its own IP and appropriately
                compensate the parties whose IP it has licensed.</li>
+                -->
             </ul>
         </section>
 
@@ -1056,6 +1224,7 @@
             </ul>
         </section>
 
+        <!--
         <section id='extres'>
             <h3>Sharing External Resources</h3>
             <p class="req-set" id="r_extres">Several PWPs may share external resources.</p>
@@ -1070,40 +1239,7 @@
               reading application and cached.</li>
             </ul>
         </section>
-
-        <section id='extdata'>
-            <h3>External Data</h3>
-            <p class="req-set" id="r_extdata">PWPs should be able to access external data.</p>
-
-            <p>This is related to <a class="req-ref-full" href="#r_essential"></a>. That requirement states that essential resources must be included in the offline version; non-essential resources may be either included, too, or accessed online when possible. It is up to the author to decide which resources will be included, and which will not. This requirement adds the possibility to specify that some data must stay external to the Web Publication. </p>
-
-            <ul class="use-cases">
-                <li>Rosa has submitted an article to EsteemedJournal and provided her
-                research data in CSV format. She and EsteemedJournal wish to provide users
-                access to the CSVs when accessing her article, but they decide to
-                inactivate the inclusion of the research data in the packaged publication.
-                Albert reads Rosa’s article from a packaged version. When online, he can
-                access the research data, but when offline, he cannot access it and the
-                user agent fails gracefully.</li>
-
-                <li>Risha publishes an article which includes an interactive component
-                relying accessing a database, exposed to the web via a RESTful API. The
-                interactive component is implemented as a JavaScript library. Such data
-                cannot be included in a packaged publication and the interactive module is
-                of no use without such data. Risha therefore marks the PWP component
-                relative to the interactive module as “not packageable”. Albert reads
-                Risha’s article from a packaged version. When online, he can access the
-                interactive module, but when offline, he cannot access it and the reading
-                system fails gracefully.</li>
-
-                <li>InteractiveCompany publishes a PWP containing an interactive component
-                implemented as a JavaScript library, but this library requires several
-                other JavaScript libraries. The interactive component has not been marked as “not
-                packageable”. The user agent therefore packages all JavaScript libraries
-                required to get the interactive component running offline, with a
-                recursive inspection of the JavaScript code.</li>
-            </ul>
-        </section>
+        -->
     </section>
 
     <section id="manifests">
@@ -1111,48 +1247,17 @@
 
         <p>In this document, 'manifest' refers to an abstract place,
         typically one or several files, that contain information necessary to the
-        proper management, rendering, and so on, of the publication. This is opposed to
-        metadata that contain information on the content of the
+        proper management, rendering, and so on, of the publication. This is opposed to metadata that contains information on the content of the
         publication like author, publication date, and so on.</p>
 
         <p>Some fundamental use cases and requirements already imply the usage of manifests. For example:</p>
         <ul>
-            <li><a class="req-ref-full" href="#r_horizdep"></a></li>
+            <li><a class="req-ref-full" href="#r_con-res"></a></li>
+            <li><a class="req-ref-full" href="#r_manifest-metadata"></a></li>
+            <li><a class="req-ref-full" href="#r_extdata"></a></li>
             <li><a class="req-ref-full" href="#r_read-order"></a></li>
         </ul>
 
-        <section id="technical-metadata">
-              <h3>Manifests, Metadata, and Resources</h3>
-              <p class="req-set" id="r_manifest-metadata">Manifests should include the technical and descriptive metadata, and basic characteristics of the constituent resources.</p>
-
-              <p>A user agent requires information about the package and its components
-              in order to process it. For example, performance and memory requirements may
-              prevent a user agent from parsing a large number of content documents in
-              order to discover the necessary components and their relationships. A user
-              agent may need to make some decisions about how to present content before
-              displaying it.</p>
-
-              <p>Some necessary features are listed among the fundamental features of a
-              PWP (see <a href="#find-information"></a>); the use cases below provide a
-              (non-exhaustive) list of further information.</p>
-
-              <ul class="use-cases">
-                <li>The author/publisher should provide, when appropriate, the rights of various components identified in the package; e.g., the rights relevant to the image of the Mona Lisa owned by the Louvre on whether it is permissible to download the image for offline use.</li>
-
-                <li>The author/publisher should have the possibility to provide additional information on the Web Publication, like:
-                    <ul>
-                        <li>captions belonging to multimedia resources within the publication;</li>
-                        <li>the accessibility of each component (see also "Accessible Metadata");</li>
-                        <li>whether there is a need for additional processing, such as with MathML;</li>
-                        <li>the title, author(s), cover image, etc., to display the
-                        publication on a shelf without downloading all its content see
-                        also "Discoverability", "Accessible Metadata");</li>
-                        <li>whether the content is unaltered (see also "Security");</li>
-                        <li>the origin of the publication.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
 
     <!--
         <section>
@@ -1181,7 +1286,7 @@
               <ul class="use-cases">
                   <li>EsteemedJournalPublisher would like to offer the users of the
                   EsteemedJournal of Chemistry App the opportunity to read only the
-                  abstracts of the journals in the app. The App Package must offer the
+                  abstracts of the journals in the app. The publication would therefore provide the
                   user a list (table of contents) of abstracts (disjoint objects in the
                   package with semantic information or metadata informing the package of
                   the nature of the object). </li>
@@ -1194,6 +1299,7 @@
               </ul>
         </section>
 
+        <!--
         <section id="change_notices">
               <h3>Change Notices</h3>
               <p class="req-set" id="r_changenotice">Manifest should include information of new content.</p>
@@ -1219,41 +1325,36 @@
               </ul>
               <p>See also <a href="#archiving">"Archiving"</a></p>
         </section>
+    -->
 
         <section id="manifest_links">
               <h3>Manifests and Links</h3>
-              <p class="req-set" id="r_manifest-links">Manifest should include means to use links to resources, regardless of location.</p>
+              <p class="req-set" id="r_manifest-links">Manifests should include a means to remap/redirect a given URL to another, either within a package or externally.</p>
+            
               <p>The fundamental requirement on identification already states that there
               should be a way to uniquely identify a publication (see <a
               href="#unique-identifier"></a>). This requirement should be extended to
               resources within a publication, such as a chapter, an image, or a
-              mathematical formula. To achieve these, the manifest should contain the
-              necessary information to make the mapping of URIs possible.</p>
+              mathematical formula. While the web provides a model for this for non-packaged resources, we also require a model that will work for the packaged version - and where there exists a  mapping of these URIs.</p>
 
               <ul class="use-cases">
                   <li>A scholarly mathematical publication refers to a specific theorem
                   in another publication, and that reference must be unique, stable and
                   retrievable on the Web. That reference should not depend on whether
                   the publishes issues a new version of the target publication (thereby
-                  possibly change the section numbering) or whether the publication is
-                  available now for offline use.</li>
+                  possibly change the section numbering) <!--or whether the publication is
+                  available now for offline use-->.</li>
 
-                  <li>An archival service wants to harvest (spider) a PWP, and expects
-                  to find in the manifest what it needs to make sure it gets all the pieces
-                  of the PWP that must be archived, even if on separate servers.</li>
+                  <li>An archival service wants to harvest (spider) a PWP and not have to modify the OWP content during the process. In order to achive that goal, there manifest would incorporate a mapping from the URIs present in the OWP content to their new location inside the archive.</li>
               </ul>
         </section>
 
         <section id="alternative-reading-order">
             <h3>Alternative Reading Orders</h3>
-            <p class="req-set" id="r_manifest-reading">The manifest may include alternative reading orders.</p>
+            <p class="req-set" id="r_manifest-reading">The manifest may include alternative reading orders in addition to the <a href="#reading-order">default one</a>.</p>
 
-            <p>One of the fundamental requirements is that the default reading order
-            should be made available to the user agent (see <a
-            href="#reading-order"></a>). In addition, the manifest should also
-            provide  means to define alternative reading orders. It is up to the
-            user agent how this alternative reading order is conveyed to the reader
-            (via some suitable user interface techniques).</p>
+            <p>In addition to the the <a href="#reading-order">default reading order</a>, the manifest should also provide a means to define alternative reading orders. It is up to the publication or the user agent how this alternative reading order is conveyed to the reader
+            (ie via some suitable user interface techniques).</p>
 
             <ul class="use-cases">
                 <li>EducationalPublisher publishes a complex textbook. The textbook
@@ -1267,32 +1368,34 @@
         </section>
 
         <section id="flexible-access-manifest">
-            <h3>Multiple Access Options</h3>
-            <p class="req-set" id="r_manifest-flex">The access methods for retrieving a manifest should allow for significant flexibility.</p>
+            <h3>Multiple Means of Access</h3>
+            <p class="req-set" id="r_manifest-flex">The PWP specification should not mandate a single way in a user agent, or a publication itself, can retrieve a manifest.</p>
 
             <p>A manifest may be a file in some predefined format, such as XML or
-            JSON. There should be several ways to get hold of that manifest--sourcing
-            the file from a well known location, using an HTML <code>link</code>
-            element, etc. A PWP should provide a high level of flexibility, including
+            JSON or it could simply be some data in a cloud-based database. Because of this flexibility, there could be several ways to get hold of that manifest such as:</p>
+                <ul>
+                    <li><p>sourcing the file from a well known location</p></li>
+                    <li><p>using an HTML <code>link</code> element</p></li>
+                    <li><p>etc.</p></li>
+                </ul>
+            <p>A PWP should provide a high level of flexibility, including
             possible alternatives on how that manifest should be found. </p>
 
             <ul class="use-cases">
                 <li id="bigretailer-manifest">BigRetailer receives a publication
                 from EsteemedPublisher that it intends to add to its catalogue.
-                BigRetailer wants to change or extend some general information
-                (typically contained in the manifest) regarding the publication,
-                like the local bibliographic metadata, or its own “teaser” in terms
+                BigRetailer wants to adds it own “teaser” via
                 an alternative reading order (see <a
                 href="#alternative-reading-order"></a>). To achieve that,
                 BigRetailer provides its own version of the publication manifest,
-                and makes it sure that the user agent takes that one as the
-                publication’s manifest (e.g., by providing a reference to the
-                alternative manifest via an HTTP <code>LINK</code> header).</li>
+                that the user agent will use as that one as the
+                publication’s manifest.</li>
 
             </ul>
         </section>
     </section>
 
+    <!--
     <section id="locators">
         <h1>Locators</h1>
         <section id="state_independent_locs">
@@ -1374,6 +1477,7 @@
             </ul>
         </section>
     </section>
+    -->
 
     <section id="archiving">
         <h1>Archiving</h1>
@@ -1397,7 +1501,8 @@
 
             <p>An archiving service needs a reliable way to learn where all of the
             components that constitute a PWP are located in order to be able to archive
-            it. Without such a mechanism, the archiving service will have to develop and
+            it. This requirement is the same as the <a href="#constituent-resources">constituent resources requirement</a>. 
+                <!--Without such a mechanism, the archiving service will have to develop and
             maintain publisher- and/or platform-specific heuristics for packaging
             collections of interlinked resources into discrete publications, making
             archiving more expensive and error-prone.</p>
@@ -1410,14 +1515,19 @@
               ingest into a preservation repository.</li>
             </ul>
             <p>See also Discovery</p>
+            -->
         </section>
 
         <section id="new_version">
             <h3>Newly Published Versions</h3>
 
-            <p class="req-set" id="r_archnewvers">There should be a way to discover that a new version of one or more PWP components have been published.</p> <p>In order to be able to archive a PWP, an archiving service needs a
+            <p class="req-set" id="r_archnewvers">There should be a way to discover that a new version of one or more PWP components have been published.</p> 
+            
+            <p>An archiving service needs a
             reliable way to learn that a new version of one or more PWP components have
-            been published at the same locations as previously published. Without such a
+            been published at the same locations as previously published. This requirement is the same as the <a href="#r_id-version">constituent resources requirement</a></p>
+                
+                <!--Without such a
             mechanism, the archiving service will need to periodically re-download and
             re-checksum all PWP components to determine whether any updates have
             transpired, unnecessarily increasing the load on archiving service and
@@ -1431,17 +1541,19 @@
                 resources and stores them as incremental updates to the appropriate
                 archival unit in a preservation repository.</li>
             </ul>
+            -->
         </section>
 
-        <section id="new_components">
-            <h3>New Components</h3>
+        <section id="new_or_delete_components">
+            <h3>New or Removed Components</h3>
 
-            <p class="req-set" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to a PWP.</p>
+            <p class="req-set" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to or deleted from a PWP.</p>
+            
             <p>An archiving service needs a reliable way to learn that one or more PWP
-            components have been added to a PWP in order to be able to archive them.
-            Without such a mechanism, there is a possibility that the archiving service
+            components have been added to or removed from a PWP in order to be able to update the associated archive of the publication.
+            <!--Without such a mechanism, there is a possibility that the archiving service
             will not know that the new component belongs to the PWP, because the
-            publisher- and/or platform-specific heuristics have not been updated.</p>
+            publisher- and/or platform-specific heuristics have not been updated.--></p>
 
             <ul class="use-cases">
                 <li>An archiving service regularly polls for changes to an article that it
@@ -1449,19 +1561,6 @@
                 been added to the object. The archiving service retrieves these resources
                 and store them as incremental updates to the appropriate archival unit in
                 a preservation repository.</li>
-            </ul>
-        </section>
-
-        <section id="deleted_components">
-            <h3>Deleted Components</h3>
-            <p class="req-set" id="r_archdelcomp">There should be a way to discover that one or more PWP components have been removed from a PWP.</p>
-            <p>An archiving service needs a reliable way to learn that one or more PWP
-            components have been removed from a PWP in order to be able to propagate
-            this change to the archive. Without such a mechanism, it is possible
-            that the archiving service will mistakenly make PWP components accessible
-            that should not be.</p>
-
-            <ul class="use-cases">
                 <li>A publisher issues a retraction for a published article, resulting in
                 the addition of new resources to the object (i.e., the retraction notice)
                 and the removal of others (i.e., the article content). An archiving
@@ -1479,12 +1578,12 @@
         </section>
 
         <section id="embedded_metadata">
-            <h3>Embedded Metadata</h3>
+            <h3>Metadata</h3>
 
-            <p class="req-set" id="r_archmetadata">There should be a way to indicate whether one or more PWP components contain structured descriptive metadata.</p>
+            <p class="req-set" id="r_archmetadata">There should be a way to indicate whether one or more PWP components contain descriptive metadata.</p>
 
             <p>An archiving service needs a reliable way to determine which, if any, PWP
-            components contain structured descriptive metadata. Without such a
+            components contain descriptive metadata, such as that described in <a href="#technical-metadata">metadata and resources</a>. Without such a
             mechanism, the archiving service will have to develop and maintain
             publisher- and/or platform-specific heuristics for locating or parsing out
             descriptive metadata, making archiving more expensive and decreasing the
@@ -1497,7 +1596,7 @@
                 containing descriptive metadata. The archiving service retrieves these
                 resources and packages them into a logical archival unit for ingest into a
                 preservation repository. A related process identifies and parses the
-                descriptive metadata structure and saves its contents into an associated
+                descriptive metadata and saves its contents into an associated
                 management database.</li>
             </ul>
         </section>
@@ -1507,6 +1606,7 @@
         <h1>Accessibility</h1>
 <p>Some fundamental use cases and requirements already imply the usage of accessibility.
         For example:</p>
+        <p><strong>EDITORS NOTE: This list needs updating!</strong></p>
         <ul>
             <li><a class="req-ref-full" href="#r_p13n"></a></li>
             <li><a class="req-ref-full" href="#r_single"></a></li>
@@ -1515,12 +1615,14 @@
         <section id="accessible-metadata">
             <h2>Accessible Metadata</h2>
 
-            <p><span class="req-set" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</span> This ensures that users know how (or whether) a PWP or any of its parts is accessible. Granular accessibility of a PWP must be discoverable so that users know how (or whether) a specific chapter or element within a PWP is accessible. See also <a href="#technical-metadata"></a>.</p>
+            <p><span class="req-set" id="r_acc-metadata"> Accessibility of a PWP must be discoverable.</span> This ensures that users know how (or whether) a PWP or any of its resources is accessible. Granular accessibility of a PWP must be discoverable so that users know which (if any) resources within a PWP are accessible. See also <a href="#technical-metadata"></a>.</p>
+            
             <ul class="use-cases">
                 <li>Ferdous wants to buy a book about a museum exhibit, but before he does that, he wants to guarantee that the images and videos about the exhibits have detailed descriptions, to ensure that he will be able to read it with a screen reader or refreshable Braille display.</li>
 
                 <li>Alejandra must ensure that the equation editors in her textbook have
                 non-mouse functionality before she purchases the textbook.</li>
+                
                 <li>A university professor is developing a course and the professor
                 knows that he is required to use accessible digital materials. The
                 professor uses the search capabilities of available publications to
@@ -1539,29 +1641,34 @@
         </section>
 
         <section id="alterantive_media">
-            <h2>Adding Alternative Media</h2>
-            <p><span class="req-set" id="r_acc-alt-media">A PWP must support the ability to include multiple renditions of a publication.</span> Within their publication, in addition to the print rendition, a publisher may include a fully narrated rendition, or a video with described audio and captioning.</p>
+            <h2>Alternative Media</h2>
+            <p><span class="req-set" id="r_acc-alt-media">A PWP must support the ability to include multiple renditions of a publication.</span></p>
+                
+            <p>Within their publication, in addition to the print rendition, a publisher may include a fully narrated rendition, or a video with described audio and captioning. This requirement is the same as <a href="#r_multimedia">alternative modalities</a></p>
+            
             <ul class="use-cases">
                 <li>BigBox Publisher needs to add content such as a braille style sheet,
                 image descriptions, or video captioning (text/descriptive audio) to a
-                PWP previously published by a third party.</li>
+                PWP.</li>
 
+                <!--
                 <li>Frank has dyslexia and finds reading printed books a very
-                frustrating experience.  Having a book read to him with synchronized
-                highlighting of the text not only allows him to comprehend the book but
-                helps him become a better reader.</li>
+                frustrating experience.  Having a book read to him by his assistive technology solution that inlcudes synchronized highlighting of the text not only allows him to comprehend the book but helps him become a better reader.</li>
 
                 <li>Julia has ADHD and is frequently distracted when trying to read. Her
                 teachers' determined she is a visual learner and scores better when the
                 material is presented in video format. </li>
+                
                 <li>Jacob has poor depth perception and is more of a tactile learner. As
                 such, he has a difficult time conceptualizing three dimensional objects.
                 Having an embedded three dimensional image available to be printed alongside
                 the visual image will greatly improve his understanding of the object being
                 presented.</li>
+                -->
             </ul>
         </section>
 
+        <!--
         <section id="building_custom_PWP">
               <h2>Building a Custom Reading Experience</h2>
 
@@ -1589,43 +1696,45 @@
              </ul>
              <p>See also <a class="req-ref-full" href="#r_uniqres"></a> and <a class="req-ref-full" href="#r_p13n"></a>.</p>
          </section>
-
+        -->
+        
          <section id="time_based_media_text">
            <h3>Time-based Media and Text</h3>
            <p class="req-set" id="r_time">A PWP needs to support both time-based media and text.</p>
 
            <p>A PWP needs to support time-based media, such as synchronized video, audio,
            captions or transcript, or sign language interpretation.
-           A PWP must enable a synchronized media experience
+           A PWP must be able to enable a synchronized media experience
            while navigating through the book, with sufficient level
            of granularity. </p>
 
            <ul class="use-cases">
                <li>Illyés has a cognitive disability and uses accommodated texts in
-                 the classroom, to help  learn the content while improving his reading.
-                 His assistive technology uses combined audio and text, turning the page
+                 the classroom, to help learn the content while improving his reading.
+                 His assistive technology uses combined audio and text, which it obtained from the UA through the information provided in the PWP, to turn the page
                  for him while reading along in sync with the page currently open.</li>
-
+        <!--
               <li>Bogi has auditory processing disorder. He is reading an annotated screenplay showing
                 the author's original notes, along with synchronized video clips.
                 Bogi needs to be able to view the captions on the video clips, even
                 though they are associated with snippets of the screenplay.</li>
+        -->
            </ul>
         </section>
 
         <section id="accessible_annotation">
             <h2>Accessible Annotations</h2>
-            <p class="req-set" id="r_acc-annotation">When annotations are distributed and associated with a PWP, the content of the annotation must be compatible with assistive technology.</p>
+            <p class="req-set" id="r_acc-annotation">When annotations are associated with a PWP, there should be not impediments to enabling the content of the annotation to be compatible with assistive technology.</p>
 
             <ul class="use-cases">
                 <li>A teacher annotates a PWP used in the classroom with specific
-                text items the students should focus upon. Once distributed to the
+                text items the students should focus upon. This text is added in a way that is compatible with assistive technology. <!--Once distributed to the
                 students and associated with the PWP, all students must be able to
-                read the annotations.</li>
+                read the annotations.--></li>
 
-                <li>A person wants to annotate in the margin of a PWP and share it
-                with others. A digital pen is used for the annotation. The hand
-                writing is captured as an image to be displayed back to the writer.</li>
+                <li>A person wants to annotate a PWP and share that annotation
+                with others. A digital pen is used for the annotation, which enables the hand
+                writing to be captured as an image as well as decoded into text that is provided as the alternate text for the image.</li>
             </ul>
         </section>
     </section>
@@ -1635,14 +1744,14 @@
         <section id="limiting_features">
             <h3>Limiting a PWP’s features</h3>
             <p class="req-set" id="r_sec-limit">User agents must be allowed to limit the capabilities of a PWP.</p>
+            
             <p>The compatibility and interoperability requirements of the specification
             must not prevent user agents from taking measures to protect the security,
-            safety, or privacy of the user. Security-conscious systems that interlink an
+            safety, or privacy of the user. <!--Security-conscious systems that interlink an
             unusually large number of important services and have an unusually large
             attack surface (such as web browsers or web services) have stricter security
-            requirements than standalone apps that are siloed from the web. They must be
-            allowed to continue to fulfill their pre-existing security requirements as
-            they implement support for the PWP format.</p>
+            requirements than standalone apps that are siloed from the web.--> They must be
+            allowed to continue to fulfill their pre-existing security requirements, in addition to adding any new ones required, to implement support for the PWP format.</p>
 
             <ul class="use-cases">
               <li>Alice opens a malicious PWP in her browser. The malicious PWP tries to
@@ -1654,9 +1763,12 @@
               document to the school’s classroom management web service. The teacher can
               safely read the PWP on the web because the service has automatically
               stripped the document of all untrusted scripts.</li>
+            
+                <li>Ashutosh has set his user agent to not allow any tracking of his activity on the web. When reading publications - whether online or offline - he expects that his activity will not be tracked, even if a publication tries to do so.</li>
             </ul>
         </section>
 
+        <!--
         <section id="cap_discovery">
             <h2>Capabilities Discovery</h2>
 
@@ -1689,7 +1801,9 @@
                 even if they don’t have access to all the features, all the time.</li>
             </ul>
         </section>
-
+        -->
+        
+        <!--
         <section id="preserve_integrity">
             <h2>Preserving Integrity</h2>
 
@@ -1714,6 +1828,7 @@
                   to showing static—correct—graphs.</li>
             </ul>
         </section>
+        -->
 
         <section id="escalating_trust">
             <h2>Escalating trust</h2>
