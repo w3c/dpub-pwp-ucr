@@ -908,10 +908,10 @@
                 offline. </li>
               
                 <li> Sarah is reading a publication about the stock exchange. The
-                current state of the stock is fetched (from a remote resource) when she opens the
+                current value of the stock is fetched (from a remote resource) when she opens the
                 publication. However, when she is on the train (without a connection) one week later
-                and opens the stock exchange publication, she will continue to see the state of the
-                stock exchange as it was the last time she opened the
+                and opens the stock exchange publication, she will continue to see the value of the
+                stock as it was the last time she opened the
                 publication. It should be possible for either the content itself or the user agent to 
                     provide some user experience that notifies her that the currently presented data is a
                 week old. </li>
@@ -942,8 +942,7 @@
                         <li>the accessibility of each component (see also "Accessible Metadata");</li>
                         <li>whether there is a need for additional processing, such as with MathML;</li>
                         <li>the title, author(s), cover image, etc., to display the
-                        publication on a shelf without downloading all its content (see
-                        also "Discoverability", "Accessible Metadata");</li>
+                        publication on a shelf without downloading all its content (see "Accessible Metadata");</li>
                         <li>whether the content is unaltered (see also "Security");</li>
                         <li>the origin of the publication.</li>
                     </ul>
@@ -1274,14 +1273,15 @@
         </section>
     -->
         <section id="streamlining">
-            <h3>Streamlining a PWP</h3>
-            <p class="req-set" id="r_streamlining">Manifest should make it possible to provide a streamlined access to disjoint parts of the publication.</p>
+            <h3>Random Access</h3>
+            <p class="req-set" id="r_streamlining">The manifest should make it possible to provide the user agent (or the publication itself) with access to disjoint parts of the publication.</p>
 
             <p>It should be possible for the author to convey several potential <a
                 href="#reading-order">reading orders</a> that may go beyond the
                 “default” for the content of the publication. This alternative reading order
                 may only includes specific parts of the publication rather than the full
-                content of the PWP</p>
+                content of the PWP.</p>
+            <p>A user agent should be able to access the resources of the publication in whatever order it chooses - beyond the order provided by the publication itself.</p>
 
               <ul class="use-cases">
                   <li>EsteemedJournalPublisher would like to offer the users of the
@@ -1296,6 +1296,8 @@
                   without the necessity to read the whole publication. This can be
                   typically used by a reseller allowing for a prospective client to
                   access part of the publication free of charge.</li>
+                  
+                  <li>A specialized user agent wishes to find all images in a publication that do not already have alternative text and automatically provide it using an image identification service such as <a href="http://labelme.csail.mit.edu/">LabelMe</a>.</li>
               </ul>
         </section>
 
@@ -1351,7 +1353,7 @@
 
         <section id="alternative-reading-order">
             <h3>Alternative Reading Orders</h3>
-            <p class="req-set" id="r_manifest-reading">The manifest may include alternative reading orders in addition to the <a href="#reading-order">default one</a>.</p>
+            <p class="req-set" id="r_manifest-reading">The manifest may include alternative reading orders in addition to the <a href="#reading-order">default one</a>, such as to enable <a href="#streamlining">streamlined navigation</a>.</p>
 
             <p>In addition to the the <a href="#reading-order">default reading order</a>, the manifest should also provide a means to define alternative reading orders. It is up to the publication or the user agent how this alternative reading order is conveyed to the reader
             (ie via some suitable user interface techniques).</p>
@@ -1760,9 +1762,7 @@
 
               <li>Joe, a student, has completed his classroom assignment which was to
               use PWP annotations to complete the text’s quizzes, and uploads the
-              document to the school’s classroom management web service. The teacher can
-              safely read the PWP on the web because the service has automatically
-              stripped the document of all untrusted scripts.</li>
+              document to the school’s classroom management web service. In order to try to hack into his teacher's computer, Joe included some malicious scripts inside his annotations. Fortunately, the teacher can safely read the PWP on the web because the school's classroom service has automatically stripped the document of all untrusted scripts.</li>
             
                 <li>Ashutosh has set his user agent to not allow any tracking of his activity on the web. When reading publications - whether online or offline - he expects that his activity will not be tracked, even if a publication tries to do so.</li>
             </ul>
@@ -1833,7 +1833,7 @@
         <section id="escalating_trust">
             <h2>Escalating trust</h2>
             <p>
-                <span class="req-set" id="r_sec-trust">User agents may provide a method for escalating trust.</span> By providing such methods, user agents may regain access to more capabilities, while otherwise the agent would impose limitation for security reasons. Platform vendors have sometimes offered methods for otherwise untrusted local scripts to become trusted and regain API privileges that the had lost while untrusted.
+                <span class="req-set" id="r_sec-trust">User agents may provide a method for escalating trust for a specific publication.</span> By providing such methods, user agents may regain access to more capabilities for that publication which otherwise the user agent would impose for security reasons. Platform vendors have sometimes offered methods for otherwise untrusted local scripts to become trusted and regain API privileges that had been lost while untrusted.
             </p>
 
             <ul class="use-cases">
