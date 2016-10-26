@@ -26,6 +26,16 @@ function rdisplay() {
 		});
 	});
 
+	$(".req-ref-descr").each(function(i) {
+		var id = $(this).attr("href");
+		var $ref = $(this);
+		reqInfo.forEach( function(element, index, array) {
+			if( ('#' + element.id) === id ) {
+				$ref.replaceWith("<span>" + element.content + "</span>")
+			}
+		});
+	});
+
 	// Generate the table of requirements
 	$("table#reqtable").each( function(i) {
 		var $table = $(this);
