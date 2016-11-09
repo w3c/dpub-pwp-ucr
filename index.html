@@ -45,6 +45,8 @@
           wgPublicList: "public-digipub-ig",
           wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/64149/status",
           noRecTrack : "true",
+          includePermalinks: "true",
+          permalinkEdge: "true",
           otherLinks: [
             {
               key: "Repository",
@@ -171,9 +173,9 @@
         <h1>Web Publications</h1>
         <p>This section describes the use cases specific to <a data-lt="Web Publication">Web Publications</a> and the Open Web Platform, including associated publishing needs, and discoverability.</p>
 
-        <section id='pwp-users'>
+        <section id='pwp-readers'>
             <h2>Readers’ Needs</h2>
-                <section id='pwp-owp'>
+            <section id='pwp-owp'>
                 <h2>Open Web Platform</h2>
                 <p class="req-set" id="r_owp">Web Publications should be able to make use of all
                 features offered by the OWP.</p>
@@ -220,7 +222,7 @@
                     the possible inclusion of complex media.</li>
                 </ul>
             </section>
-            <section id="find-information">
+            <section id="horizdep">
                 <h3>Horizontal Dependencies</h3>
                 <p class="req-set" id="r_horizdep">A Web Publication should conform to the requirements of all horizontal dependencies.</p>
 
@@ -405,8 +407,7 @@
                </ul>
             </section>
 
-
-            <section id='fundamental-offline'>
+            <section id='onloffl'>
                 <h3>Going Offline</h3>
                 <p class="req-set" id="r_onloffl">A Web Publication should also be available offline.</p>
 
@@ -452,7 +453,7 @@
                 </ul>
             </section>
 
-            <section id="single-package">
+            <section id="single">
                 <h3>Single Unit</h3>
                 <p class="req-set" id="r_single">User agents must treat a Web Publication as a single
                 logical resource with its own URL, beyond the references to individual, constituent resources.</p>
@@ -478,7 +479,7 @@
 
             <section id="unique-identifier">
                 <h3>Uniquely Identify a Web Publication</h3>
-                <p class="req-set" id="r_uniq-id-state">There should be a way to
+                <p class="req-set" id="r_unique-identifier">There should be a way to
                 uniquely identify a Web Publication.</p>
 
                 <p>A unique identification of a specific Web Publication, is
@@ -501,7 +502,6 @@
 
             <section id="identify_const_resources">
             	<h2>Uniquely Identify the Constituent Resources</h2>
-
             	<p class="req-set" id="r_identify_const_resources" >All constitutent resources, and their contents, should be uniquely identifiable.</p>
 
             	<p>
@@ -524,7 +524,7 @@
 
             <section id='pagination'>
                 <h3>Pagination</h3>
-                <p class="req-set" id="r_pag">It should be possible to see the
+                <p class="req-set" id="r_pagination">It should be possible to see the
                  Web Publication in a “paginated” view.</p>
 
                 <p>Whereas a “scrolling” view is the dominating approach on
@@ -602,7 +602,7 @@
           <h2>Publishers’ and Authors’ Needs</h2>
           <section id="reading-order">
               <h3>Default Reading Order</h3>
-              <p class="req-set" id="r_read-order">There should be a means to
+              <p class="req-set" id="r_reading-order">There should be a means to
               indicate the author’s preferred navigation structure among the resources
               of a Web Publication.</p>
 
@@ -622,9 +622,9 @@
               </ul>
           </section>
 
-          <section id="streamlining">
+          <section id="random-access">
               <h3>Random Access to Content</h3>
-              <p class="req-set" id="r_streamlining">Authors of a Web Publication should
+              <p class="req-set" id="r_random-access">Authors of a Web Publication should
                 be able to provide the user agent with information to
                 access random parts of the publication.</p>
 
@@ -663,7 +663,7 @@
                     personalized to only read about red wines or wines
                     from a specific region. </li>
 
-                  <li id="r_streamlining_5">A specialized user agent wishes to find all images in a
+                  <li id="r_random-access_5">A specialized user agent wishes to find all images in a
                     publication that do not already have alternative text and
                     automatically provide it using an image identification
                     service such as <a href="http://labelme.csail.mit.edu/">LabelMe</a>.</li>
@@ -694,7 +694,7 @@
                 the Web Publication, would enable a user agent to provide a better
                 experience to the user. For example, the user agent can ensure that
                 essential resources are made available when offline (see <a
-                href="#fundamental-offline"></a>).</p>
+                href="#onloffl"></a>).</p>
 
              <ul class="use-cases">
                 <li>Nick is reading a long-form narrative on a device with limited storage: a publication
@@ -770,7 +770,7 @@
           any of its resources is accessible. Granular accessibility of a web
           publication must be discoverable so that users know which (if any)
           resources within a web publication are accessible. See also <a
-          href="#technical-metadata"></a>.</p>
+          href="#manifest-metadata"></a>.</p>
 
           <ul class="use-cases">
               <li>Ferdous wants to buy a book about a museum exhibit, but before
@@ -790,7 +790,7 @@
       </section> -->
 
 
-    <section>
+    <section id="protections">
         <h2>Access Control and Write Protections</h2>
           <p class="req-set" id="r_protections">A Web Publication should be able to express the access control and write protections of the publication.</p>
 
@@ -807,7 +807,7 @@
          </ul>
       </section>
 
-      <section id="technical-metadata">
+      <section id="manifest-metadata">
           <h3>Metadata and Resources</h3>
           <p class="req-set" id="r_manifest-metadata">Web Publications should include technical and descriptive metadata as well as any additional characteristics of the <a href="#constituent-resources">constituent resources.</a></p>
 
@@ -818,24 +818,17 @@
           agent may need to make some decisions about how to present content before
           displaying it.</p>
 
-        <p>A Web Publication should be able to include additional information  that the user agent can use like:</p>
-              <ul>
-                  <li>the rights of various components identified in the package</li>
-                  <li>captions belonging to multimedia resources within the publication;</li>
-                  <li>whether there is a need for additional processing, such as with MathML;</li>
-                  <li>the title, author(s), cover image, etc., to display the
-                  publication on a shelf without downloading all its content;</li>
-              </ul>
-
-
-          <p>Some necessary features are listed among the fundamental features of a
-          Web Publication (see <a href="#find-information"></a>); the use cases below provide a
-          (non-exhaustive) list of further information.</p>
+          <p>A Web Publication should be able to include additional information  that the user agent can use like:</p>
+          <ul>
+              <li>the rights of various components identified in the package</li>
+              <li>captions belonging to multimedia resources within the publication;</li>
+              <li>whether there is a need for additional processing, such as with MathML;</li>
+              <li>the title, author(s), cover image, etc., to display the
+              publication on a shelf without downloading all its content;</li>
+          </ul>
 
           <ul class="use-cases">
-
-              <li>
-                  Marla is writing an art book and wish to include the rights relevant to the image of the Mona Lisa owned by the Louvre, so that a user agent will know whether it is permissible to download the image for offline use.
+              <li>Marla is writing an art book and wish to include the rights relevant to the image of the Mona Lisa owned by the Louvre, so that a user agent will know whether it is permissible to download the image for offline use.
               </li>
 
               <li id="r_manifest-metadata_2">Ferdous wants to buy a book about a museum exhibit, but before
@@ -863,7 +856,7 @@
                <li><a class="req-ref-full" href="#r_con-res"></a></li>
                <li><a class="req-ref-full" href="#r_manifest-metadata"></a></li>
                <li><a class="req-ref-full" href="#r_extdata"></a></li>
-               <li><a class="req-ref-full" href="#r_read-order"></a></li>
+               <li><a class="req-ref-full" href="#r_reading-order"></a></li>
            </ul>
 
            <p>The usage of manifests does lead to a specific use case, too:</p>
@@ -900,7 +893,7 @@
 
 <section id='pwp'>
     <h1>Packaged Web Publications</h1>
-    <p><span class="req-set" id="r_uniqres">It should be possible to create and distribute a Web Publication as a single unit over different protocols or physical media.</span> This can done
+    <p><span class="req-set" id="r_pwp">It should be possible to create and distribute a Web Publication as a single unit over different protocols or physical media.</span> This can done
     through the usage of <a data-lt="Packaged Web Publication">Packaged Web Publications</a>.</p>
 
     <ul class="use-cases">
@@ -928,7 +921,7 @@
     </ul>
     <p>See also <a href="#archiving">Archiving</a>.
 
-    <section id="distro-vers">
+    <section id="distro">
         <h3>Distribution and Iteration</h3>
         <p class="req-set" id="r_distro">The distribution of a Packaged Web Publication should
           not affect its iterations.</p>
@@ -968,7 +961,7 @@
 
     <section id='pwp-process'>
         <h3>Distribution Process</h3>
-        <p class="req-set" id="r_process">The distribution of Packaged Web Publications should
+        <p class="req-set" id="r_pwp-process">The distribution of Packaged Web Publications should
         respect the existing processes and expectations of professional publishing
         channels as well as ad-hoc methods of distribution (eg. email). </p>
 
@@ -1013,7 +1006,7 @@
 
          <p>However, archival raises an additional requirements:<p>
 
-         <section id="embedded_metadata">
+         <section id="archmetadata">
              <h3>Locating Metadata in Components</h3>
 
              <p class="req-set" id="r_archmetadata">There should be a way to
@@ -1022,7 +1015,7 @@
 
              <p>An archiving service needs a reliable way to determine which,
               if any, Web Publication components contain descriptive metadata, such as
-              that described in <a href="#technical-metadata">metadata and resources</a>.
+              that described in <a href="#manifest-metadata">metadata and resources</a>.
               Without such a mechanism, the archiving service will have to develop and maintain
               publisher- and/or platform-specific heuristics for locating or parsing out
               descriptive metadata, making archiving more expensive and decreasing the
@@ -1043,7 +1036,7 @@
          <section id="component-change">
              <h2>New or Removed Components</h2>
 
-             <p class="req-set" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to or deleted from a Web Publication.</p>
+             <p class="req-set" id="r_component-change">There should be a way to discover that one or more new components have been added to or deleted from a Web Publication.</p>
 
              <p>An archiving service needs a reliable way to learn that one or more
               Packaged Web Publication components have been added to or removed from a
@@ -1091,7 +1084,7 @@
 
      <section id="check-integrity_and_origin">
          <h1>Integrity and Authenticity</h1>
-         <section>
+         <section id="check_integrity">
              <h2>Integrity of a Publication</h2>
              <p class="req-set" id="r_check_integrity">The publisher should be able to provide information in a Portable Web Publication proving that the publication has not been tampered with during delivery.
              </p>
@@ -1124,7 +1117,7 @@
 
   <section id="escalating_trust">
        <h2>Escalating trust</h2>
-       <p><span class="req-set" id="r_sec-trust">User agents may provide a method for escalating trust for a specific publication.</span>
+       <p><span class="req-set" id="r_escalating_trust">User agents may provide a method for escalating trust for a specific publication.</span>
             Some publications may require additional capabilities (for example, access to camera or geolocation) that a user agent might normally not enable. Today, some platform and UA vendors offer methods for otherwise untrusted local scripts to become trusted and regain API privileges, a similar ability needs to exist for publications as well.</p>
 
        <ul class="use-cases">
@@ -1242,9 +1235,9 @@
             		</td>
                 </tr>
                 <tr>
-                    <td><a href="#r_streamlining" class="req-ref"></a></td>
-            		<td><a href="#r_streamlining" class="req-ref-descr"></a></td>
-            		<td><a href="#r_streamlining_5">5</a>
+                    <td><a href="#r_random-access" class="req-ref"></a></td>
+            		<td><a href="#r_random-access" class="req-ref-descr"></a></td>
+            		<td><a href="#r_random-access_5">5</a>
             		</td>
                 </tr>
                 <tr>
