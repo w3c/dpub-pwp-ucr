@@ -11,15 +11,16 @@
       var respecConfig = {
           preProcess : [rcollect, rdisplay],
           postProcess : [rstore],
-
           specStatus: "ED",
           shortName:  "pwp-ucr",
           editors: [
                 {   name:       "Heather Flanagan",
                     url:        "",
                     company:    "Invited Expert",
-                    companyURL: "https://www.rfc-editor.org" },
-                {   name:       "Ivan Herman",
+                    companyURL: "https://www.rfc-editor.org",
+                    w3cid:      "75380"
+                 },
+                 {   name:       "Ivan Herman",
                     url:        "http://www.w3.org/People/Ivan/",
                     company:    "W3C",
                     companyURL: "http://www.w3.org",
@@ -33,7 +34,9 @@
                 {   name:       "Leonard Rosenthol",
                     url:        "",
                     company:    "Adobe Systems",
-                    companyURL: "https://www.adobe.com" },
+                    companyURL: "https://www.adobe.com",
+                    w3cid:      "42485"
+                },
           ],
           previousMaturity: "WD",
           previousPublishDate:  "2016-09-13",
@@ -58,12 +61,12 @@
               }]
             }
           ],
-          alternateFormats: [
-              {
-                uri: "pwp-ucr.epub",
-                label: "ePub"
-              }
-          ],
+        //   alternateFormats: [
+        //       {
+        //         uri: "pwp-ucr.epub",
+        //         label: "ePub"
+        //       }
+        //   ],
           edDraftURI: "https://w3c.github.io/dpub-pwp-ucr/",
       };
     </script>
@@ -81,21 +84,13 @@
             font-style: italic;
             text-decoration: underline;
         }
-
-        dl.pwpintro dd {
-            font-style: italic;
-        }
-
-        dl.pwpintro dd::before {
-            content: "— i.e.: "
-        }
     </style>
   </head>
   <body>
     <section id='abstract'>
         <p>
-        Publications, from corporate memos to newsletters to electronic books to scholarly journal articles, must be considered first-class content on the web, equal to the more common forms of web pages available today. 
-        This document describes the various use cases highlighting the problems users and publishers face when these publications are to be used in a digital, Web environment. 
+        Publications, from corporate memos to newsletters to electronic books to scholarly journal articles, must be considered first-class content on the Web, equal to the more common forms of Web pages available today.
+        This document describes the various use cases highlighting the problems users and publishers face when these publications are to be used in a digital, Web environment.
         The requirements that come from those use cases provide the basis for the technical considerations in a companion document, currently entitled <a href="http://w3c.github.io/dpub-pwp/">“Portable
         Web Publications for the Open Web Platform”</a>.
         </p>
@@ -104,10 +99,9 @@
     <section id='sotd'>
       <p>
          This is work in progress. The final version of this document planned to be published as an
-         Interest Group Note in a few months.
+         Interest Group Note.
       </p>
     </section>
-
 
     <section id="introduction">
         <h1>Introduction</h1>
@@ -125,10 +119,10 @@
           made public.</p>
 
         <p>Another form of publication that also has a long history in both the
-        printed as well as the digital world are documents. These are
-        publications that are written and distributed in a more ad-hoc manner,
-        such as legal briefs, corporate memos, and even the definitions of
-        standards, such as this content currently being read.</p>
+          printed as well as the digital world are documents. These are
+          publications that are written and distributed in a more ad-hoc manner,
+          such as legal briefs, corporate memos, and even the definitions of
+          standards, such as this content currently being read.</p>
 
         <p>We believe there is great value in combining this older tradition
           of portable, bounded publications with the pervasive accessibility,
@@ -151,18 +145,6 @@
         <section>
           <h2>Terminology</h2>
           <ul class="terms">
-              <!-- <li>Online/Offline: The terms “online” and “offline” are used in this document, but the
-              borderline between these is not always clear cut. For example, a web publication
-              can be on a local disc but accessed through a web server running on
-              that machine (i.e., through a <code>http://localhost</code> URL).
-              The behavior of the client in this case is identical to the situation when the
-              publication is genuinely online, although, technically, the
-              publication is clearly offline. Similarly, a remote file system can be
-              mounted as a local disc, in which case a web publication can be accessed as a file
-              though technically online. A more precise terminology would use the
-              terms like “protocol” and “file” states, for what is colloquially
-              called “online” and “offline” in this document.</li> -->
-
               <li>This document uses the term <dfn>user agent</dfn>, as used by the Web
               community; see, for example, the <a
               href="https://www.w3.org/WAI/UA/work/wiki/Definition_of_User_Agent">WAI
@@ -179,7 +161,7 @@
               constituent resources are combined into a single distributable file, using some standard
               packaging format.</li>
 
-              <li>In this document, <dfn>manifest</dfn> refers to an abstract means to contain information necessary to the proper management, rendering, and so on, of a publication. This is opposed to metadata that contains information on the content of the publication like author, publication date, and so on. 
+              <li>In this document, <dfn>manifest</dfn> refers to an abstract means to contain information necessary to the proper management, rendering, and so on, of a publication. This is opposed to metadata that contains information on the content of the publication like author, publication date, and so on.
               The precise format of how such a manifest is stored is not considered in this document.</li>
           </ul>
         </section>
@@ -189,72 +171,55 @@
         <h1>Web Publications</h1>
         <p>This section describes the use cases specific to <a data-lt="Web Publication">Web Publications</a> and the Open Web Platform, including associated publishing needs, and discoverability.</p>
 
-        <section id='pwp-owp'>
-            <h2>Open Web Platform</h2>
-            <p class="req-set" id="r_owp">Web Publications should be able to make use of all
-            features offered by the OWP.</p>
+        <section id='pwp-users'>
+            <h2>Readers’ Needs</h2>
+                <section id='pwp-owp'>
+                <h2>Open Web Platform</h2>
+                <p class="req-set" id="r_owp">Web Publications should be able to make use of all
+                features offered by the OWP.</p>
 
-            <p>There is a remarkable development of tools and frameworks built
-            on top of OWP that make it possible to develop powerful interactive
-            layers on top of OWP. These include, for example, data visualization
-            systems (e.g., d3, built on top of SVG), possibilities to access
-            external services like Wolfram Alpha, or tools to create and store (possibly as part of the publication) annotations. These tools have been
-            traditionally developed around browsers, and provide possibilities that
-             publications should also benefit from. That requires that <a data-lt="Web Publication">Web Publications</a> become first class citizens on the Web platform.</p>
+                <p>There is a remarkable development of tools and frameworks built
+                on top of OWP that make it possible to develop powerful interactive
+                layers on top of OWP. These include, for example, data visualization
+                systems (e.g., d3, built on top of SVG), possibilities to access
+                external services like Wolfram Alpha, or tools to create and store (possibly as part of the publication) annotations. These tools have been
+                traditionally developed around browsers, and provide possibilities that
+                 publications should also benefit from. That requires that <a data-lt="Web Publication">Web Publications</a> become first class citizens on the Web platform.</p>
 
-            <ul class="use-cases">
-                <li>A large, multidisciplinary, Web-based journal relies on
-                traditional Web technologies like HTML and CSS for its
-                content. The journal, responding to the evolving
-                expectations of its audience, is increasingly using
-                additional media such as video, audio, animated graphics,
-                and very large images; the trend is to consider these as
-                integral parts of the scientific output. The journal as a
-                result needs access to the latest visualization and other
-                data management tools that the OWP-based tools can
-                offer.</li>
+                <ul class="use-cases">
+                    <li>A large, multidisciplinary, Web-based journal relies on
+                    traditional Web technologies like HTML and CSS for its
+                    content. The journal, responding to the evolving
+                    expectations of its audience, is increasingly using
+                    additional media such as video, audio, animated graphics,
+                    and very large images; the trend is to consider these as
+                    integral parts of the scientific output. The journal as a
+                    result needs access to the latest visualization and other
+                    data management tools that the OWP-based tools can
+                    offer.</li>
 
-                <li>Educational publications are increasingly making use of OWP
-                features. They include interactive exams (possibly linked to
-                online evaluation facilities), visualization of data or of
-                algorithms, built-in interpreters for various languages (e.g.,
-                for courses on programming); in many respects, the borderline
-                between these publications and Web applications is becoming
-                fuzzy.</li>
+                    <li>Educational publications are increasingly making use of OWP
+                    features. They include interactive exams (possibly linked to
+                    online evaluation facilities), visualization of data or of
+                    algorithms, built-in interpreters for various languages (e.g.,
+                    for courses on programming); in many respects, the borderline
+                    between these publications and Web applications is becoming
+                    fuzzy.</li>
 
-                <li id="in_house_doc">BigBoxCo, a large technology company
-                with extensive “in-house” documentation to support the
-                technical and/or user documentation for their various
-                products and administrative processes, develops all this
-                material in digital-only formats. The quantity of
-                documentation makes it impractical to produce these documents
-                in print. Instead, the company publishes them
-                on the company intranet, and/or provides them to their
-                employees and contractors via specialized mobile devices.
-                These documents, as a type of publication, require
-                accessibility, portability of annotations, and
-                the possible inclusion of complex media.</li>
-            </ul>
-
-            <section id="multimedia">
-                <h3>Alternative modalities</h3>
-                <p class="req-set" id="r_multimedia">The notion of a Web Publication should
-                enable specific publications like audio books, graphics books, and
-                mixed media.</p>
-
-                <p>All concepts and structures related to a Web Publication should
-                enable the creation and/or production of alternative
-                renderings for visual and auditory content.</p>
-
-                <ul class ="use-cases">
-                  <li>Faye, a busy mother of five, wants to access audio books while commuting, jogging, doing dishes, or otherwise not able to use her eyes or hands. </li>
-
-                  <li>Khoudia, a librarian focusing on the children's section of her local library, is looking exclusively for material rich in audio and video components so as to reach a wider age bracket.</li>
-
-                    <li id="r_multimedia_acc_3">James, a musician, requires that the musical score within a publication come preformatted in braille music notation in order to read it, as he uses freely available assistive technology which does not have braille music translations built in.</li>
+                    <li id="in_house_doc">BigBoxCo, a large technology company
+                    with extensive “in-house” documentation to support the
+                    technical and/or user documentation for their various
+                    products and administrative processes, develops all this
+                    material in digital-only formats. The quantity of
+                    documentation makes it impractical to produce these documents
+                    in print. Instead, the company publishes them
+                    on the company intranet, and/or provides them to their
+                    employees and contractors via specialized mobile applications.
+                    These documents, as a type of publication, require
+                    accessibility, portability of annotations, and
+                    the possible inclusion of complex media.</li>
                 </ul>
             </section>
-
             <section id="find-information">
                 <h3>Horizontal Dependencies</h3>
                 <p class="req-set" id="r_horizdep">A Web Publication should conform to the requirements of all horizontal dependencies.</p>
@@ -296,7 +261,7 @@
                       should be automatic with no, or very little, user intervention.</dd>
 
                     <dt>Security:</dt>
-                    <dd>Publications should be presented by a User Agent using a security model that is at least (if not more) secure than the standard <a href="https://www.w3.org/TR/runtime/">Web security model</a>. Doing will prevent publications that contain malicious attacks,
+                    <dd>Publications should be presented by a User Agent using a security model that is at least (if not more) secure than the standard <a href="https://www.w3.org/TR/runtime/">Web security model</a>. Doing this will prevent publications that contain malicious attacks,
                     data theft, and other security incidents from impacting users by jeopardizing the integrity of the underlying data or machine operations.</dd>
 
                     <dt>Privacy:</dt>
@@ -310,7 +275,7 @@
 
                 <p>These principles correspond to technical requirements on
                   the underlying technologies (i.e., OWP, and its possible
-                  extension for the web publication) insofar as the technologies must
+                  extension to Web Publications) insofar as the technologies must
                   empower the authors (writers, editors, publishers,
                   etc.) to produce content that follow them. Whether
                   authors use the possibilities of these technologies or
@@ -341,12 +306,12 @@
                       Ltd. publishes digital textbooks to cover BigUniversity’s
                       curriculae. These (digital) educational publications also
                       include access to interactive tests via specialized
-                      services on the web that regularly access the student’s
+                      services on the Web that regularly access the student’s
                       progress. The privacy and the integrity of the student’s
                       test data must be preserved. This, and the fact that
                       digital textbooks must also abide to WCAG Level AA
                       requirement in terms of accessibility, are such that
-                      EducationPublishing is liable in case they are not
+                      EducationPublishing may be liable in case they are not
                       fulfilled.</li>
 
                     <li>(On Internationalization) PublicationInternational
@@ -378,42 +343,67 @@
                 </ul>
             </section>
 
+            <section id="multimedia">
+                <h3>Alternative modalities</h3>
+                <p class="req-set" id="r_multimedia">The notion of a Web Publication should
+                enable specific publications like audio books, graphics books, and
+                mixed media.</p>
+
+                <p>All concepts and structures related to a Web Publication should
+                enable the creation and/or production of alternative
+                renderings for visual and auditory content.</p>
+
+                <ul class ="use-cases">
+                  <li>Faye, a busy mother of five, wants to access audio books while commuting, jogging, doing dishes, or otherwise not able to use her eyes or hands. </li>
+
+                  <li>Khoudia, a librarian focusing on the children's section of her local library, is looking exclusively for material rich in audio and video components so as to reach a wider age bracket.</li>
+
+                  <li id="r_multimedia_acc_3">James, a musician, requires that the musical score within a publication come preformatted in braille music notation in order to read it, as he uses freely available assistive technology which does not have braille music translations built in.</li>
+                </ul>
+            </section>
+
             <section id="time_based_media_text">
                 <h3>Time-based Media and Text</h3>
                 <p class="req-set" id="r_time">A Web Publication needs to support both time-based media and text.</p>
 
                 <p>A Web Publication needs to support time-based media, such as synchronized video, audio, captions or transcript, or sign language interpretation.
-                A web publication must be able to enable a synchronized media experience
+                A Web Publication must also be able to enable a synchronized media experience
                 while navigating through the publication, with sufficient level
                 of granularity. </p>
 
                 <ul class="use-cases">
                     <li id="r_time_1">Illyés has a cognitive disability and uses accommodated texts in
                     the classroom, to help learn the content while improving his reading.
-                    His assistive technology uses combined audio and text, which it obtained from the UA through the information provided in the web publication, to turn the page
+                    His assistive technology uses combined audio and highlighted text, which it obtained from the UA through the information provided in the Web Publication, to turn the page
                     for him while reading along in sync with the page currently open.</li>
                 </ul>
             </section>
 
-               <!-- <section id="accessible_annotation">
-                   <h2>Accessible Annotations</h2>
-                   <p class="req-set" id="r_acc-annotation">When annotations are
-                   associated with a web publication, there should be no
-                   impediments in enabling the content of the annotation to be
-                   compatible with assistive technology.</p>
+            <section id='extdata'>
+                <h3>Inclusion of Data</h3>
+                <p class="req-set" id="r_extdata">Web Publications should be able to include data as <a href="#constituent-resources">resources</a>, just as it does with text, images, etc.</p>
 
-                   <ul class="use-cases">
-                       <li>A teacher annotates a web publication used in the
-                       classroom with specific text items the students should
-                       focus upon. This text is added in a way that is
-                       compatible with assistive technology. </li>
+                <ul class="use-cases">
+                    <li>Rosa has submitted an article to EsteemedJournal and provided her
+                    research data in CSV format. She and EsteemedJournal provide users
+                    access to the CSVs when accessing her article in any situation by including the
+                    CSV data, as well as the Javascript library to display the content in human
+                    friendly  form, as part of the Web Publication.</li>
+    <!--
+                   <li>Risha publishes an article which includes an interactive component
+                   that accesses a database, exposed to the web via a RESTful API. The
+                   interactive component is implemented as a JavaScript library. Such data
+                   cannot be included in a packaged publication and the interactive module is
+                   of no use without such data. Risha therefore marks the web publication component
+                   relative to the interactive module as not relevant when offline. </li>
 
-                       <li>A person wants to annotate a web publication and share that annotation
-                       with others. A digital pen is used for the annotation, which
-                       enables the hand writing to be captured as an image as well as
-                       decoded into text that is provided as the alternate text for the
-                       image.</li> </ul>
-               </section> -->
+                   <li>InteractiveCompany publishes a Web Publication containing an interactive component
+                   implemented as a JavaScript library, but this library requires several
+                   other JavaScript libraries. Therefore InteractiveCompany makes it sure that
+                   all JavaScript libraries
+                   required to get the interactive component running offline.</li> -->
+               </ul>
+            </section>
 
 
             <section id='fundamental-offline'>
@@ -462,83 +452,154 @@
                 </ul>
             </section>
 
-            <section id='extdata'>
-                <h3>Inclusion of Data</h3>
-                <p class="req-set" id="r_extdata">Web Publications should be able to include data as <a href="#constituent-resources">resources</a>, just as it does with text, images, etc.</p>
+            <section id="single-package">
+                <h3>Single Unit</h3>
+                <p class="req-set" id="r_single">User agents must treat a Web Publication as a single
+                logical resource with its own URL, beyond the references to individual, constituent resources.</p>
 
                 <ul class="use-cases">
-                    <li>Rosa has submitted an article to EsteemedJournal and provided her
-                    research data in CSV format. She and EsteemedJournal provide users
-                    access to the CSVs when accessing her article in any situation by including the
-                    CSV data, as well as the Javascript library to display the content in human
-                    friendly  form, as part of the Web Publication.</li>
-    <!--
-                   <li>Risha publishes an article which includes an interactive component
-                   that accesses a database, exposed to the web via a RESTful API. The
-                   interactive component is implemented as a JavaScript library. Such data
-                   cannot be included in a packaged publication and the interactive module is
-                   of no use without such data. Risha therefore marks the web publication component
-                   relative to the interactive module as not relevant when offline. </li>
+                  <li>Marwin wants to search for a term on the publication. As a reader, he does not know the
+                      internal structure of the book, i.e., whether the content is one or several HTML files; he
+                      wants to search to be executed on the whole (logical) content, regardless of its internal
+                      representation.</li>
 
-                   <li>InteractiveCompany publishes a Web Publication containing an interactive component
-                   implemented as a JavaScript library, but this library requires several
-                   other JavaScript libraries. Therefore InteractiveCompany makes it sure that
-                   all JavaScript libraries
-                   required to get the interactive component running offline.</li> -->
-               </ul>
+                  <li>Svetlana sets her preferences in terms of font selection and size, background color, etc, for a particular book. She wants those to be in effect on all chapters of the book automatically.</li>
+
+                  <li>User agents that support value counters (page
+                    counters, section numbering, footnotes, endnotes), should do so across
+                    the entire Web Publication (as opposed to individual components being
+                    numbered separately)</li>
+
+                  <li id="r_single_4">Assistive Technology such as screen readers or voice
+                    dictation control needs to have the Web Publication presented to it
+                    as if it was a single unit.</li>
+                </ul>
             </section>
+
+            <section id="unique-identifier">
+                <h3>Uniquely Identify a Web Publication</h3>
+                <p class="req-set" id="r_uniq-id-state">There should be a way to
+                uniquely identify a Web Publication.</p>
+
+                <p>A unique identification of a specific Web Publication, is
+                  essential. If not expressed as a URL, there should be a way to
+                  map this unique identification onto a Web Address.
+                </p>
+
+                <ul class="use-cases">
+                  <li>Scholarly references demand a unique identification
+                    of the publication and, possibly, its internal structure.
+                    That unique identification must be available as a Web link,
+                    to make it possible for other publications and other
+                    sites (e.g., the authors’ institutional sites) to
+                    unambiguously link to the publication. These features
+                    are essential in the scholarly community to make, for
+                    example, the assessment of individual researchers
+                    possible.</li>
+                </ul>
+            </section>
+
+            <section id="identify_const_resources">
+            	<h2>Uniquely Identify the Constituent Resources</h2>
+
+            	<p class="req-set" id="r_identify_const_resources" >All constitutent resources, and their contents, should be uniquely identifiable.</p>
+
+            	<p>
+            		The requirement on identification already states that there should be a way to uniquely identify a publication (see <a href="#unique-identifier"></a>). This requirement can be easily extended to constituents of a Web Publication, as well as the fragments, parts, sections, etc, of those resources. Those idenfications should be stable, resilient to changes and new iterations of the publication.
+            	</p>
+
+            	<ul class="use-cases">
+            		<li>Markus refers to a specific mathematical theorem
+            			in a publication. That reference must be unique, stable and
+            			retrievable on the Web, and it should not depend on whether
+            			the publisher issues a new iteration of the target publication (thereby
+            			possibly change the section numbering).</li>
+
+            		<li>Judit uses an annotation tool to comment on a publication authored by Pablo.
+            			She puts an annotation against a sentence in a particular paragraph, anchoring
+            			that annotation to the sentence using a reliable way of identifying it. That identification should
+            			not be invalidated by a subsequent change of the document by Pablo (unless he, e.g., removes that sentence).</li>
+            	</ul>
+            </section>
+
+            <section id='pagination'>
+                <h3>Pagination</h3>
+                <p class="req-set" id="r_pag">It should be possible to see the
+                 Web Publication in a “paginated” view.</p>
+
+                <p>Whereas a “scrolling” view is the dominating approach on
+                  the Web in browsers, a user or author may wish to view their publications in a paginated view. As such, it should be possible for an individual publication or user agent to provide the ability to switch to pagination view. This pagination may
+                  automatically adapt page sizes to the device’s or the
+                  browser’s viewport, and may contain separate headers,
+                  footers, and/or page numbers.
+                </p>
+
+                <p>This is distinct from the need to retain original page
+                  numbering (often from the print edition) which must be
+                  available on demand and must be usable to discover specific
+                  locations in the publication.
+                </p>
+
+                <p>For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.</p>
+
+                <ul class="use-cases">
+                    <li>Ann reads War and Peace which, when printed, is
+                     over 1200 pages. In order to have a better sense of
+                     her progress in the book and to make navigation within
+                     the book easier (i.e., to support usability) she decides
+                     to switch her reading environment to paged view.</li>
+
+                    <li>Susan uses a flexible CSS layout, that includes images, to create
+                     a rich, interactive publication on the history of a city.
+                     Each major historical milestone is
+                     defined as a standalone unit that would be a single
+                     page when printed, with a timeline with the main
+                     events in the footer area of the page.</li>
+
+                    <li>IndyPublisher wants to provide transition effects between
+                     pages, both within and across content documents.</li>
+
+                    <li>Mr. Oayia, a classroom teacher, says, “turn to page 137 of your
+                     textbook.” Regardless of layout and font size, students
+                     reading digital editions need to find the same location
+                     in the textbook as one another and as students reading
+                     the print edition.
+                     </li>
+                </ul>
+            </section>
+
+           <section id="personalized">
+                <h3>Personalization</h3>
+                <p><span class="req-set" id="r_p13n">The user must have the possibility to
+                  personalize his or her reading experience.</span> This may include, for example,
+                  controlling such features as font size, choice of fonts, background and
+                  foreground color, tone of audio, etc. </p>
+
+                <ul class="use-cases">
+                  <li id="r_p13n_1">Olga, a dyslexic student, downloads a textbook and proceeds to personalize
+                    the material with larger and/or a specialized dyslexic font, as well as
+                    different contrast that, for her particular case, makes the text easier
+                    to consume.</li>
+
+                  <li>When reading a book in the sun, Mia adjusts the
+                    background color to allow for a stronger contrast so that she can see the
+                    text.</li>
+
+                  <li>While reading a book on computer programming, Ransheed
+                    wants to change the font into a local font. However, the
+                    code samples within the text should remain in a fixed-width font.</li>
+
+                  <li id="r_p13n_4">Buffy is Deafblind. Every morning she downloads her daily
+                    newspaper. Like most news sites, it provides many rich
+                    multimedia presentations. As a high-quality, accessible news
+                    site, it's multimedia presentations come with captions and
+                    transcripts. Buffy does not want to waste her data plan on the useless-to-her audio and video content, so she instructs her user agents to ignore them.</li>
+             </ul>
+          </section>
       </section>
 
       <section id='pub-needs'>
-          <h2>Publishing Needs</h2>
-
-          <section id="single-package">
-              <h3>Single Unit</h3>
-              <p class="req-set" id="r_single">User agents must treat a Web Publication as a single
-              unit, with its own URL, beyond the references to individual resources.</p>
-
-              <ul class="use-cases">
-                <li>User agent must be able to search a Web Publication and see the results provided as if it was one unit.</li>
-
-                <li>User agents that support value counters (page
-                  counters, section numbering, footnotes, endnotes), should do so across
-                  the entire web publication (as opposed to individual components being
-                  numbered separately)</li>
-
-                <li>Any preferences or settings in the user agent must
-                  apply to the complete web publication (users must be
-                  able to adjust display, e.g., font selection, font-size
-                  adjustment, background color)</li>
-
-                <li id="r_single_3">Assistive Technology such as screen readers or voice
-                  dictation control needs to have the web publication presented to it
-                  as if it was a single unit.</li>
-              </ul>
-          </section>
-
-          <section id="unique-identifier">
-              <h3>Uniquely Identifying a Web Publication</h3>
-              <p class="req-set" id="r_uniq-id-state">There should be a way to
-              uniquely identify a Web Publication.</p>
-
-              <p>A unique identification of a specific Web Publication, is
-                essential. If not expressed as a URL, there should be a way to
-                map this unique identification onto a Web Address.
-              </p>
-
-              <ul class="use-cases">
-                <li>Scholarly references demand a unique identification
-                  of the publication and, possibly, its internal structure.
-                  That unique identification must be available as a web link,
-                  to make it possible for other publications and other
-                  sites (e.g., the authors’ institutional sites) to
-                  unambiguously link to the publication. These features
-                  are essential in the scholarly community to make, for
-                  example, the assessment of individual researchers
-                  possible.</li>
-              </ul>
-          </section>
-
+          <h2>Publishers’ and Authors’ Needs</h2>
           <section id="reading-order">
               <h3>Default Reading Order</h3>
               <p class="req-set" id="r_read-order">There should be a means to
@@ -571,7 +632,7 @@
                 href="#reading-order">reading orders</a> that may go beyond the
                 “default” for the content of the publication. This alternative reading order
                 may only includes specific parts of the publication rather than the full
-                content of the web publication.</p>
+                content of the Web Publication.</p>
 
               <p>A user agent should be able to access the resources of the publication in whatever order it chooses—beyond the order provided by the publication itself.</p>
 
@@ -609,82 +670,78 @@
               </ul>
           </section>
 
-          <section id='pagination'>
-              <h3>Pagination</h3>
-              <p class="req-set" id="r_pag">It should be possible to see the
-               Web Publication in a “paginated” view.</p>
+          <section id="constituent-resources">
+              <h3>Information on Constituent Resources</h3>
 
-              <p>Whereas a “scrolling” view is the dominating approach on
-                the Web in browsers, a user or author may wish to view their publications in a paginated view. As such, it should be possible for an individual publication or user agent to provide the ability to switch to pagination view. This pagination may
-                automatically adapt page sizes to the device’s or the
-                browser’s viewport, and may contain separate headers,
-                footers, and/or page numbers.
-              </p>
+              <p class="req-set" id="r_con-res">The information regarding the
+                constituent resources of a Web Publication must be easily discovered
+                and there should be a way to differentiate between essential and
+                non-essential resources.</p>
 
-              <p>This is distinct from the need to retain original page
-                numbering (often from the print edition) which must be
-                available on demand and must be usable to discover specific
-                locations in the publication.
-              </p>
+              <p>A Web Publication will likely be composed of multiple Web documents and their
+                resources. A more complicated Web Publication may have many resources, some of
+                which are essential and some of which are not. Because of this
+                complexity, extracting in advance all the references to some or all
+                constituent resources may be prohibitive. It is therefore necessary
+                for the user agent to have an easy access to the list of constituent
+                resources and some of their characteristics such as whether they are
+                essential, their media types, or their sizes. </p>
 
-              <p>For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.</p>
+             <p>In a publication, some content is essential to the user being
+                able to consume it while other content could be either absent or
+                have a provided fallback for situations such as limited connectivity
+                or storage. This information, provided by the author or publisher of
+                the Web Publication, would enable a user agent to provide a better
+                experience to the user. For example, the user agent can ensure that
+                essential resources are made available when offline (see <a
+                href="#fundamental-offline"></a>).</p>
 
-              <ul class="use-cases">
-                  <li>Ann reads War and Peace which, when printed, is
-                   over 1200 pages. In order to have a better sense of
-                   her progress in the book and to make navigation within
-                   the book easier (i.e., to support usability) she decides
-                   to switch her reading environment to paged view.</li>
+             <ul class="use-cases">
+                <li>Nick is reading a long-form narrative on a device with limited storage: a publication
+                  filled with text, images, sounds, and multimedia files.
+                  Nick also rides the subway, where
+                  he loses Internet connectivity frequently and without
+                  warning for long stretches of time. During offline or
+                  low-storage situations, there are still critical parts of the
+                  publication that are consumable, mainly the text (and
+                  possibly images). Having a reasonable fallback for video,
+                  such as a poster image or placeholder image, would allow Nick
+                  to read the content while offline or on a device with
+                  limited storage.
+                </li>
 
-                  <li>Susan uses a flexible CSS layout, that includes images, to create
-                   a rich, interactive publication on the history of a city.
-                   Each major historical milestone is
-                   defined as a standalone unit that would be a single
-                   page when printed, with a timeline with the main
-                   events in the footer area of the page.</li>
+                <li>Gösta is reading a treatise on the theory of functions.
+                  A mathematical font is essential for the proper display
+                  of the mathematical formula in this publication, so the author
+                  has marked the font as essential so it is made available offline.</li>
 
-                  <li>IndyPublisher wants to provide transition effects between
-                   pages, both within and across content documents.</li>
+                <li>While reading an article on a new spam analysis algorithm,
+                  Lars is primarily interested in the findings of the research.
+                  Since the research was funded by a government agency, the
+                  dataset, consisting of millions of anonymized log files, is also
+                  available. Because of its size, the researchers have marked the
+                  dataset as non-essential for conveying the results of the paper and therefore
+                  indicates it can be skipped when reading the publication
+                  offline. </li>
 
-                  <li>Mr. Oayia, a classroom teacher, says, “turn to page 137 of your
-                   textbook.” Regardless of layout and font size, students
-                   reading digital editions need to find the same location
-                   in the textbook as one another and as students reading
-                   the print edition.
-                   </li>
+                <li> Sarah is reading a publication about the stock exchange. The
+                  current value of the stock is fetched (from a remote resource) when she opens the
+                  publication. However, when she is on the train (without a connection) one week later
+                  and opens the stock exchange publication, she will continue to see the value of the
+                  stock as it was the last time she opened the
+                  publication. It should be possible for either the content itself or the user agent to
+                  provide some user experience that notifies her that the currently presented data is a
+                  week old. </li>
+
+                <li>Risha publishes an article which includes an interactive component
+                  that accesses a database, exposed to the Web via a RESTful API. The
+                  interactive component is implemented as a JavaScript library. Such data
+                  cannot be included in a packaged publication and the interactive module is
+                  of no use without such data. Risha therefore marks the Web Publication component
+                  relative to the interactive module as not relevant when offline. </li>
               </ul>
-
-
           </section>
 
-         <section id="personalized">
-              <h3>Personalization</h3>
-              <p><span class="req-set" id="r_p13n">The user must have the possibility to
-                personalize his or her reading experience.</span> This may include, for example,
-                controlling such features as font size, choice of fonts, background and
-                foreground color, tone of voice, etc. </p>
-
-              <ul class="use-cases">
-                <li id="r_p13n_1">Olga, a dyslexic student, downloads a textbook and proceeds to personalize
-                  the material with larger and/or a specialized dyslexic font, as well as
-                  different contrast that, for her particular case, makes the text easier
-                  to consume.</li>
-
-                <li>When reading a book in the sun, Mia adjusts the
-                  background color to allow for a stronger contrast so that she can see the
-                  text.</li>
-
-                <li>While reading a book on computer programming, Ransheed
-                  wants to change the font into a local font. However, the
-                  code samples within the text should remain in a fixed-width font.</li>
- 
-                <li id="r_p13n_4">Buffy is Deafblind. Every morning she downloads her daily
-                  newspaper. Like most news sites, it provides many rich
-                  multimedia presentations. As a high-quality, accessible news
-                  site, it's multimedia presentations come with captions and
-                  transcripts. Buffy does not want to waste her data plan on the useless-to-her audio and video content, so she instructs her user agents to ignore them.</li>
-           </ul>
-        </section>
 
       <!-- <section id='cross-ref'>
           <h3>Cross-referencing</h3>
@@ -732,77 +789,6 @@
           </ul>
       </section> -->
 
-        <section id="constituent-resources">
-            <h3>Constituent Resources</h3>
-
-            <p class="req-set" id="r_con-res">The information regarding the
-              constituent resources of a Web Publication must be easily discovered
-              and there should be a way to differentiate between essential and
-              non-essential resources.</p>
-
-            <p>A Web Publication will likely be composed of multiple Web documents and their
-              resources. A more complicated Web Publication may have many resources, some of
-              which are essential and some of which are not. Because of this
-              complexity, extracting in advance all the references to some or all
-              constituent resources may be prohibitive. It is therefore necessary
-              for the user agent to have an easy access to the list of constituent
-              resources and some of their characteristics such as whether they are
-              essential, their media types, or their sizes. </p>
-
-           <p>In a publication, some content is essential to the user being
-              able to consume it while other content could be either absent or
-              have a provided fallback for situations such as limited connectivity
-              or storage. This information, provided by the author or publisher of
-              the Web Publication, would enable a user agent to provide a better
-              experience to the user. For example, the user agent can ensure that
-              essential resources are made available when offline (see <a
-              href="#fundamental-offline"></a>).</p>
-
-           <ul class="use-cases">
-              <li>Nick is reading a long-form narrative on a device with limited storage: a publication
-                filled with text, images, sounds, and multimedia files.
-                Nick also rides the subway, where
-                he loses Internet connectivity frequently and without
-                warning for long stretches of time. During offline or
-                low-storage situations, there are still critical parts of the
-                publication that are consumable, mainly the text (and
-                possibly images). Having a reasonable fallback for video,
-                such as a poster image or placeholder image, would allow Nick
-                to read the content while offline or on a device with
-                limited storage.
-              </li>
-
-              <li>Gösta is reading a treatise on the theory of functions.
-                A mathematical font is essential for the proper display
-                of the mathematical formula in this publication, so the author
-                has marked the font as essential so it is made available offline.</li>
-
-              <li>While reading an article on a new spam analysis algorithm,
-                Lars is primarily interested in the findings of the research.
-                Since the research was funded by a government agency, the
-                dataset, consisting of millions of anonymized log files, is also
-                available. Because of its size, the researchers have marked the
-                dataset as non-essential for conveying the results of the paper and therefore
-                indicates it can be skipped when reading the publication
-                offline. </li>
-
-              <li> Sarah is reading a publication about the stock exchange. The
-                current value of the stock is fetched (from a remote resource) when she opens the
-                publication. However, when she is on the train (without a connection) one week later
-                and opens the stock exchange publication, she will continue to see the value of the
-                stock as it was the last time she opened the
-                publication. It should be possible for either the content itself or the user agent to
-                provide some user experience that notifies her that the currently presented data is a
-                week old. </li>
-
-              <li>Risha publishes an article which includes an interactive component
-                that accesses a database, exposed to the web via a RESTful API. The
-                interactive component is implemented as a JavaScript library. Such data
-                cannot be included in a packaged publication and the interactive module is
-                of no use without such data. Risha therefore marks the Web Publication component
-                relative to the interactive module as not relevant when offline. </li>
-            </ul>
-      </section>
 
     <section>
         <h2>Access Control and Write Protections</h2>
@@ -831,7 +817,7 @@
           order to discover the necessary components and their relationships. A user
           agent may need to make some decisions about how to present content before
           displaying it.</p>
-                    
+
         <p>A Web Publication should be able to include additional information  that the user agent can use like:</p>
               <ul>
                   <li>the rights of various components identified in the package</li>
@@ -840,7 +826,7 @@
                   <li>the title, author(s), cover image, etc., to display the
                   publication on a shelf without downloading all its content;</li>
               </ul>
-   
+
 
           <p>Some necessary features are listed among the fundamental features of a
           Web Publication (see <a href="#find-information"></a>); the use cases below provide a
@@ -852,7 +838,7 @@
                   Marla is writing an art book and wish to include the rights relevant to the image of the Mona Lisa owned by the Louvre, so that a user agent will know whether it is permissible to download the image for offline use.
               </li>
 
-              <li id="r_manifest-metadata_3">Ferdous wants to buy a book about a museum exhibit, but before
+              <li id="r_manifest-metadata_2">Ferdous wants to buy a book about a museum exhibit, but before
                he does that, he wants to guarantee that the images and videos
               about the exhibits have detailed descriptions, to ensure that he
               will be able to read it with a screen reader or refreshable
@@ -867,7 +853,7 @@
                 accessbility characteristics for each constituent resource.</li>
           </ul>
        </section>
-    <!--      
+    <!--
        <section id="manifests">
            <h3>Manifests Access</h3>
 
@@ -943,13 +929,13 @@
     <p>See also <a href="#archiving">Archiving</a>.
 
     <section id="distro-vers">
-        <h3>Distribution and Versioning</h3>
+        <h3>Distribution and Iteration</h3>
         <p class="req-set" id="r_distro">The distribution of a Packaged Web Publication should
-          not affect its versioning.</p>
+          not affect its iterations.</p>
 
         <p>Simply distributing or sharing a Packaged Web Publication to multiple destinations
-        and devices should not result in (technically) different versions of the Web Publication
-        unless they contain modifications that make them different web publications.</p>
+        and devices should not result in (technically) different iterations of the Web Publication
+        unless they contain modifications that make them different Web Publications.</p>
 
         <ul class="use-cases">
           <li>Publisher Corp. Inc. publishes a new Packaged Web Publication and sends it to its
@@ -965,12 +951,12 @@
           <li>Mary creates a Packaged Web Publication and sends it to Dave and Kristin. Kristin
             simply sends it along to two other friends, but Dave adds some comments first
             to his copy before sending to two friends. By doing so, Dave has created a
-            new web publication with its own <a href="unique-identifier">canonical identifier</a>
+            new Web Publication with its own <a href="unique-identifier">canonical identifier</a>
             while the version used by Mary, Kristen and her friends remains the same as
             the original.</li>
 
            <li>Slicendice Publishing publishes many Packaged Web Publications, some of which are
-           different versions or subsets or combinations of others. Slicendice needs
+           different iterations or subsets or combinations of others. Slicendice needs
            not only to be able to uniquely identify each unique Web Publication but also to
            identify each “copy” or “delivery” (“item”) of each of those Web Publications so that
            it can track “what” has been sold and “how many” of each one have been
@@ -995,7 +981,7 @@
            <li>Alice acquires a Packaged Web Publication through a subscription service and downloads it.
              When, later on, she decides to unsubscribe from the service, this Web Publication
              becomes unavailable to her.</li>
-            
+
             <li>
                 Leila has just written a report for school as a Web Publication, but she is required to email it to her teacher. She takes advantage of the fact that it is possible to  package up a publication and then sends it off.
             </li>
@@ -1057,7 +1043,7 @@
          <section id="component-change">
              <h2>New or Removed Components</h2>
 
-             <p class="req-set" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to or deleted from a web publication.</p>
+             <p class="req-set" id="r_archnewcomp">There should be a way to discover that one or more new components have been added to or deleted from a Web Publication.</p>
 
              <p>An archiving service needs a reliable way to learn that one or more
               Packaged Web Publication components have been added to or removed from a
@@ -1089,26 +1075,18 @@
         </section>
     </section>
 
-    <section id="manifest_links">
-        <h3>Manifests and Links</h3>
-        <p class="req-set" id="r_manifest-links">Manifests should include a means to remap/redirect a given URL to another, either within a package or externally.</p>
+    <section id="remap_links">
+    	<h3>Remap links</h3>
+    	<p class="req-set" id="r_remap_links">A PWP should include means to map the identification of a constituent resource between the Web and its equivalent in a package</p>
 
-        <p>The fundamental requirement on identification already states that there
-        should be a way to uniquely identify a publication (see <a
-        href="#unique-identifier"></a>). This requirement should be extended to
-        resources within a publication, such as a chapter, an image, or a
-        mathematical formula. While the Web provides a model for this for non-packaged resources,
-        a model that will work for the packaged version is also necessary.</p>
+    	<p>
+    		The fundamental requirement on identification already states that there should be a way to uniquely identify a publication (see <a href="#unique-identifier"></a>). This requirement can easily be extended to constituents of a Web Publication by using standard Web identifications. However, a model that would extend this identification to the resources contained in a <em>Packaged</em> Web Publication is also necessary, making it possible to refer to a resource regardless of whether the resource is within an Web Publication or within its packaged version.
+    	</p>
 
-        <ul class="use-cases">
-            <li>A scholarly mathematical publication refers to a specific theorem
-            in another publication, and that reference must be unique, stable and
-            retrievable on the Web. That reference should not depend on whether
-            the publishes issues a new version of the target publication (thereby
-            possibly change the section numbering).</li>
+    	<ul class="use-cases">
+    		<li>An archival service wants to harvest (spider) a Web Publication and not have to modify the OWP content during the process. In order to achive that goal, its manifest would incorporate a mapping from the URIs present in the OWP content to their new location inside the archive.</li>
+    	</ul>
 
-            <li>An archival service wants to harvest (spider) a Web Publication and not have to modify the OWP content during the process. In order to achive that goal, there manifest would incorporate a mapping from the URIs present in the OWP content to their new location inside the archive.</li>
-        </ul>
     </section>
 
      <section id="check-integrity_and_origin">
@@ -1129,7 +1107,7 @@
              </ul>
          </section>
          <section id="check-origin">
-             <h2>Authenticity - Origin of a Publication</h2>
+             <h2>Authenticity—Origin of a Publication</h2>
              <p class="req-set" id="r_check_origin">The publisher should be able to provide information in a Portable Web Publication that can be used to check the origin of the publication and its authenticity.
              </p>
 
@@ -1141,10 +1119,10 @@
                   information to the Web Publication proving its own identity.</li>
              </ul>
          </section>
-    </section>
+      </section>
   </section>
 
-        <section id="escalating_trust">
+  <section id="escalating_trust">
        <h2>Escalating trust</h2>
        <p><span class="req-set" id="r_sec-trust">User agents may provide a method for escalating trust for a specific publication.</span>
             Some publications may require additional capabilities (for example, access to camera or geolocation) that a user agent might normally not enable. Today, some platform and UA vendors offer methods for otherwise untrusted local scripts to become trusted and regain API privileges, a similar ability needs to exist for publications as well.</p>
@@ -1152,7 +1130,7 @@
        <ul class="use-cases">
          <li>Luke has written another book, this time using all of the capabilities of the Open Web Platform that he can think of including using the readers location to adapt the content. He submits the book for review to a Web Publication retail platform, where the book is signed by the publisher.  When purchased, the UA detects that the book came from a trusted source and has not been modified, therefore allowing it to use the full capabilities of the web platform.</li>
        </ul>
-     </section>
+   </section>
 
 <!--
   <section id='perm-obl'>
@@ -1196,19 +1174,21 @@
 -->
 
   <section class="appendix" id="req_list">
-        <h2>List of Requirements</h2>
-        <table class="zebra" id="reqtable">
-            <thead>
+     <h2>List of Requirements</h2>
+     <table class="zebra" id="reqtable">
+        <thead>
+            <tr>
                 <th>
                     Number and reference
                 </th>
                 <th>
                     Short description
                 </th>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+     </table>
    </section>
 
    <section class="appendix" id="accessibility">
@@ -1216,28 +1196,30 @@
 
        <p>Ensuring accessibillity is a strong requirement for publishers. Instead of
          dealing with accessibility features as separate requirements and use cases,
-         this document provides use cases for each requirement whenever appropriate.
-         This table lists those requirement, and also the use case number(s) within
+         this document provides use cases for requirements whenever appropriate.
+         This table lists those requirements, and also the use case number(s) within
          that section that are related to accessibility.</p>
 
         <table class="zebra" id="acc_table">
         	<thead>
-        		<th>Number and reference</th>
-        		<th>Short description</th>
-        		<th>Use case(s)</th>
+                <tr>
+                    <th>Number and reference</th>
+            		<th>Short description</th>
+            		<th>Use case(s)</th>
+                </tr>
         	</thead>
         	<tbody>
-                <tr>
-                    <td><a href="#r_multimedia" class="req-ref"></a></td>
-            		<td><a href="#r_multimedia" class="req-ref-descr"></a></td>
-            		<td><a href="#r_multimedia_acc_3">3</a>
-            		</td>
-                </tr>
                 <tr>
                     <td><a href="#r_horizdep" class="req-ref"></a></td>
             		<td><a href="#r_horizdep" class="req-ref-descr"></a></td>
             		<td><a href="#r_horizdep_1">1</a>,
                         <a href="#r_horizdep_2">2</a>
+            		</td>
+                </tr>
+                <tr>
+                    <td><a href="#r_multimedia" class="req-ref"></a></td>
+            		<td><a href="#r_multimedia" class="req-ref-descr"></a></td>
+            		<td><a href="#r_multimedia_acc_3">3</a>
             		</td>
                 </tr>
                 <tr>
@@ -1249,7 +1231,14 @@
                 <tr>
                     <td><a href="#r_single" class="req-ref"></a></td>
             		<td><a href="#r_single" class="req-ref-descr"></a></td>
-            		<td><a href="#r_single_3">3</a>
+            		<td><a href="#r_single_4">4</a>
+            		</td>
+                </tr>
+                <tr>
+                    <td><a href="#r_p13n" class="req-ref"></a></td>
+            		<td><a href="#r_p13n" class="req-ref-descr"></a></td>
+            		<td><a href="#r_p13n_1">1</a>,
+            		    <a href="#r_p13n_4">4</a>
             		</td>
                 </tr>
                 <tr>
@@ -1259,31 +1248,22 @@
             		</td>
                 </tr>
                 <tr>
-                    <td><a href="#r_p13n" class="req-ref"></a></td>
-            		<td><a href="#r_p13n" class="req-ref-descr"></a></td>
-            		<td><a href="#r_p13n_1">1</a>,
-            		      <a href="#r_p13n_4">4</a>
-            		</td>
-                </tr>
-                <tr>
                     <td><a href="#r_manifest-metadata" class="req-ref"></a></td>
             		<td><a href="#r_manifest-metadata" class="req-ref-descr"></a></td>
-            		<td><a href="#r_manifest-metadata_3">3</a>,
-                        <a href="#r_manifest-metadata_4">4</a>
+            		<td><a href="#r_manifest-metadata_2">2</a>,
+                        <a href="#r_manifest-metadata_3">3</a>
             		</td>
                 </tr>
         	</tbody>
         </table>
     </section>
 
-
-
     <section class="appendix" id="acknowledgements">
         <h2>Acknowledgements</h2>
         <p>The following people have been instrumental in providing thoughts, feedback, reviews, content, criticism, and input in the creation of this document:</p>
 
         <div style="margin-left: 3em">
-            Boris Anthony (Rebus Foundation), Luc Audrain (Hachette Livre), Nick Barreto (Canelo, Invited Expert), Baldur Bjarnason (Rebus Foundation), Marcos Caceres (Mozilla), Timothy Cole (University of Illinois at Urbana-Champaign), Garth Conboy (Google), Dave Cramer (Hachette Livre), Romain Deltour (DAISY Consortium), Brady Duga (Google), Heather Flanagan (IETF, Invited Expert), Hadrien Gardeur (Feedbooks), (Markus Gylling (IDPF), Eric Hellman, Ivan Herman (W3C), Deborah Kaplan (Invited Expert), Bill Kasdorf (BISG), George Kerscher (DAISY Consortium), Peter Krautzberger (MathJax, Invited Expert), Charles LaPierre (Benetech), Laurent Le Meur (EDRLab), Vladimir Levantovsky (Monotype), Mia Lipner (Pearson), Christofer Maden (University of Illinois at Urbana-Champaign), Shane McCarron (Spec-Ops), William McCoy (IDPF), Hugh McGuire (Rebus Foundation), Ben De Meester (iMinds), Liam Quin (W3C), Leonard Rosenthol (Adobe), Nicholas Ruffilo (Ingram, Invited Expert), Rob Sanderson (Stanford University), Avneesh Singh (DAISY Consortium), Mike Smith (W3C), Alan Stearns (Adobe), Ayla Stein (University of Illinois at Urbana-Champaign), Tzviya Siegman (Wiley), Nicholas Taylor (Stanford University), Benjamin Young (Wiley), and Daniel Weck (DAISY Consortium)
+            Boris Anthony (Rebus Foundation), Luc Audrain (Hachette Livre), Nick Barreto (Canelo, Invited Expert), Baldur Bjarnason (Rebus Foundation), Marcos Caceres (Mozilla), Timothy Cole (University of Illinois at Urbana-Champaign), Garth Conboy (Google), Dave Cramer (Hachette Livre), Romain Deltour (DAISY Consortium), Brady Duga (Google), Heather Flanagan (IETF, Invited Expert), Hadrien Gardeur (Feedbooks), (Markus Gylling (IDPF), Eric Hellman, Ivan Herman (W3C), Deborah Kaplan (Invited Expert), Bill Kasdorf (BISG), George Kerscher (DAISY Consortium), Peter Krautzberger (MathJax, Invited Expert), Charles LaPierre (Benetech), Laurent Le Meur (EDRLab), Vladimir Levantovsky (Monotype), Mia Lipner (Pearson), Christofer Maden (University of Illinois at Urbana-Champaign), Shane McCarron (Spec-Ops), William McCoy (IDPF), Hugh McGuire (Rebus Foundation), Ben De Meester (iMinds), Liam Quin (W3C), Leonard Rosenthol (Adobe), Nicholas Ruffilo (Ingram, Invited Expert), Rob Sanderson (Stanford University), Avneesh Singh (DAISY Consortium), Mike Smith (W3C), Alan Stearns (Adobe), Ayla Stein (University of Illinois at Urbana-Champaign), Tzviya Siegman (Wiley), Nicholas Taylor (Stanford University), Daniel Weck (DAISY Consortium), and Benjamin Young (Wiley).
         </div>
     </section>
   </body>
