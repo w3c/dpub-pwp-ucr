@@ -94,14 +94,9 @@
   <body>
     <section id='abstract'>
         <p>
-        Publications, from newletters to electronic books to scholarly journal
-        articles, must be considered first-class content on the web, equal to
-        the more common forms of web pages available today. This documents
-        describes the various use cases highlighting the problems users and
-        publishers face when traditional publications are to be used in a
-        digital, Web environment. The requirements that come from those use
-        cases provide the basis for the technical considerations in a companion
-        document, currently entitled <a href="http://w3c.github.io/dpub-pwp/">“Portable
+        Publications, from corporate memos to newsletters to electronic books to scholarly journal articles, must be considered first-class content on the web, equal to the more common forms of web pages available today. 
+        This document describes the various use cases highlighting the problems users and publishers face when these publications are to be used in a digital, Web environment. 
+        The requirements that come from those use cases provide the basis for the technical considerations in a companion document, currently entitled <a href="http://w3c.github.io/dpub-pwp/">“Portable
         Web Publications for the Open Web Platform”</a>.
         </p>
     </section>
@@ -176,27 +171,23 @@
               subtle differences, it is better to stick
               to a single term for the purposes of this document.</li>
 
-			  <li>A <dfn>Web Publication</dfn> (WP) is a collection of one or more Web resources,
+			  <li>A <dfn>Web Publication</dfn> (WP) is a collection of one or more constituent resources,
 			  organized together in a uniquely identifiable grouping, and presented using
-			  standard Open Web Platform formats.</li>
+			  standard Open Web Platform technologies.</li>
 
               <li>A <dfn>Packaged Web Publication</dfn> (PWP) is a <a>Web Publication</a> whose
               constituent resources are combined into a single distributable file, using some standard
               packaging format.</li>
 
-              <li>In this document, <dfn>manifest</dfn> refers to an abstract means,
-              to contain information necessary to the proper management, rendering, and so on,
-              of a publication. This is opposed to metadata that contains information on the
-              content of the publication like author, publication date, and so on. The
-              precise format of how such a manifest is stored is not considered in this document.</li>
+              <li>In this document, <dfn>manifest</dfn> refers to an abstract means to contain information necessary to the proper management, rendering, and so on, of a publication. This is opposed to metadata that contains information on the content of the publication like author, publication date, and so on. 
+              The precise format of how such a manifest is stored is not considered in this document.</li>
           </ul>
         </section>
     </section>
 
     <section id='fundamental-ar'>
         <h1>Web Publications</h1>
-        <p>This section describes the use cases specific to <a data-lt="Web Publication">Web Publications</a> and the Open Web Platform, including associated publishing
-        needs, and discoverability.</p>
+        <p>This section describes the use cases specific to <a data-lt="Web Publication">Web Publications</a> and the Open Web Platform, including associated publishing needs, and discoverability.</p>
 
         <section id='pwp-owp'>
             <h2>Open Web Platform</h2>
@@ -207,9 +198,9 @@
             on top of OWP that make it possible to develop powerful interactive
             layers on top of OWP. These include, for example, data visualization
             systems (e.g., d3, built on top of SVG), possibilities to access
-            external services like Wolfram Alfa, or tools to create and store (possibly as part of the publication) annotations. These tools have been
+            external services like Wolfram Alpha, or tools to create and store (possibly as part of the publication) annotations. These tools have been
             traditionally developed around browsers, and provide possibilities that
-            traditional publications should also benefit from. That requires that <a data-lt="Web Publication">Web Publications</a> become first class citizens on the Web platform.</p>
+             publications should also benefit from. That requires that <a data-lt="Web Publication">Web Publications</a> become first class citizens on the Web platform.</p>
 
             <ul class="use-cases">
                 <li>A large, multidisciplinary, Web-based journal relies on
@@ -393,7 +384,7 @@
 
                 <p>A Web Publication needs to support time-based media, such as synchronized video, audio, captions or transcript, or sign language interpretation.
                 A web publication must be able to enable a synchronized media experience
-                while navigating through the book, with sufficient level
+                while navigating through the publication, with sufficient level
                 of granularity. </p>
 
                 <ul class="use-cases">
@@ -624,9 +615,7 @@
                Web Publication in a “paginated” view.</p>
 
               <p>Whereas a “scrolling” view is the dominating approach on
-                the Web in browsers, publications should provide the
-                possibility to switch to a paginated view if the user so
-                desires or as the author suggests. Pagination may
+                the Web in browsers, a user or author may wish to view their publications in a paginated view. As such, it should be possible for an individual publication or user agent to provide the ability to switch to pagination view. This pagination may
                 automatically adapt page sizes to the device’s or the
                 browser’s viewport, and may contain separate headers,
                 footers, and/or page numbers.
@@ -688,16 +677,13 @@
                 <li>While reading a book on computer programming, Ransheed
                   wants to change the font into a local font. However, the
                   code samples within the text should remain in a fixed-width font.</li>
-
+ 
                 <li id="r_p13n_4">Buffy is Deafblind. Every morning she downloads her daily
                   newspaper. Like most news sites, it provides many rich
                   multimedia presentations. As a high-quality, accessible news
                   site, it's multimedia presentations come with captions and
-                  transcripts. Buffy does not want to waste her data plan on the
-                  useless-to-her audio and video content. She’d like to build a
-                  Web Publication which contains the captions and transcripts, but
-                  not the data-heavy videos.</li>
-            </ul>
+                  transcripts. Buffy does not want to waste her data plan on the useless-to-her audio and video content, so she instructs her user agents to ignore them.</li>
+           </ul>
         </section>
 
       <!-- <section id='cross-ref'>
@@ -815,7 +801,24 @@
                 cannot be included in a packaged publication and the interactive module is
                 of no use without such data. Risha therefore marks the Web Publication component
                 relative to the interactive module as not relevant when offline. </li>
-          </ul>
+            </ul>
+      </section>
+
+    <section>
+        <h2>Access Control and Write Protections</h2>
+          <p class="req-set" id="r_protections">A Web Publication should be able to express the access control and write protections of the publication.</p>
+
+         <ul class="use-cases">
+            <li>A library may loan the publication for two weeks or a university may make a textbook available for its students for the course of the year. A Web Publication
+            should provide a means to inform user agents about the availability period to enable the UA to control access accordingly.</li>
+
+            <li>Alice is working on potentially Nobel prize winning
+                research, and has drafted her paper describing her
+                discoveries. She asks Bob to review the paper, but
+                needs to make sure that the Web Publication retains specific
+                protections on what Bob is able to do with the publication and its content.
+            </li>
+         </ul>
       </section>
 
       <section id="technical-metadata">
@@ -828,26 +831,25 @@
           order to discover the necessary components and their relationships. A user
           agent may need to make some decisions about how to present content before
           displaying it.</p>
+                    
+        <p>A Web Publication should be able to include additional information  that the user agent can use like:</p>
+              <ul>
+                  <li>the rights of various components identified in the package</li>
+                  <li>captions belonging to multimedia resources within the publication;</li>
+                  <li>whether there is a need for additional processing, such as with MathML;</li>
+                  <li>the title, author(s), cover image, etc., to display the
+                  publication on a shelf without downloading all its content;</li>
+              </ul>
+   
 
           <p>Some necessary features are listed among the fundamental features of a
           Web Publication (see <a href="#find-information"></a>); the use cases below provide a
           (non-exhaustive) list of further information.</p>
 
           <ul class="use-cases">
-              <li>The author/publisher should provide, when appropriate, the rights of
-                  various components identified in the package; e.g., the rights relevant
-                  to the image of the Mona Lisa owned by the Louvre on whether it is
-                  permissible to download the image for offline use.</li>
 
-              <li>The author/publisher should have the possibility to provide additional
-                  information on the Web Publication that the user agent can use like:
-                  <ul>
-                      <li>captions belonging to multimedia resources within the publication;</li>
-                      <li>whether there is a need for additional processing, such as with MathML;</li>
-                      <li>the title, author(s), cover image, etc., to display the
-                      publication on a shelf without downloading all its content;</li>
-                      <li>the origin of the publication.</li>
-                  </ul>
+              <li>
+                  Marla is writing an art book and wish to include the rights relevant to the image of the Mona Lisa owned by the Louvre, so that a user agent will know whether it is permissible to download the image for offline use.
               </li>
 
               <li id="r_manifest-metadata_3">Ferdous wants to buy a book about a museum exhibit, but before
@@ -865,6 +867,7 @@
                 accessbility characteristics for each constituent resource.</li>
           </ul>
        </section>
+    <!--      
        <section id="manifests">
            <h3>Manifests Access</h3>
 
@@ -904,6 +907,7 @@
                  that the user agent will use instead of the publisher’s manifest.</li>
            </ul>
         </section>
+-->
    </section>
 </section>
 
@@ -971,6 +975,8 @@
            identify each “copy” or “delivery” (“item”) of each of those Web Publications so that
            it can track “what” has been sold and “how many” of each one have been
            sold.</li>
+
+             <li id="bigretailer-manifest">BigRetailer receives a Web Publication from EsteemedPublisher that it intends to add to its catalogue. BigRetailer wants to adds it own “teaser” via an alternative reading order (see <a href="#streamlining"></a>). To achieve that, BigRetailer provides its own version of the publication’s manifest, that the user agent will use instead of the publisher’s manifest.</li>
         </ul>
     </section>
 
@@ -989,6 +995,10 @@
            <li>Alice acquires a Packaged Web Publication through a subscription service and downloads it.
              When, later on, she decides to unsubscribe from the service, this Web Publication
              becomes unavailable to her.</li>
+            
+            <li>
+                Leila has just written a report for school as a Web Publication, but she is required to email it to her teacher. She takes advantage of the fact that it is possible to  package up a publication and then sends it off.
+            </li>
         </ul>
     </section>
 
@@ -1100,27 +1110,63 @@
             <li>An archival service wants to harvest (spider) a Web Publication and not have to modify the OWP content during the process. In order to achive that goal, there manifest would incorporate a mapping from the URIs present in the OWP content to their new location inside the archive.</li>
         </ul>
     </section>
+
+     <section id="check-integrity_and_origin">
+         <h1>Integrity and Authenticity</h1>
+         <section>
+             <h2>Integrity of a Publication</h2>
+             <p class="req-set" id="r_check_integrity">The publisher should be able to provide information in a Portable Web Publication proving that the publication has not been tampered with during delivery.
+             </p>
+
+             <ul class="use-cases">
+                 <li>LegalPublisher Ltd. regularly publishes the official legal texts and
+                   regulation as decided by the local government. Michael, who is a lawyer, has
+                   access to these documents via his law firm, and uses them for his cases; to do so,
+                   he must be 100% sure that the publication he accesses faithfully reproduces the
+                   latest governmental decisions. This can be done because LegalPublisher Ltd.
+                   adds the necessary cryptographic information to the Web Publication that becomes
+                   invalid if any resource of the Web Publication changes.</li>
+             </ul>
+         </section>
+         <section id="check-origin">
+             <h2>Authenticity - Origin of a Publication</h2>
+             <p class="req-set" id="r_check_origin">The publisher should be able to provide information in a Portable Web Publication that can be used to check the origin of the publication and its authenticity.
+             </p>
+
+             <ul class="use-cases">
+                 <li>Michael, who is a lawyer, and uses the publications of LegalPublisher Ltd.,
+                  must be 100% sure that the publication he uses for his case has indeed been
+                  published by LegalPublisher Ltd., and not by a possible third party. This
+                  can be done because LegalPublisher Ltd. adds the necessary cryptographic
+                  information to the Web Publication proving its own identity.</li>
+             </ul>
+         </section>
+    </section>
   </section>
 
+        <section id="escalating_trust">
+       <h2>Escalating trust</h2>
+       <p><span class="req-set" id="r_sec-trust">User agents may provide a
+            method for escalating trust for a specific publication.</span>
+            By providing such methods, user agents may regain access to more
+            capabilities for that publication which otherwise the user agent
+            would impose for security reasons. Platform vendors have
+            sometimes offered methods for otherwise untrusted local scripts
+            to become trusted and regain API privileges that had been lost
+            while untrusted.</p>
+
+       <ul class="use-cases">
+         <li>Luke has written another book, this time using all of the capabilities
+            of the Open Web Platform that he can think of. He submits the book for review
+            to a Web Publication retail platform. After review, the book is listed in the
+            retailer’s store. When bought, the book runs with the full capabilities of
+            the platform because it has been code signed by the platform vendor.</li>
+       </ul>
+     </section>
+
+<!--
   <section id='perm-obl'>
       <h1>Security</h1>
-      <section id='acwp'>
-          <h2>Access Control and Write Protections</h2>
-          <p class="req-set" id="r_protections">A Web Publication should allow for access control and write protections of the publication.</p>
-
-         <ul class="use-cases">
-            <li>A library may loan the publication for two weeks or a university may make a textbook available for its students for the course of the year. A Web Publication
-            should provide a means to inform user agents about the availability period to enable the UA to control access accordingly.</li>
-
-            <li>Alice is working on potentially Nobel prize winning
-                research, and has drafted her paper describing her
-                discoveries. She asks Bob to review the paper, but
-                needs to make sure that the Web Publication retains specific
-                protections on what Bob is able to do with the publication and its content.
-            </li>
-         </ul>
-      </section>
-
       <section id="limiting_features">
          <h3>Limiting a Web Publication's Features</h3>
          <p class="req-set" id="r_sec-limit">User agents must be allowed to limit the
@@ -1156,59 +1202,8 @@
              publication tries to do so.</li>
        </ul>
      </section>
-
-     <section id="escalating_trust">
-       <h2>Escalating trust</h2>
-       <p><span class="req-set" id="r_sec-trust">User agents may provide a
-            method for escalating trust for a specific publication.</span>
-            By providing such methods, user agents may regain access to more
-            capabilities for that publication which otherwise the user agent
-            would impose for security reasons. Platform vendors have
-            sometimes offered methods for otherwise untrusted local scripts
-            to become trusted and regain API privileges that had been lost
-            while untrusted.</p>
-
-       <ul class="use-cases">
-         <li>Luke has written another book, this time using all of the capabilities
-            of the Open Web Platform that he can think of. He submits the book for review
-            to a Web Publication retail platform. After review, the book is listed in the
-            retailer’s store. When bought, the book runs with the full capabilities of
-            the platform because it has been code signed by the platform vendor.</li>
-       </ul>
-     </section>
-
-     <section id="check-integrity">
-         <h2>Integrity of a Publication</h2>
-         <p class="req-set" id="r_check_integrity">The publisher should be able to provide
-           information in a Web Publication proving that the publication has not
-           been tampered with at delivery.
-         </p>
-
-         <ul class="use-cases">
-             <li>LegalPublisher Ltd. regularly publishes the official legal texts and
-               regulation as decided by the local government. Michael, who is a lawyer, has
-               access to these documents via his law firm, and uses them for his cases; to do so,
-               he must be 100% sure that the publication he accesses faithfully reproduces the
-               latest governmental decisions. This can be done because LegalPublisher Ltd.
-               adds the necessary cryptographic information to the Web Publication that becomes
-               invalid if any resource of the Web Publication changes.</li>
-         </ul>
-     </section>
-     <section id="check-origin">
-         <h2>Origin of a Publication</h2>
-         <p class="req-set" id="r_check_origin">The publisher should be able to provide
-           information in a Web Publication that can be used to check the origin of the publication.
-         </p>
-
-         <ul class="use-cases">
-             <li>Michael, who is a lawyer, and uses the publications of LegalPublisher Ltd.,
-              must be 100% sure that the publication he uses for his case has indeed been
-              published by LegalPublisher Ltd., and not by a possible third party. This
-              can be done because LegalPublisher Ltd. adds the necessary cryptographic
-              information to the Web Publication proving its own identity.</li>
-         </ul>
-     </section>
   </section>
+-->
 
   <section class="appendix" id="req_list">
         <h2>List of Requirements</h2>
@@ -1277,7 +1272,7 @@
                     <td><a href="#r_p13n" class="req-ref"></a></td>
             		<td><a href="#r_p13n" class="req-ref-descr"></a></td>
             		<td><a href="#r_p13n_1">1</a>,
-                        <a href="#r_p13n_4">4</a>
+            		      <a href="#r_p13n_4">4</a>
             		</td>
                 </tr>
                 <tr>
