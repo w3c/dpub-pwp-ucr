@@ -1146,21 +1146,11 @@
 
         <section id="escalating_trust">
        <h2>Escalating trust</h2>
-       <p><span class="req-set" id="r_sec-trust">User agents may provide a
-            method for escalating trust for a specific publication.</span>
-            By providing such methods, user agents may regain access to more
-            capabilities for that publication which otherwise the user agent
-            would impose for security reasons. Platform vendors have
-            sometimes offered methods for otherwise untrusted local scripts
-            to become trusted and regain API privileges that had been lost
-            while untrusted.</p>
+       <p><span class="req-set" id="r_sec-trust">User agents may provide a method for escalating trust for a specific publication.</span>
+            Some publications may require additional capabilities (for example, access to camera or geolocation) that a user agent might normally not enable. Today, some platform and UA vendors offer methods for otherwise untrusted local scripts to become trusted and regain API privileges, a similar ability needs to exist for publications as well.</p>
 
        <ul class="use-cases">
-         <li>Luke has written another book, this time using all of the capabilities
-            of the Open Web Platform that he can think of. He submits the book for review
-            to a Web Publication retail platform. After review, the book is listed in the
-            retailer’s store. When bought, the book runs with the full capabilities of
-            the platform because it has been code signed by the platform vendor.</li>
+         <li>Luke has written another book, this time using all of the capabilities of the Open Web Platform that he can think of including using the readers location to adapt the content. He submits the book for review to a Web Publication retail platform, where the book is signed by the publisher.  When purchased, the UA detects that the book came from a trusted source and has not been modified, therefore allowing it to use the full capabilities of the web platform.</li>
        </ul>
      </section>
 
