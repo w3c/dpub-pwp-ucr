@@ -3,14 +3,32 @@
   <head>
     <title>Web Publications Use Cases and Requirements</title>
     <meta charset='utf-8'>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <!-- <script src='/Tools/respec/respec-w3c-common.js' class='remove'></script> -->
+	<script src='https://www.w3.org/Tools/respec/respec-w3c-common.js' class='remove'></script>
     <script src="scripts/rcollect.js" class="remove"></script>
     <script src="scripts/rdisplay.js" class="remove"></script>
-    <link rel="stylesheet" href="css/extras.css">
+    <link rel="stylesheet" href="extras.css">
     <script class='remove'>
       var respecConfig = {
           preProcess : [rcollect, rdisplay],
           postProcess : [rstore],
+		  localBiblio: {
+             "pwp": {
+                 "authors": [
+                   "Markus Gylling",
+                   "Ben De Meester",
+				   "Ivan Herman",
+				   "Tzviya Siegman",
+				   "Dave Cramer",
+				   "Leonard Rosenthol"
+                 ],
+                 "title": "Web Publications",
+                 "href" : "https://www.w3.org/TR/pwp",
+                 "rawDate": "2017-03-14",
+                 "status" : "Working Draft",
+                 "publisher": "W3C"
+             },
+		 },
           specStatus: "ED",
           shortName:  "pwp-ucr",
           editors: [
@@ -41,7 +59,7 @@
           previousMaturity: "WD",
           previousPublishDate:  "2016-09-13",
           wg:           "Digital Publishing Interest Group",
-          wgURI:        "http://www.w3.org/dpub/IG/",
+          wgURI:        "https://www.w3.org/dpub/IG/",
           wgPublicList: "public-digipub-ig",
           wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/64149/status",
           noRecTrack : "true",
@@ -70,6 +88,7 @@
         //       }
         //   ],
           edDraftURI: "https://w3c.github.io/dpub-pwp-ucr/",
+		  lint: false
       };
     </script>
     <style media="screen">
@@ -93,8 +112,7 @@
         <p>
         Publications, from corporate memos to newsletters to electronic books to scholarly journal articles, must be considered first-class content on the Web, equal to the more common forms of Web pages available today.
         This document describes the various use cases highlighting the problems users and publishers face when these publications are to be used in a digital, Web environment.
-        The requirements that come from those use cases provide the basis for the technical considerations in a companion document, currently entitled <a href="http://w3c.github.io/dpub-pwp/">“
-        Web Publications for the Open Web Platform”</a>.
+        The requirements that come from those use cases provide the basis for the technical considerations in a companion document, currently entitled “Web Publications”&nbsp;[[pwp]]</a>.
         </p>
     </section>
 
