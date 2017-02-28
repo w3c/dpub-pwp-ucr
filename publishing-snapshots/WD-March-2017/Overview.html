@@ -1343,15 +1343,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <p>Simply distributing or sharing a Packaged Web Publication to multiple destinations and devices should not result in (technically) different iterations of the Web Publication unless they contain modifications that make them different Web Publications.</p>
 
       <ul class="use-cases">
-        <li>Publisher Corp. Inc. publishes a new Packaged Web Publication and sends it to its distributors and customers. This Packaged Web Publication is downloaded to devices or made available to a customer-specific cloud. Customers can access this file from different retailers, through different applications, either directly or downloaded from a private cloud. Thus, the Web Publication is duplicated many times, resulting in a huge number of copies. There remains a single source manifestation, and therefore one <a href="unique-identifier">canonical identifier</a> for all of the items spread across devices and buyers. </li>
+        <li>Publisher Corp. Inc. publishes a new Packaged Web Publication and sends it to its distributors and customers. This Packaged Web Publication is downloaded to devices or made available to a customer-specific cloud. Customers can access this file from different retailers, through different applications, either directly or downloaded from a private cloud. Thus, the Web Publication is duplicated many times, resulting in a huge number of copies. There remains a single source manifestation, and therefore one <a href="#unique-identifier">canonical identifier</a> for all of the items spread across devices and buyers. </li>
 
-        <li>Mary creates a Packaged Web Publication and sends it to Dave and Kristin. Kristin simply sends it along to two other friends, but Dave adds some comments first to his copy before sending to two friends. By doing so, Dave has created a new Web Publication with its own <a href="unique-identifier">canonical identifier</a> while the version used by Mary, Kristen and her friends remains the same as the original.</li>
+        <li>Mary creates a Packaged Web Publication and sends it to Dave and Kristin. Kristin simply sends it along to two other friends, but Dave adds some comments first to his copy before sending to two friends. By doing so, Dave has created a new Web Publication with its own <a href="#unique-identifier">canonical identifier</a> while the version used by Mary, Kristen and her friends remains the same as the original.</li>
 
         <li>Slicendice Publishing publishes many Packaged Web Publications, some of which are different iterations or subsets or combinations of others. Slicendice needs not only to be able to uniquely identify each unique Web Publication but also to identify each “copy” or “delivery” (“item”) of each of those Web Publications so that it can track “what” has been sold and “how many” of each one have been sold.
         </li>
 
-        <li id="bigretailer-manifest">BigRetailer receives a Web Publication from EsteemedPublisher that it intends to add to its catalogue. BigRetailer wants to adds it own “teaser” via an alternative reading order (see
-          <a href="#streamlining"></a>). To achieve that, BigRetailer provides its own version of the publication’s manifest, that the user agent will use instead of the publisher’s manifest.</li>
+        <li id="bigretailer-manifest">BigRetailer receives a Web Publication from EsteemedPublisher that it intends to add to its catalogue. BigRetailer wants to adds it own “teaser” via an alternative reading order. To achieve that, BigRetailer provides its own version of the publication’s manifest, that the user agent will use instead of the publisher’s manifest.</li>
       </ul>
     </section>
 
@@ -1682,9 +1681,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <tr>
           <td><a href="#r_horizdep" class="req-ref">Req.&nbsp;2</a></td>
           <td><span>A Web Publication should conform to the requirements of all horizontal dependencies</span></td>
-          <td><a href="#r_horizdep_1">1</a>,
-            <a href="#r_horizdep_2">2</a>
-          </td>
         </tr>
         <tr>
           <td><a href="#r_multimedia" class="req-ref">Req.&nbsp;3</a></td>
