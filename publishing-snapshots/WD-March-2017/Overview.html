@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" typeof="bibo:Document w3p:WD" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -116,7 +116,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       font-style: normal;
       vertical-align: middle;
       margin-left: 4px;
-      float: right;
     }
     
     .permalink a,
@@ -551,9 +550,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     }
   </style>
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD">
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED">
   <link rel="canonical" href="https://www.w3.org/TR/pwp-ucr/">
-  <meta name="generator" content="ReSpec 10.5.3">
+  <meta name="generator" content="ReSpec 10.5.11">
   <script id="initialUserConfig" type="application/json">
     {
       "preProcess": [
@@ -577,7 +576,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           ],
           "title": "Web Publications",
           "href": "https://www.w3.org/TR/pwp",
-          "rawDate": "2017-03-14",
+          "rawDate": "2017-03-09",
           "status": "Working Draft",
           "publisher": "W3C"
         }
@@ -620,7 +619,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/64149/status",
       "noRecTrack": "true",
       "includePermalinks": "true",
-      "permalinkEdge": "true",
       "otherLinks": [
       {
         "key": "Repository",
@@ -643,22 +641,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     }
   </script>
 </head>
-<body aria-busy="false" class="h-entry" role="document" id="respecDocument">
+<body aria-busy="false" class="h-entry" id="respecDocument">
   <div class="head" role="contentinfo" id="respecHeader">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">Web Publications Use Cases and Requirements</h1>
-    <h2 id="w3c-working-draft-14-march-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Working Draft <time property="dcterms:issued" class="dt-published" datetime="2017-03-14">14 March 2017</time></h2>
+    <h2 id="w3c-editor-s-draft-09-march-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2017-03-09">09 March 2017</time></h2>
     <dl>
       <dt>This version:</dt>
-      <dd><a class="u-url" href="https://www.w3.org/TR/2017/WD-pwp-ucr-20170314/">https://www.w3.org/TR/2017/WD-pwp-ucr-20170314/</a></dd>
+      <dd><a class="u-url" href="https://w3c.github.io/dpub-pwp-ucr/">https://w3c.github.io/dpub-pwp-ucr/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="https://www.w3.org/TR/pwp-ucr/">https://www.w3.org/TR/pwp-ucr/</a></dd>
       <dt>Latest editor's draft:</dt>
       <dd><a href="https://w3c.github.io/dpub-pwp-ucr/">https://w3c.github.io/dpub-pwp-ucr/</a></dd>
-      <dt>Previous version:</dt>
-      <dd><a rel="dcterms:replaces" href="https://www.w3.org/TR/2016/WD-pwp-ucr-20160913/">https://www.w3.org/TR/2016/WD-pwp-ucr-20160913/</a></dd>
       <dt>Editors:</dt>
       <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0" data-editor-id="75380"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Heather Flanagan</span>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="https://www.rfc-editor.org">Invited Expert</a></span>
         <span property="rdf:rest" resource="_:editor1"></span>
@@ -714,17 +710,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </p>
 
     <p>
-      This document was published by the <a href="https://www.w3.org/dpub/IG/">Digital Publishing Interest Group</a> as a Working Draft. If you wish to make comments regarding this document, please send them to
+      This document was published by the <a href="https://www.w3.org/dpub/IG/">Digital Publishing Interest Group</a> as an Editor's Draft. If you wish to make comments regarding this document, please send them to
       <a href="mailto:public-digipub-ig@w3.org">public-digipub-ig@w3.org</a> (<a href="mailto:public-digipub-ig-request@w3.org?subject=subscribe">subscribe</a>,
       <a href="https://lists.w3.org/Archives/Public/public-digipub-ig/">archives</a>). All comments are welcome.
     </p>
     <p>
-      Publication as a Working Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+      Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
     </p>
     <p>
       This document was produced by a group operating under the
       <a id="sotd_patent" property="w3p:patentRules" href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-              Policy</a>. The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+              Policy</a>.
       <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/64149/status" rel="disclosure">public list of any patent
                 disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains
       <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
@@ -732,7 +728,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
               6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
     </p>
-    <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2015/Process-20150901/">1 September 2015 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+    <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
     </p>
 
   </section>
@@ -807,7 +803,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a>
+    <h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction&nbsp;<span class="permalink" typeof="bookmark"><a href="#introduction" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction" property="url"><span property="title" content="1. Introduction">§</span></a>
       </span>
       </span>
     </h2>
@@ -825,7 +821,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a href="#req_list" class="sec-ref"><span class="secno">A.</span> <span class="sec-title">List of Requirements</span></a>.</p>
 
     <section id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
-      <h3 id="h-terminology" resource="#h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Terminology<span class="permalink" typeof="bookmark"><a href="#terminology" aria-label="Permalink for 1.1 Terminology" title="Permalink for 1.1 Terminology" property="url"><span property="title" content="1.1 Terminology">§</span></a>
+      <h3 id="h-terminology" resource="#h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Terminology&nbsp;<span class="permalink" typeof="bookmark"><a href="#terminology" aria-label="Permalink for 1.1 Terminology" title="Permalink for 1.1 Terminology" property="url"><span property="title" content="1.1 Terminology">§</span></a>
         </span>
         </span>
       </h3>
@@ -844,20 +840,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section id="fundamental-ar" typeof="bibo:Chapter" resource="#fundamental-ar" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-fundamental-ar" resource="#h-fundamental-ar"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Web Publications<span class="permalink" typeof="bookmark"><a href="#fundamental-ar" aria-label="Permalink for 2. Web Publications" title="Permalink for 2. Web Publications" property="url"><span property="title" content="2. Web Publications">§</span></a>
+    <h2 id="h-fundamental-ar" resource="#h-fundamental-ar"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Web Publications&nbsp;<span class="permalink" typeof="bookmark"><a href="#fundamental-ar" aria-label="Permalink for 2. Web Publications" title="Permalink for 2. Web Publications" property="url"><span property="title" content="2. Web Publications">§</span></a>
       </span>
       </span>
     </h2>
     <p>This section describes the use cases specific to <a data-lt="Web Publication" href="#dfn-web-publication" class="internalDFN" data-link-type="dfn">Web Publications</a> and the Open Web Platform, including associated publishing needs, and discoverability.</p>
 
     <section id="pwp-readers" typeof="bibo:Chapter" resource="#pwp-readers" property="bibo:hasPart">
-      <h3 id="h-pwp-readers" resource="#h-pwp-readers"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Readers’ Needs<span class="permalink" typeof="bookmark"><a href="#pwp-readers" aria-label="Permalink for 2.1 Readers’ Needs" title="Permalink for 2.1 Readers’ Needs" property="url"><span property="title" content="2.1 Readers’ Needs">§</span></a>
+      <h3 id="h-pwp-readers" resource="#h-pwp-readers"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Readers’ Needs&nbsp;<span class="permalink" typeof="bookmark"><a href="#pwp-readers" aria-label="Permalink for 2.1 Readers’ Needs" title="Permalink for 2.1 Readers’ Needs" property="url"><span property="title" content="2.1 Readers’ Needs">§</span></a>
         </span>
         </span>
       </h3>
 
       <section id="pwp-owp" typeof="bibo:Chapter" resource="#pwp-owp" property="bibo:hasPart">
-        <h4 id="h-pwp-owp" resource="#h-pwp-owp"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.1 </span>Open Web Platform<span class="permalink" typeof="bookmark"><a href="#pwp-owp" aria-label="Permalink for 2.1.1 Open Web Platform" title="Permalink for 2.1.1 Open Web Platform" property="url"><span property="title" content="2.1.1 Open Web Platform">§</span></a>
+        <h4 id="h-pwp-owp" resource="#h-pwp-owp"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.1 </span>Open Web Platform&nbsp;<span class="permalink" typeof="bookmark"><a href="#pwp-owp" aria-label="Permalink for 2.1.1 Open Web Platform" title="Permalink for 2.1.1 Open Web Platform" property="url"><span property="title" content="2.1.1 Open Web Platform">§</span></a>
           </span>
           </span>
         </h4>
@@ -877,7 +873,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="horizdep" typeof="bibo:Chapter" resource="#horizdep" property="bibo:hasPart">
-        <h4 id="h-horizdep" resource="#h-horizdep"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>Horizontal Dependencies<span class="permalink" typeof="bookmark"><a href="#horizdep" aria-label="Permalink for 2.1.2 Horizontal Dependencies" title="Permalink for 2.1.2 Horizontal Dependencies" property="url"><span property="title" content="2.1.2 Horizontal Dependencies">§</span></a>
+        <h4 id="h-horizdep" resource="#h-horizdep"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>Horizontal Dependencies&nbsp;<span class="permalink" typeof="bookmark"><a href="#horizdep" aria-label="Permalink for 2.1.2 Horizontal Dependencies" title="Permalink for 2.1.2 Horizontal Dependencies" property="url"><span property="title" content="2.1.2 Horizontal Dependencies">§</span></a>
           </span>
           </span>
         </h4>
@@ -927,7 +923,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="multimedia" typeof="bibo:Chapter" resource="#multimedia" property="bibo:hasPart">
-        <h4 id="h-multimedia" resource="#h-multimedia"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Alternative modalities<span class="permalink" typeof="bookmark"><a href="#multimedia" aria-label="Permalink for 2.1.3 Alternative modalities" title="Permalink for 2.1.3 Alternative modalities" property="url"><span property="title" content="2.1.3 Alternative modalities">§</span></a>
+        <h4 id="h-multimedia" resource="#h-multimedia"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Alternative modalities&nbsp;<span class="permalink" typeof="bookmark"><a href="#multimedia" aria-label="Permalink for 2.1.3 Alternative modalities" title="Permalink for 2.1.3 Alternative modalities" property="url"><span property="title" content="2.1.3 Alternative modalities">§</span></a>
           </span>
           </span>
         </h4>
@@ -945,7 +941,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="time_based_media_text" typeof="bibo:Chapter" resource="#time_based_media_text" property="bibo:hasPart">
-        <h4 id="h-time_based_media_text" resource="#h-time_based_media_text"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.4 </span>Time-based Media and Text<span class="permalink" typeof="bookmark"><a href="#time_based_media_text" aria-label="Permalink for 2.1.4 Time-based Media and Text" title="Permalink for 2.1.4 Time-based Media and Text" property="url"><span property="title" content="2.1.4 Time-based Media and Text">§</span></a>
+        <h4 id="h-time_based_media_text" resource="#h-time_based_media_text"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.4 </span>Time-based Media and Text&nbsp;<span class="permalink" typeof="bookmark"><a href="#time_based_media_text" aria-label="Permalink for 2.1.4 Time-based Media and Text" title="Permalink for 2.1.4 Time-based Media and Text" property="url"><span property="title" content="2.1.4 Time-based Media and Text">§</span></a>
           </span>
           </span>
         </h4>
@@ -959,7 +955,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="extdata" typeof="bibo:Chapter" resource="#extdata" property="bibo:hasPart">
-        <h4 id="h-extdata" resource="#h-extdata"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.5 </span>Inclusion of Data<span class="permalink" typeof="bookmark"><a href="#extdata" aria-label="Permalink for 2.1.5 Inclusion of Data" title="Permalink for 2.1.5 Inclusion of Data" property="url"><span property="title" content="2.1.5 Inclusion of Data">§</span></a>
+        <h4 id="h-extdata" resource="#h-extdata"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.5 </span>Inclusion of Data&nbsp;<span class="permalink" typeof="bookmark"><a href="#extdata" aria-label="Permalink for 2.1.5 Inclusion of Data" title="Permalink for 2.1.5 Inclusion of Data" property="url"><span property="title" content="2.1.5 Inclusion of Data">§</span></a>
           </span>
           </span>
         </h4>
@@ -984,7 +980,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="onloffl" typeof="bibo:Chapter" resource="#onloffl" property="bibo:hasPart">
-        <h4 id="h-onloffl" resource="#h-onloffl"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.6 </span>Going Offline<span class="permalink" typeof="bookmark"><a href="#onloffl" aria-label="Permalink for 2.1.6 Going Offline" title="Permalink for 2.1.6 Going Offline" property="url"><span property="title" content="2.1.6 Going Offline">§</span></a>
+        <h4 id="h-onloffl" resource="#h-onloffl"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.6 </span>Going Offline&nbsp;<span class="permalink" typeof="bookmark"><a href="#onloffl" aria-label="Permalink for 2.1.6 Going Offline" title="Permalink for 2.1.6 Going Offline" property="url"><span property="title" content="2.1.6 Going Offline">§</span></a>
           </span>
           </span>
         </h4>
@@ -1006,7 +1002,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="single" typeof="bibo:Chapter" resource="#single" property="bibo:hasPart">
-        <h4 id="h-single" resource="#h-single"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.7 </span>Single Unit<span class="permalink" typeof="bookmark"><a href="#single" aria-label="Permalink for 2.1.7 Single Unit" title="Permalink for 2.1.7 Single Unit" property="url"><span property="title" content="2.1.7 Single Unit">§</span></a>
+        <h4 id="h-single" resource="#h-single"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.7 </span>Single Unit&nbsp;<span class="permalink" typeof="bookmark"><a href="#single" aria-label="Permalink for 2.1.7 Single Unit" title="Permalink for 2.1.7 Single Unit" property="url"><span property="title" content="2.1.7 Single Unit">§</span></a>
           </span>
           </span>
         </h4>
@@ -1025,7 +1021,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="unique-identifier" typeof="bibo:Chapter" resource="#unique-identifier" property="bibo:hasPart">
-        <h4 id="h-unique-identifier" resource="#h-unique-identifier"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.8 </span>Uniquely Identify a Web Publication<span class="permalink" typeof="bookmark"><a href="#unique-identifier" aria-label="Permalink for 2.1.8 Uniquely Identify a Web Publication" title="Permalink for 2.1.8 Uniquely Identify a Web Publication" property="url"><span property="title" content="2.1.8 Uniquely Identify a Web Publication">§</span></a>
+        <h4 id="h-unique-identifier" resource="#h-unique-identifier"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.8 </span>Uniquely Identify a Web Publication&nbsp;<span class="permalink" typeof="bookmark"><a href="#unique-identifier" aria-label="Permalink for 2.1.8 Uniquely Identify a Web Publication" title="Permalink for 2.1.8 Uniquely Identify a Web Publication" property="url"><span property="title" content="2.1.8 Uniquely Identify a Web Publication">§</span></a>
           </span>
           </span>
         </h4>
@@ -1041,7 +1037,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="identify_const_resources" typeof="bibo:Chapter" resource="#identify_const_resources" property="bibo:hasPart">
-        <h4 id="h-identify_const_resources" resource="#h-identify_const_resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.9 </span>Uniquely Identify the Constituent Resources<span class="permalink" typeof="bookmark"><a href="#identify_const_resources" aria-label="Permalink for 2.1.9 Uniquely Identify the Constituent Resources" title="Permalink for 2.1.9 Uniquely Identify the Constituent Resources" property="url"><span property="title" content="2.1.9 Uniquely Identify the Constituent Resources">§</span></a>
+        <h4 id="h-identify_const_resources" resource="#h-identify_const_resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.9 </span>Uniquely Identify the Constituent Resources&nbsp;<span class="permalink" typeof="bookmark"><a href="#identify_const_resources" aria-label="Permalink for 2.1.9 Uniquely Identify the Constituent Resources" title="Permalink for 2.1.9 Uniquely Identify the Constituent Resources" property="url"><span property="title" content="2.1.9 Uniquely Identify the Constituent Resources">§</span></a>
           </span>
           </span>
         </h4>
@@ -1059,7 +1055,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="pagination" typeof="bibo:Chapter" resource="#pagination" property="bibo:hasPart">
-        <h4 id="h-pagination" resource="#h-pagination"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.10 </span>Pagination<span class="permalink" typeof="bookmark"><a href="#pagination" aria-label="Permalink for 2.1.10 Pagination" title="Permalink for 2.1.10 Pagination" property="url"><span property="title" content="2.1.10 Pagination">§</span></a>
+        <h4 id="h-pagination" resource="#h-pagination"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.10 </span>Pagination&nbsp;<span class="permalink" typeof="bookmark"><a href="#pagination" aria-label="Permalink for 2.1.10 Pagination" title="Permalink for 2.1.10 Pagination" property="url"><span property="title" content="2.1.10 Pagination">§</span></a>
           </span>
           </span>
         </h4>
@@ -1086,7 +1082,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="personalized" typeof="bibo:Chapter" resource="#personalized" property="bibo:hasPart">
-        <h4 id="h-personalized" resource="#h-personalized"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.11 </span>Personalization<span class="permalink" typeof="bookmark"><a href="#personalized" aria-label="Permalink for 2.1.11 Personalization" title="Permalink for 2.1.11 Personalization" property="url"><span property="title" content="2.1.11 Personalization">§</span></a>
+        <h4 id="h-personalized" resource="#h-personalized"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.11 </span>Personalization&nbsp;<span class="permalink" typeof="bookmark"><a href="#personalized" aria-label="Permalink for 2.1.11 Personalization" title="Permalink for 2.1.11 Personalization" property="url"><span property="title" content="2.1.11 Personalization">§</span></a>
           </span>
           </span>
         </h4>
@@ -1107,13 +1103,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
 
     <section id="pub-needs" typeof="bibo:Chapter" resource="#pub-needs" property="bibo:hasPart">
-      <h3 id="h-pub-needs" resource="#h-pub-needs"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Publishers’ and Authors’ Needs<span class="permalink" typeof="bookmark"><a href="#pub-needs" aria-label="Permalink for 2.2 Publishers’ and Authors’ Needs" title="Permalink for 2.2 Publishers’ and Authors’ Needs" property="url"><span property="title" content="2.2 Publishers’ and Authors’ Needs">§</span></a>
+      <h3 id="h-pub-needs" resource="#h-pub-needs"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Publishers’ and Authors’ Needs&nbsp;<span class="permalink" typeof="bookmark"><a href="#pub-needs" aria-label="Permalink for 2.2 Publishers’ and Authors’ Needs" title="Permalink for 2.2 Publishers’ and Authors’ Needs" property="url"><span property="title" content="2.2 Publishers’ and Authors’ Needs">§</span></a>
         </span>
         </span>
       </h3>
 
       <section id="reading-order" typeof="bibo:Chapter" resource="#reading-order" property="bibo:hasPart">
-        <h4 id="h-reading-order" resource="#h-reading-order"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.1 </span>Default Reading Order<span class="permalink" typeof="bookmark"><a href="#reading-order" aria-label="Permalink for 2.2.1 Default Reading Order" title="Permalink for 2.2.1 Default Reading Order" property="url"><span property="title" content="2.2.1 Default Reading Order">§</span></a>
+        <h4 id="h-reading-order" resource="#h-reading-order"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.1 </span>Default Reading Order&nbsp;<span class="permalink" typeof="bookmark"><a href="#reading-order" aria-label="Permalink for 2.2.1 Default Reading Order" title="Permalink for 2.2.1 Default Reading Order" property="url"><span property="title" content="2.2.1 Default Reading Order">§</span></a>
           </span>
           </span>
         </h4>
@@ -1129,7 +1125,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="random-access" typeof="bibo:Chapter" resource="#random-access" property="bibo:hasPart">
-        <h4 id="h-random-access" resource="#h-random-access"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.2 </span>Random Access to Content<span class="permalink" typeof="bookmark"><a href="#random-access" aria-label="Permalink for 2.2.2 Random Access to Content" title="Permalink for 2.2.2 Random Access to Content" property="url"><span property="title" content="2.2.2 Random Access to Content">§</span></a>
+        <h4 id="h-random-access" resource="#h-random-access"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.2 </span>Random Access to Content&nbsp;<span class="permalink" typeof="bookmark"><a href="#random-access" aria-label="Permalink for 2.2.2 Random Access to Content" title="Permalink for 2.2.2 Random Access to Content" property="url"><span property="title" content="2.2.2 Random Access to Content">§</span></a>
           </span>
           </span>
         </h4>
@@ -1153,7 +1149,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="constituent-resources" typeof="bibo:Chapter" resource="#constituent-resources" property="bibo:hasPart">
-        <h4 id="h-constituent-resources" resource="#h-constituent-resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.3 </span>Information on Constituent Resources<span class="permalink" typeof="bookmark"><a href="#constituent-resources" aria-label="Permalink for 2.2.3 Information on Constituent Resources" title="Permalink for 2.2.3 Information on Constituent Resources" property="url"><span property="title" content="2.2.3 Information on Constituent Resources">§</span></a>
+        <h4 id="h-constituent-resources" resource="#h-constituent-resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.3 </span>Information on Constituent Resources&nbsp;<span class="permalink" typeof="bookmark"><a href="#constituent-resources" aria-label="Permalink for 2.2.3 Information on Constituent Resources" title="Permalink for 2.2.3 Information on Constituent Resources" property="url"><span property="title" content="2.2.3 Information on Constituent Resources">§</span></a>
           </span>
           </span>
         </h4>
@@ -1227,7 +1223,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
       <section id="protections" typeof="bibo:Chapter" resource="#protections" property="bibo:hasPart">
-        <h4 id="h-protections" resource="#h-protections"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.4 </span>Access Control and Write Protections<span class="permalink" typeof="bookmark"><a href="#protections" aria-label="Permalink for 2.2.4 Access Control and Write Protections" title="Permalink for 2.2.4 Access Control and Write Protections" property="url"><span property="title" content="2.2.4 Access Control and Write Protections">§</span></a>
+        <h4 id="h-protections" resource="#h-protections"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.4 </span>Access Control and Write Protections&nbsp;<span class="permalink" typeof="bookmark"><a href="#protections" aria-label="Permalink for 2.2.4 Access Control and Write Protections" title="Permalink for 2.2.4 Access Control and Write Protections" property="url"><span property="title" content="2.2.4 Access Control and Write Protections">§</span></a>
           </span>
           </span>
         </h4>
@@ -1242,7 +1238,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="manifest-metadata" typeof="bibo:Chapter" resource="#manifest-metadata" property="bibo:hasPart">
-        <h4 id="h-manifest-metadata" resource="#h-manifest-metadata"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.5 </span>Metadata and Resources<span class="permalink" typeof="bookmark"><a href="#manifest-metadata" aria-label="Permalink for 2.2.5 Metadata and Resources" title="Permalink for 2.2.5 Metadata and Resources" property="url"><span property="title" content="2.2.5 Metadata and Resources">§</span></a>
+        <h4 id="h-manifest-metadata" resource="#h-manifest-metadata"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.5 </span>Metadata and Resources&nbsp;<span class="permalink" typeof="bookmark"><a href="#manifest-metadata" aria-label="Permalink for 2.2.5 Metadata and Resources" title="Permalink for 2.2.5 Metadata and Resources" property="url"><span property="title" content="2.2.5 Metadata and Resources">§</span></a>
           </span>
           </span>
         </h4>
@@ -1314,7 +1310,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section id="pwp" typeof="bibo:Chapter" resource="#pwp" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-pwp" resource="#h-pwp"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Packaged Web Publications<span class="permalink" typeof="bookmark"><a href="#pwp" aria-label="Permalink for 3. Packaged Web Publications" title="Permalink for 3. Packaged Web Publications" property="url"><span property="title" content="3. Packaged Web Publications">§</span></a>
+    <h2 id="h-pwp" resource="#h-pwp"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Packaged Web Publications&nbsp;<span class="permalink" typeof="bookmark"><a href="#pwp" aria-label="Permalink for 3. Packaged Web Publications" title="Permalink for 3. Packaged Web Publications" property="url"><span property="title" content="3. Packaged Web Publications">§</span></a>
       </span>
       </span>
     </h2>
@@ -1334,7 +1330,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </p>
 
     <section id="distro" typeof="bibo:Chapter" resource="#distro" property="bibo:hasPart">
-      <h3 id="h-distro" resource="#h-distro"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Distribution and Iteration<span class="permalink" typeof="bookmark"><a href="#distro" aria-label="Permalink for 3.1 Distribution and Iteration" title="Permalink for 3.1 Distribution and Iteration" property="url"><span property="title" content="3.1 Distribution and Iteration">§</span></a>
+      <h3 id="h-distro" resource="#h-distro"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Distribution and Iteration&nbsp;<span class="permalink" typeof="bookmark"><a href="#distro" aria-label="Permalink for 3.1 Distribution and Iteration" title="Permalink for 3.1 Distribution and Iteration" property="url"><span property="title" content="3.1 Distribution and Iteration">§</span></a>
         </span>
         </span>
       </h3>
@@ -1355,7 +1351,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
 
     <section id="pwp-process" typeof="bibo:Chapter" resource="#pwp-process" property="bibo:hasPart">
-      <h3 id="h-pwp-process" resource="#h-pwp-process"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Distribution Process<span class="permalink" typeof="bookmark"><a href="#pwp-process" aria-label="Permalink for 3.2 Distribution Process" title="Permalink for 3.2 Distribution Process" property="url"><span property="title" content="3.2 Distribution Process">§</span></a>
+      <h3 id="h-pwp-process" resource="#h-pwp-process"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Distribution Process&nbsp;<span class="permalink" typeof="bookmark"><a href="#pwp-process" aria-label="Permalink for 3.2 Distribution Process" title="Permalink for 3.2 Distribution Process" property="url"><span property="title" content="3.2 Distribution Process">§</span></a>
         </span>
         </span>
       </h3>
@@ -1374,7 +1370,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
     <section id="archiving" typeof="bibo:Chapter" resource="#archiving" property="bibo:hasPart">
-      <h3 id="h-archiving" resource="#h-archiving"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>Archiving<span class="permalink" typeof="bookmark"><a href="#archiving" aria-label="Permalink for 3.3 Archiving" title="Permalink for 3.3 Archiving" property="url"><span property="title" content="3.3 Archiving">§</span></a>
+      <h3 id="h-archiving" resource="#h-archiving"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>Archiving&nbsp;<span class="permalink" typeof="bookmark"><a href="#archiving" aria-label="Permalink for 3.3 Archiving" title="Permalink for 3.3 Archiving" property="url"><span property="title" content="3.3 Archiving">§</span></a>
         </span>
         </span>
       </h3>
@@ -1396,7 +1392,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
 
       <section id="archmetadata" typeof="bibo:Chapter" resource="#archmetadata" property="bibo:hasPart">
-        <h4 id="h-archmetadata" resource="#h-archmetadata"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.1 </span>Locating Metadata in Components<span class="permalink" typeof="bookmark"><a href="#archmetadata" aria-label="Permalink for 3.3.1 Locating Metadata in Components" title="Permalink for 3.3.1 Locating Metadata in Components" property="url"><span property="title" content="3.3.1 Locating Metadata in Components">§</span></a>
+        <h4 id="h-archmetadata" resource="#h-archmetadata"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.1 </span>Locating Metadata in Components&nbsp;<span class="permalink" typeof="bookmark"><a href="#archmetadata" aria-label="Permalink for 3.3.1 Locating Metadata in Components" title="Permalink for 3.3.1 Locating Metadata in Components" property="url"><span property="title" content="3.3.1 Locating Metadata in Components">§</span></a>
           </span>
           </span>
         </h4>
@@ -1411,7 +1407,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="component-change" typeof="bibo:Chapter" resource="#component-change" property="bibo:hasPart">
-        <h4 id="h-component-change" resource="#h-component-change"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.2 </span>New or Removed Components<span class="permalink" typeof="bookmark"><a href="#component-change" aria-label="Permalink for 3.3.2 New or Removed Components" title="Permalink for 3.3.2 New or Removed Components" property="url"><span property="title" content="3.3.2 New or Removed Components">§</span></a>
+        <h4 id="h-component-change" resource="#h-component-change"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3.2 </span>New or Removed Components&nbsp;<span class="permalink" typeof="bookmark"><a href="#component-change" aria-label="Permalink for 3.3.2 New or Removed Components" title="Permalink for 3.3.2 New or Removed Components" property="url"><span property="title" content="3.3.2 New or Removed Components">§</span></a>
           </span>
           </span>
         </h4>
@@ -1432,7 +1428,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
 
     <section id="remap_links" typeof="bibo:Chapter" resource="#remap_links" property="bibo:hasPart">
-      <h3 id="h-remap_links" resource="#h-remap_links"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>Remap links<span class="permalink" typeof="bookmark"><a href="#remap_links" aria-label="Permalink for 3.4 Remap links" title="Permalink for 3.4 Remap links" property="url"><span property="title" content="3.4 Remap links">§</span></a>
+      <h3 id="h-remap_links" resource="#h-remap_links"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>Remap links&nbsp;<span class="permalink" typeof="bookmark"><a href="#remap_links" aria-label="Permalink for 3.4 Remap links" title="Permalink for 3.4 Remap links" property="url"><span property="title" content="3.4 Remap links">§</span></a>
         </span>
         </span>
       </h3>
@@ -1449,13 +1445,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </section>
 
     <section id="check-integrity_and_origin" typeof="bibo:Chapter" resource="#check-integrity_and_origin" property="bibo:hasPart">
-      <h3 id="h-check-integrity_and_origin" resource="#h-check-integrity_and_origin"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5 </span>Integrity and Authenticity<span class="permalink" typeof="bookmark"><a href="#check-integrity_and_origin" aria-label="Permalink for 3.5 Integrity and Authenticity" title="Permalink for 3.5 Integrity and Authenticity" property="url"><span property="title" content="3.5 Integrity and Authenticity">§</span></a>
+      <h3 id="h-check-integrity_and_origin" resource="#h-check-integrity_and_origin"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5 </span>Integrity and Authenticity&nbsp;<span class="permalink" typeof="bookmark"><a href="#check-integrity_and_origin" aria-label="Permalink for 3.5 Integrity and Authenticity" title="Permalink for 3.5 Integrity and Authenticity" property="url"><span property="title" content="3.5 Integrity and Authenticity">§</span></a>
         </span>
         </span>
       </h3>
 
       <section id="check_integrity" typeof="bibo:Chapter" resource="#check_integrity" property="bibo:hasPart">
-        <h4 id="h-check_integrity" resource="#h-check_integrity"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.1 </span>Integrity of a Publication<span class="permalink" typeof="bookmark"><a href="#check_integrity" aria-label="Permalink for 3.5.1 Integrity of a Publication" title="Permalink for 3.5.1 Integrity of a Publication" property="url"><span property="title" content="3.5.1 Integrity of a Publication">§</span></a>
+        <h4 id="h-check_integrity" resource="#h-check_integrity"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.1 </span>Integrity of a Publication&nbsp;<span class="permalink" typeof="bookmark"><a href="#check_integrity" aria-label="Permalink for 3.5.1 Integrity of a Publication" title="Permalink for 3.5.1 Integrity of a Publication" property="url"><span property="title" content="3.5.1 Integrity of a Publication">§</span></a>
           </span>
           </span>
         </h4>
@@ -1468,7 +1464,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </section>
 
       <section id="check-origin" typeof="bibo:Chapter" resource="#check-origin" property="bibo:hasPart">
-        <h4 id="h-check-origin" resource="#h-check-origin"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.2 </span>Authenticity—Origin of a Publication<span class="permalink" typeof="bookmark"><a href="#check-origin" aria-label="Permalink for 3.5.2 Authenticity—Origin of a Publication" title="Permalink for 3.5.2 Authenticity—Origin of a Publication" property="url"><span property="title" content="3.5.2 Authenticity—Origin of a Publication">§</span></a>
+        <h4 id="h-check-origin" resource="#h-check-origin"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5.2 </span>Authenticity—Origin of a Publication&nbsp;<span class="permalink" typeof="bookmark"><a href="#check-origin" aria-label="Permalink for 3.5.2 Authenticity—Origin of a Publication" title="Permalink for 3.5.2 Authenticity—Origin of a Publication" property="url"><span property="title" content="3.5.2 Authenticity—Origin of a Publication">§</span></a>
           </span>
           </span>
         </h4>
@@ -1484,7 +1480,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section id="escalating_trust" typeof="bibo:Chapter" resource="#escalating_trust" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-escalating_trust" resource="#h-escalating_trust"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Escalating trust<span class="permalink" typeof="bookmark"><a href="#escalating_trust" aria-label="Permalink for 4. Escalating trust" title="Permalink for 4. Escalating trust" property="url"><span property="title" content="4. Escalating trust">§</span></a>
+    <h2 id="h-escalating_trust" resource="#h-escalating_trust"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Escalating trust&nbsp;<span class="permalink" typeof="bookmark"><a href="#escalating_trust" aria-label="Permalink for 4. Escalating trust" title="Permalink for 4. Escalating trust" property="url"><span property="title" content="4. Escalating trust">§</span></a>
       </span>
       </span>
     </h2>
@@ -1538,7 +1534,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section class="appendix" id="req_list" typeof="bibo:Chapter" resource="#req_list" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-req_list" resource="#h-req_list"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>List of Requirements<span class="permalink" typeof="bookmark"><a href="#req_list" aria-label="Permalink for A. List of Requirements" title="Permalink for A. List of Requirements" property="url"><span property="title" content="A. List of Requirements">§</span></a>
+    <h2 id="h-req_list" resource="#h-req_list"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>List of Requirements&nbsp;<span class="permalink" typeof="bookmark"><a href="#req_list" aria-label="Permalink for A. List of Requirements" title="Permalink for A. List of Requirements" property="url"><span property="title" content="A. List of Requirements">§</span></a>
       </span>
       </span>
     </h2>
@@ -1662,7 +1658,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section class="appendix" id="accessibility" typeof="bibo:Chapter" resource="#accessibility" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-accessibility" resource="#h-accessibility"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>Accessibility Requirements<span class="permalink" typeof="bookmark"><a href="#accessibility" aria-label="Permalink for B. Accessibility Requirements" title="Permalink for B. Accessibility Requirements" property="url"><span property="title" content="B. Accessibility Requirements">§</span></a>
+    <h2 id="h-accessibility" resource="#h-accessibility"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>Accessibility Requirements&nbsp;<span class="permalink" typeof="bookmark"><a href="#accessibility" aria-label="Permalink for B. Accessibility Requirements" title="Permalink for B. Accessibility Requirements" property="url"><span property="title" content="B. Accessibility Requirements">§</span></a>
       </span>
       </span>
     </h2>
@@ -1732,7 +1728,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section class="appendix" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-acknowledgements" resource="#h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>Acknowledgements<span class="permalink" typeof="bookmark"><a href="#acknowledgements" aria-label="Permalink for C. Acknowledgements" title="Permalink for C. Acknowledgements" property="url"><span property="title" content="C. Acknowledgements">§</span></a>
+    <h2 id="h-acknowledgements" resource="#h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>Acknowledgements&nbsp;<span class="permalink" typeof="bookmark"><a href="#acknowledgements" aria-label="Permalink for C. Acknowledgements" title="Permalink for C. Acknowledgements" property="url"><span property="title" content="C. Acknowledgements">§</span></a>
       </span>
       </span>
     </h2>
@@ -1746,13 +1742,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   <section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart">
     <!--OddPage-->
-    <h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D. </span>References<span class="permalink" typeof="bookmark"><a href="#references" aria-label="Permalink for D. References" title="Permalink for D. References" property="url"><span property="title" content="D. References">§</span></a>
+    <h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D. </span>References&nbsp;<span class="permalink" typeof="bookmark"><a href="#references" aria-label="Permalink for D. References" title="Permalink for D. References" property="url"><span property="title" content="D. References">§</span></a>
       </span>
       </span>
     </h2>
 
     <section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart">
-      <h3 id="h-informative-references" resource="#h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D.1 </span>Informative references<span class="permalink" typeof="bookmark"><a href="#informative-references" aria-label="Permalink for D.1 Informative references" title="Permalink for D.1 Informative references" property="url"><span property="title" content="D.1 Informative references">§</span></a>
+      <h3 id="h-informative-references" resource="#h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D.1 </span>Informative references&nbsp;<span class="permalink" typeof="bookmark"><a href="#informative-references" aria-label="Permalink for D.1 Informative references" title="Permalink for D.1 Informative references" property="url"><span property="title" content="D.1 Informative references">§</span></a>
         </span>
         </span>
       </h3>
