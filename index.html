@@ -3,99 +3,63 @@
   <head>
     <title>Web Publications Use Cases and Requirements</title>
     <meta charset='utf-8'>
-    <!-- <script src='/Tools/respec/respec-w3c-common.js' class='remove'></script> -->
-	<script src='https://www.w3.org/Tools/respec/respec-w3c-common.js' class='remove'></script>
+	  <script src='https://www.w3.org/Tools/respec/respec-w3c-common.js' class='remove' defer="defer"></script>
     <script src="scripts/rcollect.js" class="remove"></script>
     <script src="scripts/rdisplay.js" class="remove"></script>
+		<script src="https://w3c.github.io/wpub/common/js/biblio.js" class="remove"></script>
     <link rel="stylesheet" href="extras.css">
     <script class='remove'>
       var respecConfig = {
           preProcess : [rcollect, rdisplay],
           postProcess : [rstore],
-		  localBiblio: {
-             "pwp": {
-                 "authors": [
-                   "Markus Gylling",
-                   "Ben De Meester",
-				   "Ivan Herman",
-				   "Tzviya Siegman",
-				   "Dave Cramer",
-				   "Leonard Rosenthol"
-                 ],
-                 "title": "Web Publications for the Open Web Platform: Vision And Technical Challenges",
-                 "href" : "https://www.w3.org/TR/pwp",
-                 "rawDate": "2017-05-02",
-                 "status" : "Interest Group Note",
-                 "publisher": "W3C"
-             },
-		 },
-          specStatus: "IG-NOTE",
-          publishDate:  "2017-05-02",
+          specStatus: "ED",
+          // publishDate:  "2017-05-02",
           shortName:  "pwp-ucr",
+
           editors: [
-                {   name:       "Heather Flanagan",
-                    url:        "",
-                    company:    "Invited Expert",
-                    companyURL: "https://www.rfc-editor.org",
-                    w3cid:      "75380"
-                 },
-                 {   name:       "Ivan Herman",
-                    url:        "http://www.w3.org/People/Ivan/",
-                    company:    "W3C",
-                    companyURL: "http://www.w3.org",
-                    extras:     [{
-                        name:  "<img src='figures/orcid_logo.png' alt='orcid logo'/>",
-                        href:  "http://orcid.org/0000-0003-0782-2704",
-                        class: "orcid"
-                      }]
-                  ,   w3cid:      "7382"
-                },
-                {   name:       "Leonard Rosenthol",
-                    url:        "",
-                    company:    "Adobe Systems",
-                    companyURL: "https://www.adobe.com",
-                    w3cid:      "42485"
-                },
-          ],
-          previousMaturity: "WD",
-          previousPublishDate:  "2017-03-09",
-          wg:           "Digital Publishing Interest Group",
-          wgURI:        "https://www.w3.org/dpub/IG/",
-          wgPublicList: "public-digipub-ig",
-          wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/64149/status",
-          noRecTrack : "true",
-        //   includePermalinks: "true",
-          otherLinks: [
             {
-              key: "Repository",
-              data: [{
-                value: "Github Repository",
-                href: "https://github.com/w3c/dpub-pwp-ucr"
-              }]
+              "name": "Laurent Le Meur",
+              "company": "EDRLab",
+              "companyURL": "https://www.edrlab.org",
+              "w3cid": 91888
             },
             {
-              key: "Issues tracker",
-              data: [{
-                value: "Github Issue Tracker",
-                href: "https://github.com/w3c/dpub-pwp-ucr/issues"
-              }]
-            }
+            "name": "Matt Garrish",
+                "company": "DAISY Consortium",
+                "companyURL": "https://www.daisy.org",
+                "w3cid": 51655
+            },
           ],
-          alternateFormats: [
-              {
-                uri: "pwp-ucr.epub",
-                label: "ePub"
-              }
-          ],
-          edDraftURI: "https://w3c.github.io/dpub-pwp-ucr/",
-          charterDisclosureURI : "https://www.w3.org/2004/01/pp-impl/64149/status",
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/64149/status",
-          // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+          otherLinks: [{
+            key: "Editors of the previous version",
+            data: [{
+              value: "Heather Flanagan, Invited Expert",
+              href: "https://www.rfc-editor.org/"
+            }, {
+              value: "Ivan Herman, W3C",
+              href: "http://www.w3.org/People/Ivan/"
+            }, {
+              value: "Leonard Rosenthol, Adobe Systems",
+              href: "https://www.adobe.com"
+            }]
+          }],
+          previousMaturity: "IG-NOTE",
+          previousPublishDate:  "2017-05-02",
+          processVersion: 2017,
+          includePermalinks: true,
+          permalinkEdge:     true,
+          permalinkHide:     false,
+
+          diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+          wg:           "Publishing Working Group",
+          wgURI:             "https://www.w3.org/publishing/groups/publ-wg/",
+          wgPublicList:      "public-publ-wg",
+          wgPatentURI:       "https://www.w3.org/2004/01/pp-impl/100074/status",
+  			  github:			 {
+            repoURL: "https://github.com/w3c/dpub-pwp-ucr",
+            branch: "gh-pages"
+			    },
+          noRecTrack : "true",
       };
     </script>
     <style media="screen">
@@ -119,15 +83,21 @@
         <p>
         Publications, from corporate memos to newsletters to electronic books to scholarly journal articles, must be considered first-class content on the Web, equal to the more common forms of Web pages available today.
         This document describes the various use cases highlighting the problems users and publishers face when these publications are to be used in a digital, Web environment.
-        The requirements that come from those use cases provide the basis for the technical considerations in a companion document, currently entitled “Web Publications”&nbsp;[[pwp]]</a>.
+        The requirements that come from those use cases provide the basis for the technical considerations in a companion document, currently entitled “Web Publications”&nbsp;[[wpub]]</a>.
         </p>
     </section>
 
     <section id='sotd'>
-      <p>
-         This is work in progress. The final version of this document planned to be published as an
-         Interest Group Note.
-      </p>
+        <p>
+            This is work in progress. The final version of this document is planned to be published as a
+            Working Group Note.
+         </p>
+
+         <p>
+            A previous version of this document was published by the <a href="https://www.w3.org/dpub/IG">Digital Publishing Interest Group</a> as an <a href="https://www.w3.org/TR/2017/NOTE-pwp-ucr-20170502/">Interest Group Note</a>. 
+            After the closure of that Interest Group the Publishing Working Group took it over the document for further work. 
+          </p>
+
     </section>
 
     <section id="introduction">
@@ -1273,13 +1243,6 @@
         </table>
     </section>
 
-    <section class="appendix" id="acknowledgements">
-        <h2>Acknowledgements</h2>
-        <p>The following people have been instrumental in providing thoughts, feedback, reviews, content, criticism, and input in the creation of this document:</p>
-
-        <div style="margin-left: 3em">
-            Boris Anthony (Rebus Foundation), Luc Audrain (Hachette Livre), Nick Barreto (Canelo, Invited Expert), Baldur Bjarnason (Rebus Foundation), Marcos Caceres (Mozilla), Timothy Cole (University of Illinois at Urbana-Champaign), Garth Conboy (Google), Dave Cramer (Hachette Livre), Romain Deltour (DAISY Consortium), Brady Duga (Google), Heather Flanagan (IETF, Invited Expert), Hadrien Gardeur (Feedbooks), (Markus Gylling (IDPF), Eric Hellman, Ivan Herman (W3C), Deborah Kaplan (Invited Expert), Bill Kasdorf (BISG), George Kerscher (DAISY Consortium), Peter Krautzberger (MathJax, Invited Expert), Charles LaPierre (Benetech), Laurent Le Meur (EDRLab), Vladimir Levantovsky (Monotype), Mia Lipner (Pearson), Christofer Maden (University of Illinois at Urbana-Champaign), Shane McCarron (Spec-Ops), William McCoy (IDPF), Hugh McGuire (Rebus Foundation), Ben De Meester (iMinds), Liam Quin (W3C), Leonard Rosenthol (Adobe), Nicholas Ruffilo (Ingram, Invited Expert), Rob Sanderson (Stanford University), Avneesh Singh (DAISY Consortium), Mike Smith (W3C), Alan Stearns (Adobe), Ayla Stein (University of Illinois at Urbana-Champaign), Tzviya Siegman (Wiley), Nicholas Taylor (Stanford University), Daniel Weck (DAISY Consortium), and Benjamin Young (Wiley).
-        </div>
-    </section>
+		<section class="appendix" id="ack" data-include="https://w3c.github.io/wpub/common/html/acknowledgements.html" data-include-replace="true"></section>    
   </body>
 </html>

@@ -1,6 +1,6 @@
 /**
 *
-* Note: T
+* Note: 
 *    The code for the popup was shamelessly stolen (with his permission:-) from Shane McCarron
 *    The code for setting and numbering a requirement is based on the requirement.js code in respec
 *

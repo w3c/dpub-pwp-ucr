@@ -1,11 +1,5 @@
 {
-    "group":     "64149",
-    "contacts": [{
-    				"github" : "rdeltour"
-    		  	},
-   				{
-   					"github": "hlflanagan"
-   				}],
-    "shortName": "dpub-pwp-ucr",
-    "policy":    "open"
+    "group":      ["100074"]
+,   "contacts":   ["iherman"]
+,	"shortName": "dpub-pwp-ucr"
 }
