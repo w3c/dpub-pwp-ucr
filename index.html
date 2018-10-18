@@ -422,6 +422,9 @@
             provide a better experience to the user. For example, the user agent can ensure that essential resources are
             made available when offline (see <a href="#onloffl"></a>).
           </p>
+          <p>
+            <b>Should we include reference to links (as in wpub <a href="https://w3c.github.io/wpub/#links">4.5.3</a>, <a href="https://w3c.github.io/wpub/#links-infoset">4.5.3.1</a>) when discussing non-essential resources?</b>
+          </p>
           <ul class="use-cases">
             <li>
               Nick is reading a long-form narrative on a device with limited storage: a publication filled with text,
@@ -552,6 +555,14 @@
 
         <section id="publication-identification">
           <h3>Publication Identification</h3>
+            <p class="req-set">
+            <b>Suggested requirement from wpub <a href="https://w3c.github.io/wpub/#wp-primary-entry-page">3.6</a> </b>A Web Publication must include at least one HTML document: the primary entry page.
+          </p>
+
+          <p>
+            The primary entry page represents the preferred starting resource for discover of the Web Publication and enables the discovery of the manifest.
+          </p>
+
           <p class="req-set" id="r_unique-identifier">
             There must be a way to uniquely identify a Web Publication.
           </p>
@@ -559,6 +570,13 @@
             The unique identification of a specific Web Publication is essential. If not expressed as a URL, there
             should be a way to map this unique identification onto a Web Address.
           </p>
+          <p>
+            A Web Publication may have more than one address, but all addressed must resolve to the canonical identifier, which must be a URL. <b>Expansion on above from <a href="https://w3c.github.io/wpub/#address-infoset">4.4.2.1</a>, <a href="https://w3c.github.io/wpub/#canonical-identifier
+">4.4.3.1</a></b>
+          </p>
+
+
+
           <ul class="use-cases">
             <li>
               Scholarly references demand a unique identification of the publication and, possibly, its internal
@@ -979,6 +997,10 @@
 
       <section id="reading-order">
         <h2>Default Reading Order</h2>
+        <p class="req-set">
+          The default reading order must include at least one resource. <b><a href="https://w3c.github.io/wpub/#default-reading-order-infoset">4.5.1.1</a></b>
+        </p>
+
         <p class="req-set" id="r_reading-order">
           There should be a means to indicate the author’s preferred navigation structure among the resources of a Web
           Publication.
@@ -999,6 +1021,9 @@
             by title.
           </li>
         </ul>
+        <p>
+          <b>Use cases for the bounds of a publication. (<a href="https://github.com/w3c/wpub/issues/205">Issue 205</a>, referenced in <a href="https://w3c.github.io/wpub/#resource-list-infoset">wpub 4.5.2.1</a></b>
+        </p>
       </section>
 
       <section id="random-access">
