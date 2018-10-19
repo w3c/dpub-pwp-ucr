@@ -616,20 +616,45 @@
 
         <section id="style">
           <h3>Style</h3>
+          <p class="req-set" id="r_identify_const_resources">
+            <b>I believe the requirements related to style are addressed in 5.2 personalization, req: "The user must have the possibility to personalize his or her reading experience. This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc"</b>
+          </p>
+          <ul class="use-cases">
+            <li></li>
+          </ul>
         </section>
 
         <section id="layout">
           <h3>Layout</h3>
+          <p class="req-set" id="r_identify_const_resources">
+            For the purposes of layout, each resource of a Web Publication is treated as a separate document. User agents must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely positioned elements from one resource cannot intrude or overlap with content from an other resource).
+          </p>
+          <ul class="use-cases">
+            <li>
+              Helga is authoring an internal work document for her company as a Web Publication. This Web Publication spans several resources / documents, and she would like to use decimal-dot notation to indicate the section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an accurate count.  <b><- this is currently limited by CSS / I wonder too whether it would be complicated by the fact that the CSS would also have to interact with the manifest to determine this counter. Would this be the only reason for the CSS to interact with the manifest? Or is there another manner in which this can be accomplished in CSS without having to interact with the manifest?</b>
+            </li>
+          </ul>
         </section>
 
         <section id="progression">
           <h3>Progression</h3>
+          <p class="req-set" id="r_identify_const_resources">
+            User agents should provide the option to save this progression in the publication and returns the user to their last location the next time they open the publication.
+          </p>
+          <ul class="use-cases">
+            <li>
+              Filbert is reading a comic as a Web Publication. In his user agent, he marks a specific page to return to and exits the user agent. When he returns the next day, he opens the Web Publication and continues reading from the location he marked.
+            </li>
+          </ul>
         </section>
 
         <section id='movement'>
           <h3>Movement</h3>
           <p class="req-set" id="r_pagination">
             It should be possible to see the Web Publication in a “paginated” view.
+          </p>
+          <p class="req-set" id="r_pagination_ro">
+            When a user agent renders a Web Publication in a paginated layout, it must lay out each document in the default reading order sequentially, with the last page of a resource being followed by the first page of the subsequent one.
           </p>
           <p>
             Whereas a “scrolling” view is the dominating approach on the Web in browsers, a user or author may wish to
