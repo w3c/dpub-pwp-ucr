@@ -54,6 +54,30 @@ function rdisplay() {
 		})
 	});
 
+    // Generate the tables of conformance tiers
+    $("table.ct").each( function() {
+        var $table = $(this);
+        reqInfo.forEach( function(element, index, array) {
+            var $req = $("#" + element.id);
+            if ($req.hasClass($table.data("display"))) {
+                var $row = $("<tr></tr>"),
+                    $refCell = $("<td></td>"),
+                    $desCell = $("<td></td>"),
+                    $link = $("<a></a>");
+
+                $link.attr("href", ucrUri + "#" + element.id);
+                $link.append(element.title);
+                $refCell.append($link);
+                $row.append($refCell);
+
+                $desCell.append(element.content);
+                $row.append($desCell);
+
+                $table.append($row);
+            }
+        })
+    });
+
 	// // Generate the table of requirements
 	// $("table#reqtable, tbody#reqtable").each( function(i) {
 	// 	var $table = $(this);
