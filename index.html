@@ -397,6 +397,12 @@
               publishers have added the <a href="https://idpf.github.io/a11y-guidelines/content/meta/schema.org.html">Schema.org Accessibility Metadata</a>
               to the Web Publication, describing the accessbility characteristics for each constituent resource.
             </li>
+            <li id="r_manifest-metadata_4">
+              When Bella is listening to an audiobook or browsing her bookshelf, she wants to ask questions like  “Hey <Digital Assistant>, who’s the narrator?” or “How long is that book?” and hear the corresponding metadata read to her by TTS, before resuming listening to content or browsing.
+            </li>
+            <li id="r_manifest-metadata_5">
+              Marco is an Ainu audiobook listener, and the book he is reading has a table of contents consisting of images, because the Ainu language has no script. While listening, he asks for the chapter name, and the reading system plays the audio for the title of the current TOC item, and then resumes playback from my last position in the content.
+            </li>
             <li>
               A library wants to promote a particular type of publication depending on different categories available in a publication’s metadata (age suitability, genre, author). <b>[I did not see some of these fields, such as genre or age suitability, available in the manifest dictionary. Is this something that has been discussed, or something that is accounted for elsewhere?]</b>
             </li>
@@ -473,7 +479,10 @@
               when offline.
             </li>
             <li>
-              Stephanie, a student, is answering questions in an assessment embedded in a web publication. Her internet connection is unreliable at home. She should be able, via the user agent or the content itself, to save those responses in the Web Publication. If there is component wherein the student would have to submit the responses to the assessment to a database, a user experience within the Web Publication, provided within the content itself or via the user agent, should notify her whether the data has been successfully submitted. 
+              Chiara is listening to an audiobook on roman history. The description when she bought it mentioned that the maps and images mentioned in the book were available as supplemental content in the file. At the end of the audiobook, she is able to view the content which helps her understand the audiobook better, but it is marked as non-essential if the audiobook is taken offline.
+            </li>
+            <li>
+              Stephanie, a student, is answering questions in an assessment embedded in a web publication. Her internet connection is unreliable at home. She should be able, via the user agent or the content itself, to save those responses in the Web Publication. If there is component wherein the student would have to submit the responses to the assessment to a database, a user experience within the Web Publication, provided within the content itself or via the user agent, should notify her whether the data has been successfully submitted.
             </li>
           </ul>
         </section>
@@ -481,8 +490,7 @@
         <section id="alternative-modalities">
           <h3>Alternative Modalities</h3>
           <p class="req-set" id="r_multimedia">
-            The notion of a Web Publication should enable specific publications like audio books, graphics books, and
-            mixed media.
+A Web Publication should encompass publications such as audiobooks, graphic books, mixed media, and interactive media.
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#manifest-pub-types">Publication Types</a></li>
@@ -495,8 +503,8 @@
           </p>
           <ul class ="use-cases">
             <li>
-              Faye, a busy mother of five, wants to access audio books while commuting, jogging, doing dishes, or
-              otherwise not able to use her eyes or hands.
+              Sree wants to access audio books while commuting, jogging, doing dishes, or
+              otherwise not able to use his eyes or hands.
             </li>
             <li>
               Khoudia, a librarian focusing on the children's section of her local library, is looking exclusively for
@@ -691,8 +699,13 @@
 
         <section id="style">
           <h3>Style</h3>
-          <p class="req-set" id="r_identify_const_resources">
-            <b>I believe the requirements related to style are addressed in 5.2 personalization, req: "The user must have the possibility to personalize his or her reading experience. This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc"</b>
+          <div class="note">
+            <p>
+              The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user must have the possibility to personalize his or her reading experience. This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc"
+            </p>
+          </div>
+          <p>
+            <b></b>
           </p>
           <ul class="use-cases">
             <li></li>
@@ -765,6 +778,9 @@
           <p>
             For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
           </p>
+          <p>
+            The exception to the paginated view would be an audio-only audiobook. An audiobook may be presented as a single page with a player module presenting the content metadata. This player may automatically adapt size and features according to the device or browser's viewport. This view may not have page numbering, but reading position would correspond to a time value within the audiobook.
+          </p>
           <ul class="use-cases">
             <li>
               Ann reads War and Peace which, when printed, is over 1200 pages. In order to have a better sense of her
@@ -783,6 +799,9 @@
               Mr. Oayia, a classroom teacher, says, “turn to page 137 of your textbook.” Regardless of layout and font
               size, students reading digital editions need to find the same location in the textbook as one another and
               as students reading the print edition.
+            </li>
+            <li>
+              Alphonse has been listening to an audiobook he enjoys and would like to share a section with a friend. He tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the section with the audiobook player module provided by his user agent.
             </li>
           </ul>
         </section>
@@ -819,6 +838,9 @@
             Dave is reading Moby Dick on his tablet (at home with network connectivity). He then jumps on a plane with his
             good friend Tzviya. After having finished reading the book, he wants to lend it to Tzviya, so that she can
             start reading on her own tablet. They are both offline, but can exchange data with SD cards or Bluetooth.
+          </li>
+          <li>
+            Giselle is an independent author who has produced the audio version of her latest novel. She wants to distribute it directly to a few beta readers before launch without worrying about sending a list of files with no structure.
           </li>
         </ul>
         <p>
@@ -1094,6 +1116,122 @@
           </li>
         </ul>
       </section> -->
+
+      <section id="audiobooks">
+        <h2>Audiobooks Use Cases</h2>
+
+          <section id="audiobooks-player">
+            <h3>Audiobooks Player</h3>
+            <p>
+              Unique to the audiobooks experience is a player element that differs from print content. A user agent should provide a player experience that allows for the following use cases:
+            </p>
+            <ul>
+              <li>
+                Listening to an audiobook to completion without user interaction
+              </li>
+              <li>
+                Listening to an audiobook at the user's desired pace without audio distortion
+              </li>
+              <li>
+                Navigating to the listening position of choice
+              </li>
+              <li>
+                Understanding the duration of the chapter/audiobook being listened to
+              </li>
+              <li>
+                Leaving and returning to the audiobook in the same position left from
+            </uL>
+            <ul class="use-cases">
+              <li>
+                Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for additional inputs.
+              </li>
+              <li>
+                Yitian is listening to an audiobook on a device where the only input available is play/pause.
+              </li>
+              <li>
+                Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
+              </li>
+              <li>
+                Belinda would like to skip directly to a specific short story in a collected edition.
+              </li>
+              <li>
+                Mr. Sterling asked the students to skip directly to the 23rd minute of an audiobook.
+              </li>
+              <li>
+                Ken was assigned part of a non-fiction title for a class. He wants to open the audiobook but only needs to listen to chapter 19.
+              </li>
+              <li>
+                Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one he remembers listening to.
+              </li>
+              <li>
+                Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards in ten second increments until he finds it.
+              </li>
+              <li>
+                While listening to chapter content on a device with no display, Zara wants to see what chapter she is in by saying “Hey <DigitalAssistant>, what’s this chapter called?”, and then hear the name of the chapter before resuming reading.
+              </li>
+              <li>
+                While listening to chapter content on a device with a display, Clarence would like to see the current chapter name displayed.
+              </li>
+              <li>
+                Nelleke is listening to The Iliad on her walk to work. The audiobook is 14 hours long, but her walk only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off on her trip home.
+              </li>
+            </ul>
+          </section>
+
+          <section id="audiobooks-offline">
+            <h3>Audiobooks Offline/Streaming</h3>
+            <p>
+              A user agent needs to know the information required to allow the user to enjoy their audiobooks offline or while actively streaming the content, due to the size and nature of the content.
+            </p>
+            <ul class="use-cases">
+              <li>
+                Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire ebook during the flight, which does not have Wifi.
+              </li>
+              <li>
+                João lives in Recife where he has very spotty internet and slow download speeds. He enjoys listening to audiobooks during his morning bike ride, and would like to listen to his books before they complete downloading, as fully downloading a book could take several days.
+              </li>
+              <li>
+                Wendy is running late for work but wants to listen to her audiobook on her commute. As she leaves she realizes she has not yet downloaded it, but there is no wifi available. She has plenty of data, and decides to stream the content as she makes her way to the office.
+              </li>
+            </ul>
+          </section>
+
+          <section id="non-wp-ab-support">
+            <h3>Audiobooks Support in a non-WP User Agent</h3>
+            <p>
+              If the audiobook is in the WP format, it should be accessible in any user agent, even if the user agent does not support WP.
+            </p>
+            <p>
+              The basic functionality of an audiobook in a vanilla browser includes:
+            </p>
+            <ul>
+              <li>
+                Ability to display title and duration of the book to the user
+              </li>
+              <li>
+                Ability to play chapters defined in the book one after the other. It may not include end to end continuous reading of the book
+              </li>
+              <li>
+                Ability to navigate to a chapter defined in the book and start playback from there
+              </li>
+              <li>
+                Ability to pause and resume
+              </li>
+              <li>
+                Ability to start playing from a page number or a time point defined in the book
+              </li>
+              <li>
+                Ability to forward and rewind by some time interval
+              </li>
+            </ul>
+            <ul class="use-cases">
+              <li>
+                John found an Audio WP in his university which he want to start listening immediately, but he does not have a WP reading system installed on his university computer. He should be able to at least use basic functionality of the book in vanilla browser available on the university computer.
+              </li>
+            </ul>
+          </section>
+        </section>
+
     </section>
 
     <section id="for-authors">
