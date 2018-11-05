@@ -29,12 +29,6 @@
             "company": "EDRLab",
             "companyURL": "https://www.edrlab.org",
             "w3cid": 91888
-          },
-          {
-          "name": "Matt Garrish",
-              "company": "DAISY Consortium",
-              "companyURL": "https://www.daisy.org",
-              "w3cid": 51655
           }
         ],
 
@@ -193,28 +187,30 @@
             platform.
           </p>
           <ul class="use-cases">
-            <li>
+            <li id="jrnl">
               A large, multidisciplinary, Web-based journal relies on traditional Web technologies like HTML and CSS for
               its content. The journal, responding to the evolving expectations of its audience, is increasingly using
               additional media such as video, audio, animated graphics, and very large images; the trend is to consider
               these as integral parts of the scientific output. The journal as a result needs access to the latest
               visualization and other data management tools that the OWP-based tools can offer.
             </li>
-            <li>
-              Educational publications are increasingly making use of OWP features. They include interactive exams
-              (possibly linked to online evaluation facilities), visualization of data or of algorithms, built-in
-              interpreters for various languages (e.g., for courses on programming); in many respects, the borderline
+            <li id="edu">
+              Educational publications are increasingly making use of OWP features. In addition to video, audio, and animations, they may also include interactive exams
+              (possibly linked to online evaluation facilities), visualization of data or of algorithms, and built-in
+              interpreters for various languages (e.g., for courses on programming). In many respects, the borderline
               between these publications and Web applications is becoming fuzzy.
             </li>
             <li id="in_house_doc">
-              BigBoxCo, a large technology company with extensive “in-house” documentation to support the technical
-              and/or user documentation for their various products and administrative processes, develops all this
+              BigBoxCo, a large technology company with extensive “in-house” documentation to support  technical and administrative processes
+              and user documentation for their various products, develops all this
               material in digital-only formats. The quantity of documentation makes it impractical to produce these
               documents in print. Instead, the company publishes them on the company intranet, and/or provides them to
               their employees and contractors via specialized mobile applications. These documents, as a type of
               publication, require accessibility, portability of annotations, and the possible inclusion of complex
               media.
             </li>
+            <li id="news">Like scholarly journals, news outlets are also leveraging OWP features. <b>[Need more expansion on this use case.]</b></li>
+            <li id="comics"><b>[The addition of an example for graphic novels / comics may be worth considering.]</b></li>
           </ul>
         </section>
 
@@ -380,6 +376,12 @@
             <li id="r_manifest-metadata_5">
               Marco is an Ainu audiobook listener, and the book he is reading has a table of contents consisting of images, because the Ainu language has no script. While listening, he asks for the chapter name, and the reading system plays the audio for the title of the current TOC item, and then resumes playback from my last position in the content.
             </li>
+            <li>
+              A library wants to promote a particular type of publication depending on different categories available in a publication’s metadata (age suitability, genre, author). <b>[I did not see some of these fields, such as genre or age suitability, available in the manifest dictionary. Is this something that has been discussed, or something that is accounted for elsewhere?]</b>
+            </li>
+            <li>
+              <b>Is there a way currently outlined (and would it be desirable) to have books with multiple authors (who authored specific chapters) to be identified as the authors of those chapters? I recall some discussion about a WP of WPs as well though. But I can see how this might not always been desirable. Use case:</b> An online literary magazine wishes to compile an anthology of short stories authored by a specific writer. The magazine should be able to identify the stories within the manifests by author and bring those chapters together into a new Web Publication.
+            </li>
           </ul>
         </section>
 
@@ -443,14 +445,16 @@
             <li>
               Chiara is listening to an audiobook on roman history. The description when she bought it mentioned that the maps and images mentioned in the book were available as supplemental content in the file. At the end of the audiobook, she is able to view the content which helps her understand the audiobook better, but it is marked as non-essential if the audiobook is taken offline.
             </li>
+            <li>
+              Stephanie, a student, is answering questions in an assessment embedded in a web publication. Her internet connection is unreliable at home. She should be able, via the user agent or the content itself, to save those responses in the Web Publication. If there is component wherein the student would have to submit the responses to the assessment to a database, a user experience within the Web Publication, provided within the content itself or via the user agent, should notify her whether the data has been successfully submitted.
+            </li>
           </ul>
         </section>
 
         <section id="alternative-modalities">
           <h3>Alternative Modalities</h3>
           <p class="req-set" id="r_multimedia">
-            The notion of a Web Publication should enable specific publications like audio books, graphics books, and
-            mixed media.
+A Web Publication should encompass publications such as audiobooks, graphic books, mixed media, and interactive media.
           </p>
           <p>
             All concepts and structures related to a Web Publication should enable the creation and/or production of
@@ -458,8 +462,8 @@
           </p>
           <ul class ="use-cases">
             <li>
-              Faye, a busy mother of five, wants to access audio books while commuting, jogging, doing dishes, or
-              otherwise not able to use her eyes or hands.
+              Sree wants to access audio books while commuting, jogging, doing dishes, or
+              otherwise not able to use his eyes or hands.
             </li>
             <li>
               Khoudia, a librarian focusing on the children's section of her local library, is looking exclusively for
@@ -490,6 +494,9 @@
               obtained from the UA through the information provided in the Web Publication, to turn the page for him
               while reading along in sync with the page currently open.
             </li>
+            <li>
+              Marco is learning German as a second language. In order to improve his understanding and pronunciation, while reading a German text, he uses a read-aloud function available through his User Agent and made accessible by the information provided in the Web Publication.
+            </li>
           </ul>
         </section>
 
@@ -505,6 +512,12 @@
               EsteemedJournal provide users access to the CSVs when accessing her article in any situation by including
               the CSV data, as well as the Javascript library to display the content in human friendly form, as part of
               the Web Publication.
+            </li>
+            <li>
+              A news organization wishes to run a series of articles containing graphs based on a set of raw data. Those graphs are generated dynamically in each article, depending on what the topic is. The data is also available to the user for transparency. 
+            </li>
+            <li>
+              An exercise in an educational Web Publication requires the student to push data to a CSV and analyze the subsequent graphs that are dynamically created with each datapoint that the student enters.
             </li>
             <!-- <li>
               Risha publishes an article which includes an interactive component that accesses a database, exposed to
@@ -542,6 +555,9 @@
               publications and other sites (e.g., the authors’ institutional sites) to unambiguously link to the
               publication. These features are essential in the scholarly community to make, for example, the assessment
               of individual researchers possible.
+            </li>
+            <li>
+              Textbook editions should be clearly distinct from one another using unique identifiers. Links should be accurate in order to avoid confusion in classes, especially since each class is not necessarily using the latest edition. 
             </li>
           </ul>
 
@@ -605,20 +621,50 @@
 
         <section id="style">
           <h3>Style</h3>
+          <div class="note">
+            <p>
+              The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user must have the possibility to personalize his or her reading experience. This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc"
+            </p>
+          </div>
+          <p>
+            <b></b>
+          </p>
+          <ul class="use-cases">
+            <li></li>
+          </ul>
         </section>
 
         <section id="layout">
           <h3>Layout</h3>
+          <p class="req-set" id="r_identify_const_resources">
+            For the purposes of layout, each resource of a Web Publication is treated as a separate document. User agents must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely positioned elements from one resource cannot intrude or overlap with content from an other resource).
+          </p>
+          <ul class="use-cases">
+            <li>
+              Helga is authoring an internal work document for her company as a Web Publication. This Web Publication spans several resources / documents, and she would like to use decimal-dot notation to indicate the section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an accurate count.  <b><- this is currently limited by CSS / I wonder too whether it would be complicated by the fact that the CSS would also have to interact with the manifest to determine this counter. Would this be the only reason for the CSS to interact with the manifest? Or is there another manner in which this can be accomplished in CSS without having to interact with the manifest?</b>
+            </li>
+          </ul>
         </section>
 
         <section id="progression">
           <h3>Progression</h3>
+          <p class="req-set" id="r_identify_const_resources">
+            User agents should provide the option to save this progression in the publication and returns the user to their last location the next time they open the publication.
+          </p>
+          <ul class="use-cases">
+            <li>
+              Filbert is reading a comic as a Web Publication. In his user agent, he marks a specific page to return to and exits the user agent. When he returns the next day, he opens the Web Publication and continues reading from the location he marked.
+            </li>
+          </ul>
         </section>
 
         <section id='movement'>
           <h3>Movement</h3>
           <p class="req-set" id="r_pagination">
             It should be possible to see the Web Publication in a “paginated” view.
+          </p>
+          <p class="req-set" id="r_pagination_ro">
+            When a user agent renders a Web Publication in a paginated layout, it must lay out each document in the default reading order sequentially, with the last page of a resource being followed by the first page of the subsequent one.
           </p>
           <p>
             Whereas a “scrolling” view is the dominating approach on the Web in browsers, a user or author may wish to
@@ -1096,6 +1142,9 @@
             be able to indicate to the user agent that the standard way to consume the articles is alphabetical order,
             by title.
           </li>
+          <li>
+            The third edition of the Writing Handbook has 10 chapters with 5-10 subsections apiece and 4-8 readings. Each subsection and reading starts its own HTML page. The Web Publication should be able to inform the user agent that the proper order for consumption of the HTML documents is sequentially, starting with the first chapter. Moreover, in the navigation structure, the user agent should be able to indicate to the user which subheadings and readings belong to which chapter, and that those subheadings and readings are navigated sequentially, starting with the first subheading in the parent chapter.
+          </li>
         </ul>
       </section>
 
@@ -1141,6 +1190,18 @@
             A specialized user agent wishes to find all images in a publication that do not already have alternative
             text and automatically provide it using an image identification service such as
             <a href="http://labelme.csail.mit.edu/">LabelMe</a>.
+          </li>
+          <li>
+            EducationalPublisher publishes a history textbook in English. The textbook contains two glossaries, one in English and one in Spanish for Spanish-speaking students learning English as their target language to facilitate their ability to understand key terms in the text. A specialized user agent should be able to reveal and suppress the Spanish glossary based on what the student requires.
+          </li>
+          <li>
+            EducationalPublisher allows for a specialized user agent to filter and display content identified in a foreign language learning Web Publication as vocabulary and conjugation charts. This is done in order to facilitate the teacher creating study guides. 
+          </li>
+          <li>
+            CookbookPublisher wants to create a cookbook that either a function within the publication itself or a feature in a user agent can filter to only show recipes with certain labels.
+          </li>
+          <li>
+            The publisher of Julio Cortázar's experimental novel <i>Rayuela</i> would like to publish the book as a Web Publication. The book may be read in a variety of different sequences, all of which are offered as alternative reading orders.
           </li>
         </ul>
       </section>
@@ -1227,7 +1288,7 @@
             can avoid those additional charges.
           </li>
           <li>
-            Gemma, a private collector of digital publications, is building a private collections of publications that
+            Gemma, a private collector of digital publications, is building a private collection of publications that
             she expects to be available to her whether online or offline, over the public Internet, or within a
             private local area network (LAN).
           </li>
@@ -1269,7 +1330,7 @@
           </li>
           <li id="r_p13n_4">
             Buffy is Deafblind. Every morning she downloads her daily newspaper. Like most news sites, it provides
-            many rich multimedia presentations. As a high-quality, accessible news site, it's multimedia presentations
+            many rich multimedia presentations. As a high-quality, accessible news site, its multimedia presentations
             come with captions and transcripts. Buffy does not want to waste her data plan on the useless-to-her audio
             and video content, so she instructs her user agents to ignore them.
           </li>
