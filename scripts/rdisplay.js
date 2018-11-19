@@ -55,7 +55,7 @@ function rdisplay() {
 	});
 
     // Generate the tables of conformance tiers
-    $("table.ct").each( function() {
+    $("table.conformance").each( function() {
         var $table = $(this);
         reqInfo.forEach( function(element, index, array) {
             var $req = $("#" + element.id);
