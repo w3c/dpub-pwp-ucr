@@ -25,10 +25,10 @@
             "w3cid": 102151
           },
           {
-            "name": "Laurent Le Meur",
-            "company": "EDRLab",
-            "companyURL": "https://www.edrlab.org",
-            "w3cid": 91888
+            "name": "Franco Alvarado",
+            "company": "Macmillan Higher Education",
+            "companyURL": "http://macmillan.com/",
+            "w3cid": 105737
           }
         ],
 
@@ -174,7 +174,7 @@
 
         <section id="owp">
           <h3>Open Web Platform</h3>
-          <p class="req-set" id="r_owp">
+          <p id="r_owp" class="req-set cc-minimal">
             Web Publications should be able to make use of all features offered by the Open Web Platform (OWP).
           </p>
           <ul class="wpub-xref">
@@ -219,7 +219,7 @@
 
         <section id="horizdep">
           <h3>Horizontal Dependencies</h3>
-          <p class="req-set" id="r_horizdep">
+          <p id="r_horizdep" class="req-set cc-extended">
             A Web Publication should conform to the requirements of all horizontal dependencies.
           </p>
           <ul class="wpub-xref">
@@ -334,7 +334,7 @@
 
         <section id="manifest-metadata">
           <h3>Metadata</h3>
-          <p class="req-set" id="r_manifest-metadata">
+          <p id="r_manifest-metadata" class="req-set cc-minimal">
             Web Publications should include technical and descriptive metadata as well as any additional characteristics
             of the <a href="#constituent-resources">constituent resources.</a>
           </p>
@@ -398,7 +398,7 @@
               to the Web Publication, describing the accessbility characteristics for each constituent resource.
             </li>
             <li id="r_manifest-metadata_4">
-              When Bella is listening to an audiobook or browsing her bookshelf, she wants to ask questions like  “Hey <Digital Assistant>, who’s the narrator?” or “How long is that book?” and hear the corresponding metadata read to her by TTS, before resuming listening to content or browsing.
+              When Bella is listening to an audiobook or browsing her bookshelf, she wants to ask questions like  “Hey [Digital Assistant], who’s the narrator?” or “How long is that book?” and hear the corresponding metadata read to her by TTS, before resuming listening to content or browsing.
             </li>
             <li id="r_manifest-metadata_5">
               Marco is an Ainu audiobook listener, and the book he is reading has a table of contents consisting of images, because the Ainu language has no script. While listening, he asks for the chapter name, and the reading system plays the audio for the title of the current TOC item, and then resumes playback from my last position in the content.
@@ -414,7 +414,7 @@
 
         <section id="constituent-resources">
           <h3>Resources</h3>
-          <p class="req-set" id="r_con-res">
+          <p id="r_con-res" class="req-set cc-extended">
             The information regarding the constituent resources of a Web Publication must be easily discovered and there
             should be a way to differentiate between essential and non-essential resources.
           </p>
@@ -487,10 +487,42 @@
           </ul>
         </section>
 
+        <section id='tableofcontents'>
+          <h3>Table of Contents</h3>
+          <p id="r_toc" class="req-set cc-minimal">
+            A user agent should be able to reveal the navigable structure of a Web Publication as a table of contents.
+          </p>
+          <p>
+            The table of contents must include a link to at least one resource, and all links should refer to resources
+            within publication bounds. The user agent should allow the reader to access the links without navigating
+            away from the current resource.
+          </p>
+          <ul class="wpub-xref">
+            <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
+            <li><a href="https://w3c.github.io/wpub/#table-of-contents">Structural Properties > Table of Contents</a></li>
+            <li><a href="https://w3c.github.io/wpub/#affordances">Table of Contents > Affordances</a></li>
+          </ul>
+          <ul class="use-cases">
+            <li>
+              Penelope has opened her web publication to its preface. She would like to skip the preface and go to
+              chapter one. She is able to reveal the table of contents built into her web publication via a function in
+              her user agent and view a link to chapter one. She changes her mind and decides to read the preface. Since
+              she is still on the preface and has not navigated away, she only needs to close out of the table of
+              contents to continue reading the preface.
+            </li>
+            <li>
+              Matilda is listening to an audiobook of an anthology, but would like to read her favorite author's short
+              stories first. She is able to reveal the navigation built into her web publication via a function in her
+              user agent and access the relevant stories.
+            </li>
+          </ul>
+        </section>
+
         <section id="alternative-modalities">
           <h3>Alternative Modalities</h3>
-          <p class="req-set" id="r_multimedia">
-A Web Publication should encompass publications such as audiobooks, graphic books, mixed media, and interactive media.
+          <p id="r_multimedia" class="req-set cc-extended">
+            A Web Publication should encompass publications such as audiobooks, graphic books, mixed media, and
+            interactive media.
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#manifest-pub-types">Publication Types</a></li>
@@ -520,7 +552,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="Time-based Media">
           <h3>Time-based Media</h3>
-          <p class="req-set" id="r_time">
+          <p id="r_time" class="req-set cc-extended">
             A Web Publication needs to support both time-based media and text.
           </p>
           <ul class="wpub-xref">
@@ -547,7 +579,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="data">
           <h3>Data</h3>
-          <p class="req-set" id="r_extdata">
+          <p id="r_extdata" class="req-set cc-minimal">
             Web Publications should be able to include data as <a href="#constituent-resources">resources</a>, just as
             it does with text, images, etc.
           </p>
@@ -590,8 +622,8 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="publication-identification">
           <h3>Publication Identification</h3>
-          <p class="req-set" id="r_unique-identifier">
-            There must be a way to uniquely identify a Web Publication.
+          <p id="r_unique-identifier" class="req-set cc-minimal">
+            A Web Publication must be identified by either a URL or a unique handle that can be mapped to a URL.
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#wp-bounds">Web Publication Bounds</a></li>
@@ -621,7 +653,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             </li>
           </ul>
 
-          <p class="req-set" id="r_single">
+          <p id="r_single" class="req-set cc-minimal">
             User agents must treat a Web Publication as a single logical resource with its own URL, beyond the
             references to individual, constituent resources.
           </p>
@@ -654,8 +686,9 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="resource-identification">
           <h3>Resource Identification</h3>
-          <p class="req-set" id="r_identify_const_resources">
-            All constituent resources, and their contents, should be uniquely identifiable.
+          <p id="r_identify_const_resources" class="req-set cc-extended">
+            All constituent resources, and their contents, should be identified by either a URL or a unique handle that
+            can be mapped to a URL.
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#manifest-embedding">Embedding a Manifest</a></li>
@@ -702,7 +735,10 @@ A Web Publication should encompass publications such as audiobooks, graphic book
           <h3>Style</h3>
           <div class="note">
             <p>
-              The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user must have the possibility to personalize his or her reading experience. This may include, for example, controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc"
+              The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user
+              must have the possibility to personalize his or her reading experience. This may include, for example,
+              controlling such features as font size, choice of fonts, background and foreground color, tone of audio,
+              etc"
             </p>
           </div>
           <p>
@@ -715,8 +751,10 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="layout">
           <h3>Layout</h3>
-          <p class="req-set" id="r_identify_const_resources">
-            For the purposes of layout, each resource of a Web Publication is treated as a separate document. User agents must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely positioned elements from one resource cannot intrude or overlap with content from an other resource).
+          <p id="r_separate_const_resources" class="req-set cc-extended">
+            For the purposes of layout, each resource of a Web Publication is treated as a separate document. User
+            agents must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely
+            positioned elements from one resource cannot intrude or overlap with content from an other resource).
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
@@ -724,29 +762,38 @@ A Web Publication should encompass publications such as audiobooks, graphic book
           </ul>
           <ul class="use-cases">
             <li>
-              Helga is authoring an internal work document for her company as a Web Publication. This Web Publication spans several resources / documents, and she would like to use decimal-dot notation to indicate the section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an accurate count.  <b><- this is currently limited by CSS / I wonder too whether it would be complicated by the fact that the CSS would also have to interact with the manifest to determine this counter. Would this be the only reason for the CSS to interact with the manifest? Or is there another manner in which this can be accomplished in CSS without having to interact with the manifest?</b>
+              Helga is authoring an internal work document for her company as a Web Publication. This Web Publication
+              spans several resources / documents, and she would like to use decimal-dot notation to indicate the
+              section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an
+              accurate count.  <b><- this is currently limited by CSS / I wonder too whether it would be complicated by
+              the fact that the CSS would also have to interact with the manifest to determine this counter. Would this
+              be the only reason for the CSS to interact with the manifest? Or is there another manner in which this can
+              be accomplished in CSS without having to interact with the manifest?</b>
             </li>
           </ul>
         </section>
 
         <section id="progression">
           <h3>Progression</h3>
-          <p class="req-set" id="r_identify_const_resources">
-            User agents should provide the option to save this progression in the publication and returns the user to their last location the next time they open the publication.
+          <p id="r_save_progresssion" class="req-set cc-extended">
+            User agents should provide the option to save this progression in the publication and returns the user to
+            their last location the next time they open the publication.
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#short-description-0">Reading State > Short Description</a></li>
           </ul>
           <ul class="use-cases">
             <li>
-              Filbert is reading a comic as a Web Publication. In his user agent, he marks a specific page to return to and exits the user agent. When he returns the next day, he opens the Web Publication and continues reading from the location he marked.
+              Filbert is reading a comic as a Web Publication. In his user agent, he marks a specific page to return to
+              and exits the user agent. When he returns the next day, he opens the Web Publication and continues reading
+              from the location he marked.
             </li>
           </ul>
         </section>
 
         <section id='movement'>
           <h3>Movement</h3>
-          <p class="req-set" id="r_pagination">
+          <p id="r_pagination" class="req-set cc-customization">
             It should be possible to see the Web Publication in a “paginated” view.
           </p>
           <ul class="wpub-xref">
@@ -754,8 +801,10 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List > Manifest Expression</a></li>
             <li><a href="https://w3c.github.io/wpub/#feature-reading-order">Reading Order</a></li>
           </ul>
-          <p class="req-set" id="r_pagination_ro">
-            When a user agent renders a Web Publication in a paginated layout, it must lay out each document in the default reading order sequentially, with the last page of a resource being followed by the first page of the subsequent one.
+          <p id="r_pagination_ro" class="req-set cc-customization">
+            When a user agent renders a Web Publication in a paginated layout, it must lay out each document in the
+            default reading order sequentially, with the last page of a resource being followed by the first page of the
+            subsequent one.
           </p>
           <ul class="wpub-xref">
             <li><a href="https://w3c.github.io/wpub/#feature-reading-order">Reading Order</a></li>
@@ -780,7 +829,10 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
           </p>
           <p>
-            The exception to the paginated view would be an audio-only audiobook. An audiobook may be presented as a single page with a player module presenting the content metadata. This player may automatically adapt size and features according to the device or browser's viewport. This view may not have page numbering, but reading position would correspond to a time value within the audiobook.
+            The exception to the paginated view would be an audio-only audiobook. An audiobook may be presented as a
+            single page with a player module presenting the content metadata. This player may automatically adapt size
+            and features according to the device or browser's viewport. This view may not have page numbering, but
+            reading position would correspond to a time value within the audiobook.
           </p>
           <ul class="use-cases">
             <li>
@@ -802,7 +854,9 @@ A Web Publication should encompass publications such as audiobooks, graphic book
               as students reading the print edition.
             </li>
             <li>
-              Alphonse has been listening to an audiobook he enjoys and would like to share a section with a friend. He tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the section with the audiobook player module provided by his user agent.
+              Alphonse has been listening to an audiobook he enjoys and would like to share a section with a friend. He
+              tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the
+              section with the audiobook player module provided by his user agent.
             </li>
           </ul>
         </section>
@@ -811,8 +865,8 @@ A Web Publication should encompass publications such as audiobooks, graphic book
       <section id="packaging">
         <h2>Packaging</h2>
         <p>
-        <span class="req-set" id="r_pwp">It should be possible to create and distribute a Web Publication as a single
-        unit over different protocols or physical media.</span> This can done through the usage of
+          <span id="r_pwp" class="req-set cc-packaging">It should be possible to create and distribute a Web Publication
+          as a single unit over different protocols or physical media.</span> This can done through the usage of
           <a data-lt="Packaged Web Publication">Packaged Web Publications</a>.
         </p>
         <ul class="wpub-xref">
@@ -841,7 +895,9 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             start reading on her own tablet. They are both offline, but can exchange data with SD cards or Bluetooth.
           </li>
           <li>
-            Giselle is an independent author who has produced the audio version of her latest novel. She wants to distribute it directly to a few beta readers before launch without worrying about sending a list of files with no structure.
+            Giselle is an independent author who has produced the audio version of her latest novel. She wants to
+            distribute it directly to a few beta readers before launch without worrying about sending a list of files
+            with no structure.
           </li>
         </ul>
         <p>
@@ -850,7 +906,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="link-remapping">
           <h3>Link Remapping</h3>
-          <p class="req-set" id="r_remap_links">
+          <p id="r_remap_links" class="req-set cc-packaging">
             A Packaged Web Publication (PWP) should include means to map the identification of a constituent resource
             between the Web and its equivalent in a package.
           </p>
@@ -874,7 +930,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
         <section id="distro">
           <h3>Distribution</h3>
-          <p class="req-set" id="r_distro">
+          <p id="r_distro" class="req-set cc-packaging">
             The distribution of a Packaged Web Publication should not affect its iterations.
           </p>
 
@@ -915,7 +971,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             </li>
           </ul>
 
-          <p class="req-set" id="r_pwp-process">
+          <p id="r_pwp-process" class="req-set cc-packaging">
             The distribution of Packaged Web Publications should respect the existing processes and expectations of
             professional publishing channels as well as ad-hoc methods of distribution (eg. email).
           </p>
@@ -959,7 +1015,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             However, archival raises an additional requirements:
           </p>
 
-          <p class="req-set" id="r_archmetadata">
+          <p id="r_archmetadata" class="req-set cc-packaging">
             There should be a way to indicate whether one or more Packaged Web Publication components contain (embedded)
             descriptive metadata.
           </p>
@@ -984,7 +1040,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             </li>
           </ul>
 
-          <p class="req-set" id="r_component-change">
+          <p id="r_component-change" class="req-set cc-packaging">
             There should be a way to discover that one or more new components have been added to or deleted from a Web
             Publication.
           </p>
@@ -1168,7 +1224,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
                 Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards in ten second increments until he finds it.
               </li>
               <li>
-                While listening to chapter content on a device with no display, Zara wants to see what chapter she is in by saying “Hey <DigitalAssistant>, what’s this chapter called?”, and then hear the name of the chapter before resuming reading.
+                While listening to chapter content on a device with no display, Zara wants to see what chapter she is in by saying “Hey [DigitalAssistant], what’s this chapter called?”, and then hear the name of the chapter before resuming reading.
               </li>
               <li>
                 While listening to chapter content on a device with a display, Clarence would like to see the current chapter name displayed.
@@ -1232,15 +1288,14 @@ A Web Publication should encompass publications such as audiobooks, graphic book
             </ul>
           </section>
         </section>
-
-    </section>
+      </section>
 
     <section id="for-authors">
       <h1>For Authors</h1>
 
       <section id="reading-order">
         <h2>Default Reading Order</h2>
-        <p class="req-set" id="r_reading-order">
+        <p id="r_reading-order" class="req-set cc-minimal">
           There should be a means to indicate the author’s preferred navigation structure among the resources of a Web
           Publication.
         </p>
@@ -1273,7 +1328,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
       <section id="random-access">
         <h2>Random Access to Content</h2>
-        <p class="req-set" id="r_random-access">
+        <p id="r_random-access" class="req-set cc-extended">
           Authors of a Web Publication should be able to provide the user agent with information to access random
           parts of the publication.
         </p>
@@ -1340,7 +1395,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
       <section id="check-origin">
         <h2>Authenticity</h2>
-        <p class="req-set" id="r_check_origin">
+        <p id="r_check_origin" class="req-set cc-packaging">
           The publisher should be able to provide information in a Portable Web Publication that can be used to check
           the origin of the publication and its authenticity.
         </p>
@@ -1360,7 +1415,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
       <section id="integrity">
         <h2>Integrity</h2>
-        <p class="req-set" id="r_check_integrity">
+        <p id="r_check_integrity" class="req-set cc-packaging">
           The publisher should be able to provide information in a Portable Web Publication proving that the
           publication has not been tampered with during delivery.
         </p>
@@ -1381,7 +1436,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
       <section id="protection">
         <h2>Protection</h2>
-        <p class="req-set" id="r_protection">
+        <p id="r_protection" class="req-set cc-packaging">
           A Web Publication should be able to express the access control and write protections of the publication.
         </p>
         <ul class="wpub-xref">
@@ -1408,7 +1463,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
 
       <section id='onloffl'>
         <h2>Offlining</h2>
-        <p class="req-set" id="r_onloffl">
+        <p id="r_onloffl" class="req-set cc-extended">
           A Web Publication should also be available offline.
         </p>
         <ul class="wpub-xref">
@@ -1454,7 +1509,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
       <section id="personalized">
         <h2>Personalization</h2>
         <p>
-            <span class="req-set" id="r_p13n">The user must have the possibility to personalize his or her reading
+            <span id="r_p13n" class="req-set cc-customization">The user must have the possibility to personalize his or her reading
             experience.</span> This may include, for example, controlling such features as font size, choice of fonts,
           background and foreground color, tone of audio, etc.
         </p>
@@ -1487,7 +1542,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
       <section id="multiformatsync">
         <h3>Synchronization</h3>
         <p>
-          <span class="req-set" id="r_p14n">The user must have the ability to quickly browse to a corresponding
+          <span id="r_p14n" class="req-set cc-extended">The user must have the ability to quickly browse to a corresponding
           pointer as identified in a physical book.</span>  A user must quickly be able to locate the position of
           content that is identified within a print book.
         </p>
@@ -1525,7 +1580,7 @@ A Web Publication should encompass publications such as audiobooks, graphic book
     <section id="escalating_trust">
       <h2>Escalating trust</h2>
       <p>
-        <span class="req-set" id="r_escalating_trust">User agents may provide a method for escalating trust for a
+        <span id="r_escalating_trust" class="req-set cc-customization">User agents may provide a method for escalating trust for a
         specific publication.</span> Some publications may require additional capabilities (for example, access to
         camera or geolocation) that a user agent might normally not enable. Today, some platform and UA vendors offer
         methods for otherwise untrusted local scripts to become trusted and regain API privileges, a similar ability
@@ -1593,6 +1648,62 @@ A Web Publication should encompass publications such as audiobooks, graphic book
         <tbody>
         </tbody>
       </table>
+    </section>
+
+    <section class="appendix">
+      <h2>Conformance Classes</h2>
+      <div class="note">
+        <p>TODO: Write a nice introduction to this section.</p>
+      </div>
+      <h3>Minimal</h3>
+      <p>
+        A UA conforming at a minimal level must address the following requirements:
+      </p>
+      <table class="conformance zebra" data-display="cc-minimal">
+        <thead>
+        <tr>
+          <th>Number and reference</th><th>Short description</th>
+        </tr>
+        </thead>
+        <tbody/>
+      </table>
+      <h3>Extended</h3>
+      <p>
+        A UA may be extended by addressing all minimal requirements and the following requirements:
+      </p>
+      <table class="conformance zebra" data-display="cc-extended">
+        <thead>
+        <tr>
+          <th>Number and reference</th><th>Short description</th>
+        </tr>
+        </thead>
+        <tbody/>
+      </table>
+      <h3>Packaging</h3>
+      <p>
+        A UA may support packaging by addressing all minimal requirements and the following requirements:
+      </p>
+      <table class="conformance zebra" data-display="cc-packaging">
+        <thead>
+        <tr>
+          <th>Number and reference</th><th>Short description</th>
+        </tr>
+        </thead>
+        <tbody/>
+      </table>
+      <h3>Customization</h3>
+      <p>
+        A UA may support user customization by addressing all minimal requirements and the following requirements:
+      </p>
+      <table class="conformance zebra" data-display="cc-customization">
+        <thead>
+        <tr>
+          <th>Number and reference</th><th>Short description</th>
+        </tr>
+        </thead>
+        <tbody/>
+      </table>
+
     </section>
 
     <section class="appendix" id="accessibility">
