@@ -109,3 +109,8 @@ aside.annotation {
 span.annotation {
     background:yellow;
 }
+
+ul.wpub-xref::before {
+   content: "Reference to Web Publications Specification";
+   font-weight: bold;
+   font-style: italic;
