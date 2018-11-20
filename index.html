@@ -451,6 +451,37 @@
           </ul>
         </section>
 
+        <section id='tableofcontents'>
+          <h3>Table of Contents</h3>
+          <p id="r_toc" class="req-set cc-minimal">
+            A user agent should be able to reveal the navigable structure of a Web Publication as a table of contents.
+          </p>
+          <p>
+            The table of contents must include a link to at least one resource, and all links should refer to resources
+            within publication bounds. The user agent should allow the reader to access the links without navigating
+            away from the current resource.
+          </p>
+          <ul class="wpub-xref">
+            <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
+            <li><a href="https://w3c.github.io/wpub/#table-of-contents">Structural Properties > Table of Contents</a></li>
+            <li><a href="https://w3c.github.io/wpub/#affordances">Table of Contents > Affordances</a></li>
+          </ul>
+          <ul class="use-cases">
+            <li>
+              Penelope has opened her web publication to its preface. She would like to skip the preface and go to
+              chapter one. She is able to reveal the table of contents built into her web publication via a function in
+              her user agent and view a link to chapter one. She changes her mind and decides to read the preface. Since
+              she is still on the preface and has not navigated away, she only needs to close out of the table of
+              contents to continue reading the preface.
+            </li>
+            <li>
+              Matilda is listening to an audiobook of an anthology, but would like to read her favorite author's short
+              stories first. She is able to reveal the navigation built into her web publication via a function in her
+              user agent and access the relevant stories.
+            </li>
+          </ul>
+        </section>
+
         <section id="alternative-modalities">
           <h3>Alternative Modalities</h3>
           <p id="r_multimedia" class="req-set cc-extended">
@@ -730,28 +761,6 @@
             </li>
           </ul>
         </section>
-
-        <section id='tableofcontents'>
-          <h3>Table of Contents</h3>
-          <p class="req-set" id="r_toc">
-            A user agent should be able to reveal the navigable structure of a Web Publication as a table of contents. 
-          </p>
-          <p>
-            The table of contents must include a link to at least one resource, and all links should refer to resources within publication bounds. The user agent should allow the reader to access the links without navigating away from the current resource.
-          </p>
-          <ul class="wpub-xref">
-            <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
-            <li><a href="https://w3c.github.io/wpub/#table-of-contents">Structural Properties > Table of Contents</a></li>
-            <li><a href="https://w3c.github.io/wpub/#affordances">Table of Contents > Affordances</a></li>
-          </ul>
-          <ul class="use-cases">
-            <li>
-              Penelope has opened her web publication to its preface. She would like to skip the preface and go to chapter one. She is able to reveal the table of contents built into her web publication via a function in her user agent and view a link to chapter one. She changes her mind and decides to read the preface. Since she is still on the preface and has not navigated away, she only needs to close out of the table of contents to continue reading the preface.
-            </li>
-            <li>
-              Matilda is listening to an audiobook of an anthology, but would like to read her favorite author's short stories first. She is able to reveal the navigation built into her web publication via a function in her user agent and access the relevant stories. 
-            </li>
-          </ul>
       </section>
 
       <section id="packaging">
@@ -1162,8 +1171,7 @@
             </ul>
           </section>
         </section>
-
-    </section>
+      </section>
 
     <section id="for-authors">
       <h1>For Authors</h1>
