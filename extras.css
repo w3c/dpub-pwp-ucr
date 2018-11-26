@@ -111,6 +111,8 @@ span.annotation {
 }
 
 ul.wpub-xref::before {
-   content: "Reference to Web Publications Specification";
-   font-weight: bold;
-   font-style: italic;
+    content: "References to specification:";
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
