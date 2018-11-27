@@ -326,8 +326,8 @@
       </section>
 
       <section id="escalating_trust">
-        <h3>Escalating trust</h3>
-        <p id="r_escalating_trust" class="req-set cc-customization">
+        <h3>Escalating Trust</h3>
+        <p id="r_escalating_trust" class="req-set cc-extended">
           User agents may provide a method for escalating trust for a specific publication.
         </p>
         <p>
@@ -353,6 +353,104 @@
 
     <section id="composition">
       <h2>Composition</h2>
+
+      <section id="identification">
+        <h3>Identification</h3>
+
+        <p id="r_unique-identifier" class="req-set cc-minimal">
+          A Web Publication must be identified by either a URL or a unique handle that can be mapped to a URL.
+        </p>
+        <p>
+          The unique identification of a specific Web Publication is essential. If not expressed as a URL, there
+          should be a way to map this unique identification onto a Web Address.
+        </p>
+        <ul class="use-cases">
+          <li>
+            Scholarly references demand a unique identification of the publication and, possibly, its internal
+            structure. That unique identification must be available as a Web link, to make it possible for other
+            publications and other sites (e.g., the authors’ institutional sites) to unambiguously link to the
+            publication. These features are essential in the scholarly community to make, for example, the assessment
+            of individual researchers possible.
+          </li>
+          <li>
+            Textbook editions should be clearly distinct from one another using unique identifiers. Links should be accurate in order to avoid confusion in classes, especially since each class is not necessarily using the latest edition.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#wp-bounds">Web Publication Bounds</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-resources">Resources</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-primary-entry-page">Primary Entry Page</a></li>
+          <li><a href="https://w3c.github.io/wpub/#address-infoset">Address &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#canonical-identifier-infoset">Canonical Identifier &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#extensibility-linked-records">Linked Records</a></li>
+          <li><a href="https://w3c.github.io/wpub/#obtaining-manifest">Obtaining a Manifest</a></li>
+        </ul>
+
+        <p id="r_identify_const_resources" class="req-set cc-extended">
+          All constituent resources, and their contents, should be identified by either a URL or a unique handle that
+          can be mapped to a URL.
+        </p>
+        <p>
+          The requirement that a Web Publication be uniquely identifiable can be easily extended to the constituents
+          of a Web Publication, as well as the fragments, parts, sections, etc, of those resources. Those
+          idenfications should be stable, resilient to changes and new iterations of the publication.
+        </p>
+        <ul class="use-cases">
+          <li>
+            Markus refers to a specific mathematical theorem in a publication. That reference must be unique, stable
+            and retrievable on the Web, and it should not depend on whether the publisher issues a new iteration of
+            the target publication (thereby possibly change the section numbering).
+          </li>
+          <li>
+            Judit uses an annotation tool to comment on a publication authored by Pablo. She puts an annotation
+            against a sentence in a particular paragraph, anchoring that annotation to the sentence using a reliable
+            way of identifying it. That identification should not be invalidated by a subsequent change of the
+            document by Pablo (unless he, e.g., removes that sentence).
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#manifest-embedding">Embedding a Manifest</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-linking">Linking to a Manifest</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-pagelist">Page List</a></li>
+          <li><a href="https://w3c.github.io/wpub/#address-infoset">Address &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a href="https://w3c.github.io/wpub/#resource-list-manifest">Resource List &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#cover-infoset">Cover &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#cover-manifest">Cover &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
+        </ul>
+
+        <p id="r_single" class="req-set cc-minimal">
+          User agents must treat a Web Publication as a single logical resource with its own URL, beyond the
+          references to individual, constituent resources.
+        </p>
+        <ul class="use-cases">
+          <li>
+            Marwin wants to search for a term on the publication. As a reader, he does not know the internal structure
+            of the book, i.e., whether the content is one or several HTML files; he wants to search to be executed on
+            the whole (logical) content, regardless of its internal representation.
+          </li>
+          <li>
+            Svetlana sets her preferences in terms of font selection and size, background color, etc, for a particular
+            book. She wants those to be in effect on all chapters of the book automatically.
+          </li>
+          <li>
+            User agents that support value counters (page counters, section numbering, footnotes, endnotes), should do
+            so across the entire Web Publication (as opposed to individual components being numbered separately)
+          </li>
+          <li id="r_single_4">
+            Assistive Technology such as screen readers or voice dictation control needs to have the Web Publication
+            presented to it as if it was a single unit.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#manifest-pub-types">Publication Types</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-bounds">Web Publication Bounds</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-resources">Resources</a></li>
+          <li><a href="https://w3c.github.io/wpub/#address-infoset">Address &gt; Infoset Requirements</a></li>
+        </ul>
+      </section>
 
       <section id="manifest-metadata">
         <h3>Metadata</h3>
@@ -754,110 +852,6 @@
         <ul class="wpub-xref">
           <li><a href="https://w3c.github.io/wpub/#privacy-policy-manifest">Privacy Policy &gt; Manifest Expression</a></li>
           <li><a href="https://w3c.github.io/wpub/#feature-publication-mode">Switch to Publication Mode</a></li>
-        </ul>
-      </section>
-    </section>
-
-    <section id="identification">
-      <h2>Identification</h2>
-
-      <section id="publication-identification">
-        <h3>Publication Identification</h3>
-        <p id="r_unique-identifier" class="req-set cc-minimal">
-          A Web Publication must be identified by either a URL or a unique handle that can be mapped to a URL.
-        </p>
-        <p>
-          The unique identification of a specific Web Publication is essential. If not expressed as a URL, there
-          should be a way to map this unique identification onto a Web Address.
-        </p>
-        <ul class="use-cases">
-          <li>
-            Scholarly references demand a unique identification of the publication and, possibly, its internal
-            structure. That unique identification must be available as a Web link, to make it possible for other
-            publications and other sites (e.g., the authors’ institutional sites) to unambiguously link to the
-            publication. These features are essential in the scholarly community to make, for example, the assessment
-            of individual researchers possible.
-          </li>
-          <li>
-            Textbook editions should be clearly distinct from one another using unique identifiers. Links should be accurate in order to avoid confusion in classes, especially since each class is not necessarily using the latest edition.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://w3c.github.io/wpub/#wp-bounds">Web Publication Bounds</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-resources">Resources</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-primary-entry-page">Primary Entry Page</a></li>
-          <li><a href="https://w3c.github.io/wpub/#address-infoset">Address &gt; Infoset Requirements</a></li>
-          <li><a href="https://w3c.github.io/wpub/#canonical-identifier-infoset">Canonical Identifier &gt; Infoset Requirements</a></li>
-          <li><a href="https://w3c.github.io/wpub/#extensibility-linked-records">Linked Records</a></li>
-          <li><a href="https://w3c.github.io/wpub/#obtaining-manifest">Obtaining a Manifest</a></li>
-        </ul>
-
-        <p id="r_single" class="req-set cc-minimal">
-          User agents must treat a Web Publication as a single logical resource with its own URL, beyond the
-          references to individual, constituent resources.
-        </p>
-        <ul class="use-cases">
-          <li>
-            Marwin wants to search for a term on the publication. As a reader, he does not know the internal structure
-            of the book, i.e., whether the content is one or several HTML files; he wants to search to be executed on
-            the whole (logical) content, regardless of its internal representation.
-          </li>
-          <li>
-            Svetlana sets her preferences in terms of font selection and size, background color, etc, for a particular
-            book. She wants those to be in effect on all chapters of the book automatically.
-          </li>
-          <li>
-            User agents that support value counters (page counters, section numbering, footnotes, endnotes), should do
-            so across the entire Web Publication (as opposed to individual components being numbered separately)
-          </li>
-          <li id="r_single_4">
-            Assistive Technology such as screen readers or voice dictation control needs to have the Web Publication
-            presented to it as if it was a single unit.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://w3c.github.io/wpub/#manifest-pub-types">Publication Types</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-bounds">Web Publication Bounds</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-resources">Resources</a></li>
-          <li><a href="https://w3c.github.io/wpub/#address-infoset">Address &gt; Infoset Requirements</a></li>
-        </ul>
-      </section>
-
-      <section id="resource-identification">
-        <h3>Resource Identification</h3>
-        <p id="r_identify_const_resources" class="req-set cc-extended">
-          All constituent resources, and their contents, should be identified by either a URL or a unique handle that
-          can be mapped to a URL.
-        </p>
-        <p>
-          The requirement that a Web Publication be uniquely identifiable can be easily extended to the constituents
-          of a Web Publication, as well as the fragments, parts, sections, etc, of those resources. Those
-          idenfications should be stable, resilient to changes and new iterations of the publication.
-        </p>
-        <ul class="use-cases">
-          <li>
-            Markus refers to a specific mathematical theorem in a publication. That reference must be unique, stable
-            and retrievable on the Web, and it should not depend on whether the publisher issues a new iteration of
-            the target publication (thereby possibly change the section numbering).
-          </li>
-          <li>
-            Judit uses an annotation tool to comment on a publication authored by Pablo. She puts an annotation
-            against a sentence in a particular paragraph, anchoring that annotation to the sentence using a reliable
-            way of identifying it. That identification should not be invalidated by a subsequent change of the
-            document by Pablo (unless he, e.g., removes that sentence).
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://w3c.github.io/wpub/#manifest-embedding">Embedding a Manifest</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-linking">Linking to a Manifest</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-pagelist">Page List</a></li>
-          <li><a href="https://w3c.github.io/wpub/#address-infoset">Address &gt; Infoset Requirements</a></li>
-          <li><a href="https://w3c.github.io/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://w3c.github.io/wpub/#resource-list-manifest">Resource List &gt; Manifest Expression</a></li>
-          <li><a href="https://w3c.github.io/wpub/#cover-infoset">Cover &gt; Infoset Requirements</a></li>
-          <li><a href="https://w3c.github.io/wpub/#cover-manifest">Cover &gt; Manifest Expression</a></li>
-          <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
         </ul>
       </section>
     </section>
