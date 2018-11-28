@@ -732,6 +732,36 @@
           <li><a href="https://w3c.github.io/wpub/#default-reading-order-manifest">Default Reading Order &gt; Manifest Expression</a></li>
           <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
         </ul>
+
+     
+
+  <!--     </section>
+
+       <section id="print-page-reference">
+        <h3>Print Page Referencing</h3> -->
+        <p>
+        <span id="r_print-page" class="req-set cc-extended">If there is a physical book version of the Web Publication, the user must have the ability to quickly browse to a corresponding
+        pointer as identified in the physical book.</span>  A user must quickly be able to locate the position of
+          content that is identified within a print book.
+        </p>
+        <ul class="use-cases">
+          <li>
+            Beatrix is teaching a thermodynamics class.  Some of her students use a physical textbook while others are
+            using the web publication.  She needs them all to be able to find the same content so they can follow
+            along.
+          </li>
+          <li>
+            Zoya borrowed a book from her library but must return it.  She has decided to buy a WP version of the same
+            text and would like to continue reading where she left off.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-pagelist">Page List</a></li>
+          <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
+        </ul>
       </section>
 
       <section id="alternative-modalities">
@@ -908,18 +938,45 @@
       <section id="progression">
         <h3>Progression</h3>
         <p id="r_save_progresssion" class="req-set cc-extended">
-          User agents should provide the option to save this progression in the publication and returns the user to
-          their last location the next time they open the publication.
+          User agents should provide the option for the user to save their progression in the publication and return the user to
+          the last location they saved the next time they open the publication.
         </p>
         <ul class="use-cases">
           <li>
-            Filbert is reading a comic as a Web Publication. In his user agent, he marks a specific page to return to
-            and exits the user agent. When he returns the next day, he opens the Web Publication and continues reading
-            from the location he marked.
+            Mateusz runs a Dungeons and Dragons campaign.  He would like to be able to mark off specific sections of
+            different rulebooks and share those bookmarks so that players in his game can quickly reference the
+            material.
+          </li>
+          <li>
+            Aika is reading a novel on her 9 inch tablet, but later switches to her 5 inch phone.  She would like to
+            be able to resume reading from the same point where she left off, given that she may not be using the same
+            user agent on each device that contains some mechanism that would sync the content position.
           </li>
         </ul>
         <ul class="wpub-xref">
           <li><a href="https://w3c.github.io/wpub/#short-description-0">Reading State &gt; Short Description</a></li>
+          <li><a href="https://w3c.github.io/wpub/#locators">Web Publication Locators</a></li>
+        </ul>
+      </section>
+
+      <section id="multiformatsync">
+        <h3>Reading State</h3>
+        <p>
+        <span id="r_reading-state" class="req-set cc-minimal">The user must be able to leave the Web Publication and return to it at the last position they left from. The User Agent must retain the reading position, based on the last known position of the reader in the web publication. The position should be based on the reader's position in the file, within the reading order.</span>
+        </p>
+        <p>The user agent may retain reading state if the web publication is revised.</p>
+        <ul class="use-cases">
+          <li>
+            Filbert is reading a comic as a Web Publication. He exits the user agent without bookmarking or saving his location in the Web Publication. When he returns the next day, he opens the Web Publication and continues reading from where he had left off.
+          </li>
+        </ul>
+      <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-reading-order">Reading Order</a></li>
+          <li><a href="https://w3c.github.io/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a href="https://w3c.github.io/wpub/#default-reading-order-manifest">Default Reading Order &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-pagination">Paginated Layout</a></li>
         </ul>
       </section>
 
@@ -1063,43 +1120,6 @@
         </ul>
         <ul class="wpub-xref">
           <li><a href="https://w3c.github.io/wpub/#language-and-dir-infoset">Language and Base Direction &gt; Infoset Requirements</a></li>
-        </ul>
-      </section>
-
-      <section id="multiformatsync">
-        <h3>Synchronization</h3>
-        <p>
-        <span id="r_p14n" class="req-set cc-extended">The user must have the ability to quickly browse to a corresponding
-        pointer as identified in a physical book.</span>  A user must quickly be able to locate the position of
-          content that is identified within a print book.
-        </p>
-        <ul class="use-cases">
-          <li>
-            Beatrix is teaching a thermodynamics class.  Some of her students use a physical textbook while others are
-            using the web publication.  She needs them all to be able to find the same content so they can follow
-            along.
-          </li>
-          <li>
-            Zoya borrowed a book from her library but must return it.  She has decided to buy a WP version of the same
-            text and would like to continue reading where she left off.
-          </li>
-          <li>
-            Mateusz runs a Dungeons and Dragons campaign.  He would like to be able to mark off specific sections of
-            different rulebooks and share those bookmarks so that players in his game can quickly reference the
-            material.
-          </li>
-          <li>
-            Aika is reading a novel on her 9 inch tablet, but later switches to her 5 inch phone.  She would like to
-            be able to resume reading from the same point where she left off, given that she may not be using the same
-            user agent on each device that contains some mechanism that would sync the content position.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-pagelist">Page List</a></li>
-          <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
-          <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
-          <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
         </ul>
       </section>
     </section>
