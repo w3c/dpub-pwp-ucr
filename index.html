@@ -515,7 +515,6 @@
           </li>
           <li>
             A library wants to promote a particular type of publication depending on different categories available in a publication’s metadata (age suitability, genre, author). 
-            <div class="note"><p>Are fields such as genre or age suitability available in the manifest dictionary. Is this something that has been discussed, or something that is accounted for elsewhere?</p></div>
           </li>
           <li>
             An online literary magazine wishes to compile an anthology of short stories authored by a specific writer. The magazine should be able to identify the stories within the manifests by author and bring those chapters together into a new Web Publication.
@@ -770,8 +769,7 @@
         <h3>Print Page Referencing</h3> -->
         <p>
         <span id="r_print-page" class="req-set cc-extended">If there is a physical book version of the Web Publication, the user must have the ability to quickly browse to a corresponding
-        pointer as identified in the physical book.</span>  A user must quickly be able to locate the position of
-          content that is identified within a print book.
+        pointer as identified in the physical book.</span>
         </p>
         <ul class="use-cases">
           <li>
@@ -987,7 +985,7 @@
         </p>
         <ul class="use-cases">
           <li>
-            Helga is authoring an internal work document for her company as a Web Publication. This Web Publication
+            Maeve is authoring an internal work document for her company as a Web Publication. This Web Publication
             spans several resources / documents, and she would like to use decimal-dot notation to indicate the
             section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an
             accurate count.
@@ -1119,7 +1117,7 @@
       </section>
 
       <section id='onloffl'>
-        <h3>Offlining</h3>
+        <h3>Offline and Online</h3>
         <p id="r_onloffl" class="req-set cc-extended">
           A Web Publication should also be available offline.
         </p>
@@ -1128,10 +1126,6 @@
           the necessity for the user to take any particular, technical actions.
         </p>
         <ul class="use-cases">
-           <li>
-            Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire Web Publication during the flight, which does not have wifi. 
-            Via her user agent, she is able to listen to the Web Publication offline.
-          </li>
           <li>
             Omo, a student in a remote Nigerian village, is taking classes online. Connectivity to the village is
             unreliable and intermittent. Omo needs to have his textbooks available regardless of actual connectivity.
@@ -1164,6 +1158,28 @@
           <li><a href="https://w3c.github.io/wpub/#scope">Scope</a></li>
           <li><a href="https://w3c.github.io/wpub/#feature-offline-access">Offline Access</a></li>
           <li><a href="https://w3c.github.io/wpub/#resource-list">Resource List</a></li>
+        </ul>
+        <p id="audiobooks-streaming" class="req-set cc-extended">
+          A user agent needs to know the information required to allow the user to access audiobook content offline or actively streaming, based on the size and nature of the content, and conditions imposed by the user.
+        </p>
+        <ul class="use-cases">
+          <li>
+            João lives in Recife where he has very spotty internet and slow download speeds. He enjoys listening to audiobooks during his morning bike ride and would like to listen to his books before they complete downloading, as fully downloading a book could take several days.
+          </li>
+          <li>
+            Wendy is running late for work but wants to listen to her audiobook on her commute. As she leaves she realizes she has not yet downloaded it, but there is no wifi available. She has plenty of data and decides to stream the content as she makes her way to the office.
+          </li>
+          <li>
+            Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire Web Publication during the flight, which does not have wifi. 
+            Via her user agent, she is able to listen to the Web Publication offline.
+          </li>
+        </ul>
+          <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#scope">Scope</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-offline-access">Offline Access</a></li>
+          <li><a href="https://w3c.github.io/wpub/#resource-list">Resource List</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-user-settings">User Settings</a></li>
+          <li><a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a></li>
         </ul>
       </section>
 
@@ -1199,7 +1215,50 @@
           <li><a href="https://w3c.github.io/wpub/#language-and-dir-infoset">Language and Base Direction &gt; Infoset Requirements</a></li>
         </ul>
       </section>
+      <section id="non-wp-ua">
+        <h3>Support in a non-WP User Agent</h3>
+          <p id="non-wp-ua-req" class="req-set cc-minimal">
+            A non-WP user agent should be able to access the content of a Web Publication.
+          </p>
+          <p>
+            Since Web Publications are based on the <a href="#owp">Open Web Platform</a>, a Web Publication's constituent HTML pages,
+            video, audio, images, interactive components, and other media, should be accessible to a non-WP user agent. Creators of 
+            Web Publications should allow for the user to be able to access this content.
+          </p>
+          <p>Special consideration should be given to audiobook Web Publications, where audio is main or only component. To allow 
+            the user to access this content, the Web Publication should provide the user with the ability to</p>
+          <ul>
+            <li>
+              Display title and duration of the book to the user
+            </li>
+            <li>
+              Play chapters defined in the book one after the other. It may not include end to end continuous reading of the book
+            </li>
+            <li>
+              Navigate to a chapter defined in the book and start playback from there
+            </li>
+            <li>
+              Pause and resume
+            </li>
+            <li>
+              Start playing from a page number or a time point defined in the book
+            </li>
+            <li>
+              Forward and rewind by some time interval
+            </li>
+          </ul>
+          <ul class="use-cases">
+            <li>
+              John found an Audio WP in his university which he want to start listening immediately, but he does not have a WP reading system installed on his university computer. He should be able to at least use basic functionality of the book in vanilla browser available on the university computer.
+            </li>
+          </ul>
+          <ul class="wpub-xref">
+            <li><a href="https://w3c.github.io/wpub/#wp-resources">Resources</a></li>
+            <li><a href="https://w3c.github.io/wpub/#address">Descriptive Properties > Address</a></li>
+            <li><a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a></li>
+          </ul>
     </section>
+  </section>
 
     <section id="packaging">
       <h2>Packaging</h2>
@@ -1558,49 +1617,7 @@
       </ul>
     </section> -->
 
-    <section id="audiobooks">
-      <h2>Audiobooks</h2>
-
-      
-
-      
-
-      <section id="non-wp-ab-support">
-        <h3>Support in a non-WP User Agent</h3>
-        <p>
-          If the audiobook is in the WP format, it should be accessible in any user agent, even if the user agent does not support WP.
-        </p>
-        <p>
-          The basic functionality of an audiobook in a vanilla browser includes:
-        </p>
-        <ul>
-          <li>
-            Ability to display title and duration of the book to the user
-          </li>
-          <li>
-            Ability to play chapters defined in the book one after the other. It may not include end to end continuous reading of the book
-          </li>
-          <li>
-            Ability to navigate to a chapter defined in the book and start playback from there
-          </li>
-          <li>
-            Ability to pause and resume
-          </li>
-          <li>
-            Ability to start playing from a page number or a time point defined in the book
-          </li>
-          <li>
-            Ability to forward and rewind by some time interval
-          </li>
-        </ul>
-        <ul class="use-cases">
-          <li>
-            John found an Audio WP in his university which he want to start listening immediately, but he does not have a WP reading system installed on his university computer. He should be able to at least use basic functionality of the book in vanilla browser available on the university computer.
-          </li>
-        </ul>
-      </section>
-    </section>
-
+     
     <!-- <section id='perm-obl'>
       <h1>Security</h1>
 
