@@ -495,6 +495,12 @@
             by the Louvre, so that a user agent will know whether it is permissible to download the image for offline
             use.
           </li>
+          <li>
+            While listening to a chapter in an audiobook via a user agent with a display, Clarence would like to see the current chapter name displayed.
+          </li>
+           <li>
+            While listening to a chapter in an audiobook via a user agent with no display, Zara wants to see what chapter she is in by saying, “Hey [Digital Assistant], what’s this chapter called?” and then hear the name of the chapter before resuming reading.
+          </li>
           <li id="r_manifest-metadata_2">
             Ferdous wants to buy a book about a museum exhibit, but before he does that, he wants to guarantee that
             the images and videos about the exhibits have detailed descriptions, to ensure that he will be able to
@@ -515,10 +521,10 @@
             Marco is an Ainu audiobook listener, and the book he is reading has a table of contents consisting of images because the Ainu language has no script. While listening, he asks for the chapter name, and the reading system plays the audio for the title of the current table of contents item, and then resumes playback from the last position in the content.
           </li>
           <li>
-            A library wants to promote a particular type of publication depending on different categories available in a publication’s metadata (age suitability, genre, author). <b>[I did not see some of these fields, such as genre or age suitability, available in the manifest dictionary. Is this something that has been discussed, or something that is accounted for elsewhere?]</b>
+            A library wants to promote a particular type of publication depending on different categories available in a publication’s metadata (age suitability, genre, author). 
           </li>
           <li>
-            <b>Is there a way currently outlined (and would it be desirable) to have books with multiple authors (who authored specific chapters) to be identified as the authors of those chapters? I recall some discussion about a WP of WPs as well though. But I can see how this might not always been desirable. Use case:</b> An online literary magazine wishes to compile an anthology of short stories authored by a specific writer. The magazine should be able to identify the stories within the manifests by author and bring those chapters together into a new Web Publication.
+            An online literary magazine wishes to compile an anthology of short stories authored by a specific writer. The magazine should be able to identify the stories within the manifests by author and bring those chapters together into a new Web Publication.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -648,7 +654,7 @@
       </section>
 
       <section id='tableofcontents'>
-        <h3>Table of Contents</h3>
+        <h3>Navigation</h3>
         <p id="r_toc" class="req-set cc-minimal">
           A user agent should be able to reveal the navigable structure of a Web Publication as a table of contents.
         </p>
@@ -666,12 +672,34 @@
             contents to continue reading the preface.
           </li>
           <li>
-            Matilda is listening to an audiobook of an anthology, but would like to read her favorite author's short
-            stories first. She is able to reveal the navigation built into her web publication via a function in her
+            Matilda is reading an anthology, but would like to read her favorite author's short
+            stories first. She is able to reveal the navigation built into her web 
+            publication via a function in her
             user agent and access the relevant stories.
           </li>
         </ul>
         <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
+          <li><a href="https://w3c.github.io/wpub/#table-of-contents">Structural Properties &gt; Table of Contents</a></li>
+          <li><a href="https://w3c.github.io/wpub/#affordances">Table of Contents &gt; Affordances</a></li>
+        </ul>
+        <p id="r_player_nav" class="req-set cc-extended">
+          For an audiobook Web Publication that provides a player interface, the user agent 
+          should provide the user a way to navigate to the listening position of choice.
+        </p>
+        <ul class="use-cases">
+          <li>
+            Belinda would like to skip directly to a specific short story in a collected edition.
+          </li>
+          <li>
+            Mr. Sterling asks his students to skip directly to the 23rd minute of an audiobook.
+          </li>
+          <li>
+            Ken was assigned part of a non-fiction title for a class. He wants to open the audiobook but only needs to listen to chapter 19.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a></li>
           <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
           <li><a href="https://w3c.github.io/wpub/#table-of-contents">Structural Properties &gt; Table of Contents</a></li>
           <li><a href="https://w3c.github.io/wpub/#affordances">Table of Contents &gt; Affordances</a></li>
@@ -738,6 +766,35 @@
           <li><a href="https://w3c.github.io/wpub/#default-reading-order-infoset">Default Reading Order &gt; Infoset Requirements</a></li>
           <li><a href="https://w3c.github.io/wpub/#default-reading-order-manifest">Default Reading Order &gt; Manifest Expression</a></li>
           <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
+        </ul>
+
+     
+
+  <!--     </section>
+
+       <section id="print-page-reference">
+        <h3>Print Page Referencing</h3> -->
+        <p>
+        <span id="r_print-page" class="req-set cc-extended">If there is a physical book version of the Web Publication, the user must have the ability to quickly browse to a corresponding
+        pointer as identified in the physical book.</span>
+        </p>
+        <ul class="use-cases">
+          <li>
+            Beatrix is teaching a thermodynamics class.  Some of her students use a physical textbook while others are
+            using the web publication.  She needs them all to be able to find the same content so they can follow
+            along.
+          </li>
+          <li>
+            Zoya borrowed a book from her library but must return it.  She has decided to buy a WP version of the same
+            text and would like to continue reading where she left off.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
+          <li><a href="https://w3c.github.io/wpub/#wp-pagelist">Page List</a></li>
+          <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
         </ul>
       </section>
 
@@ -869,7 +926,45 @@
       <div class="note">
         <p>This section is under construction!</p>
       </div>
-
+      <section id="audiobooks-player">
+        <h3>Audiobook Player</h3>
+        <p>
+           <span id="r_player" class="req-set cc-extended">If a Web Publication is an audiobook, a user agent should provide a player interface.</span> The player 
+           interface should allow for the following use cases:
+        </p>
+        <ul>
+          <li>
+            Listening to an audiobook to completion without user interaction
+          </li>
+          <li>
+            Listening to an audiobook at the user's desired pace without audio distortion
+          </li>
+          <li>
+            Understanding the duration of the chapter/audiobook being listened to
+          </li>
+        </ul>
+        <ul class="use-cases">
+          <li>
+            Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for additional inputs.
+          </li>
+          <li>
+            Yitian is listening to an audiobook on a device where the only input available is play/pause.
+          </li>
+          <li>
+            Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
+          </li>
+          <li>
+            Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards in ten second increments until he finds it.
+          </li>
+        </ul><ul class="wpub-xref">
+          <li>
+            <a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a>
+          </li>
+          <li>
+            <a href="https://w3c.github.io/wpub/#feature-user-settings">User Settings</a>
+          </li>
+        </ul>
+      </section>
       <section id="style">
         <h3>Style</h3>
         <div class="note">
@@ -897,13 +992,10 @@
         </p>
         <ul class="use-cases">
           <li>
-            Helga is authoring an internal work document for her company as a Web Publication. This Web Publication
+            Maeve is authoring an internal work document for her company as a Web Publication. This Web Publication
             spans several resources / documents, and she would like to use decimal-dot notation to indicate the
             section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an
-            accurate count.  <b><- this is currently limited by CSS / I wonder too whether it would be complicated by
-            the fact that the CSS would also have to interact with the manifest to determine this counter. Would this
-            be the only reason for the CSS to interact with the manifest? Or is there another manner in which this can
-            be accomplished in CSS without having to interact with the manifest?</b>
+            accurate count.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -915,18 +1007,54 @@
       <section id="progression">
         <h3>Progression</h3>
         <p id="r_save_progresssion" class="req-set cc-extended">
-          User agents should provide the option to save this progression in the publication and returns the user to
-          their last location the next time they open the publication.
+          User agents should provide the option for the user to save their progression in the publication and return the user to
+          the last location they saved the next time they open the publication.
         </p>
         <ul class="use-cases">
           <li>
-            Filbert is reading a comic as a Web Publication. In his user agent, he marks a specific page to return to
-            and exits the user agent. When he returns the next day, he opens the Web Publication and continues reading
-            from the location he marked.
+            Mateusz runs a Dungeons and Dragons campaign.  He would like to be able to mark off specific sections of
+            different rulebooks and share those bookmarks so that players in his game can quickly reference the
+            material.
+          </li>
+          <li>
+            Aika is reading a novel on her 9 inch tablet, but later switches to her 5 inch phone.  She would like to
+            be able to resume reading from the same point where she left off, given that she may not be using the same
+            user agent on each device that contains some mechanism that would sync the content position.
           </li>
         </ul>
         <ul class="wpub-xref">
           <li><a href="https://w3c.github.io/wpub/#short-description-0">Reading State &gt; Short Description</a></li>
+          <li><a href="https://w3c.github.io/wpub/#locators">Web Publication Locators</a></li>
+        </ul>
+      </section>
+
+      <section id="multiformatsync">
+        <h3>Reading State</h3>
+        <p>
+        <span id="r_reading-state" class="req-set cc-minimal">The user must be able to leave the Web Publication and return to it at the last position they left from. The User Agent must retain the reading position, based on the last known position of the reader in the web publication. The position should be based on the reader's position in the file, within the reading order.</span>
+        </p>
+        <p>The user agent may retain reading state if the web publication is revised. If the 
+        user agent consists of an audio player, that audio player should allow the ability 
+        to leave and return to the audiobook in the same position where the reader left off.
+        </p>
+        <ul class="use-cases">
+          <li>
+            Filbert is reading a comic as a Web Publication. He exits the user agent without bookmarking or saving his location in the Web Publication. When he returns the next day, he opens the Web Publication and continues reading from where he had left off.
+          </li>
+          <li>
+            Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one he remembers listening to.
+          </li>
+          <li>
+            Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off on her trip home.
+          </li>
+        </ul>
+      <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
+          <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-reading-order">Reading Order</a></li>
+          <li><a href="https://w3c.github.io/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a href="https://w3c.github.io/wpub/#default-reading-order-manifest">Default Reading Order &gt; Manifest Expression</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-pagination">Paginated Layout</a></li>
         </ul>
       </section>
 
@@ -996,7 +1124,7 @@
       </section>
 
       <section id='onloffl'>
-        <h3>Offlining</h3>
+        <h3>Offline and Online</h3>
         <p id="r_onloffl" class="req-set cc-extended">
           A Web Publication should also be available offline.
         </p>
@@ -1038,6 +1166,28 @@
           <li><a href="https://w3c.github.io/wpub/#feature-offline-access">Offline Access</a></li>
           <li><a href="https://w3c.github.io/wpub/#resource-list">Resource List</a></li>
         </ul>
+        <p id="audiobooks-streaming" class="req-set cc-extended">
+          A user agent needs to know the information required to allow the user to access audiobook content offline or actively streaming, based on the size and nature of the content, and conditions imposed by the user.
+        </p>
+        <ul class="use-cases">
+          <li>
+            João lives in Recife where he has very spotty internet and slow download speeds. He enjoys listening to audiobooks during his morning bike ride and would like to listen to his books before they complete downloading, as fully downloading a book could take several days.
+          </li>
+          <li>
+            Wendy is running late for work but wants to listen to her audiobook on her commute. As she leaves she realizes she has not yet downloaded it, but there is no wifi available. She has plenty of data and decides to stream the content as she makes her way to the office.
+          </li>
+          <li>
+            Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire Web Publication during the flight, which does not have wifi. 
+            Via her user agent, she is able to listen to the Web Publication offline.
+          </li>
+        </ul>
+          <ul class="wpub-xref">
+          <li><a href="https://w3c.github.io/wpub/#scope">Scope</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-offline-access">Offline Access</a></li>
+          <li><a href="https://w3c.github.io/wpub/#resource-list">Resource List</a></li>
+          <li><a href="https://w3c.github.io/wpub/#feature-user-settings">User Settings</a></li>
+          <li><a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a></li>
+        </ul>
       </section>
 
       <section id="personalized">
@@ -1072,44 +1222,50 @@
           <li><a href="https://w3c.github.io/wpub/#language-and-dir-infoset">Language and Base Direction &gt; Infoset Requirements</a></li>
         </ul>
       </section>
-
-      <section id="multiformatsync">
-        <h3>Synchronization</h3>
-        <p>
-        <span id="r_p14n" class="req-set cc-extended">The user must have the ability to quickly browse to a corresponding
-        pointer as identified in a physical book.</span>  A user must quickly be able to locate the position of
-          content that is identified within a print book.
-        </p>
-        <ul class="use-cases">
-          <li>
-            Beatrix is teaching a thermodynamics class.  Some of her students use a physical textbook while others are
-            using the web publication.  She needs them all to be able to find the same content so they can follow
-            along.
-          </li>
-          <li>
-            Zoya borrowed a book from her library but must return it.  She has decided to buy a WP version of the same
-            text and would like to continue reading where she left off.
-          </li>
-          <li>
-            Mateusz runs a Dungeons and Dragons campaign.  He would like to be able to mark off specific sections of
-            different rulebooks and share those bookmarks so that players in his game can quickly reference the
-            material.
-          </li>
-          <li>
-            Aika is reading a novel on her 9 inch tablet, but later switches to her 5 inch phone.  She would like to
-            be able to resume reading from the same point where she left off, given that she may not be using the same
-            user agent on each device that contains some mechanism that would sync the content position.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://w3c.github.io/wpub/#wp-table-of-contents">Table of Contents</a></li>
-          <li><a href="https://w3c.github.io/wpub/#wp-pagelist">Page List</a></li>
-          <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
-          <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
-          <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
-        </ul>
-      </section>
+      <section id="non-wp-ua">
+        <h3>Support in a non-WP User Agent</h3>
+          <p id="non-wp-ua-req" class="req-set cc-minimal">
+            A non-WP user agent should be able to access the content of a Web Publication.
+          </p>
+          <p>
+            Since Web Publications are based on the <a href="#owp">Open Web Platform</a>, a Web Publication's constituent HTML pages,
+            video, audio, images, interactive components, and other media, should be accessible to a non-WP user agent. Creators of 
+            Web Publications should allow for the user to be able to access this content.
+          </p>
+          <p>Special consideration should be given to audiobook Web Publications, where audio is main or only component. To allow 
+            the user to access this content, the Web Publication should provide the user with the ability to</p>
+          <ul>
+            <li>
+              Display title and duration of the book to the user
+            </li>
+            <li>
+              Play chapters defined in the book one after the other. It may not include end to end continuous reading of the book
+            </li>
+            <li>
+              Navigate to a chapter defined in the book and start playback from there
+            </li>
+            <li>
+              Pause and resume
+            </li>
+            <li>
+              Start playing from a page number or a time point defined in the book
+            </li>
+            <li>
+              Forward and rewind by some time interval
+            </li>
+          </ul>
+          <ul class="use-cases">
+            <li>
+              John found an Audio WP in his university which he want to start listening immediately, but he does not have a WP reading system installed on his university computer. He should be able to at least use basic functionality of the book in vanilla browser available on the university computer.
+            </li>
+          </ul>
+          <ul class="wpub-xref">
+            <li><a href="https://w3c.github.io/wpub/#wp-resources">Resources</a></li>
+            <li><a href="https://w3c.github.io/wpub/#address">Descriptive Properties > Address</a></li>
+            <li><a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a></li>
+          </ul>
     </section>
+  </section>
 
     <section id="packaging">
       <h2>Packaging</h2>
@@ -1468,121 +1624,7 @@
       </ul>
     </section> -->
 
-    <section id="audiobooks">
-      <h2>Audiobooks</h2>
-
-      <section id="audiobooks-player">
-        <h3>Player</h3>
-        <p>
-          Unique to the audiobooks experience is a player element that differs from print content. A user agent should provide a player experience that allows for the following use cases:
-        </p>
-        <ul>
-          <li>
-            Listening to an audiobook to completion without user interaction
-          </li>
-          <li>
-            Listening to an audiobook at the user's desired pace without audio distortion
-          </li>
-          <li>
-            Navigating to the listening position of choice
-          </li>
-          <li>
-            Understanding the duration of the chapter/audiobook being listened to
-          </li>
-          <li>
-            Leaving and returning to the audiobook in the same position left from
-        </uL>
-        <ul class="use-cases">
-          <li>
-            Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for additional inputs.
-          </li>
-          <li>
-            Yitian is listening to an audiobook on a device where the only input available is play/pause.
-          </li>
-          <li>
-            Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
-          </li>
-          <li>
-            Belinda would like to skip directly to a specific short story in a collected edition.
-          </li>
-          <li>
-            Mr. Sterling asks his students to skip directly to the 23rd minute of an audiobook.
-          </li>
-          <li>
-            Ken was assigned part of a non-fiction title for a class. He wants to open the audiobook but only needs to listen to chapter 19.
-          </li>
-          <li>
-            Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one he remembers listening to.
-          </li>
-          <li>
-            Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards in ten second increments until he finds it.
-          </li>
-          <li>
-            While listening to chapter content on a device with no display, Zara wants to see what chapter she is in by saying, “Hey [Digital Assistant], what’s this chapter called?”, and then hear the name of the chapter before resuming reading.
-          </li>
-          <li>
-            While listening to chapter content on a device with a display, Clarence would like to see the current chapter name displayed.
-          </li>
-          <li>
-            Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off on her trip home.
-          </li>
-        </ul>
-      </section>
-
-      <section id="audiobooks-offline">
-        <h3>Offline/Streaming</h3>
-        <p>
-          A user agent needs to know the information required to allow the user to enjoy their audiobooks offline or while actively streaming the content, due to the size and nature of the content.
-        </p>
-        <ul class="use-cases">
-          <li>
-            Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire Web Publication during the flight, which does not have wifi.
-          </li>
-          <li>
-            João lives in Recife where he has very spotty internet and slow download speeds. He enjoys listening to audiobooks during his morning bike ride and would like to listen to his books before they complete downloading, as fully downloading a book could take several days.
-          </li>
-          <li>
-            Wendy is running late for work but wants to listen to her audiobook on her commute. As she leaves she realizes she has not yet downloaded it, but there is no wifi available. She has plenty of data and decides to stream the content as she makes her way to the office.
-          </li>
-        </ul>
-      </section>
-
-      <section id="non-wp-ab-support">
-        <h3>Support in a non-WP User Agent</h3>
-        <p>
-          If the audiobook is in the WP format, it should be accessible in any user agent, even if the user agent does not support WP.
-        </p>
-        <p>
-          The basic functionality of an audiobook in a vanilla browser includes:
-        </p>
-        <ul>
-          <li>
-            Ability to display title and duration of the book to the user
-          </li>
-          <li>
-            Ability to play chapters defined in the book one after the other. It may not include end to end continuous reading of the book
-          </li>
-          <li>
-            Ability to navigate to a chapter defined in the book and start playback from there
-          </li>
-          <li>
-            Ability to pause and resume
-          </li>
-          <li>
-            Ability to start playing from a page number or a time point defined in the book
-          </li>
-          <li>
-            Ability to forward and rewind by some time interval
-          </li>
-        </ul>
-        <ul class="use-cases">
-          <li>
-            John found an Audio WP in his university which he want to start listening immediately, but he does not have a WP reading system installed on his university computer. He should be able to at least use basic functionality of the book in vanilla browser available on the university computer.
-          </li>
-        </ul>
-      </section>
-    </section>
-
+     
     <!-- <section id='perm-obl'>
       <h1>Security</h1>
 
