@@ -223,8 +223,8 @@
 
       <section id="horizdep">
         <h3>Horizontal Dependencies</h3>
-        <p id="r_horizdep" class="req-set cc-extended">
-          A Web Publication should conform to the requirements of all horizontal dependencies.
+        <p id="r_horizdep" class="req-set cc-minimal">
+          A Web Publication should conform to the requirements of all horizontal dependencies: accessibility, internationalization, device independence, security, and privacy.
         </p>
         <p>
           Web content has to be consumed under different circumstances: it must be available to the largest possible
@@ -473,7 +473,8 @@
       <section id="manifest-metadata">
         <h3>Metadata</h3>
         <p id="r_manifest-metadata" class="req-set cc-minimal">
-          Web Publications should include technical and descriptive metadata as well as any additional characteristics
+          Web Publications should include technical metadata and descriptive metadata, including accessibility metadata, as well 
+          as any additional characteristics
           of the <a href="#constituent-resources">constituent resources.</a>
         </p>
         <p>
@@ -587,6 +588,13 @@
             read the content while offline or on a device with limited storage.
           </li>
           <li>
+            Henry creates a Web Publication and includes the accessibility metadata indicating that the publication has 
+            descriptions for videos. He marks the accessible descriptions as essential and marks videos as 
+            non-essential while providing images as fall-back. This enables the print-disabled readers to access the 
+            accessible descriptions and video when there is good internet connectivity and fall-back images along with 
+            accessible descriptions when internet connectivity is not optimum. 
+          </li>
+          <li>
             Gösta is reading a treatise on the theory of functions. A mathematical font is essential for the proper
             display of the mathematical formula in this publication, so the author has marked the font as essential so
             it is made available offline.
@@ -634,13 +642,13 @@
       <section id="reading-order">
         <h3>Default Reading Order</h3>
         <p id="r_reading-order" class="req-set cc-minimal">
-          There should be a means to indicate the author’s preferred navigation structure among the resources of a Web
-          Publication.
+          There should be a means to indicate the author’s preferred navigation structure among the resources of a Web 
+          Publication, and User Agents should provide an accessible way of navigating the same. 
         </p>
-        <p>
+        <!-- <p>
           A user agent needs to know the sequence in which to present components of a Web Publication to the user,
-          including the starting point.
-        </p>
+          including the starting point, and should also provide an accessible way of navigating the same.
+        </p> -->
         <ul class="use-cases">
           <li>
             Moby Dick contains 136 chapters. Each chapter is a separate HTML document, with a logical order for
@@ -667,12 +675,13 @@
       <section id='tableofcontents'>
         <h3>Navigation</h3>
         <p id="r_toc" class="req-set cc-minimal">
-          A user agent should be able to reveal the navigable structure of a Web Publication as a table of contents.
+          A user agent should be able to reveal the navigable structure of a Web Publication as a table of contents that is 
+          accessible to  users, including those  with disabilities.
         </p>
         <p>
           The table of contents must include a link to at least one resource, and all links should refer to resources
-          within publication bounds. The user agent should allow the reader to access the links without navigating
-          away from the current resource.
+          within publication bounds. The user agent present an accessible table of contents, which allows the user to 
+          access the links without navigating away from the current resource.
         </p>
         <ul class="use-cases">
           <li>
@@ -797,9 +806,10 @@
         </p>
         <ul class="use-cases">
           <li>
-            Beatrix is teaching a thermodynamics class.  Some of her students use a physical textbook while others are
-            using the web publication.  She needs them all to be able to find the same content so they can follow
-            along.
+            Beatrix  is visually impaired and uses accessible Web Publications in her class, while her sighted 
+            classmates use physical books. When the teacher asks the class to open page 71 and read the second 
+            paragraph, Beatrix  should be able  to navigate to exactly the same position in her version as her sighted 
+            classmates.
           </li>
           <li>
             Zoya borrowed a book from her library but must return it.  She has decided to buy a WP version of the same
@@ -930,8 +940,9 @@
           </li>
           <li>
             Alice is working on potentially Nobel prize winning research, and has drafted her paper describing her
-            discoveries. She asks Bob to review the paper, but needs to make sure that the Web Publication retains
-            specific protections on what Bob is able to do with the publication and its content.
+            discoveries. She asks her print disabled friend Bob to review the paper, but needs to make sure that the Web 
+            Publication retains specific protections on what Bob is able to do with the publication and its content without 
+            restricting Bob's access to his assistive technology. 
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -950,8 +961,8 @@
       <section id="audiobooks-player">
         <h3>Audiobook Player</h3>
         <p>
-           <span id="r_player" class="req-set cc-extended">If a Web Publication is an audiobook, a user agent should provide a player interface.</span> The player 
-           interface should allow for the following use cases:
+           <span id="r_player" class="req-set cc-extended">If a Web Publication is an audiobook, a user agent should provide a player interface that is also accessible. </span>The player 
+           interface should   allow for the following use cases:
         </p>
         <ul>
           <li>
@@ -1033,6 +1044,12 @@
         </p>
         <ul class="use-cases">
           <li>
+            Ann is visually impaired and is reading a sample test paper with objective-type questions. The answers of the test 
+            are given at the end of the publication.  Ann needs to read the question one at a time and then check if her 
+            answer is correct.  Therefore she must bookmark both the questions and  answers provided at the end of the book 
+            so that she is able to switch between the both efficiently.
+          </li>
+          <li>
             Mateusz runs a Dungeons and Dragons campaign.  He would like to be able to mark off specific sections of
             different rulebooks and share those bookmarks so that players in his game can quickly reference the
             material.
@@ -1056,7 +1073,7 @@
       <section id="multiformatsync">
         <h3>Reading State</h3>
         <p>
-        <span id="r_reading-state" class="req-set cc-minimal">The user must be able to leave the Web Publication and return to it at the last position they left from. The User Agent must retain the reading position, based on the last known position of the reader in the web publication. The position should be based on the reader's position in the file, within the reading order.</span>
+        <span id="r_reading-state" class="req-set cc-minimal">The user must be able to leave the Web Publication and return to it at the last position they left from. The User Agent must retain the reading position, based on the last known position of the reader in the web publication. The position should be based on the reader's position in the file, within the reading order </span>
         </p>
         <p>The user agent may retain reading state if the web publication is revised. If the 
         user agent consists of an audio player, that audio player should allow the ability 
