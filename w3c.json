@@ -1,5 +1,11 @@
 {
-    "group":      ["100074"]
-,   "contacts":   ["iherman"]
-,	"shortName": "dpub-pwp-ucr"
+    "group": [
+        "64149",
+        "100074"
+    ],
+    "contacts": [
+        "iherman"
+    ],
+    "shortName": "dpub-pwp-ucr",
+    "repo-type": "note"
 }
