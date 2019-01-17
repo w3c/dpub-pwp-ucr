@@ -84,6 +84,10 @@ a.sec-ref:after  {
     content: "”";
 }
 
+p.req-set {
+    font-weight: bold;
+}
+
 span.orcid a  {
     text-decoration: none !important;
     border: none !important;

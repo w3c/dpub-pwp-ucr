@@ -310,7 +310,7 @@
             shall be jailed. Thomas needs to distribute the pamphlet in ways that preserve his anonymity and allow the
             public to read without fear of the government cyber-police.
           </li>
-          <li id="uc_horizdep_devind">
+          <li id="uc_horizdep_devind" class="uc-device-independence">
             <span class="uc-categories">(On Device Independence)</span> Yoshio usually reads a book on his tablet when
             he is at home, but he does not carry his tablet around while commuting on the train. Instead, he prefers to
             use his phone to continue reading. Publications must be able to adapt to the consumption environment, so as
@@ -334,7 +334,7 @@
 
       <section id="escalating-trust">
         <h3>Escalating Trust</h3>
-        <p id="r_escalating-trust" class="req-set cc-extended">
+        <p id="r_escalating-trust" class="req-set">
           User agents may provide a method for escalating trust for a specific publication.
         </p>
         <p>
@@ -400,7 +400,7 @@
           <li><a href="https://w3c.github.io/wpub/#obtaining-manifest">Obtaining a Manifest</a></li>
         </ul>
 
-        <p id="r_identify-const-resources" class="req-set cc-extended">
+        <p id="r_identify-const-resources" class="req-set">
           All constituent resources, and their contents, should be identified by either a URL or a unique handle that
           can be mapped to a URL.
         </p>
@@ -570,7 +570,7 @@
 
       <section id="constituent-resources">
         <h3>Resources</h3>
-        <p id="r_const-res" class="req-set cc-extended">
+        <p id="r_const-res" class="req-set">
           The information regarding the constituent resources of a Web Publication must be easily discovered and there
           should be a way to differentiate between essential and non-essential resources.
         </p>
@@ -587,7 +587,7 @@
           be either absent or have a provided fallback for situations such as limited connectivity or storage. This
           information, provided by the author or publisher of the Web Publication, would enable a user agent to provide
           a better experience to the user. For example, the user agent can ensure that essential resources are made
-          available when offline (see <a href="#onloffl"></a>).
+          available when offline (see <a href="#offline"></a>).
         </p>
         <ul class="use-cases">
           <li id="uc_const-res_fallback">
@@ -730,7 +730,7 @@
           <li><a href="https://w3c.github.io/wpub/#affordances">Table of Contents &gt; Affordances</a></li>
         </ul>
 
-        <p id="r_player-nav" class="req-set cc-extended">
+        <p id="r_player-nav" class="req-set">
           For an audiobook Web Publication that provides a player interface, the user agent should provide the user a
           way to navigate to the listening position of choice.
         </p>
@@ -756,7 +756,7 @@
 
       <section id="random-access">
         <h3>Random Access to Content</h3>
-        <p id="r_random-access" class="req-set cc-extended">
+        <p id="r_random-access" class="req-set">
           Authors of a Web Publication should be able to provide the user agent with information to access random
           parts of the publication.
         </p>
@@ -824,7 +824,7 @@
           <li><a href="https://w3c.github.io/wpub/#table-of-contents-infoset">Table of Contents &gt; Infoset Requirements</a></li>
         </ul>
 
-        <p id="r_print-page" class="req-set cc-extended">
+        <p id="r_print-page" class="req-set">
           If there is a physical book version of the Web Publication, the user must have the ability to quickly browse
           to a corresponding pointer as identified in the physical book.
         </p>
@@ -850,7 +850,7 @@
 
       <section id="alternative-modalities">
         <h3>Alternative Modalities</h3>
-        <p id="r_alt-mods" class="req-set cc-extended">
+        <p id="r_alt-mods" class="req-set">
           A Web Publication should encompass publications such as audiobooks, graphic books, mixed media, and
           interactive media.
         </p>
@@ -886,7 +886,7 @@
 
       <section id="Time-based Media">
         <h3>Time-based Media</h3>
-        <p id="r_time" class="req-set cc-extended">
+        <p id="r_time" class="req-set">
           A Web Publication needs to support both time-based media and text.
         </p>
         <p>
@@ -957,7 +957,7 @@
 
       <section id="protection">
         <h3>Protection</h3>
-        <p id="r_protection" class="req-set cc-packaging">
+        <p id="r_protection" class="req-set">
           A Web Publication should be able to express the access control and write protections of the publication.
         </p>
         <ul class="use-cases">
@@ -982,15 +982,17 @@
 
     <section id="presentation">
       <h2>Presentation</h2>
-
       <div class="note">
         <p>This section is under construction!</p>
       </div>
-      <section id="audiobooks-player">
+
+      <section id="audiobook-player">
         <h3>Audiobook Player</h3>
+        <p id="r_audiobook-player" class="req-set">
+           If a Web Publication is an audiobook, a user agent should provide a player interface that is also accessible.
+        </p>
         <p>
-           <span id="r_player" class="req-set cc-extended">If a Web Publication is an audiobook, a user agent should provide a player interface that is also accessible. </span>The player 
-           interface should   allow for the following use cases:
+          The player interface should allow for the following use cases:
         </p>
         <ul>
           <li>
@@ -1004,19 +1006,23 @@
           </li>
         </ul>
         <ul class="use-cases">
-          <li>
-            Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for additional inputs.
+          <li id="uc_audiobook-player_continuous_playback">
+            Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for
+            additional inputs.
           </li>
-          <li>
+          <li id="uc_audiobook-player_limited_controls">
             Yitian is listening to an audiobook on a device where the only input available is play/pause.
           </li>
-          <li>
+          <li id="uc_audiobook-player_voice_controls">
             Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
           </li>
-          <li>
-            Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards in ten second increments until he finds it.
+          <li id="uc_audiobook-player_ten_second_jumps">
+            Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s
+            early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards
+            in ten second increments until he finds it.
           </li>
-        </ul><ul class="wpub-xref">
+        </ul>
+        <ul class="wpub-xref">
           <li>
             <a href="https://w3c.github.io/wpub/#audiobook">Audiobook</a>
           </li>
@@ -1025,8 +1031,12 @@
           </li>
         </ul>
       </section>
+
       <section id="style">
         <h3>Style</h3>
+        <div class="note">
+          <p>This section is under construction!</p>
+        </div>
         <div class="note">
           <p>
             The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user
@@ -1035,23 +1045,20 @@
             etc"
           </p>
         </div>
-        <p>
-          <b></b>
-        </p>
-        <ul class="use-cases">
-          <li></li>
-        </ul>
+        <!--<ul class="use-cases">-->
+          <!--<li></li>-->
+        <!--</ul>-->
       </section>
 
       <section id="layout">
         <h3>Layout</h3>
-        <p id="r_separate_const_resources" class="req-set cc-extended">
+        <p id="r_separate-const-resources" class="req-set">
           For the purposes of layout, each resource of a Web Publication is treated as a separate document. User
           agents must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely
           positioned elements from one resource cannot intrude or overlap with content from an other resource).
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_separate-const-resources_css_counter">
             Maeve is authoring an internal work document for her company as a Web Publication. This Web Publication
             spans several resources / documents, and she would like to use decimal-dot notation to indicate the
             section numbers. The CSS counter should be able to accumulate across the multiple resources to provide an
@@ -1066,30 +1073,29 @@
 
       <section id="progression">
         <h3>Progression</h3>
-        <p id="r_save_progresssion" class="req-set cc-extended">
-          User agents should provide the option for the user to save their progression in the publication and return the user to
-          the last location they saved the next time they open the publication.
+        <p id="r_progresssion" class="req-set">
+          User agents should provide the option for the user to save their progression in the publication and return the
+          user to the last location they saved the next time they open the publication.
         </p>
         <ul class="use-cases">
-          <li>
-            Ann is visually impaired and is reading a sample test paper with objective-type questions. The answers of the test 
-            are given at the end of the publication.  Ann needs to read the question one at a time and then check if her 
-            answer is correct.  Therefore she must bookmark both the questions and  answers provided at the end of the book 
-            so that she is able to switch between the both efficiently.
+          <li id="uc_progresssion_testing" class="uc-accessibility">
+            Ann is visually impaired and is reading a sample test paper with objective-type questions. The answers of
+            the test are given at the end of the publication.  Ann needs to read the question one at a time and then
+            check if her answer is correct.  Therefore she must bookmark both the questions and answers provided at the
+            end of the book so that she is able to switch between the both efficiently.
           </li>
-          <li>
-            Mateusz runs a Dungeons and Dragons campaign.  He would like to be able to mark off specific sections of
-            different rulebooks and share those bookmarks so that players in his game can quickly reference the
-            material.
+          <li id="uc_progresssion_rulebooks">
+            Mateusz runs a Dungeons and Dragons campaign. He would like to be able to mark off specific sections of
+            different rulebooks and share those bookmarks so that players in his game can quickly reference the material.
           </li>
-          <li>
-            Aika is reading a novel on her 9 inch tablet, bookmarks her location, and switches to her 5 inch phone.  She would like to
-            be able to resume reading from the same point where she left off, given that she may not be using the same
-            user agent on each device that contains some mechanism that would sync the content position.
+          <li id="uc_progresssion_device_sync" class="uc-device-independence">
+            Aika is reading a novel on her 9 inch tablet, bookmarks her location, and switches to her 5 inch phone.  She
+            would like to be able to resume reading from the same point where she left off, given that she may not be
+            using the same user agent on each device that contains some mechanism that would sync the content position.
           </li>
-          <li>
-            Julia prepares her lessons for the next day. In her textbook WP, 
-            she bookmarks several locations in while doing her prep. 
+          <li id="uc_progresssion_lesson_prep">
+            Julia prepares her lessons for the next day. In her textbook WP, she bookmarks several locations in while
+            doing her prep.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -1098,27 +1104,36 @@
         </ul>
       </section>
 
-      <section id="multiformatsync">
+      <section id="reading-state">
         <h3>Reading State</h3>
-        <p>
-        <span id="r_reading-state" class="req-set cc-minimal">The user must be able to leave the Web Publication and return to it at the last position they left from. The User Agent must retain the reading position, based on the last known position of the reader in the web publication. The position should be based on the reader's position in the file, within the reading order </span>
+        <p id="r_reading-state" class="req-set cc-minimal">
+          The user must be able to leave the Web Publication and return to it at the last position they left from. The
+          User Agent must retain the reading position, based on the last known position of the reader in the web
+          publication. The position should be based on the reader's position in the file, within the reading order.
         </p>
-        <p>The user agent may retain reading state if the web publication is revised. If the 
-        user agent consists of an audio player, that audio player should allow the ability 
-        to leave and return to the audiobook in the same position where the reader left off.
+        <p>
+          The user agent may retain reading state if the web publication is revised. If the user agent consists of an
+          audio player, that audio player should allow the ability to leave and return to the audiobook in the same
+          position where the reader left off.
         </p>
         <ul class="use-cases">
-          <li>
-            Filbert is reading a comic as a Web Publication. He exits the user agent without bookmarking or saving his location in the Web Publication. When he returns the next day, he opens the Web Publication and continues reading from where he had left off.
+          <li id="uc_reading-state_continuity">
+            Filbert is reading a comic as a Web Publication. He exits the user agent without bookmarking or saving his
+            location in the Web Publication. When he returns the next day, he opens the Web Publication and continues
+            reading from where he had left off.
           </li>
-          <li>
-            Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one he remembers listening to.
+          <li id="uc_reading-state_rollback">
+            Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next
+            listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one
+            he remembers listening to.
           </li>
-          <li>
-            Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off on her trip home.
+          <li id="uc_reading-state_pause_and_restart">
+            Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk
+            only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off
+            on her trip home.
           </li>
         </ul>
-      <ul class="wpub-xref">
+        <ul class="wpub-xref">
           <li><a href="https://w3c.github.io/wpub/#page-list-infoset">Page List &gt; Infoset Requirements</a></li>
           <li><a href="https://w3c.github.io/wpub/#page-list-manifest">Page List &gt; Manifest Expression</a></li>
           <li><a href="https://w3c.github.io/wpub/#feature-reading-order">Reading Order</a></li>
@@ -1130,13 +1145,10 @@
 
       <section id='movement'>
         <h3>Movement</h3>
-        <p id="r_pagination" class="req-set cc-customization">
-          It should be possible to see the Web Publication in a “paginated” view.
-        </p>
-        <p id="r_pagination_ro" class="req-set cc-customization">
-          When a user agent renders a Web Publication in a paginated layout, it must lay out each document in the
-          default reading order sequentially, with the last page of a resource being followed by the first page of the
-          subsequent one.
+        <p id="r_movement" class="req-set">
+          It should be possible to see the Web Publication in a “paginated” view. When a user agent renders a Web
+          Publication in a paginated layout, it must lay out each document in the default reading order sequentially,
+          with the last page of a resource being followed by the first page of the subsequent one.
         </p>
         <p>
           Whereas a “scrolling” view is the dominating approach on the Web in browsers, a user or author may wish to
@@ -1146,8 +1158,8 @@
           numbers.
         </p>
         <p>
-          This is distinct from the need to retain original page numbering (often from the print edition) which must
-          be available on demand and must be usable to discover specific locations in the publication.
+          This is distinct from the need to retain original page numbering (often from the print edition) which must be
+          available on demand and must be usable to discover specific locations in the publication.
         </p>
         <p>
           For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
@@ -1159,28 +1171,28 @@
           reading position would correspond to a time value within the audiobook.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_movement_progress">
             Ann reads War and Peace which, when printed, is over 1200 pages. In order to have a better sense of her
-            progress in the book and to make navigation within the book easier (i.e., to support usability) she
-            decides to switch her reading environment to paged view.
+            progress in the book and to make navigation within the book easier (i.e., to support usability) she decides
+            to switch her reading environment to paged view.
           </li>
-          <li>
+          <li id="uc_movement_responsive_layout">
             Susan uses a flexible CSS layout, that includes images, to create a rich, interactive publication on the
             history of a city. Each major historical milestone is defined as a standalone unit that would be a single
             page when printed, with a timeline with the main events in the footer area of the page.
           </li>
-          <li>
+          <li id="uc_movement_transition_effects">
             IndyPublisher wants to provide transition effects between pages, both within and across content documents.
           </li>
-          <li>
+          <li id="uc_movement_page_numbers" class="uc-device-independence">
             Mr. Oayia, a classroom teacher, says, “turn to page 137 of your textbook.” Regardless of layout and font
             size, students reading digital editions need to find the same location in the textbook as one another and
             as students reading the print edition.
           </li>
-          <li>
+          <li id="uc_movement_random_access">
             Alphonse has been listening to an audiobook he enjoys and would like to share a section with a friend. He
-            tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the
-            section with the audiobook player module provided by his user agent.
+            tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the section
+            with the audiobook player module provided by his user agent.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -1193,42 +1205,42 @@
         </ul>
       </section>
 
-      <section id='onloffl'>
-        <h3>Offline and Online</h3>
-        <p id="r_onloffl" class="req-set cc-extended">
+      <section id='offline'>
+        <h3>Offline</h3>
+        <p id="r_offline" class="req-set">
           A Web Publication should also be available offline.
         </p>
         <p>
-          The same content of the Web Publication should be accessible offline, if circumstances so dictate, without
-          the necessity for the user to take any particular, technical actions.
+          The same content of the Web Publication should be accessible offline, if circumstances so dictate, without the
+          necessity for the user to take any particular, technical actions.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_offline_limited_connectivity">
             Omo, a student in a remote Nigerian village, is taking classes online. Connectivity to the village is
             unreliable and intermittent. Omo needs to have his textbooks available regardless of actual connectivity.
           </li>
-          <li>
+          <li id="uc_offline_download">
             Heather, a frequent international traveller, enjoys reading books and tour guides on her portable device,
-            regardless of her physical location on any given day. Due to the high mobile network access roaming
-            charges on her mobile network, she tends to download as much of her reading material as possible where she
-            can avoid those additional charges.
+            regardless of her physical location on any given day. Due to the high mobile network access roaming charges
+            on her mobile network, she tends to download as much of her reading material as possible where she can avoid
+            those additional charges.
           </li>
-          <li>
+          <li id="uc_offline_collection">
             Gemma, a private collector of digital publications, is building a private collection of publications that
-            she expects to be available to her whether online or offline, over the public Internet, or within a
-            private local area network (LAN).
+            she expects to be available to her whether online or offline, over the public Internet, or within a private
+            local area network (LAN).
           </li>
-          <li>
-            <a href="#in_house_doc">“In house” documents</a> may have to be accessed both online and offline,
-            depending on the access point. While online access might be beneficial when done from the work floor (e.g.,
-            at an airplane production line), the same documents may need reliable offline access (e.g., in the cockpit).
+          <li id="uc_offline_in-house">
+            “In house” documents may have to be accessed both online and offline, depending on the access point. While
+            online access might be beneficial when done from the work floor (e.g., at an airplane production line), the
+            same documents may need reliable offline access (e.g., in the cockpit).
           </li>
-          <li>
-            Gyöngyi, selected as a peer reviewer for the Journal of Scholarly Publications, only has time to review
-            her assigned publication while commuting on the train to her university, where she does not have
-            connectivity. Since her review process includes the creation of annotations, notes, highlights, and
-            possibly changes on the content itself, it is important that these changes must be smoothly transferred
-            back to the server of the journal when she is back online.
+          <li id="uc_offline_synchronization">
+            Gyöngyi, selected as a peer reviewer for the Journal of Scholarly Publications, only has time to review her
+            assigned publication while commuting on the train to her university, where she does not have connectivity.
+            Since her review process includes the creation of annotations, notes, highlights, and possibly changes on
+            the content itself, it is important that these changes must be smoothly transferred back to the server of
+            the journal when she is back online.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -1236,24 +1248,31 @@
           <li><a href="https://w3c.github.io/wpub/#feature-offline-access">Offline Access</a></li>
           <li><a href="https://w3c.github.io/wpub/#resource-list">Resource List</a></li>
         </ul>
-        <p id="audiobooks-streaming" class="req-set cc-extended">
-          A user agent needs to know the information required to allow the user to access content offline or actively streaming, based on the size and nature of the content, and conditions imposed by the user.
+
+        <p id="r_streaming" class="req-set">
+          A user agent needs to know the information required to allow the user to access content offline or actively
+          streaming, based on the size and nature of the content, and conditions imposed by the user.
         </p>
         <ul class="use-cases">
-          <li>
-            João lives in Recife where he has very spotty internet and slow download speeds. He enjoys listening to audiobooks during his morning bike ride and would like to listen to his books before they complete downloading, as fully downloading a book could take several days.
+          <li id="uc_streaming_limited_connectivity">
+            João lives in Recife where he has very spotty internet and slow download speeds. He enjoys listening to
+            audiobooks during his morning bike ride and would like to listen to his books before they complete
+            downloading, as fully downloading a book could take several days.
           </li>
-          <li>
-            Rich is watching a video embedded in his textbook WP for a class. He is streaming the 
-            video rather than waiting for it download because he does not have enough space on his 
-            device to download all the videos required to watch for the class. 
+          <li id="uc_streaming_limited_storage">
+            Rich is watching a video embedded in his textbook WP for a class. He is streaming the video rather than
+            waiting for it download because he does not have enough space on his device to download all the videos
+            required to watch for the class.
           </li>
-          <li>
-            Wendy is running late for work but wants to listen to her audiobook on her commute. As she leaves she realizes she has not yet downloaded it, but there is no wifi available. She has plenty of data and decides to stream the content as she makes her way to the office.
+          <li id="uc_streaming_no_wifi">
+            Wendy is running late for work but wants to listen to her audiobook on her commute. As she leaves she
+            realizes she has not yet downloaded it, but there is no Wi-Fi available. She has plenty of data and decides
+            to stream the content as she makes her way to the office.
           </li>
-          <li>
-            Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire Web Publication during the flight, which does not have wifi. 
-            Via her user agent, she is able to listen to the Web Publication offline.
+          <li id="uc_streaming_in_flight">
+            Sally is preparing for a flight from London to LA tomorrow. She would like to listen to an entire Web
+            Publication during the flight, which does not have Wi-Fi. Via her user agent, she is able to listen to the
+            Web Publication offline.
           </li>
         </ul>
           <ul class="wpub-xref">
@@ -1265,9 +1284,9 @@
         </ul>
       </section>
 
-      <section id="personalized">
+      <section id="personalization">
         <h3>Personalization</h3>
-        <p id="r_p13n" class="req-set cc-customization">
+        <p id="r_p13n" class="req-set">
           The user must have the possibility to personalize his or her reading experience. This may include, for example,
           controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc.
         </p>
@@ -1296,24 +1315,29 @@
           <li><a href="https://w3c.github.io/wpub/#language-and-dir-infoset">Language and Base Direction &gt; Infoset Requirements</a></li>
         </ul>
       </section>
+
       <section id="non-wp-ua">
-        <h3>Support in a non-WP User Agent</h3>
-          <p id="non-wp-ua-req" class="req-set cc-minimal">
+        <h3>Non-WP User Agents</h3>
+          <p id="r_non-wp-ua" class="req-set cc-minimal">
             A non-WP user agent should be able to access the content of a Web Publication.
           </p>
           <p>
-            Since Web Publications are based on the <a href="#owp">Open Web Platform</a>, a Web Publication's constituent HTML pages,
-            video, audio, images, interactive components, and other media, should be accessible to a non-WP user agent. Creators of 
-            Web Publications should allow for the user to be able to access this content.
+            Since Web Publications are based on the <a href="#owp">Open Web Platform</a>, a Web Publication's
+            constituent HTML pages, video, audio, images, interactive components, and other media, should be accessible
+            to a non-WP user agent. Creators of Web Publications should allow for the user to be able to access this
+            content.
           </p>
-          <p>Special consideration should be given to audiobook Web Publications, where audio is main or only component. To allow 
-            the user to access this content, the Web Publication should provide the user with the ability to</p>
+          <p>
+            Special consideration should be given to audiobook Web Publications, where audio is main or only component.
+            To allow the user to access this content, the Web Publication should provide the user with the ability to:
+          </p>
           <ul>
             <li>
               Display title and duration of the book to the user
             </li>
             <li>
-              Play chapters defined in the book one after the other. It may not include end to end continuous reading of the book
+              Play chapters defined in the book one after the other. It may not include end to end continuous reading of
+              the book
             </li>
             <li>
               Navigate to a chapter defined in the book and start playback from there
@@ -1329,8 +1353,10 @@
             </li>
           </ul>
           <ul class="use-cases">
-            <li>
-              John found an Audio WP in his university which he want to start listening immediately, but he does not have a WP reading system installed on his university computer. He should be able to at least use basic functionality of the book in vanilla browser available on the university computer.
+            <li id="uc_non-wp-ua_simple_browser" class="uc-device-independence">
+              John found an Audio WP in his university which he wants to start listening to immediately, but he does not
+              have a WP reading system installed on his university computer. He should be able to at least use basic
+              functionality of the book in vanilla browser available on the university computer.
             </li>
           </ul>
           <ul class="wpub-xref">
@@ -1343,34 +1369,36 @@
 
     <section id="packaging">
       <h2>Packaging</h2>
+      <p id="r_pwp" class="req-set">
+        It should be possible to create and distribute a Web Publication as a single unit over different protocols or
+        physical media.
+      </p>
       <p>
-        <span id="r_pwp" class="req-set cc-packaging">It should be possible to create and distribute a Web Publication
-        as a single unit over different protocols or physical media.</span> This can done through the usage of
-        <a data-lt="Packaged Web Publication">Packaged Web Publications</a>.
+        This can done through the usage of <a data-lt="Packaged Web Publication">Packaged Web Publications</a>.
       </p>
       <ul class="use-cases">
-        <li>
+        <li id="uc_pwp_secure_email">
           HA, Ltd, a publisher of legal briefs, needs to distribute content in a consumable format to its clients via
           secure email.
         </li>
-        <li>
+        <li id="uc_pwp_device_transfer" class="uc-device-independence">
           Dalia, a patent lawyer, wants to consume content on a multitude of devices, some of which may not always have
           connectivity. In order to meet her expectations, it is necessary to have all required content grouped in a
           logical structure that can be easily transferred between devices.
         </li>
-        <li>
+        <li id="uc_pwp_single_unit">
           Andreas is working on his first collaborative research paper with a fellow student. He wants to share a
           relevant publication that includes content, diagrams, and data sets with his writing partner. He does not have
           time to learn how to share each component so that his partner can access it all without much effort; he
           expects to be able to share this material as a single unit via the chatting system that they use to
           collaborate.
         </li>
-        <li>
+        <li id="uc_pwp_offline_lending">
           Dave is reading Moby Dick on his tablet (at home with network connectivity). He then jumps on a plane with his
           good friend Tzviya. After having finished reading the book, he wants to lend it to Tzviya, so that she can
           start reading on her own tablet. They are both offline, but can exchange data with SD cards or Bluetooth.
         </li>
-        <li>
+        <li id="uc_pwp_simple_distribution">
           Giselle is an independent author who has produced the audio version of her latest novel. She wants to
           distribute it directly to a few beta readers before launch without worrying about sending a list of files
           with no structure.
@@ -1385,7 +1413,7 @@
 
       <section id="link-remapping">
         <h3>Link Remapping</h3>
-        <p id="r_remap_links" class="req-set cc-packaging">
+        <p id="r_pwp-links" class="req-set">
           A Packaged Web Publication (PWP) should include means to map the identification of a constituent resource
           between the Web and its equivalent in a package.
         </p>
@@ -1395,7 +1423,7 @@
           resources inside the package.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_pwp-links_harvesting">
             An archival service wants to harvest (spider) a Web Publication and not have to modify the OWP content
             during the process. In order to achive that goal, its manifest would incorporate a mapping from the URIs
             present in the OWP content to their new location inside the archive.
@@ -1409,7 +1437,7 @@
 
       <section id="distro">
         <h3>Distribution</h3>
-        <p id="r_distro" class="req-set cc-packaging">
+        <p id="r_pwp-distro" class="req-set">
           The distribution of a Packaged Web Publication should not affect its iterations.
         </p>
         <p>
@@ -1418,7 +1446,7 @@
           make them different Web Publications.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_pwp-distro_uid">
             Publisher Corp. Inc. publishes a new Packaged Web Publication and sends it to its distributors and customers.
             This Packaged Web Publication is downloaded to devices or made available to a customer-specific cloud.
             Customers can access this file from different retailers, through different applications, either directly or
@@ -1426,24 +1454,23 @@
             number of copies. There remains a single source manifestation, and therefore one
             <a href="#identification">canonical identifier</a> for all of the items spread across devices and buyers.
           </li>
-          <li>
-            EducationPublisher wants to create a custom version of their textbook WP for an 
-            instructor. Content from a few additional sources is added, but the original WPs are 
-            not affected.
+          <li id="uc_pwp-distro_instructor_edition">
+            EducationPublisher wants to create a custom version of their textbook WP for an instructor. Content from a
+            few additional sources is added, but the original WPs are not affected.
           </li>
-          <li>
+          <li id="uc_pwp-distro_annotation">
             Mary creates a Packaged Web Publication and sends it to Dave and Kristin. Kristin simply sends it along to
             two other friends, but Dave adds some comments first to his copy before sending to two friends. By doing so,
-            Dave has created a new Web Publication with its own <a href="#identification">canonical identifier</a>
-            while the version used by Mary, Kristen and her friends remains the same as the original.
+            Dave has created a new Web Publication with its own <a href="#identification">canonical identifier</a> while
+            the version used by Mary, Kristen and her friends remains the same as the original.
           </li>
-          <li>
+          <li id="uc_pwp-distro_tracking">
             Slicendice Publishing publishes many Packaged Web Publications, some of which are different iterations or
             subsets or combinations of others. Slicendice needs not only to be able to uniquely identify each unique Web
             Publication but also to identify each “copy” or “delivery” (“item”) of each of those Web Publications so
             that it can track “what” has been sold and “how many” of each one have been sold.
           </li>
-          <li id="bigretailer-manifest">
+          <li id="uc_pwp-distro_teaser">
             BigRetailer receives a Web Publication from EsteemedPublisher that it intends to add to its catalogue.
             BigRetailer wants to adds it own “teaser” via an alternative reading order. To achieve that, BigRetailer
             provides its own version of the publication’s manifest, that the user agent will use instead of the
@@ -1454,23 +1481,23 @@
           <li><a href="https://w3c.github.io/wpub/#extensibility-linked-records">Extensibility &gt; Linked records</a></li>
         </ul>
 
-        <p id="r_pwp-process" class="req-set cc-packaging">
+        <p id="r_pwp-process" class="req-set">
           The distribution of Packaged Web Publications should respect the existing processes and expectations of
           professional publishing channels as well as ad-hoc methods of distribution (eg. email).
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_pwp-process_single_unit" class="uc-device-independence">
             Ahmed acquires a Packaged Web Publications on an e-commerce platform. He expects to be able to receive the
             Web Publication as a file (rather than only having access to it) and to be able to load it onto its
             different reading devices.
           </li>
-          <li>
+          <li id="uc_pwp-process_access_control">
             Alice acquires a Packaged Web Publication through a subscription service and downloads it. When, later on,
             she decides to unsubscribe from the service, this Web Publication becomes unavailable to her.
           </li>
-          <li>
+          <li id="uc_pwp-process_email">
             Leila has just written a report for school as a Web Publication, but she is required to email it to her
-            teacher. She takes advantage of the fact that it is possible to  package up a publication and then sends it
+            teacher. She takes advantage of the fact that it is possible to package up a publication and then sends it
             off.
           </li>
         </ul>
@@ -1478,20 +1505,20 @@
 
       <section id="check-origin">
         <h3>Authenticity</h3>
-        <p id="r_check_origin" class="req-set cc-packaging">
+        <p id="r_check-origin" class="req-set">
           The publisher should be able to provide information in a Packaged Web Publication that can be used to check
           the origin of the publication and its authenticity.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_check-origin_cryptography">
             Michael, who is a lawyer, and uses the publications of LegalPublisher Ltd., must be 100% sure that the
             publication he uses for his case has indeed been published by LegalPublisher Ltd., and not by a possible
             third party. This can be done because LegalPublisher Ltd. adds the necessary cryptographic information to
             the Web Publication proving its own identity.
           </li>
-          <li>
-            Brendan wants to make sure that the version of a textbook WP that 
-            wants to purchase from an online retailer is the correct one required for his class.
+          <li id="uc_check-origin_versioning">
+            Brendan wants to make sure that the version of a textbook WP that wants to purchase from an online retailer
+            is the correct one required for his class.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -1502,18 +1529,17 @@
 
       <section id="integrity">
         <h3>Integrity</h3>
-        <p id="r_check_integrity" class="req-set cc-packaging">
-          The publisher should be able to provide information in a Packaged Web Publication proving that the
-          publication has not been tampered with during delivery.
+        <p id="r_check-integrity" class="req-set">
+          The publisher should be able to provide information in a Packaged Web Publication proving that the publication
+          has not been tampered with during delivery.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_check-integrity_cryptography">
             LegalPublisher Ltd. regularly publishes the official legal texts and regulation as decided by the local
-            government. Michael, who is a lawyer, has access to these documents via his law firm, and uses them for
-            his cases; to do so, he must be 100% sure that the publication he accesses faithfully reproduces the
-            latest governmental decisions. This can be done because LegalPublisher Ltd. adds the necessary
-            cryptographic information to the Web Publication that becomes invalid if any resource of the Web
-            Publication changes.
+            government. Michael, who is a lawyer, has access to these documents via his law firm, and uses them for his
+            cases; to do so, he must be 100% sure that the publication he accesses faithfully reproduces the latest
+            governmental decisions. This can be done because LegalPublisher Ltd. adds the necessary cryptographic
+            information to the Web Publication that becomes invalid if any resource of the Web Publication changes.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -1534,16 +1560,11 @@
           beyond the tenure of individual authors, file formats, publishers, or publishing platforms.
         </p>
         <p>
-          Fundamental use cases and requirements already help aid our archiving requirements. For example:
-        </p>
-        <ul>
-          <li><a class="req-ref-full" href="#r_con-res"></a></li>
-        </ul>
-        <p>
-          However, archival raises an additional requirements:
+          Fundamental use cases and requirements already help aid our archiving requirements (<i>e.g.</i>
+          <a class="req-ref-full" href="#r_const-res"></a>). However, archival raises additional requirements:
         </p>
 
-        <p id="r_archmetadata" class="req-set cc-packaging">
+        <p id="r_archmetadata" class="req-set">
           There should be a way to indicate whether one or more Packaged Web Publication components contain (embedded)
           descriptive metadata.
         </p>
@@ -1555,7 +1576,7 @@
           expensive and decreasing the reliability of reporting.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_archmetadata_harvesting">
             An archiving service sets out to conduct an initial harvest of an article. Along with the images, markup,
             scripts, and style and layout instructions that constitute the object, it is able to locate a file
             containing descriptive metadata. The archiving service retrieves these resources and packages them into a
@@ -1568,7 +1589,7 @@
           <li><a href="https://w3c.github.io/wpub/#title-infoset">Title &gt; Infoset Requirements  </a></li>
         </ul>
 
-        <p id="r_component-change" class="req-set cc-packaging">
+        <p id="r_component-change" class="req-set">
           There should be a way to discover that one or more new components have been added to or deleted from a Web
           Publication.
         </p>
@@ -1578,26 +1599,26 @@
           archive of the publication.
         </p>
         <ul class="use-cases">
-          <li>
+          <li id="uc_component-change_polling">
             An archiving service regularly polls for changes to an article that it has already archived. One such poll
             indicates that several resources have been added to the object. The archiving service retrieves these
             resources and store them as incremental updates to the appropriate archival unit in a preservation
             repository.
           </li>
-          <li>
+          <li id="uc_component-change_retraction">
             A publisher issues a retraction for a published article, resulting in the addition of new resources to the
             object (i.e., the retraction notice) and the removal of others (i.e., the article content). An archiving
             service regularly polls for changes to this article, which it has already archived, and discovers the
             retraction. The archiving service retrieves the new resources and record those that are no longer
             accessible, carrying over the cumulative updates to a preservation repository.
           </li>
-          <li>
+          <li id="uc_component-change_takedown">
             A copyright dispute results in the takedown of a published book. An archiving service regularly polls for
             changes to this book, which it has already archived, and discovers that it has been taken down. It records
             that the resources that constitute the object are no longer accessible and propagates this update to a
             preservation repository.
           </li>
-          <li>
+          <li id="uc_component-change_differential">
             A student writing a research report wishes to refer to changes in a certain Web Publication. The student
             would like to compare changes across different iterations of that Web Publication and cite an archival
             service.
@@ -1698,7 +1719,7 @@
         manifest should be found.
       </p>
       <ul class="use-cases">
-        <li id="bigretailer-manifest">
+        <li>
           BigRetailer receives a Web Publication from EsteemedPublisher that it intends to add to its catalogue.
           BigRetailer wants to adds it own “teaser” via an alternative reading order (see
           <a href="#streamlining"></a>). To achieve that, BigRetailer provides its own version of the publication’s
@@ -1707,7 +1728,6 @@
       </ul>
     </section> -->
 
-     
     <!-- <section id='perm-obl'>
       <h1>Security</h1>
 
@@ -1743,6 +1763,27 @@
       </section>
     </section> -->
 
+    <section id="list_of_requirements" class="appendix">
+      <h2>List of Requirements</h2>
+      <section>
+        <h3>All Requirements</h3>
+        <table id="reqtable" class="zebra">
+          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
+          <tbody/>
+        </table>
+      </section>
+      <section>
+        <h3>Minimal Requirements</h3>
+        <p>
+          A UA conforming at a minimal level must address all of the following requirements:
+        </p>
+        <table class="conformance zebra" data-display="cc-minimal">
+          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
+          <tbody/>
+        </table>
+      </section>
+    </section>
+
     <section id="use_cases_by_category" class="appendix">
       <h2>Use Cases by Category</h2>
       <section>
@@ -1772,14 +1813,13 @@
         </table>
       </section>
       <section>
-        <h3>Privacy</h3>
+        <h3>Device Independence</h3>
         <p>
-          The content in a publication should maintain and support user privacy, in spite of the fact that the evolution
-          of online technologies has increased the possibility for the collection and processing of personal, and
-          possibly sensitive, data. However, since a publication may use <a href="#r_owp">any part of the OWP</a>, it
-          may choose to use functionality such as the ability to track a user's activity within the publication.
+          The content in a publication should be usable on a large number of devices with very different device
+          characteristics: different screen types and sizes, various input modalities, varying level of processing power,
+          etc. These different affordances should be automatic with no, or very little, user intervention.
         </p>
-        <table class="uc-category zebra" data-display="uc-privacy">
+        <table class="uc-category zebra" data-display="uc-device-independence">
           <thead><tr><th>Req.&nbsp;#</th><th>UC&nbsp;#</th><th>Use Case</th></tr></thead>
           <tbody/>
         </table>
@@ -1797,54 +1837,16 @@
           <tbody/>
         </table>
       </section>
-    </section>
-
-    <section id="requirements_by_class" class="appendix">
-      <h2>Requirements by Class</h2>
       <section>
-        <h3>All Requirements</h3>
-        <table id="reqtable" class="zebra">
-          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
-          <tbody/>
-        </table>
-      </section>
-      <section>
-        <h3>Minimal Conformance</h3>
+        <h3>Privacy</h3>
         <p>
-          A UA conforming at a minimal level must address the following requirements:
+          The content in a publication should maintain and support user privacy, in spite of the fact that the evolution
+          of online technologies has increased the possibility for the collection and processing of personal, and
+          possibly sensitive, data. However, since a publication may use <a href="#r_owp">any part of the OWP</a>, it
+          may choose to use functionality such as the ability to track a user's activity within the publication.
         </p>
-        <table class="conformance zebra" data-display="cc-minimal">
-          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
-          <tbody/>
-        </table>
-      </section>
-      <section>
-        <h3>Extended Conformance</h3>
-        <p>
-          A UA may be extended by addressing all minimal requirements and the following requirements:
-        </p>
-        <table class="conformance zebra" data-display="cc-extended">
-          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
-          <tbody/>
-        </table>
-      </section>
-      <section>
-        <h3>Packaging</h3>
-        <p>
-          A UA may support packaging by addressing all minimal requirements and the following requirements:
-        </p>
-        <table class="conformance zebra" data-display="cc-packaging">
-          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
-          <tbody/>
-        </table>
-      </section>
-      <section>
-        <h3>Customization</h3>
-        <p>
-          A UA may support user customization by addressing all minimal requirements and the following requirements:
-        </p>
-        <table class="conformance zebra" data-display="cc-customization">
-          <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
+        <table class="uc-category zebra" data-display="uc-privacy">
+          <thead><tr><th>Req.&nbsp;#</th><th>UC&nbsp;#</th><th>Use Case</th></tr></thead>
           <tbody/>
         </table>
       </section>
