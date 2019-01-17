@@ -21,6 +21,10 @@ code {
   font-size: 120%;
 }
 
+table.uc-category span.uc-categories {
+    display: none;
+}
+
 /* Table zebra style... */
 table.zebra {
   font-size:inherit;

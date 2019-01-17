@@ -31,32 +31,53 @@ function rdisplay() {
 	});
 
 	// Generate the table of requirements
-	$("table#reqtable").each( function(i) {
-		var $table = $(this);
-		$("table#reqtable tbody").each( function(i) {
-			var $table = $(this);
-		});
-		reqInfo.forEach( function(element, index, array) {
-			// Add a new table row to the table itself
-			var $row = $("<tr></tr>");
-			$table.append($row);
+    $("#reqtable").each( function() {
+        var $table = $(this),
+            $tbody = $table.find("tbody");
+        reqInfo.forEach( function(element, index, array) {
+            var $row = $("<tr></tr>"),
+                $refCell = $("<td></td>"),
+                $desCell = $("<td></td>"),
+                $link = $("<a></a>");
 
-			cellref = $("<td></td>");
-			$row.append(cellref)
-			reqref = $("<a></a>");
-			cellref.append(reqref);
-			reqref.attr("href", ucrUri + "#" + element.id);
-			reqref.append(element.title)
+            $link.attr("href", ucrUri + "#" + element.id);
+            $link.append(element.title);
+            $refCell.append($link);
+            $row.append($refCell);
 
-			celltitle = $("<td></td>");
-			$row.append(celltitle);
-			celltitle.append(element.content);
-		})
-	});
+            $desCell.append(element.content);
+            $row.append($desCell);
+
+            $tbody.append($row);
+        })
+    });
+//	$("table#reqtable").each( function(i) {
+//		var $table = $(this);
+//		$("table#reqtable tbody").each( function(i) {
+//			var $table = $(this);
+//		});
+//		reqInfo.forEach( function(element, index, array) {
+//			// Add a new table row to the table itself
+//			var $row = $("<tr></tr>");
+//			$table.append($row);
+//
+//			cellref = $("<td></td>");
+//			$row.append(cellref)
+//			reqref = $("<a></a>");
+//			cellref.append(reqref);
+//			reqref.attr("href", ucrUri + "#" + element.id);
+//			reqref.append(element.title)
+//
+//			celltitle = $("<td></td>");
+//			$row.append(celltitle);
+//			celltitle.append(element.content);
+//		})
+//	});
 
     // Generate the tables of conformance tiers
     $("table.conformance").each( function() {
-        var $table = $(this);
+        var $table = $(this),
+            $tbody = $table.find("tbody");
         reqInfo.forEach( function(element, index, array) {
             var $req = $("#" + element.id);
             if ($req.hasClass($table.data("display"))) {
@@ -73,31 +94,10 @@ function rdisplay() {
                 $desCell.append(element.content);
                 $row.append($desCell);
 
-                $table.append($row);
+                $tbody.append($row);
             }
         })
     });
-
-	// // Generate the table of requirements
-	// $("table#reqtable, tbody#reqtable").each( function(i) {
-	// 	var $table = $(this);
-	// 	reqInfo.forEach( function(element, index, array) {
-	// 		// Add a new table row to the table itself
-	// 		var $row = $("<tr></tr>");
-	// 		$table.append($row);
-	//
-	// 		cellref = $("<td></td>");
-	// 		$row.append(cellref)
-	// 		reqref = $("<a></a>");
-	// 		cellref.append(reqref);
-	// 		reqref.attr("href", ucrUri + "#" + element.id);
-	// 		reqref.append(element.title)
-	//
-	// 		celltitle = $("<td></td>");
-	// 		$row.append(celltitle);
-	// 		celltitle.append(element.content);
-	// 	})
-	// });
 
 	$("ul#reclist, ol#reclist").each( function(i) {
 		var $list = $(this);
@@ -115,6 +115,44 @@ function rdisplay() {
 			$span.append(": " + element.content)
 		})
 	})
+}
+
+function ucdisplay() {
+    ucrUri = respecConfig.ucrUri === undefined ? "" : respecConfig.ucrUri ;
+
+    $("table.uc-category").each( function() {
+        var $table = $(this),
+            $tbody = $table.find("tbody");
+        ucInfo.forEach( function(element, index, array) {
+            var $uc = $("#" + element.id);
+            if ($uc.hasClass($table.data("display"))) {
+                var reqId = "r_" + element.id.split("_")[1],
+                    req = $.grep(reqInfo, function (a) { return a.id == reqId })[0],
+                    $row = $("<tr></tr>"),
+                    $reqCell = $("<td></td>"),
+                    $reqLink = $("<a></a>"),
+                    $ucCell = $("<td></td>"),
+                    $ucLink = $("<a></a>"),
+                    $desCell = $("<td></td>");
+
+                $reqLink.attr("href", ucrUri + "#" + req.id);
+                $reqLink.append(req.title);
+                $reqCell.append($reqLink);
+                $row.append($reqCell);
+
+                $ucLink.attr("href", ucrUri + "#" + element.id);
+                $ucLink.append(element.title);
+                $ucCell.append($ucLink);
+                $row.append($ucCell);
+
+                $desCell.append(element.content);
+                $row.append($desCell);
+
+                $tbody.append($row);
+            }
+        })
+    });
+
 }
 
 require(["core/pubsubhub"], function(respecEvents) {

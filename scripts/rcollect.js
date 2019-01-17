@@ -12,6 +12,9 @@
 var reqInfo =  [
 ];
 
+var ucInfo =  [
+];
+
 function rcollect() {
 	// Collect the necessary information on the various requirement entries right at the start...
 	$(".req-set").each(function (i) {
@@ -24,13 +27,33 @@ function rcollect() {
 			content = content.slice(0,-1);
 		}
 		reqInfo.push({
-			number: i,
+            number: i,
 			content: content,
 			title: title,
 			id: $req.attr("id")
 		});
 		$req.prepend("<a href='#" + $req.attr("id") + "'>" + title + "</a>: ");
 	});
+}
+
+function uccollect() {
+    // Collect the necessary information on the various use case entries right at the start...
+    $("ul.use-cases > li").each(function (i) {
+        i++;
+        var $uc = $(this),
+            title = "UC&nbsp;" + i,
+            content = $uc.html();
+        //if( content.charAt(content.length-1) === '.' ) {
+        //    content = content.slice(0,-1);
+        //}
+        ucInfo.push({
+            number: i,
+            content: content,
+            title: title,
+            id: $uc.attr("id")
+        });
+        $uc.prepend("<a href='#" + $uc.attr("id") + "'>" + title + "</a>: ");
+    });
 }
 
 function rstore() {
