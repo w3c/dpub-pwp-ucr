@@ -21,6 +21,10 @@ code {
   font-size: 120%;
 }
 
+table.uc-category span.uc-categories {
+    display: none;
+}
+
 /* Table zebra style... */
 table.zebra {
   font-size:inherit;
@@ -78,6 +82,10 @@ a.sec-ref:before {
 
 a.sec-ref:after  {
     content: "”";
+}
+
+p.req-set {
+    font-weight: bold;
 }
 
 span.orcid a  {
