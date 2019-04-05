@@ -987,12 +987,12 @@
       </div>
 
       <section id="audiobook-player">
-        <h3>Audiobook Player</h3>
+        <h3>Time-based Media</h3>
         <p id="r_audiobook-player" class="req-set">
-           If a Web Publication is an audiobook, a user agent should provide a player interface that is also accessible.
+           If a Web Publication contains time-based media, a user agent should provide a player interface that is also accessible.
         </p>
         <p>
-          The player interface should allow for the following use cases:
+          The player interface should allow for, but is not limited to, the following use cases:
         </p>
         <ul>
           <li>
@@ -1002,7 +1002,7 @@
             Listening to an audiobook at the user's desired pace without audio distortion
           </li>
           <li>
-            Understanding the duration of the chapter/audiobook being listened to
+            Understanding the duration of the chapter, audiobook, or video being listened to
           </li>
         </ul>
         <ul class="use-cases">
@@ -1144,6 +1144,23 @@
 
       <section id='movement'>
         <h3>Movement</h3>
+        <p id="r_scrubbing" class="req-set">
+          In time-based media in a Web Publication, It should be 
+          possible to navigate not only by chapter/section but by 
+          short segments of time.
+        </p>
+
+        <p>
+          Similar to navigation via scrolling or page turn in
+           text-based  media, navigation via small increments of 
+           time should also be possible within the user agent 
+           interface. 
+        </p>
+        <ul class="use-cases">
+          
+        </ul>
+
+
         <p id="r_movement" class="req-set">
           It should be possible to see the Web Publication in a “paginated” view. When a user agent renders a Web
           Publication in a paginated layout, it must lay out each document in the default reading order sequentially,
