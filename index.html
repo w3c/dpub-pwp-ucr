@@ -731,8 +731,9 @@
  -->        </ul>
 
         <p id="r_player-nav" class="req-set">
-          For an audiobook Web Publication that provides a player interface, the user agent should provide the user a
-          way to navigate to the listening position of choice.
+          For a Web Publication that provides a player interface for 
+          time-based media, the user agent should provide the user a
+          way to navigate to a specific position in the content.
         </p>
         <ul class="use-cases">
           <li id="uc_player-nav_skip_to_story">
@@ -1148,9 +1149,10 @@
           publication. The position should be based on the reader's position in the file, within the reading order.
         </p>
         <p>
-          The user agent may retain reading state if the web publication is revised. If the user agent consists of an
-          audio player, that audio player should allow the ability to leave and return to the audiobook in the same
-          position where the reader left off.
+          The user agent may retain reading state if the web publication is 
+          revised. If the user agent consists of a player interface, that 
+          interface should allow the ability to leave and return to the 
+          content in the same position where the reader left off.
         </p>
         <ul class="use-cases">
           <li id="uc_reading-state_continuity">
@@ -1371,7 +1373,7 @@
             content.
           </p>
           <p>
-            Special consideration should be given to audiobook Web Publications, where audio is main or only component.
+            Special consideration should be given to Web Publications where time-based media is the main or only component, such as an audiobook.
             To allow the user to access this content, the Web Publication should provide the user with the ability to:
           </p>
           <ul>
@@ -1397,8 +1399,8 @@
           </ul>
           <ul class="use-cases">
             <li id="uc_non-wp-ua_simple_browser" class="uc-device-independence">
-              John found an Audio WP in his university which he wants to start listening to immediately, but he does not
-              have a WP reading system installed on his university computer. He should be able to at least use basic
+              John found an audiobook Web Publication in his university which he wants to start listening to immediately, but he does not
+              have an audiobook User Agent installed on his university computer. He should be able to at least use basic
               functionality of the book in vanilla browser available on the university computer.
             </li>
           </ul>
