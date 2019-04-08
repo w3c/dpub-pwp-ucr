@@ -884,7 +884,7 @@
         </ul>
       </section>
 
-      <section id="Time-based-Media">
+      <section id="Synch-Time-based-Media">
         <h3>Synchronized Time-based Media</h3>
         <p id="r_time" class="req-set">
           A Web Publication needs to support synchronization between text and time-based media.
@@ -982,61 +982,97 @@
 
     <section id="presentation">
       <h2>Presentation</h2>
-      <div class="note">
+<!--       <div class="note">
         <p>This section is under construction!</p>
-      </div>
+      </div> -->
 
-      <section id="audiobook-player">
+      <section id="player">
         <h3>Time-based Media</h3>
-        <p id="r_audiobook-player" class="req-set">
-           If a Web Publication contains time-based media, a user agent should provide a player interface that is also accessible.
+        <p id="r_player" class="req-set">
+           If a Web Publication contains time-based media, a user
+           agent should provide a player interface that is  
+           accessible.
         </p>
         <p>
-          The player interface should allow for, but is not limited to, the following use cases:
+          The player interface should allow for the following use cases:
         </p>
         <ul>
           <li>
-            Listening to an audiobook to completion without user interaction
+            Experiencing an audiobook, video, or other time-based
+            media to completion without user interaction
           </li>
           <li>
-            Listening to an audiobook at the user's desired pace without audio distortion
-          </li>
-          <li>
-            Understanding the duration of the chapter, audiobook, or video being listened to
+            Experiencing an audiobook, video, or other time-based
+            media at the user's desired pace without audio 
+            distortion
           </li>
         </ul>
         <ul class="use-cases">
-          <li id="uc_audiobook-player_continuous_playback">
+          <li id="uc_player_continuous_playback">
             Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for
             additional inputs.
           </li>
-          <li id="uc_audiobook-player_limited_controls">
+          <li id="uc_player_limited_controls">
             Yitian is listening to an audiobook on a device where the only input available is play/pause.
           </li>
-          <li id="uc_audiobook-player_voice_controls">
+          <li id="uc_player_voice_controls">
             Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
-          </li>
-          <li id="uc_audiobook-player_ten_second_jumps">
-            Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s
-            early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards
-            in ten second increments until he finds it.
           </li>
         </ul>
         <ul class="wpub-xref">
           <li>
             <a href="https://www.w3.org/TR/wpub/#audiobook">Audiobook</a>
           </li>
-          <li>
-            <!-- <a href="https://www.w3.org/TR/wpub/#feature-user-settings">User Settings</a> -->
+        </ul>
+        <p id="r_skip-by-increment" class="req-set">
+          In time-based media in a Web Publication, It should be 
+          possible to navigate not only by chapter/section but by 
+          short segments of time.
+        </p>
+        <ul class="use-cases">
+          <li id="uc_skip-by-increment_ten_second_jumps">
+            Mateus is writing a book review and want to find a 
+            specific segment in the audiobook to quote and review. 
+            He remembers it’s early in chapter 3, so he wants to 
+            open the audiobook to chapter 3 and listen, skipping 
+            forward in ten second increments using the player 
+            provided by the user agent, until he finds it.
+          </li>
+          <li id="uc_skip-by-increment_rewind">
+            Delta is listening to an audiobook in her car but 
+            realizes she missed the last 30 seconds because she 
+            was merging onto a highway and wasn’t focused on the 
+            content. She wants to pan back 30 seconds to listen to 
+            the content she missed.</li>
+          <li id="uc_skip-by-increment_skip_front_matter">
+            Stanford just opened his audiobook and wants to skip 
+            through the copyright and title info as well as the 
+            dedication without opening up the TOC menu.</li>
+          <li id="uc_skip-by-increment_skip_introduction">
+            Sasha is rewatching a video in her educational Web
+            Publication for a refresher and wants to skip 
+            introductory content and content that she already has 
+            a firm  understanding of.
+          </li>
+        </ul>
+        <p id="r_duration" class="req-set">
+          If a Web Publication contains time-based media, a user 
+          should be able to understand the duration of the media, 
+          both in its entirety and of its constituent parts. 
+        </p>
+        <ul class="use-cases">
+          <li id="uc_duration_video_duration">
+            Bruce is watching a series of videos in a Web Publication 
+            and wants to know how long it will be until the next 
+            video plays. He is able to view the duration of the 
+            current video in the player interface of the user
+            agent.
           </li>
         </ul>
       </section>
 
       <section id="style">
         <h3>Style</h3>
-        <div class="note">
-          <p>This section is under construction!</p>
-        </div>
         <div class="note">
           <p>
             The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user
@@ -1144,23 +1180,6 @@
 
       <section id='movement'>
         <h3>Movement</h3>
-        <p id="r_scrubbing" class="req-set">
-          In time-based media in a Web Publication, It should be 
-          possible to navigate not only by chapter/section but by 
-          short segments of time.
-        </p>
-
-        <p>
-          Similar to navigation via scrolling or page turn in
-           text-based  media, navigation via small increments of 
-           time should also be possible within the user agent 
-           interface. 
-        </p>
-        <ul class="use-cases">
-          
-        </ul>
-
-
         <p id="r_movement" class="req-set">
           It should be possible to see the Web Publication in a “paginated” view. When a user agent renders a Web
           Publication in a paginated layout, it must lay out each document in the default reading order sequentially,
@@ -1180,12 +1199,21 @@
         <p>
           For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
         </p>
-        <p>
-          The exception to the paginated view would be an audio-only audiobook. An audiobook may be presented as a
-          single page with a player module presenting the content metadata. This player may automatically adapt size
-          and features according to the device or browser's viewport. This view may not have page numbering, but
-          reading position would correspond to a time value within the audiobook.
-        </p>
+        <div class="note">
+          <p>
+            Time-based media, especially a Web Publication consisting
+            solely of time-based media, such as an audiobook, may be 
+            presented as a single page with a player module presenting 
+            the content metadata. This player may automatically adapt 
+            size and features according to the device or browser's 
+            viewport. This view may not have page numbering, but
+            reading position would correspond to a time value.
+          </p>
+          <p>
+            For navigation within time-based media such as audio and 
+            video, refer to <a href="#player">Time-based Media</a>.
+          </p>
+        </div>
         <ul class="use-cases">
           <li id="uc_movement_progress">
             Ann reads <i>War and Peace</i> which, when printed, is over 1200 pages. In order to have a better sense of her
