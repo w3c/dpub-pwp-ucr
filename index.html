@@ -731,19 +731,22 @@
  -->        </ul>
 
         <p id="r_player-nav" class="req-set">
-          For an audiobook Web Publication that provides a player interface, the user agent should provide the user a
-          way to navigate to the listening position of choice.
+          For content that requires a player interface for time-based media, 
+          the Web Publication should provide the User Agent a way to navigate 
+          to a specific position in the content.
         </p>
         <ul class="use-cases">
           <li id="uc_player-nav_skip_to_story">
-            Belinda would like to skip directly to a specific short story in a collected edition.
+            Belinda would like to skip directly to a specific short story in a collected edition. The Web Publication provides the User Agent
+            with metadata to access the short story.
           </li>
           <li id="uc_player-nav_skip_to_minute">
             Mr. Sterling asks his students to skip directly to the 23rd minute of an audiobook.
           </li>
           <li id="uc_player-nav_skip_to_chapter">
             Ken was assigned part of a non-fiction title for a class. He wants to open the audiobook but only needs to
-            listen to chapter 19.
+            listen to chapter 19. The Web Publication provides the 
+            User Agent with metadata to access the chapter.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -884,7 +887,7 @@
         </ul>
       </section>
 
-      <section id="Time-based-Media">
+      <section id="Synch-Time-based-Media">
         <h3>Synchronized Time-based Media</h3>
         <p id="r_time" class="req-set">
           A Web Publication needs to support synchronization between text and time-based media.
@@ -982,61 +985,97 @@
 
     <section id="presentation">
       <h2>Presentation</h2>
-      <div class="note">
+<!--       <div class="note">
         <p>This section is under construction!</p>
-      </div>
+      </div> -->
 
-      <section id="audiobook-player">
-        <h3>Audiobook Player</h3>
-        <p id="r_audiobook-player" class="req-set">
-           If a Web Publication is an audiobook, a user agent should provide a player interface that is also accessible.
+      <section id="player">
+        <h3>Time-based Media</h3>
+        <p id="r_player" class="req-set">
+           If a Web Publication contains time-based media, a user
+           agent should provide a player interface that is  
+           accessible.
         </p>
         <p>
           The player interface should allow for the following use cases:
         </p>
         <ul>
           <li>
-            Listening to an audiobook to completion without user interaction
+            Experiencing an audiobook, video, or other time-based
+            media to completion without user interaction
           </li>
           <li>
-            Listening to an audiobook at the user's desired pace without audio distortion
-          </li>
-          <li>
-            Understanding the duration of the chapter/audiobook being listened to
+            Experiencing an audiobook, video, or other time-based
+            media at the user's desired pace without audio 
+            distortion
           </li>
         </ul>
         <ul class="use-cases">
-          <li id="uc_audiobook-player_continuous_playback">
+          <li id="uc_player_continuous_playback">
             Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for
             additional inputs.
           </li>
-          <li id="uc_audiobook-player_limited_controls">
+          <li id="uc_player_limited_controls">
             Yitian is listening to an audiobook on a device where the only input available is play/pause.
           </li>
-          <li id="uc_audiobook-player_voice_controls">
+          <li id="uc_player_voice_controls">
             Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
-          </li>
-          <li id="uc_audiobook-player_ten_second_jumps">
-            Mateus is writing a book review and want to find a specific segment to quote and review. He remembers it’s
-            early in chapter 3 so he wants to open it and listen to the chapter a few seconds at a time, moving forwards
-            in ten second increments until he finds it.
           </li>
         </ul>
         <ul class="wpub-xref">
           <li>
             <a href="https://www.w3.org/TR/wpub/#audiobook">Audiobook</a>
           </li>
-          <li>
-            <!-- <a href="https://www.w3.org/TR/wpub/#feature-user-settings">User Settings</a> -->
+        </ul>
+        <p id="r_skip-by-increment" class="req-set">
+          In time-based media in a Web Publication, It should be 
+          possible to navigate not only by chapter/section but by 
+          short segments of time.
+        </p>
+        <ul class="use-cases">
+          <li id="uc_skip-by-increment_ten_second_jumps">
+            Mateus is writing a book review and want to find a 
+            specific segment in the audiobook to quote and review. 
+            He remembers it’s early in chapter 3, so he wants to 
+            open the audiobook to chapter 3 and listen, skipping 
+            forward in ten second increments using the player 
+            provided by the user agent, until he finds it.
+          </li>
+          <li id="uc_skip-by-increment_rewind">
+            Delta is listening to an audiobook in her car but 
+            realizes she missed the last 30 seconds because she 
+            was merging onto a highway and wasn’t focused on the 
+            content. She wants to pan back 30 seconds to listen to 
+            the content she missed.</li>
+          <li id="uc_skip-by-increment_skip_front_matter">
+            Stanford just opened his audiobook and wants to skip 
+            through the copyright and title info as well as the 
+            dedication without opening up the TOC menu.</li>
+          <li id="uc_skip-by-increment_skip_introduction">
+            Sasha is rewatching a video in her educational Web
+            Publication for a refresher and wants to skip 
+            introductory content and content that she already has 
+            a firm  understanding of.
+          </li>
+        </ul>
+        <p id="r_duration" class="req-set">
+          If a Web Publication contains time-based media, a user 
+          should be able to understand the duration of the media, 
+          both in its entirety and of its constituent parts. 
+        </p>
+        <ul class="use-cases">
+          <li id="uc_duration_video_duration">
+            Bruce is watching a series of videos in a Web Publication 
+            and wants to know how long it will be until the next 
+            video plays. He is able to view the duration of the 
+            current video in the player interface of the user
+            agent.
           </li>
         </ul>
       </section>
 
       <section id="style">
         <h3>Style</h3>
-        <div class="note">
-          <p>This section is under construction!</p>
-        </div>
         <div class="note">
           <p>
             The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user
@@ -1112,9 +1151,10 @@
           publication. The position should be based on the reader's position in the file, within the reading order.
         </p>
         <p>
-          The user agent may retain reading state if the web publication is revised. If the user agent consists of an
-          audio player, that audio player should allow the ability to leave and return to the audiobook in the same
-          position where the reader left off.
+          The user agent may retain reading state if the web publication is 
+          revised. If the user agent consists of a player interface, that 
+          interface should allow the ability to leave and return to the 
+          content in the same position where the reader left off.
         </p>
         <ul class="use-cases">
           <li id="uc_reading-state_continuity">
@@ -1163,12 +1203,21 @@
         <p>
           For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
         </p>
-        <p>
-          The exception to the paginated view would be an audio-only audiobook. An audiobook may be presented as a
-          single page with a player module presenting the content metadata. This player may automatically adapt size
-          and features according to the device or browser's viewport. This view may not have page numbering, but
-          reading position would correspond to a time value within the audiobook.
-        </p>
+        <div class="note">
+          <p>
+            Time-based media, especially a Web Publication consisting
+            solely of time-based media, such as an audiobook, may be 
+            presented as a single page with a player module presenting 
+            the content metadata. This player may automatically adapt 
+            size and features according to the device or browser's 
+            viewport. This view may not have page numbering, but
+            reading position would correspond to a time value.
+          </p>
+          <p>
+            For navigation within time-based media such as audio and 
+            video, refer to <a href="#player">Time-based Media</a>.
+          </p>
+        </div>
         <ul class="use-cases">
           <li id="uc_movement_progress">
             Ann reads <i>War and Peace</i> which, when printed, is over 1200 pages. In order to have a better sense of her
@@ -1326,7 +1375,7 @@
             content.
           </p>
           <p>
-            Special consideration should be given to audiobook Web Publications, where audio is main or only component.
+            Special consideration should be given to Web Publications where time-based media is the main or only component, such as an audiobook.
             To allow the user to access this content, the Web Publication should provide the user with the ability to:
           </p>
           <ul>
@@ -1352,8 +1401,8 @@
           </ul>
           <ul class="use-cases">
             <li id="uc_non-wp-ua_simple_browser" class="uc-device-independence">
-              John found an Audio WP in his university which he wants to start listening to immediately, but he does not
-              have a WP reading system installed on his university computer. He should be able to at least use basic
+              John found an audiobook Web Publication in his university which he wants to start listening to immediately, but he does not
+              have an audiobook User Agent installed on his university computer. He should be able to at least use basic
               functionality of the book in vanilla browser available on the university computer.
             </li>
           </ul>
