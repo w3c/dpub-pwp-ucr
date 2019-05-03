@@ -1086,6 +1086,272 @@
 
     <section id="user-agent-operation">
       <h2>User Agent Operation</h2>
+
+      <section id="style">
+        <h3>Style</h3>
+        <div class="note">
+          <p>
+            The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user
+            must have the possibility to personalize his or her reading experience. This may include, for example,
+            controlling such features as font size, choice of fonts, background and foreground color, tone of audio,
+            etc"
+          </p>
+        </div>
+        <!--<ul class="use-cases">
+          <li></li>
+        </ul>-->
+      </section>
+
+      <section id="layout">
+        <h3>Layout</h3>
+        <p id="r_separate-const-resources" class="req-set">
+          For the purposes of layout, each resource of a Web Publication is treated as a separate document. User agents
+          must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely positioned
+          elements from one resource cannot intrude or overlap with content from an other resource).
+        </p>
+        <ul class="use-cases">
+          <li id="uc_separate-const-resources_css_counter">
+            Maeve is authoring an internal work document for her company as a Web Publication. This Web Publication
+            spans several resources / documents, and she would like to use decimal-dot notation to indicate the section
+            numbers. The CSS counter should be able to accumulate across the multiple resources to provide an accurate
+            count.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <!--<li><a href="https://www.w3.org/TR/wpub/#layout">Layout</a></li>-->
+        </ul>
+      </section>
+
+      <section id='movement'>
+        <h3>Movement</h3>
+        <p>
+          Many publications are not expected to be read in order, e.g. cookbooks, dictionaries, reference works,
+          journals. However, the principle of supporting the reading order does not impact the effective use of
+          reference materials.
+        </p>
+        <p id="r_beginning-to-end" class="req-set">
+          The Reading System should enable the end user to start reading at the first file in the publication and easily
+          continue to read through the entire publication.
+        </p>
+
+        <p id="r_continuous-movement" class="req-set">
+          The Reading System should not require the end user to do something different when moving to the next file in
+          the sequence.
+        </p>
+        <p>
+          The end user does not know how many files make up the publication. Having the end user move to the next file
+          in the sequence is a burden that should be avoided, e.g. go to the TOC and move down to the next heading you
+          have not read and go to that location. The end user should not be required to hit a link at the end of a file
+          to move to the next file.
+        </p>
+
+        <p id="r_toc" class="req-set">
+          The reading system should provide a mechanism to move to the table of contents without effecting the current
+          reading position
+        </p>
+
+        <p id="r_toc-focus" class="req-set">
+          The Reading System should place focus on the heading of the current reading position in the TOC.
+        </p>
+
+        <p id="r_toc-focus-first" class="req-set">
+          If two or more headings are visible in the current viewport, place focus in the TOC on the first heading in
+          the viewport.
+        </p>
+
+        <p id="r_toc-continue" class="req-set">
+          When the end user selects a new location in the TOC, the UA should navigate to that location and permit the
+          user to read continuously from the new location.
+        </p>
+
+        <p id="r_paginated-view" class="req-set">
+          It should be possible to see the Web Publication in a “paginated” view. When a user agent renders a Web
+          Publication in a paginated layout, it must lay out each document in the default reading order sequentially,
+          with the last page of a resource being followed by the first page of the subsequent one.
+        </p>
+        <p>
+          Whereas a “scrolling” view is the dominating approach on the Web in browsers, a user or author may wish to
+          view their publications in a paginated view. As such, it should be possible for an individual publication or
+          user agent to provide the ability to switch to pagination view. This pagination may automatically adapt page
+          sizes to the device’s or the browser’s viewport, and may contain separate headers, footers, and/or page
+          numbers.
+        </p>
+        <p>
+          This is distinct from the need to retain original page numbering (often from the print edition) which must be
+          available on demand and must be usable to discover specific locations in the publication.
+        </p>
+        <p>
+          For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
+        </p>
+        <div class="note">
+          <p>
+            Time-based media, especially a Web Publication consisting solely of time-based media, such as an audiobook,
+            may be presented as a single page with a player module presenting the content metadata. This player may
+            automatically adapt size and features according to the device or browser's viewport. This view may not have
+            page numbering, but reading position would correspond to a time value.
+          </p>
+          <p>
+            For navigation within time-based media such as audio and video, refer to <a href="#player">Time-based Media</a>.
+          </p>
+        </div>
+        <ul class="use-cases">
+          <li id="uc_movement_progress">
+            Ann reads <i>War and Peace</i> which, when printed, is over 1200 pages. In order to have a better sense of
+            her progress in the book and to make navigation within the book easier (i.e., to support usability) she
+            decides to switch her reading environment to paged view.
+          </li>
+          <li id="uc_movement_responsive_layout">
+            Susan uses a flexible CSS layout, that includes images, to create a rich, interactive publication on the
+            history of a city. Each major historical milestone is defined as a standalone unit that would be a single
+            page when printed, with a timeline with the main events in the footer area of the page.
+          </li>
+          <li id="uc_movement_transition_effects">
+            IndyPublisher wants to provide transition effects between pages, both within and across content documents.
+          </li>
+          <li id="uc_movement_page_numbers" class="uc-device-independence">
+            Mr. Oayia, a classroom teacher, says, “turn to page 137 of your textbook.” Regardless of layout and font
+            size, students reading digital editions need to find the same location in the textbook as one another and
+            as students reading the print edition.
+          </li>
+          <li id="uc_movement_random_access">
+            Alphonse has been listening to an audiobook he enjoys and would like to share a section with a friend. He
+            tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the section
+            with the audiobook player module provided by his user agent.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
+          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-reading-order">Reading Order</a></li>-->
+          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
+          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-pagination">Paginated Layout</a></li>-->
+        </ul>
+      </section>
+
+      <section id="progression">
+        <h3>Progression</h3>
+        <p id="r_progresssion" class="req-set">
+          User agents should provide the option for the user to save their progression in the publication and return the
+          user to the last location they saved the next time they open the publication.
+        </p>
+        <ul class="use-cases">
+          <li id="uc_progresssion_testing" class="uc-accessibility">
+            Ann is visually impaired and is reading a sample test paper with objective-type questions. The answers of
+            the test are given at the end of the publication.  Ann needs to read the question one at a time and then
+            check if her answer is correct.  Therefore she must bookmark both the questions and answers provided at the
+            end of the book so that she is able to switch between the both efficiently.
+          </li>
+          <li id="uc_progresssion_rulebooks">
+            Mateusz runs a Dungeons and Dragons campaign. He would like to be able to mark off specific sections of
+            different rulebooks and share those bookmarks so that players in his game can quickly reference the material.
+          </li>
+          <li id="uc_progresssion_device_sync" class="uc-device-independence">
+            Aika is reading a novel on her 9 inch tablet, bookmarks her location, and switches to her 5 inch phone.  She
+            would like to be able to resume reading from the same point where she left off, given that she may not be
+            using the same user agent on each device that contains some mechanism that would sync the content position.
+          </li>
+          <li id="uc_progresssion_lesson_prep">
+            Julia prepares her lessons for the next day. In her textbook WP, she bookmarks several locations in while
+            doing her prep.
+          </li>
+        </ul>
+        <!--<ul class="wpub-xref">
+          <li><a href="https://www.w3.org/TR/wpub/#short-description-0">Reading State &gt; Short Description</a></li>
+          <li><a href="https://www.w3.org/TR/wpub/#locators">Web Publication Locators</a></li>
+        </ul>-->
+
+        <p id="r_reading-state" class="req-set cc-minimal">
+          The user must be able to leave the Web Publication and return to it at the last position they left from. The
+          User Agent must retain the reading position, based on the last known position of the reader in the web
+          publication. The position should be based on the reader's position in the file, within the reading order.
+        </p>
+        <p>
+          The user agent may retain reading state if the web publication is 
+          revised. If the user agent consists of a player interface, that 
+          interface should allow the ability to leave and return to the 
+          content in the same position where the reader left off.
+        </p>
+        <ul class="use-cases">
+          <li id="uc_reading-state_continuity">
+            Filbert is reading a comic as a Web Publication. He exits the user agent without bookmarking or saving his
+            location in the Web Publication. When he returns the next day, he opens the Web Publication and continues
+            reading from where he had left off.
+          </li>
+          <li id="uc_reading-state_rollback">
+            Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next
+            listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one
+            he remembers listening to.
+          </li>
+          <li id="uc_reading-state_pause_and_restart">
+            Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk
+            only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off
+            on her trip home.
+          </li>
+        </ul>
+        <ul class="wpub-xref">
+          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
+          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-reading-order">Reading Order</a></li>-->
+          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
+          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-pagination">Paginated Layout</a></li>-->
+        </ul>
+      </section>
+
+      <section id="page-numbers">
+        <h3>Page Numbers</h3>
+        <p>
+          When print-equivalent page numbers are availble in a Web Publication, the UA should ensure that readers can
+          make use of this valuable metadata. The page numbers can be in the form of integers as well as alpha numeric
+          strings.
+        </p>
+        <p id="r_go-to-page" class="req-set">
+          A user agent should provide go-to-page functionality. It should allow the user to type in the page number, and
+          navigate to the corresponding page mark-up in the publication.
+        </p>
+        <p>
+          This works very well with integers but may be a problem for alphanumeric strings, e.g. the user mistypes the
+          string.
+        </p>
+
+        <p id="r_page-number-list" class="req-set">
+          The user agent should show the linear list of page numbers in a similar way as TOC items are displayed.
+        </p>
+        <p>
+          The user should select the destination page string from this list and activate it. The user agent should
+          navigate to the corresponding mark-up in the content. This functionality works well for both integer and
+          alphanumeric page numbers.
+        </p>
+
+        <p id="r_page-position" class="req-set">
+          The user agent should position the destination page number at the top of the screen on best effort basis.
+        </p>
+        <p>
+          If it is not possible, for example the last page has just one paragraph on it, then at least it should be on
+          the visible area of the screen.
+        </p>
+
+        <p id="r_page-number-visibility" class="req-set">
+          The user agents should be able to inform the reader about the current page number no matter it has the visible
+          text or not.
+        </p>
+        <p>
+          The author may decide to place page mark-up with visible text in the content (e.g. span with text child) or
+          may decide to create page mark-up without visible text (e.g. span without child text), which means that page
+          mark-up mainly identifies a spot in the content.
+        </p>
+
+        <p id="r_page-skippability" class="req-set">
+          User agents that support sync media should support skippability.
+        </p>
+        <p>
+          Skippability means the ability to remove page numbers from the reading flow based on user preferences. This
+          means that if the user wants to go to the page, the user agent will navigate to the exact location. However,
+          during continuous reading, the user will not hear “Page XX.” User agents should provide the user a preference
+          for switching this behavior on or off.
+        </p>
+      </section>
+
       <section id="player">
         <h3>Time-based Media</h3>
         <p id="r_player" class="req-set">
@@ -1155,180 +1421,6 @@
             next video plays. He is able to view the duration of the current video in the player interface of the user
             agent.
           </li>
-        </ul>
-      </section>
-
-      <section id="style">
-        <h3>Style</h3>
-        <div class="note">
-          <p>
-            The requirements related to style may be sufficiently addressed in 5.2 personalization, req: "The user
-            must have the possibility to personalize his or her reading experience. This may include, for example,
-            controlling such features as font size, choice of fonts, background and foreground color, tone of audio,
-            etc"
-          </p>
-        </div>
-        <!--<ul class="use-cases">
-          <li></li>
-        </ul>-->
-      </section>
-
-      <section id="layout">
-        <h3>Layout</h3>
-        <p id="r_separate-const-resources" class="req-set">
-          For the purposes of layout, each resource of a Web Publication is treated as a separate document. User agents
-          must not mix content from multiple resources in the same rendering (e.g., CSS floats or absolutely positioned
-          elements from one resource cannot intrude or overlap with content from an other resource).
-        </p>
-        <ul class="use-cases">
-          <li id="uc_separate-const-resources_css_counter">
-            Maeve is authoring an internal work document for her company as a Web Publication. This Web Publication
-            spans several resources / documents, and she would like to use decimal-dot notation to indicate the section
-            numbers. The CSS counter should be able to accumulate across the multiple resources to provide an accurate
-            count.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#layout">Layout</a></li>-->
-        </ul>
-      </section>
-
-      <section id="progression">
-        <h3>Progression</h3>
-        <p id="r_progresssion" class="req-set">
-          User agents should provide the option for the user to save their progression in the publication and return the
-          user to the last location they saved the next time they open the publication.
-        </p>
-        <ul class="use-cases">
-          <li id="uc_progresssion_testing" class="uc-accessibility">
-            Ann is visually impaired and is reading a sample test paper with objective-type questions. The answers of
-            the test are given at the end of the publication.  Ann needs to read the question one at a time and then
-            check if her answer is correct.  Therefore she must bookmark both the questions and answers provided at the
-            end of the book so that she is able to switch between the both efficiently.
-          </li>
-          <li id="uc_progresssion_rulebooks">
-            Mateusz runs a Dungeons and Dragons campaign. He would like to be able to mark off specific sections of
-            different rulebooks and share those bookmarks so that players in his game can quickly reference the material.
-          </li>
-          <li id="uc_progresssion_device_sync" class="uc-device-independence">
-            Aika is reading a novel on her 9 inch tablet, bookmarks her location, and switches to her 5 inch phone.  She
-            would like to be able to resume reading from the same point where she left off, given that she may not be
-            using the same user agent on each device that contains some mechanism that would sync the content position.
-          </li>
-          <li id="uc_progresssion_lesson_prep">
-            Julia prepares her lessons for the next day. In her textbook WP, she bookmarks several locations in while
-            doing her prep.
-          </li>
-        </ul>
-        <!--<ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#short-description-0">Reading State &gt; Short Description</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#locators">Web Publication Locators</a></li>
-        </ul>-->
-      </section>
-
-      <section id="reading-state">
-        <h3>Reading State</h3>
-        <p id="r_reading-state" class="req-set cc-minimal">
-          The user must be able to leave the Web Publication and return to it at the last position they left from. The
-          User Agent must retain the reading position, based on the last known position of the reader in the web
-          publication. The position should be based on the reader's position in the file, within the reading order.
-        </p>
-        <p>
-          The user agent may retain reading state if the web publication is 
-          revised. If the user agent consists of a player interface, that 
-          interface should allow the ability to leave and return to the 
-          content in the same position where the reader left off.
-        </p>
-        <ul class="use-cases">
-          <li id="uc_reading-state_continuity">
-            Filbert is reading a comic as a Web Publication. He exits the user agent without bookmarking or saving his
-            location in the Web Publication. When he returns the next day, he opens the Web Publication and continues
-            reading from where he had left off.
-          </li>
-          <li id="uc_reading-state_rollback">
-            Sainath fell asleep the last time he was listening to his audiobook. When he opened it for his next
-            listening session it was on chapter 6 but he needs to navigate back to chapter 3 because that’s the last one
-            he remembers listening to.
-          </li>
-          <li id="uc_reading-state_pause_and_restart">
-            Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk
-            only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off
-            on her trip home.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-reading-order">Reading Order</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-pagination">Paginated Layout</a></li>-->
-        </ul>
-      </section>
-
-      <section id='movement'>
-        <h3>Movement</h3>
-        <p id="r_movement" class="req-set">
-          It should be possible to see the Web Publication in a “paginated” view. When a user agent renders a Web
-          Publication in a paginated layout, it must lay out each document in the default reading order sequentially,
-          with the last page of a resource being followed by the first page of the subsequent one.
-        </p>
-        <p>
-          Whereas a “scrolling” view is the dominating approach on the Web in browsers, a user or author may wish to
-          view their publications in a paginated view. As such, it should be possible for an individual publication or
-          user agent to provide the ability to switch to pagination view. This pagination may automatically adapt page
-          sizes to the device’s or the browser’s viewport, and may contain separate headers, footers, and/or page
-          numbers.
-        </p>
-        <p>
-          This is distinct from the need to retain original page numbering (often from the print edition) which must be
-          available on demand and must be usable to discover specific locations in the publication.
-        </p>
-        <p>
-          For more detailed requirements on pagination, see <a href="https://www.w3.org/dpub/IG/wiki/Pagination_Requirements">here</a>.
-        </p>
-        <div class="note">
-          <p>
-            Time-based media, especially a Web Publication consisting solely of time-based media, such as an audiobook,
-            may be presented as a single page with a player module presenting the content metadata. This player may
-            automatically adapt size and features according to the device or browser's viewport. This view may not have
-            page numbering, but reading position would correspond to a time value.
-          </p>
-          <p>
-            For navigation within time-based media such as audio and video, refer to <a href="#player">Time-based Media</a>.
-          </p>
-        </div>
-        <ul class="use-cases">
-          <li id="uc_movement_progress">
-            Ann reads <i>War and Peace</i> which, when printed, is over 1200 pages. In order to have a better sense of
-            her progress in the book and to make navigation within the book easier (i.e., to support usability) she
-            decides to switch her reading environment to paged view.
-          </li>
-          <li id="uc_movement_responsive_layout">
-            Susan uses a flexible CSS layout, that includes images, to create a rich, interactive publication on the
-            history of a city. Each major historical milestone is defined as a standalone unit that would be a single
-            page when printed, with a timeline with the main events in the footer area of the page.
-          </li>
-          <li id="uc_movement_transition_effects">
-            IndyPublisher wants to provide transition effects between pages, both within and across content documents.
-          </li>
-          <li id="uc_movement_page_numbers" class="uc-device-independence">
-            Mr. Oayia, a classroom teacher, says, “turn to page 137 of your textbook.” Regardless of layout and font
-            size, students reading digital editions need to find the same location in the textbook as one another and
-            as students reading the print edition.
-          </li>
-          <li id="uc_movement_random_access">
-            Alphonse has been listening to an audiobook he enjoys and would like to share a section with a friend. He
-            tells his friend that the position of the quote is "Chapter 5, 2:33". His friend is able to find the section
-            with the audiobook player module provided by his user agent.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-reading-order">Reading Order</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-pagination">Paginated Layout</a></li>-->
         </ul>
       </section>
 
