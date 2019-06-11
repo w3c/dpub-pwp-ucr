@@ -371,13 +371,14 @@
 
       <section id="identification">
         <h3>Identification</h3>
-
         <p id="r_uid" class="req-set cc-minimal">
-          A Web Publication must be identified by either a URL or a unique handle that can be mapped to a URL.
+          A Web Publication, as a collection of resources, must be identified by either a single URL or a unique handle that can resolve to a single URL.
         </p>
         <p>
           The unique identification of a specific Web Publication is essential. If not expressed as a URL, there should
-          be a way to map this unique identification onto a Web Address.
+          be a way to map this unique identification onto a Web Address. The Web Publication must be identifiable as a single logical resource 
+          with its own URL beyond the references to its constituent 
+          resources.
         </p>
         <ul class="use-cases">
           <li id="uc_uid_scholarly_references">
@@ -392,6 +393,23 @@
             accurate in order to avoid confusion in classes, especially since each class is not necessarily using the
             latest edition.
           </li>
+          <li id="uc_single_search">
+            Marwin wants to search for a term on the publication. As a reader, he does not know the internal structure
+            of the book, i.e., whether the content is one or several HTML files; he wants to search to be executed on
+            the whole (logical) content, regardless of its internal representation.
+          </li>
+          <li id="uc_single_p13n">
+            Svetlana sets her preferences in terms of font selection and size, background color, etc, for her WP textbook.
+            She wants those to be in effect on all chapters of the book automatically.
+          </li>
+          <li id="uc_single_enumeration">
+            User agents that support value counters (page counters, section numbering, footnotes, endnotes), should do
+            so across the entire Web Publication (as opposed to individual components being numbered separately)
+          </li>
+          <li id="uc_single_assistive_technology" class="uc-accessibility">
+            Assistive Technology such as screen readers or voice dictation control needs to have the Web Publication
+            presented to it as if it was a single unit.
+          </li>
         </ul>
         <ul class="wpub-xref">
           <li><a href="https://www.w3.org/TR/wpub/#wp-bounds">Web Publication Bounds</a></li>
@@ -401,6 +419,7 @@
           <li><a href="https://www.w3.org/TR/wpub/#canonical-identifier">Canonical Identifier</a></li>
           <li><a href="https://www.w3.org/TR/wpub/#extensibility-linked-records">Linked Records</a></li>
           <li><a href="https://www.w3.org/TR/wpub/#obtaining-manifest">Obtaining a Manifest</a></li>
+          <li><a href="https://www.w3.org/TR/wpub/#manifest-pub-types">Publication Types</a></li>
         </ul>
 
         <p id="r_identify-const-resources" class="req-set">
@@ -441,36 +460,6 @@
           <li><a href="https://www.w3.org/TR/wpub/#cover">Cover</a></li>
           <li><a href="https://www.w3.org/TR/wpub/#cover">Cover</a></li>
           <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
-        </ul>
-
-        <p id="r_single" class="req-set cc-minimal">
-          User agents must treat a Web Publication as a single logical resource with its own URL, beyond the
-          references to individual, constituent resources.
-        </p>
-        <ul class="use-cases">
-          <li id="uc_single_search">
-            Marwin wants to search for a term on the publication. As a reader, he does not know the internal structure
-            of the book, i.e., whether the content is one or several HTML files; he wants to search to be executed on
-            the whole (logical) content, regardless of its internal representation.
-          </li>
-          <li id="uc_single_p13n">
-            Svetlana sets her preferences in terms of font selection and size, background color, etc, for her WP textbook.
-            She wants those to be in effect on all chapters of the book automatically.
-          </li>
-          <li id="uc_single_enumeration">
-            User agents that support value counters (page counters, section numbering, footnotes, endnotes), should do
-            so across the entire Web Publication (as opposed to individual components being numbered separately)
-          </li>
-          <li id="uc_single_assistive_technology" class="uc-accessibility">
-            Assistive Technology such as screen readers or voice dictation control needs to have the Web Publication
-            presented to it as if it was a single unit.
-          </li>
-        </ul>
-        <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-pub-types">Publication Types</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-bounds">Web Publication Bounds</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-resources">Resources</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#address">Address</a></li>
         </ul>
       </section>
 
