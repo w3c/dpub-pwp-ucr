@@ -135,7 +135,7 @@
         together. This document explores requirements based on examples of real world use cases and scenarios.
         Requirements for publications on the Web are explored first, without referring to any packaging aspect that
         would correspond to current practices like EPUB. This is followed by requirements of those packaging aspects,
-        as a structure on top of a purely Web based distribution. The complete list of requirements is also collected
+        as a structure on top of a purely Web-based distribution. The complete list of requirements is also collected
         in <a href="#reqtable">a separate table</a> in an appendix.
       </p>
 
@@ -179,7 +179,7 @@
           develop powerful interactive layers on top of OWP. These include, for example, data visualization systems
           (e.g., d3, built on top of SVG), possibilities to access external services like Wolfram Alpha, or tools to
           create and store (possibly as part of the publication) annotations. These tools have been traditionally
-          developed around browsers, and provide possibilities that publications should also benefit from. That
+          developed around browsers and provide possibilities that publications should also benefit from. That
           requires that <a data-lt="Web Publication">Web Publications</a> become first class citizens on the Web
           platform.
         </p>
@@ -309,7 +309,7 @@
           </li>
           <li id="uc_horizdep_anonymity" class="uc-privacy">
             <span class="uc-categories">(On Privacy)</span> Thomas has written a pamphlet advocating a government
-            overthrow. The government has decreed that the author of the pamphlet as well as its readers of the pamphlet
+            overthrow. The government has decreed that the author of the pamphlet as well as the readers of the pamphlet
             shall be jailed. Thomas needs to distribute the pamphlet in ways that preserve his anonymity and allow the
             public to read without fear of the government cyber-police.
           </li>
@@ -422,7 +422,7 @@
         <p>
           The requirement that a Web Publication be uniquely identifiable can be easily extended to the constituents
           of a Web Publication, as well as the fragments, parts, sections, etc, of those resources. Those
-          idenfications should be stable, resilient to changes and new iterations of the publication.
+          idenfications should be stable and resilient to changes and new iterations of the publication.
         </p>
         <ul class="use-cases">
           <li id="uc_identify-const-resources_theorem">
@@ -467,11 +467,11 @@
           make some decisions about how to present content before displaying it.
         </p>
         <p>
-          A Web Publication should be able to include additional information that the user agent can use like:
+          A Web Publication should be able to include additional information that the user agent can use, such as:
         </p>
         <ul>
           <li>
-            the rights of various components identified in the package
+            the rights of various components identified in the package;
           </li>
           <li>
             captions belonging to multimedia resources within the publication;
@@ -486,7 +486,7 @@
         </ul>
         <ul class="use-cases">
           <li id="uc_manifest-metadata_ownership_rights">
-            Marla is writing an art book and wish to include the rights relevant to the image of the Mona Lisa owned
+            Marla is writing an art book and wishes to include the rights relevant to the image of the Mona Lisa owned
             by the Louvre, so that a user agent will know whether it is permissible to download the image for offline
             use.
           </li>
@@ -501,7 +501,7 @@
           </li>
           <li id="uc_manifest-metadata_detailed_descriptions" class="uc-accessibility">
             Ferdous wants to buy a book about a museum exhibit, but before he does that, he wants to guarantee that the
-            images and videos about the exhibits have detailed descriptions, to ensure that he will be able to read it
+            images and videos about the exhibits have detailed descriptions to ensure that he will be able to read it
             with a screen reader or refreshable Braille display. This can be done because the publisher provided that
             information as part of the metadata assigned to the Web Publication.
           </li>
@@ -509,11 +509,11 @@
             A university professor is developing a course and the professor knows that he is required by the
             university's policy to use digital materials that conform to WCAG 2.0 level AA. The professor searches to
             determine which titles are accessible and therefore suitable for his use. This can be done because the
-            publishers have added the <a href="https://idpf.github.io/a11y-guidelines/content/meta/schema.org.html">Schema.org Accessibility Metadata</a>
+            publishers have added  <a href="https://idpf.github.io/a11y-guidelines/content/meta/schema.org.html">Schema.org Accessibility Metadata</a>
             to the Web Publication, describing the accessibility characteristics for each constituent resource.
           </li>
           <li id="uc_manifest-metadata_digital_assistant">
-            When Bella is listening to an audiobook or browsing her bookshelf, she wants to ask questions like,  “Hey
+            When Bella is listening to an audiobook or browsing her digital bookshelf, she wants to ask questions like,  “Hey
             [Digital Assistant], who’s the narrator?” or “How long is that book?” and hear the corresponding metadata
             read to her by text-to-speech before resuming listening to content or browsing.
           </li>
@@ -525,7 +525,7 @@
           </li>
           <li id="uc_manifest-metadata_library_promotion">
             A library wants to promote a particular type of publication depending on different categories available in a
-            publication’s metadata (age suitability, genre, author).
+            publication’s metadata (age suitability, genre, author, etc.)
           </li>
           <li id="uc_manifest-metadata_anthology">
             An online literary magazine wishes to compile an anthology of short stories authored by a specific writer.
@@ -562,8 +562,7 @@
           Web Publication may have many resources, some of which are essential and some of which are not. Because of
           this complexity, extracting in advance all the references to some or all constituent resources may be
           prohibitive. It is therefore necessary for the user agent to have an easy access to the list of constituent
-          resources and some of their characteristics such as whether they are essential, their media types, or their
-          sizes.
+          resources and some of their characteristics, such as media type, size, and whether they are essential.
         </p>
         <p>
           In a publication, some content is essential to the user being able to consume it while other content could
@@ -575,7 +574,7 @@
         <ul class="use-cases">
           <li id="uc_const-res_fallback">
             Nick is reading a long-form narrative on a device with limited storage: a publication filled with text,
-            images, sounds, and multimedia files. Nick also rides the subway, where he loses Internet connectivity
+            images, audio, and multimedia files. Nick also rides the subway where he loses Internet connectivity
             frequently and without warning for long stretches of time. During offline or low-storage situations, there
             are still critical parts of the publication that are consumable, mainly the text (and possibly images).
             Having a reasonable fallback for video, such as a poster image or placeholder image, would allow Nick to
@@ -585,7 +584,7 @@
             Henry creates a Web Publication and includes the accessibility metadata indicating that the publication has
             descriptions for videos. He marks the accessible descriptions as essential and marks videos as non-essential
             while providing images as fall-back. This enables the print-disabled readers to access the accessible
-            descriptions and video when there is good internet connectivity and fall-back images along with accessible
+            descriptions and video when there is good internet connectivity, and fall-back images along with accessible
             descriptions when internet connectivity is not optimum.
           </li>
           <li id="uc_const-res_essential_font">
@@ -611,21 +610,19 @@
             Risha publishes an article which includes an interactive component that accesses a database, exposed to the
             Web via a RESTful API. The interactive component is implemented as a JavaScript library. Such data cannot be
             included in a packaged publication and the interactive module is of no use without such data. Risha
-            therefore marks the Web Publication component relative to the interactive module as not relevant when
+            therefore marks the Web Publication component relative to the interactive module as not essential when
             offline.
           </li>
           <li id="uc_const-res_non-essential">
             Chiara is listening to an audiobook on Roman history. The description when she bought it mentioned that the
-            maps and images mentioned in the book were available as supplemental content in the file. At the end of the
+            maps and images referred to the book were available as supplemental content in the file. At the end of the
             audiobook, she is able to view the content, which helps her understand the audiobook better, but it is
             marked as non-essential if the audiobook is taken offline.
           </li>
           <li id="uc_const-res_lms_submission">
-            Stephanie, a student, is answering questions in an assessment embedded in a web publication. Her internet
-            connection is unreliable at home. She should be able, via the user agent or the content itself, to save
-            those responses in the Web Publication. If there is component wherein the student would have to submit the
-            responses to the assessment to a database, a user experience within the Web Publication, provided within the
-            content itself or via the user agent, should notify her whether the data has been successfully submitted.
+            Stephanie, a student, is answering questions in an assessment embedded in a Web Publication. Her internet
+            connection is unreliable at home. She should be able to save
+            those responses in the Web Publication. The assessment allows her to submit responses to a database. A notification within the Web Publication should inform her whether the data has been successfully submitted.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -684,25 +681,25 @@
         </p>
         <p>
           The table of contents must include a link to at least one resource, and all links should refer to resources
-          within publication bounds. The user agent present an accessible table of contents, which allows the user to
+          within the publication bounds. The user agent presents an accessible table of contents, which allows the user to
           access the links without navigating away from the current resource.
         </p>
         <ul class="use-cases">
           <li id="uc_toc_answers">
-            Chandrasekhar has been assigned a set of exercises in his math WP textbook. To double check his work, he
-            wants to easily navigate to the answers in the back of the WP. Using the table of contents exposable by his
-            UA, he is able to navigate to the answers and return to the exercise with ease.
+            Chandrasekhar has been assigned a set of exercises in his math Web Publication textbook. To double check his work, he
+            wants to easily navigate to the answers in the back of the Web Publication. Using the table of contents exposable by his
+            user agent, he is able to navigate to the answers and return to the exercise with ease.
           </li>
           <li id="uc_toc_skipping_around">
-            Penelope has opened her web publication to its preface. She would like to skip the preface and go to chapter
-            one. She is able to reveal the table of contents built into her web publication via a function in her user
+            Penelope has opened her Web Publication to its preface. She would like to skip the preface and go to chapter
+            one. She is able to reveal the table of contents built into her Web Publication via a function in her user
             agent and view a link to chapter one. She changes her mind and decides to read the preface. Since she is
             still on the preface and has not navigated away, she only needs to close out of the table of contents to
             continue reading the preface.
           </li>
           <li id="uc_toc_anthology">
-            Matilda is reading an anthology, but would like to read her favorite author's short stories first. She is
-            able to reveal the navigation built into her web publication via a function in her user agent and access the
+            Matilda is reading an anthology but would like to read her favorite author's short stories first. She is
+            able to reveal the navigation built into her Web Publication via a function in her user agent and access the
             relevant stories.
           </li>
         </ul>
@@ -717,16 +714,16 @@
         </p>
         <ul class="use-cases">
           <li id="uc_player-nav_skip_to_story">
-            Belinda would like to skip directly to a specific short story in a collected edition. The Web Publication provides the User Agent
+            Belinda would like to skip directly to a specific short story in a collected edition. The Web Publication provides the user agent
             with metadata to access the short story.
           </li>
           <li id="uc_player-nav_skip_to_minute">
             Mr. Sterling asks his students to skip directly to the 23rd minute of an audiobook.
           </li>
           <li id="uc_player-nav_skip_to_chapter">
-            Ken was assigned part of a non-fiction title for a class. He wants to open the audiobook but only needs to
+            Ken was assigned part of a non-fiction book for a class. He wants to open the audiobook but only needs to
             listen to chapter 19. The Web Publication provides the
-            User Agent with metadata to access the chapter.
+            user agent with metadata to access the chapter.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -745,7 +742,7 @@
         <p>
           It should be possible for the author to convey several potential <a href="#reading-order">reading orders</a>
           that may go beyond the “default” for the content of the publication. This alternative reading order may only
-          includes specific parts of the publication rather than the full content of the Web Publication.
+          include specific parts of the publication rather than the full content of the  publication.
         </p>
         <p>
           A user agent should be able to access the resources of the publication in whatever order it chooses—beyond
@@ -755,19 +752,19 @@
           <li id="uc_random-access_list_of_abstracts">
             EsteemedJournalPublisher would like to offer the users of the EsteemedJournal of Chemistry App the
             opportunity to read only the abstracts of the journals in the app. The publication would therefore provide
-            the user a list (table of contents) of abstracts (disjoint objects in the package with semantic
+            the user a list (table of contents) of abstracts (disjointed objects in the package with semantic
             information or metadata informing the package of the nature of the object).
           </li>
           <li id="uc_random-access_teasers">
             A publisher wants to provide “teasers” for a book by providing a series of extracts that are meant to give
-            an overview of the book without the necessity to read the whole publication. This can be typically used by
+            an overview of the book without the need to read the whole publication. This can be typically used by
             a reseller allowing for a prospective client to access part of the publication free of charge.
           </li>
           <li id="uc_random-access_dro_beginner_vs_advanced">
             EducationalPublisher publishes a complex textbook. The textbook is created is such a way that it could be
-            used both for beginner and advanced level. The default reading order corresponds to beginners, but the
+            used both for beginner and advanced levels. The default reading order corresponds to beginners, but the
             goal is that advanced students can follow a different path through the material, corresponding to their
-            level of knowledge. EducationPublisher adds, therefore, alternative reading orders to the publication that
+            level of knowledge. EducationalPublisher therefore adds alternative reading orders to the publication that
             advanced users can follow.
           </li>
           <li id="uc_random-access_dro_a-z_vs_categorized">
@@ -786,8 +783,7 @@
             reveal and suppress the Spanish glossary based on what the student requires.
           </li>
           <li id="uc_random-access_study_guides">
-            EducationalPublisher allows for a specialized user agent to filter and display content identified in a
-            foreign language learning Web Publication as vocabulary and conjugation charts. This is done in order to
+            A foreign language textbook Web Publication allows for a specialized user agent to filter and display content identified as vocabulary and conjugation charts. This is done in order to
             facilitate the teacher creating study guides.
           </li>
           <li id="uc_random-access_labels">
@@ -795,9 +791,9 @@
             feature in a user agent can filter to only show recipes with certain labels.
           </li>
           <li id="uc_random-access_dro_alternatives">
-            The publisher of Julio Cortázar's experimental novel <i>Rayuela</i> would like to publish the book as a Web
-            Publication. The book may be read in a variety of different sequences, all of which are offered as
-            alternative reading orders.
+            The publisher of an experimental novel would like to publish the book as a Web
+            Publication. The author wishes the reader to have the option to read chapters in a variety of different sequences, all of which are offered as
+            alternative reading orders in the Web Publication.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -838,11 +834,11 @@
         </p>
         <ul class ="use-cases">
           <li id="uc_alt-mods_hands-free" class="uc-accessibility">
-            Sree wants to access audio books while commuting, jogging, doing dishes, or otherwise not able to use his
+            Sree wants to access audiobooks while commuting, jogging, doing dishes, or otherwise not able to use his
             eyes or hands.
           </li>
           <li id="uc_alt-mods_audio_version">
-            Daniel wants to complete his assigned class readings during his commute to work. His textbook WP allows him
+            Daniel wants to complete his assigned class readings during his commute to work. His textbook Web Publication allows him
             to access an audio version of the each of the readings.
           </li>
           <li id="uc_alt-mods_wider_audience">
@@ -874,14 +870,14 @@
         </p>
         <ul class="use-cases">
           <li id="r_time_assistive_audio_and_text" class="uc-accessibility">
-            Illyés has a cognitive disability and uses accommodated texts in the classroom, to help learn the content
+            Illyés has a cognitive disability and uses accommodated texts in the classroom to help learn the content
             while improving his reading. His assistive technology uses combined audio and highlighted text, which it
-            obtained from the UA through the information provided in the Web Publication, to turn the page for him
+            obtains from the UA through the information provided in the Web Publication, to turn the page for him
             while reading along in sync with the page currently open.
           </li>
           <li id="r_time_read-aloud">
-            Marco is learning German as a second language. In order to improve his understanding and pronunciation,
-            while reading a German text, he uses a read-aloud function available through his User Agent and made
+            Marco is learning German as a second language. In order to improve his understanding and pronunciation
+            while reading a German text, he uses a read-aloud function available through his user agent and made
             accessible by the information provided in the Web Publication.
           </li>
         </ul>
@@ -906,7 +902,7 @@
           </li>
           <li id="uc_extdata_graphs">
             A news organization wishes to run a series of articles containing graphs based on a set of raw data. Those
-            graphs are generated dynamically in each article, depending on what the topic is. The data is also available
+            graphs are generated dynamically in each article depending on what the topic is. The data is also available
             to the user for transparency.
           </li>
           <li id="uc_extdata_dynamic">
@@ -945,10 +941,10 @@
             the availability period to enable the UA to control access accordingly.
           </li>
           <li id="uc_protection_assistive_technology" class="uc-accessibility">
-            Alice is working on potentially Nobel prize winning research, and has drafted her paper describing her
+            Alice is working on potentially Nobel prize winning research and has drafted her paper describing her
             discoveries. She asks her print disabled friend Bob to review the paper, but needs to make sure that the Web
-            Publication retains specific protections on what Bob is able to do with the publication and its content
-            without restricting Bob's access to his assistive technology.
+            Publication retains specific protections on what Bob is able to do with the publication 
+            without restricting Bob's assistive technology from accessing the content.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -964,7 +960,7 @@
           physical media.
         </p>
         <p>
-          This can done through the usage of <a data-lt="Packaged Web Publication">Packaged Web Publications</a>.
+          This can be done through the usage of <a data-lt="Packaged Web Publication">Packaged Web Publications</a>.
         </p>
         <ul class="use-cases">
           <li id="uc_pwp_secure_email">
@@ -978,7 +974,7 @@
           </li>
           <li id="uc_pwp_single_unit">
             Andreas is working on his first collaborative research paper with a fellow student. He wants to share a
-            relevant publication that includes content, diagrams, and data sets with his writing partner. He does not have
+            relevant publication that includes content, diagrams, and datasets with his writing partner. He does not have
             time to learn how to share each component so that his partner can access it all without much effort; he
             expects to be able to share this material as a single unit via the chatting system that they use to
             collaborate.
@@ -1011,7 +1007,7 @@
         <ul class="use-cases">
           <li id="uc_pwp-links_harvesting">
             An archival service wants to harvest (spider) a Web Publication and not have to modify the OWP content
-            during the process. In order to achive that goal, its manifest would incorporate a mapping from the URIs
+            during the process. In order to achieve that goal, its manifest would incorporate a mapping from the URIs
             present in the OWP content to their new location inside the archive.
           </li>
         </ul>
@@ -1027,12 +1023,12 @@
         <ul class="use-cases">
           <li id="uc_check-origin_cryptography">
             Michael, who is a lawyer, and uses the publications of LegalPublisher Ltd., must be 100% sure that the
-            publication he uses for his case has indeed been published by LegalPublisher Ltd., and not by a possible
+            publication he uses for his case has indeed been published by LegalPublisher Ltd. and not by a possible
             third party. This can be done because LegalPublisher Ltd. adds the necessary cryptographic information to
             the Web Publication proving its own identity.
           </li>
           <li id="uc_check-origin_versioning">
-            Brendan wants to make sure that the version of a textbook WP that wants to purchase from an online retailer
+            Brendan wants to make sure that the version of a textbook Web Publication that he wants to purchase from an online retailer
             is the correct one required for his class.
           </li>
         </ul>
@@ -1048,14 +1044,14 @@
         <ul class="use-cases">
         <li id="uc_check-integrity_owp" class="uc-privacy">
             Luke has written another book, this time using all of the capabilities of the Open Web Platform that he can
-            think of including using the readers location to adapt the content. He submits the book for review to a Web
-            Publication retail platform, where the book is signed by the publisher.  When purchased, the UA detects that
+            think of, including using the readers location to adapt the content. He submits the book for review to a Web
+            Publication retail platform where the book is signed by the publisher.  When purchased, the user agent detects that
             the book came from a trusted source and has not been modified, therefore allowing it to use the full
             capabilities of the web platform.
           </li>
           <li id="uc_check-integrity_cryptography">
             LegalPublisher Ltd. regularly publishes the official legal texts and regulation as decided by the local
-            government. Michael, who is a lawyer, has access to these documents via his law firm, and uses them for his
+            government. Michael, who is a lawyer, has access to these documents via his law firm and uses them for his
             cases; to do so, he must be 100% sure that the publication he accesses faithfully reproduces the latest
             governmental decisions. This can be done because LegalPublisher Ltd. adds the necessary cryptographic
             information to the Web Publication that becomes invalid if any resource of the Web Publication changes.
@@ -1089,11 +1085,11 @@
         </ul>
         <ul class="use-cases">
           <li id="uc_player_continuous_playback">
-            Helga wants to cook/drive/run while listening to an audiobook and can’t be interrupted by any request for
+            Helga wants to cook, drive, or run while listening to an audiobook and can’t be interrupted by any request for
             additional inputs.
           </li>
           <li id="uc_player_limited_controls">
-            Yitian is listening to an audiobook on a device where the only input available is play/pause.
+            Yitian is listening to an audiobook on a device where the only input available is play and pause.
           </li>
           <li id="uc_player_voice_controls">
             Suraj wants to listen to an audiobook on his smart speaker by using a voice input to start the playback.
@@ -1110,7 +1106,7 @@
         </p>
         <ul class="use-cases">
           <li id="uc_skip-by-increment_ten_second_jumps">
-            Mateus is writing a book review and want to find a specific segment in the audiobook to quote and review. He
+            Mateus is writing a book review and wants to find a specific segment in the audiobook to quote and review. He
             remembers it’s early in chapter 3, so he wants to open the audiobook to chapter 3 and listen, skipping
             forward in ten second increments using the player provided by the user agent, until he finds it.
           </li>
@@ -1121,10 +1117,10 @@
           </li>
           <li id="uc_skip-by-increment_skip_front_matter">
             Stanford just opened his audiobook and wants to skip through the copyright and title info as well as the
-            dedication without opening up the TOC menu.
+            dedication without opening up the table of contents.
           </li>
           <li id="uc_skip-by-increment_skip_introduction">
-            Sasha is rewatching a video in her educational Web Publication for a refresher and wants to skip
+            Sasha is rewatching a video in her educational Web Publication for a refresher and wants to skip over 
             introductory content and content that she already has a firm  understanding of.
           </li>
         </ul>
@@ -1170,12 +1166,12 @@
             different rulebooks and share those bookmarks so that players in his game can quickly reference the material.
           </li>
           <li id="uc_progresssion_device_sync" class="uc-device-independence">
-            Aika is reading a novel on her 9 inch tablet, bookmarks her location, and switches to her 5 inch phone.  She
+            Aika is reading a novel on her 9-inch tablet, bookmarks her location, and switches to her 5-inch phone.  She
             would like to be able to resume reading from the same point where she left off, given that she may not be
             using the same user agent on each device that contains some mechanism that would sync the content position.
           </li>
           <li id="uc_progresssion_lesson_prep">
-            Julia prepares her lessons for the next day. In her textbook WP, she bookmarks several locations in while
+            Julia prepares her lessons for the next day. In her textbook Web Publication, she bookmarks several locations while
             doing her prep.
           </li>
         </ul>
@@ -1189,8 +1185,8 @@
         <h3>Reading State</h3>
         <p id="r_reading-state" class="req-set cc-minimal">
           The user must be able to leave the Web Publication and return to it at the last position they left from. The
-          User Agent must retain the reading position, based on the last known position of the reader in the web
-          publication. The position should be based on the reader's position in the file, within the reading order.
+          User Agent must retain the reading position, based on the last known position of the reader in the Web
+          Publication. The position should be based on the reader's position in the file within the reading order.
         </p>
         <p>
           The user agent may retain reading state if the web publication is
@@ -1211,7 +1207,7 @@
           </li>
           <li id="uc_reading-state_pause_and_restart">
             Nelleke is listening to <i>The Iliad</i> on her walk to work. The audiobook is 14 hours long, but her walk
-            only takes 30 minutes, she would like to stop the playback when she arrives and continue where she left off
+            only takes 30 minutes. She would like to stop the playback when she arrives and continue where she left off
             on her trip home.
           </li>
         </ul>
@@ -1235,7 +1231,7 @@
           Whereas a “scrolling” view is the dominating approach on the Web in browsers, a user or author may wish to
           view their publications in a paginated view. As such, it should be possible for an individual publication or
           user agent to provide the ability to switch to pagination view. This pagination may automatically adapt page
-          sizes to the device’s or the browser’s viewport, and may contain separate headers, footers, and/or page
+          sizes to the device’s or the browser’s viewport and may contain separate headers, footers, and/or page
           numbers.
         </p>
         <p>
@@ -1259,11 +1255,11 @@
         <ul class="use-cases">
           <li id="uc_movement_progress">
             Ann reads <i>War and Peace</i> which, when printed, is over 1200 pages. In order to have a better sense of
-            her progress in the book and to make navigation within the book easier (i.e., to support usability) she
+            her progress in the book and to make navigation within the book easier (i.e., to support usability), she
             decides to switch her reading environment to paged view.
           </li>
           <li id="uc_movement_responsive_layout">
-            Susan uses a flexible CSS layout, that includes images, to create a rich, interactive publication on the
+            Susan uses a flexible CSS layout that includes images to create a rich, interactive publication on the
             history of a city. Each major historical milestone is defined as a standalone unit that would be a single
             page when printed, with a timeline with the main events in the footer area of the page.
           </li>
@@ -1271,7 +1267,7 @@
             IndyPublisher wants to provide transition effects between pages, both within and across content documents.
           </li>
           <li id="uc_movement_page_numbers" class="uc-device-independence">
-            Mr. Oayia, a classroom teacher, says, “turn to page 137 of your textbook.” Regardless of layout and font
+            Mr. Oayia, a classroom teacher, says, “Turn to page 137 of your textbook.” Regardless of layout and font
             size, students reading digital editions need to find the same location in the textbook as one another and
             as students reading the print edition.
           </li>
@@ -1301,30 +1297,30 @@
         </p>
         <ul class="use-cases">
           <li id="uc_offline_limited_connectivity">
-            Omo, a student in a remote Nigerian village, is taking classes online. Connectivity to the village is
+            Omo, a student in a remote Nigerian village, is taking classes online. Connectivity in the village is
             unreliable and intermittent. Omo needs to have his textbooks available regardless of actual connectivity.
           </li>
           <li id="uc_offline_download">
-            Heather, a frequent international traveller, enjoys reading books and tour guides on her portable device,
+            Heather, a frequent international traveler, enjoys reading books and tour guides on her portable device,
             regardless of her physical location on any given day. Due to the high mobile network access roaming charges
             on her mobile network, she tends to download as much of her reading material as possible where she can avoid
             those additional charges.
           </li>
           <li id="uc_offline_collection">
-            Gemma, a private collector of digital publications, is building a private collection of publications that
+            Gemma is building a private collection of publications that
             she expects to be available to her whether online or offline, over the public Internet, or within a private
             local area network (LAN).
           </li>
           <li id="uc_offline_in-house">
-            “In house” documents may have to be accessed both online and offline, depending on the access point. While
+            In-house documents may have to be accessed both online and offline, depending on the access point. While
             online access might be beneficial when done from the work floor (e.g., at an airplane production line), the
             same documents may need reliable offline access (e.g., in the cockpit).
           </li>
           <li id="uc_offline_synchronization">
             Gyöngyi, selected as a peer reviewer for the Journal of Scholarly Publications, only has time to review her
-            assigned publication while commuting on the train to her university, where she does not have connectivity.
+            assigned publication while commuting on the train to her university  where she does not have connectivity.
             Since her review process includes the creation of annotations, notes, highlights, and possibly changes on
-            the content itself, it is important that these changes must be smoothly transferred back to the server of
+            the content itself, it is important that these changes be smoothly transferred back to the server of
             the journal when she is back online.
           </li>
         </ul>
@@ -1372,7 +1368,7 @@
       <section id="personalization">
         <h3>Personalization</h3>
         <p id="r_p13n" class="req-set">
-          The user must have the possibility to personalize his or her reading experience. This may include, for example,
+          The user must have the possibility of personalizing his or her reading experience. This may include, for example,
           controlling such features as font size, choice of fonts, background and foreground color, tone of audio, etc.
         </p>
         <ul class="use-cases">
@@ -1390,7 +1386,7 @@
             the code samples within the text should remain in a fixed-width font.
           </li>
           <li id="uc_p13n_deafblind" class="uc-accessibility">
-            Buffy is Deafblind. Every morning she downloads her daily newspaper. Like most news sites, it provides many
+            Buffy is deafblind. Every morning she downloads her daily newspaper. Like most news sites, it provides many
             rich multimedia presentations. As a high-quality, accessible news site, its multimedia presentations come
             with captions and transcripts. Buffy does not want to waste her data plan on the useless-to-her audio and
             video content, so she instructs her user agents to ignore them.
@@ -1441,9 +1437,9 @@
         </ul>
         <ul class="use-cases">
           <li id="uc_non-wp-ua_simple_browser" class="uc-device-independence">
-            John found an audiobook Web Publication in his university which he wants to start listening to immediately,
-            but he does not have an audiobook User Agent installed on his university computer. He should be able to at
-            least use basic functionality of the book in vanilla browser available on the university computer.
+            John found an audiobook Web Publication in his university, which he wants to start listening to immediately,
+            but he does not have an audiobook user agent installed on his university computer. He at least should be able to  use 
+            the basic functionality of the book in the vanilla browser available on the university computer.
           </li>
         </ul>
         <ul class="wpub-xref">
@@ -1471,28 +1467,28 @@
             cloud. Customers can access this file from different retailers, through different applications, either
             directly or downloaded from a private cloud. Thus, the Web Publication is duplicated many times, resulting
             in a huge number of copies. There remains a single source manifestation, and therefore one
-            <a href="#identification">canonical identifier</a> for all of the items spread across devices and buyers.
+            <a href="#identification">canonical identifier</a>, for all of the items spread across devices and buyers.
           </li>
           <li id="uc_pwp-distro_instructor_edition">
-            EducationPublisher wants to create a custom version of their textbook WP for an instructor. Content from a
+            EducationalPublisher wants to create a custom version of their textbook WP for an instructor. Content from a
             few additional sources is added, but the original WPs are not affected.
           </li>
           <li id="uc_pwp-distro_annotation">
             Mary creates a Packaged Web Publication and sends it to Dave and Kristin. Kristin simply sends it along to
             two other friends, but Dave adds some comments first to his copy before sending to two friends. By doing
-            so, Dave has created a new Web Publication with its own <a href="#identification">canonical identifier</a>
-            while the version used by Mary, Kristen and her friends remains the same as the original.
+            so, Dave has created a new Web Publication with its own <a href="#identification">canonical identifier</a>,
+            while the version used by Mary, Kristin, and her friends remains the same as the original.
           </li>
           <li id="uc_pwp-distro_tracking">
             Slicendice Publishing publishes many Packaged Web Publications, some of which are different iterations or
-            subsets or combinations of others. Slicendice needs not only to be able to uniquely identify each unique
+            subsets or combinations of others. Slicendice needs not only to be able to uniquely identify each 
             Web Publication but also to identify each “copy” or “delivery” (“item”) of each of those Web Publications
-            so that it can track “what” has been sold and “how many” of each one have been sold.
+            so that it can track what has been sold and how many of each one have been sold.
           </li>
           <li id="uc_pwp-distro_teaser">
             BigRetailer receives a Web Publication from EsteemedPublisher that it intends to add to its catalogue.
-            BigRetailer wants to adds it own “teaser” via an alternative reading order. To achieve that, BigRetailer
-            provides its own version of the publication’s manifest, that the user agent will use instead of the
+            BigRetailer wants to add its own “teaser” via an alternative reading order. To achieve that, BigRetailer
+            provides its own version of the publication’s manifest that the user agent will use instead of the
             publisher’s manifest.
           </li>
         </ul>
@@ -1502,12 +1498,12 @@
 
         <p id="r_pwp-process" class="req-set">
           The distribution of Packaged Web Publications should respect the existing processes and expectations of
-          professional publishing channels as well as ad-hoc methods of distribution (eg. email).
+          professional publishing channels as well as ad-hoc methods of distribution (e.g., email).
         </p>
         <ul class="use-cases">
           <li id="uc_pwp-process_single_unit" class="uc-device-independence">
-            Ahmed acquires a Packaged Web Publications on an e-commerce platform. He expects to be able to receive the
-            Web Publication as a file (rather than only having access to it) and to be able to load it onto its
+            Ahmed acquires a Packaged Web Publication on an e-commerce platform. He expects to be able to receive the
+            Web Publication as a file (rather than only having access to it online) and to be able to load it onto his 
             different reading devices.
           </li>
           <li id="uc_pwp-process_access_control">
@@ -1531,13 +1527,13 @@
           such as making copies, monitoring software dependencies, and validating integrity. Since future consumers of
           publications represent the most open-ended user group, it is desirable that digital documents be instilled
           with more of the inherent durability that characterizes print artifacts. Packaged Web Publications offer this
-          potential, by making it easier for archiving services to locate, harvest, update, and describe digital
-          publications. Long-term preservation of digital publications ensures that they may continue to be accessible,
+          potential by making it easier for archiving services to locate, harvest, update, and describe digital
+          publications. Long-term preservation of digital publications ensures that they may continue to be accessible 
           beyond the tenure of individual authors, file formats, publishers, or publishing platforms.
         </p>
         <p>
-          Fundamental use cases and requirements already help aid our archiving requirements (<i>e.g.</i>
-          <a class="req-ref-full" href="#r_const-res"></a>). However, archival raises additional requirements:
+          Fundamental use cases and requirements already help aid our archiving requirements (<i>e.g.,</i>
+          <a class="req-ref-full" href="#r_const-res"></a>). However, archiving raises additional requirements:
         </p>
 
         <p id="r_archmetadata" class="req-set">
@@ -1546,7 +1542,7 @@
         </p>
         <p>
           An archiving service needs a reliable way to determine which, if any, Web Publication components contain
-          descriptive metadata, such as that described in <a href="#manifest-metadata">metadata and resources</a>.
+          descriptive metadata, such as those described in <a href="#manifest-metadata">metadata and resources</a>.
           Without such a mechanism, the archiving service will have to develop and maintain publisher- and/or
           platform-specific heuristics for locating or parsing out descriptive metadata, making archiving more
           expensive and decreasing the reliability of reporting.
@@ -1556,7 +1552,7 @@
             An archiving service sets out to conduct an initial harvest of an article. Along with the images, markup,
             scripts, and style and layout instructions that constitute the object, it is able to locate a file
             containing descriptive metadata. The archiving service retrieves these resources and packages them into a
-            logical archival unit for ingest into a preservation repository. A related process identifies and parses
+            logical archival unit for ingestion into a preservation repository. A related process identifies and parses
             the descriptive metadata and saves its contents into an associated management database.
           </li>
         </ul>
@@ -1578,14 +1574,14 @@
           <li id="uc_component-change_polling">
             An archiving service regularly polls for changes to an article that it has already archived. One such poll
             indicates that several resources have been added to the object. The archiving service retrieves these
-            resources and store them as incremental updates to the appropriate archival unit in a preservation
+            resources and stores them as incremental updates to the appropriate archival unit in a preservation
             repository.
           </li>
           <li id="uc_component-change_retraction">
             A publisher issues a retraction for a published article, resulting in the addition of new resources to the
             object (i.e., the retraction notice) and the removal of others (i.e., the article content). An archiving
             service regularly polls for changes to this article, which it has already archived, and discovers the
-            retraction. The archiving service retrieves the new resources and record those that are no longer
+            retraction. The archiving service retrieves the new resources and records those that are no longer
             accessible, carrying over the cumulative updates to a preservation repository.
           </li>
           <li id="uc_component-change_takedown">
@@ -1752,7 +1748,7 @@
       <section>
         <h3>Minimal Requirements</h3>
         <p>
-          A UA conforming at a minimal level must address all of the following requirements:
+          A user agent conforming at a minimal level must address all of the following requirements:
         </p>
         <table class="conformance zebra" data-display="cc-minimal">
           <thead><tr><th>Req.&nbsp;#</th><th>Requirement</th></tr></thead>
@@ -1779,9 +1775,9 @@
       <section>
         <h3>Internationalization</h3>
         <p>
-          Publications should be well adapted to any language, writing systems, region, or culture. This includes the
-          usage, when appropriate, of left-to-right, right-to-left, horizontal or vertical writing; item numbering, or
-          interactive forms specific to local cultures; usage of the right character sets and of local typographic
+          Publications should be well-adapted to any language, writing system, region, or culture. This includes the
+          usage, when appropriate, of left-to-right, right-to-left, horizontal, or vertical writing; item numbering; 
+          interactive forms specific to local cultures; usage of the right character sets; and local typographic
           conventions.
         </p>
         <table class="uc-category zebra" data-display="uc-i18n">
@@ -1792,8 +1788,8 @@
       <section>
         <h3>Device Independence</h3>
         <p>
-          The content in a publication should be usable on a large number of devices with very different device
-          characteristics: different screen types and sizes, various input modalities, varying level of processing power,
+          The content in a Web Publication should be usable on a large number of devices with very different device
+          characteristics: different screen types and sizes, various input modalities, varying levels of processing power,
           etc. These different affordances should be automatic with no, or very little, user intervention.
         </p>
         <table class="uc-category zebra" data-display="uc-device-independence">
