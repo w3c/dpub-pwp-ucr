@@ -7,7 +7,7 @@
     <script src="scripts/rcollect.js" class="remove"></script>
     <script src="scripts/rdisplay.js" class="remove"></script>
     <script src="https://w3c.github.io/wpub/common/js/biblio.js" class="remove"></script>
-    <link href="common/css/common.css" rel="stylesheet" type="text/css">
+    <!-- <link href="common/css/common.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="extras.css">
     <script class='remove'>
       var respecConfig = {
@@ -62,7 +62,16 @@
           repoURL: "https://github.com/w3c/dpub-pwp-ucr/",
           branch: "gh-pages"
         },
-        localBiblio: biblio,
+        localBiblio: {
+          "wpub-note": {
+              "title": "Web Publications",
+              "href": "https://www.w3.org/TR/wpub/",
+              "authors": [
+                "Matt Garrish",
+                "Ivan Herman"
+              ]
+            }
+        },
         noRecTrack: "true"
       };
     </script>
@@ -89,7 +98,7 @@
         document describes the various use cases highlighting the problems users and publishers face when these
         publications are to be used in a digital, Web environment. The requirements that come from those use cases
         provide the basis for the technical considerations in a companion document, currently entitled “Web
-        Publications”&nbsp;[[wpub]].
+        Publications”&nbsp;[[wpub-note]].
       </p>
     </section>
 
@@ -217,7 +226,7 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#scope">Scope</a></li>
+          <li><a data-cite="!wpub-note/#scope">Scope</a></li>
         </ul>
       </section>
 
@@ -326,12 +335,12 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#accessibility">Accessibility</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#language-and-dir">Language and Base Direction</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-specific-language-and-dir">Item-specific Language</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#reading-progression-direction">Reading Progression Direction</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#accessibility-report">Accessibility Report</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#privacy-policy">Privacy Policy</a></li>
+          <li><a data-cite="!wpub-note/#accessibility">Accessibility</a></li>
+          <li><a data-cite="!wpub-note/#language-and-dir">Language and Base Direction</a></li>
+          <li><a data-cite="!wpub-note/#manifest-specific-language-and-dir">Item-specific Language</a></li>
+          <li><a data-cite="!wpub-note/#reading-progression-direction">Reading Progression Direction</a></li>
+          <li><a data-cite="!wpub-note/#accessibility-report">Accessibility Report</a></li>
+          <li><a data-cite="!wpub-note/#privacy-policy">Privacy Policy</a></li>
         </ul>
       </section>
 
@@ -354,7 +363,7 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#privacy-policy">Privacy Policy</a></li>
+          <li><a data-cite="!wpub-note/#privacy-policy">Privacy Policy</a></li>
         </ul>
       </section>
     </section>
@@ -406,14 +415,14 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#wp-bounds">Web Publication Bounds</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-resources">Resources</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#primary-entry-page">Primary Entry Page</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#address">Address</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#canonical-identifier">Canonical Identifier</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#extensibility-linked-records">Linked Records</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-obtaining-manifest">Obtaining a Manifest</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#publication-types">Publication Types</a></li>
+          <li><a data-cite="!wpub-note/#wp-bounds">Web Publication Bounds</a></li>
+          <li><a data-cite="!wpub-note/#wp-resources">Resources</a></li>
+          <li><a data-cite="!wpub-note/#primary-entry-page">Primary Entry Page</a></li>
+          <li><a data-cite="!wpub-note/#address">Address</a></li>
+          <li><a data-cite="!wpub-note/#canonical-identifier">Canonical Identifier</a></li>
+          <li><a data-cite="!wpub-note/#extensibility-linked-records">Linked Records</a></li>
+          <li><a data-cite="!wpub-note/#wp-obtaining-manifest">Obtaining a Manifest</a></li>
+          <li><a data-cite="!wpub-note/#publication-types">Publication Types</a></li>
         </ul>
 
         <p id="r_identify-const-resources" class="req-set">
@@ -443,14 +452,14 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-embed">Embedding a Manifest</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-link">Linking to a Manifest</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#pagelist">Page List</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#address">Address</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#resource-list">Resource List</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#cover">Cover</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#manifest-embed">Embedding a Manifest</a></li>
+          <li><a data-cite="!wpub-note/#manifest-link">Linking to a Manifest</a></li>
+          <li><a data-cite="!wpub-note/#pagelist">Page List</a></li>
+          <li><a data-cite="!wpub-note/#address">Address</a></li>
+          <li><a data-cite="!wpub-note/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a data-cite="!wpub-note/#resource-list">Resource List</a></li>
+          <li><a data-cite="!wpub-note/#cover">Cover</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
         </ul>
       </section>
 
@@ -509,7 +518,7 @@
             A university professor is developing a course and the professor knows that he is required by the
             university's policy to use digital materials that conform to WCAG 2.0 level AA. The professor searches to
             determine which titles are accessible and therefore suitable for his use. This can be done because the
-            publishers have added  <a href="https://idpf.github.io/a11y-guidelines/content/meta/schema.org.html">Schema.org Accessibility Metadata</a>
+            publishers have added <a href="https://www.w3.org/wiki/WebSchemas/Accessibility">Schema.org Accessibility Metadata</a>
             to the Web Publication, describing the accessibility characteristics for each constituent resource.
           </li>
           <li id="uc_manifest-metadata_digital_assistant">
@@ -534,20 +543,20 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-link">Linking to a Manifest</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#accessibility">Accessibility</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#creators">Creators </a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#language-and-dir">Language and Base Direction</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-specific-language-and-dir">Item-specific Language</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-title">Title</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#links">Links</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#accessibility-report">Accessibility Report</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#privacy-policy">Privacy Policy</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#cover">Cover</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#extensibility-linked-records">Linked records</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-publication-mode">Switch to Publication Mode</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#wp-obtaining-manifest">Obtaining a manifest</a></li>
+          <li><a data-cite="!wpub-note/#manifest-link">Linking to a Manifest</a></li>
+          <li><a data-cite="!wpub-note/#accessibility">Accessibility</a></li>
+          <li><a data-cite="!wpub-note/#creators">Creators </a></li>
+          <li><a data-cite="!wpub-note/#language-and-dir">Language and Base Direction</a></li>
+          <li><a data-cite="!wpub-note/#manifest-specific-language-and-dir">Item-specific Language</a></li>
+          <li><a data-cite="!wpub-note/#wp-title">Title</a></li>
+          <li><a data-cite="!wpub-note/#links">Links</a></li>
+          <li><a data-cite="!wpub-note/#accessibility-report">Accessibility Report</a></li>
+          <li><a data-cite="!wpub-note/#privacy-policy">Privacy Policy</a></li>
+          <li><a data-cite="!wpub-note/#cover">Cover</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#extensibility-linked-records">Linked records</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-publication-mode">Switch to Publication Mode</a></li>-->
+          <li><a data-cite="!wpub-note/#wp-obtaining-manifest">Obtaining a manifest</a></li>
         </ul>
       </section>
 
@@ -626,13 +635,13 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-embed">Embedding a Manifest</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#manifest-link">Linking to a Manifest</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#address">Address</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#links">Links</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#cover">Cover</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#manifest-embed">Embedding a Manifest</a></li>
+          <li><a data-cite="!wpub-note/#manifest-link">Linking to a Manifest</a></li>
+          <li><a data-cite="!wpub-note/#address">Address</a></li>
+          <li><a data-cite="!wpub-note/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a data-cite="!wpub-note/#links">Links</a></li>
+          <li><a data-cite="!wpub-note/#cover">Cover</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
         </ul>
       </section>
 
@@ -667,9 +676,9 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#pagelist">Page List</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#pagelist">Page List</a></li>
+          <li><a data-cite="!wpub-note/#default-reading-order">Default Reading Order</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
         </ul>
       </section>
 
@@ -704,7 +713,7 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
         </ul>
 
         <p id="r_player-nav" class="req-set">
@@ -728,8 +737,8 @@
         </ul>
         <ul class="wpub-xref">
           <li><a href="https://www.w3.org/TR/audiobooks/">Audiobook</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#affordances">Table of Contents &gt; Affordances</a></li>-->
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
+          <!--<li><a data-cite="!wpub-note/#affordances">Table of Contents &gt; Affordances</a></li>-->
         </ul>
       </section>
 
@@ -797,8 +806,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#default-reading-order">Default Reading Order</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
         </ul>
 
         <p id="r_print-page" class="req-set">
@@ -817,8 +826,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#table-of-contents">Table of Contents</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
+          <li><a data-cite="!wpub-note/#table-of-contents">Table of Contents</a></li>
+          <li><a data-cite="!wpub-note/#page-list">Page List</a></li>
         </ul>
       </section>
 
@@ -852,9 +861,9 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#publication-types">Publication Types</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-bounds">Web Publication Bounds</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#links">Links</a></li>
+          <li><a data-cite="!wpub-note/#publication-types">Publication Types</a></li>
+          <li><a data-cite="!wpub-note/#wp-bounds">Web Publication Bounds</a></li>
+          <li><a data-cite="!wpub-note/#links">Links</a></li>
         </ul>
       </section>
 
@@ -882,8 +891,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#links">Links</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#resource-list">Resource List</a></li>
+          <li><a data-cite="!wpub-note/#links">Links</a></li>
+          <li><a data-cite="!wpub-note/#resource-list">Resource List</a></li>
         </ul>
       </section>
 
@@ -924,8 +933,8 @@
           </li> -->
         </ul>
         <ul class="wpub-xref">
-          <!--<li><a href="https://www.w3.org/TR/wpub/#example-65">Single-Document Publication &gt; Example 65</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-list">Resource List</a></li>
+          <!--<li><a data-cite="!wpub-note/#example-65">Single-Document Publication &gt; Example 65</a></li>-->
+          <li><a data-cite="!wpub-note/#resource-list">Resource List</a></li>
         </ul>
       </section>
 
@@ -948,8 +957,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#privacy-policy">Privacy Policy</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-publication-mode">Switch to Publication Mode</a></li>-->
+          <li><a data-cite="!wpub-note/#privacy-policy">Privacy Policy</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-publication-mode">Switch to Publication Mode</a></li>-->
         </ul>
       </section>
 
@@ -991,8 +1000,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#links">Links</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#webpub">Web Publications</a></li>
+          <li><a data-cite="!wpub-note/#links">Links</a></li>
+          <li><a data-cite="!wpub-note/#webpub">Web Publications</a></li>
         </ul>
 
         <p id="r_pwp-links" class="req-set">
@@ -1012,8 +1021,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#wp-bounds">Web Publication Bounds</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
+          <li><a data-cite="!wpub-note/#wp-bounds">Web Publication Bounds</a></li>
+          <li><a data-cite="!wpub-note/#default-reading-order">Default Reading Order</a></li>
         </ul>
 
         <p id="r_check-origin" class="req-set">
@@ -1033,8 +1042,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#creators">Creators</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#extensibility-linked-records">Linked records</a></li>
+          <li><a data-cite="!wpub-note/#creators">Creators</a></li>
+          <li><a data-cite="!wpub-note/#extensibility-linked-records">Linked records</a></li>
         </ul>
 
         <p id="r_check-integrity" class="req-set">
@@ -1058,7 +1067,7 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#creators">Creators</a></li>
+          <li><a data-cite="!wpub-note/#creators">Creators</a></li>
         </ul>
       </section>
     </section>
@@ -1144,7 +1153,7 @@
           <li>
             <a href="https://www.w3.org/TR/audiobooks/">Audiobook</a>
           </li>
-          <li><a href="https://www.w3.org/TR/wpub/#duration">Duration</a></li>
+          <li><a data-cite="!wpub-note/#duration">Duration</a></li>
         </ul>
       </section>
 
@@ -1176,8 +1185,8 @@
           </li>
         </ul>
         <!--<ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#short-description-0">Reading State &gt; Short Description</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#locators">Web Publication Locators</a></li>
+          <li><a data-cite="!wpub-note/#short-description-0">Reading State &gt; Short Description</a></li>
+          <li><a data-cite="!wpub-note/#locators">Web Publication Locators</a></li>
         </ul>-->
       </section>
 
@@ -1212,11 +1221,11 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-reading-order">Reading Order</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-pagination">Paginated Layout</a></li>-->
+          <li><a data-cite="!wpub-note/#page-list">Page List</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-reading-order">Reading Order</a></li>-->
+          <li><a data-cite="!wpub-note/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a data-cite="!wpub-note/#default-reading-order">Default Reading Order</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-pagination">Paginated Layout</a></li>-->
         </ul>
       </section>
 
@@ -1278,11 +1287,11 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#page-list">Page List</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-reading-order">Reading Order</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-categorization-properties">Resource Categorization Properties</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#default-reading-order">Default Reading Order</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-pagination">Paginated Layout</a></li>-->
+          <li><a data-cite="!wpub-note/#page-list">Page List</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-reading-order">Reading Order</a></li>-->
+          <li><a data-cite="!wpub-note/#resource-categorization-properties">Resource Categorization Properties</a></li>
+          <li><a data-cite="!wpub-note/#default-reading-order">Default Reading Order</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-pagination">Paginated Layout</a></li>-->
         </ul>
       </section>
 
@@ -1325,9 +1334,9 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#scope">Scope</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-offline-access">Offline Access</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-list">Resource List</a></li>
+          <li><a data-cite="!wpub-note/#scope">Scope</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-offline-access">Offline Access</a></li>-->
+          <li><a data-cite="!wpub-note/#resource-list">Resource List</a></li>
         </ul>
 
         <p id="r_streaming" class="req-set">
@@ -1357,10 +1366,10 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#scope">Scope</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-offline-access">Offline Access</a></li>-->
-          <li><a href="https://www.w3.org/TR/wpub/#resource-list">Resource List</a></li>
-          <!--<li><a href="https://www.w3.org/TR/wpub/#feature-user-settings">User Settings</a></li>-->
+          <li><a data-cite="!wpub-note/#scope">Scope</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-offline-access">Offline Access</a></li>-->
+          <li><a data-cite="!wpub-note/#resource-list">Resource List</a></li>
+          <!--<li><a data-cite="!wpub-note/#feature-user-settings">User Settings</a></li>-->
           <li><a href="https://www.w3.org/TR/audiobooks/">Audiobook</a></li>
         </ul>
       </section>
@@ -1393,8 +1402,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#language-and-dir">Language and Base Direction</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#accessibility">Accessibility</a></li>
+          <li><a data-cite="!wpub-note/#language-and-dir">Language and Base Direction</a></li>
+          <li><a data-cite="!wpub-note/#accessibility">Accessibility</a></li>
         </ul>
       </section>
 
@@ -1443,8 +1452,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#wp-resources">Resources</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#address">Address</a></li>
+          <li><a data-cite="!wpub-note/#wp-resources">Resources</a></li>
+          <li><a data-cite="!wpub-note/#address">Address</a></li>
           <li><a href="https://www.w3.org/TR/audiobooks/">Audiobook</a></li>
         </ul>
       </section>
@@ -1493,7 +1502,7 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#extensibility-linked-records">Linked records</a></li>
+          <li><a data-cite="!wpub-note/#extensibility-linked-records">Linked records</a></li>
         </ul>
 
         <p id="r_pwp-process" class="req-set">
@@ -1557,8 +1566,8 @@
           </li>
         </ul>
         <ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#extensibility-linked-records">Linked records</a></li>
-          <li><a href="https://www.w3.org/TR/wpub/#wp-title">Title  </a></li>
+          <li><a data-cite="!wpub-note/#extensibility-linked-records">Linked records</a></li>
+          <li><a data-cite="!wpub-note/#wp-title">Title  </a></li>
         </ul>
 
         <p id="r_component-change" class="req-set">
@@ -1597,7 +1606,7 @@
           </li>
         </ul>
         <!--<ul class="wpub-xref">
-          <li><a href="https://www.w3.org/TR/wpub/#feature-publication-mode">Switch to publication mode</a></li>
+          <li><a data-cite="!wpub-note/#feature-publication-mode">Switch to publication mode</a></li>
         </ul>-->
 
       </section>
