@@ -1,0 +1,53 @@
+[{
+    "name" : "Luc Audrain"
+},{
+    "name" : "Franco Alvarado",
+    "editor": true
+},{
+    "name" : "Baldur Bjarnason"
+},{
+    "name" : "Garth Conboy",
+    "chair": true
+},{
+    "name" : "Dave Cramer"
+},{
+    "name" : "Timothy Cole"
+},{
+    "name" : "Rachel Comerford"
+},{
+    "name" : "Romain Deltour"
+},{
+    "name" : "Hadrien Gardeur",
+    "affiliation" : "Feedbooks"
+},{
+    "name" : "Heather Flanagan",
+    "affiliation": "invited expert"
+},{
+    "name" : "Matt Garrish"
+},{
+    "name" : "Ivan Herman"
+},{
+    "name" : "Geoff Jukes"
+},{
+    "name" : "Deborah Kaplan"
+},{
+    "name" : "Laurent Le Meur"
+},{
+    "name" : "Joshua Pyle",
+    "affiliation": "Wiley",
+    "editor": true
+},{
+    "name" : "Wendy Reid",
+    "chair": true
+},{
+    "name" : "Leonard Rosenthol"
+},{
+    "name" : "Tzviya Siegman",
+    "chair": true
+},{
+    "name" : "Avneesh Singh"
+},{
+    "name" : "Benjamin Young"
+},{
+    "name" : "Jeff Xu"
+}]
